@@ -463,11 +463,15 @@
     </div>
     <p class="anim-up" style="font-size:15px;color:var(--text2);transition-delay:.2s">Ready for vans from July 2026</p>
 
-    <!-- Hero image -->
-    <div class="media-frame anim-up" style="max-width:900px;margin:44px auto 0;border:1px solid var(--border);box-shadow:0 20px 40px rgba(0,0,0,.08);transition-delay:.25s">
-      <img src="https://cdn.truckmall.cz/images/0/ff1952bcc480ca3d/1/tagra-1-vyhodnoceni-dat-z-tachografu.webp"
-           alt="TAGRA software – tachograph data management interface"
-           width="1200" height="750" loading="eager">
+    <!-- Hero video -->
+    <div class="media-frame anim-up" style="max-width:900px;margin:44px auto 0;border:1px solid var(--border);box-shadow:0 20px 40px rgba(0,0,0,.08);transition-delay:.25s;border-radius:20px;overflow:hidden">
+      <video id="hero-vid"
+             muted loop preload="metadata" playsinline
+             style="width:100%;display:block"
+             poster="https://cdn.truckmall.cz/images/0/ff1952bcc480ca3d/1/tagra-1-vyhodnoceni-dat-z-tachografu.webp">
+        <source src="https://cdn.truckmall.cz/data/user-content/Comp_2.webm" type="video/webm">
+        <source src="https://cdn.truckmall.cz/images/0/ff1952bcc480ca3d/1/tagra-1-vyhodnoceni-dat-z-tachografu.webp" type="image/webp">
+      </video>
     </div>
   </div>
 </section>
@@ -650,9 +654,9 @@
         </div>
       </div>
       <div class="anim-up" style="transition-delay:.1s">
-        <div class="media-frame">
-          <img src="https://cdn.truckmall.cz/images/0/ff1952bcc480ca3d/1/tagra-1-vyhodnoceni-dat-z-tachografu.webp"
-               alt="TAGRA 1 software screenshot – driver data evaluation" loading="lazy" width="600" height="480" style="object-fit:contain;border-radius:var(--radius);">
+        <div class="media-frame" style="background:var(--bg-gray);border-radius:var(--radius);overflow:hidden">
+          <img src="https://cdn.truckmall.cz/data/user-content/tagra-1-vyhodnoceni-dat-z-tachografu_upscayl_4x_upscayl-standard-4x.webp"
+               alt="TAGRA software – tachograph data evaluation interface" loading="lazy" width="800" height="800" style="object-fit:contain;border-radius:var(--radius);width:100%;height:auto;">
         </div>
       </div>
     </div>
@@ -701,7 +705,7 @@
   <div class="container">
     <div class="mac-stage">
       <img id="mac-img"
-           src="https://cdn.truckmall.cz/images/0/ff1952bcc480ca3d/1/tagra-1-vyhodnoceni-dat-z-tachografu.webp"
+           src="https://cdn.truckmall.cz/data/user-content/tagra/Tagra_screen_2xb.webp"
            alt="TAGRA software interface – driver working time overview"
            loading="lazy" width="3116" height="2076">
     </div>
@@ -868,6 +872,16 @@
         <div style="margin-top:24px">
           <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" class="btn-cta btn-cta--sm" target="_blank" rel="noopener">Download trial version</a>
         </div>
+      </div>
+    </div>
+
+    <!-- Wide image: TAGRA on monitors at dispatch -->
+    <div class="anim-up" style="margin-top:60px">
+      <div class="media-frame" style="border-radius:var(--radius);overflow:hidden">
+        <img src="https://cdn.truckmall.cz/data/user-content/TAGRA-monitory-2.webp"
+             alt="TAGRA software in use at a transport dispatch office"
+             loading="lazy" width="1920" height="840"
+             style="width:100%;height:auto;display:block;object-fit:cover;max-height:480px">
       </div>
     </div>
   </div>
@@ -1078,6 +1092,21 @@
     window.addEventListener('resize', onScroll, { passive: true });
     setTimeout(zoom, 150);
   }
+  /* 6. HERO VIDEO AUTOPLAY */
+  var heroVid = document.getElementById('hero-vid');
+  if (heroVid && 'IntersectionObserver' in window) {
+    var hvObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { heroVid.play().catch(function(){}); }
+        else { heroVid.pause(); }
+      });
+    }, { threshold: 0.1 });
+    hvObs.observe(heroVid);
+    document.addEventListener('touchstart', function() {
+      if (heroVid.paused) heroVid.play().catch(function(){});
+    }, { once: true, passive: true });
+  }
+
   /* 5. MAC STAGE ZOOM ON SCROLL — TRUCKER */
   var macImgT = document.getElementById('mac-img-trucker');
   if (macImgT) {
