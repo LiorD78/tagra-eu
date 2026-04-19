@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAGRA Trucker – Tachograph Software for Professional Drivers</title>
+  <meta name="description" content="TAGRA Trucker helps professional drivers stay compliant with EU tachograph regulations. Evaluate your driver card data, check driving times and rest periods. USB reader included. Free 30-day trial.">
+  <link rel="canonical" href="https://tagra.eu/driver/">
+  <meta property="og:title" content="TAGRA Trucker – For Professional Drivers">
+  <meta property="og:description" content="TAGRA Trucker helps professional drivers stay compliant with EU tachograph regulations. USB card reader included. Free 30-day trial.">
+  <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_TRUCKER_wh.jpg">
+  <meta property="og:url" content="https://tagra.eu/driver/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    /* ─── TOKENS ────────────────────────────────────────────────────── */
+    :root {
+      --blue-dark:      #0b2c4a;
+      --blue-mid:       #134a8e;
+      --blue-light:     #1f5fa6;
+      --green-cta:      #5C820F;
+      --green-brand:    #6E9B12;
+      --green-bg:       #f0f6e4;
+      --bg-apple-solid: #eaf3f8;
+      --bg-white:       #ffffff;
+      --bg-gray:        #f5f5f7;
+      --text:           #1d1d1f;
+      --text2:          #515154;
+      --text-strong:    #0b0b0c;
+      --border:         rgba(0,0,0,0.08);
+      --radius:         20px;
+      --maxw:           1180px;
+      --nav-h:          64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.6; color: var(--text); background: var(--bg-white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: var(--green-brand); text-decoration: none; }
+    a:hover { color: var(--green-cta); text-decoration: underline; text-underline-offset: .18em; }
+    img { max-width: 100%; height: auto; display: block; }
+    ul { list-style: none; }
+    p + p { margin-top: 12px; }
+    p:empty { display: none; }
+
+    /* ─── SCROLL PROGRESS ───────────────────────────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--green-brand), var(--blue-light)); width: 0%; z-index: 9999; pointer-events: none; transition: width .1s ease-out; }
+
+    /* ─── NAV ───────────────────────────────────────────────────────── */
+    .site-nav { position: sticky; top: 0; z-index: 900; height: var(--nav-h); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: -.02em; background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links li a { font-size: 15px; font-weight: 500; color: var(--text); padding: 8px 12px; border-radius: 8px; transition: background .15s, color .15s; text-decoration: none; }
+    .nav-links li a:hover { background: var(--bg-apple-solid); color: var(--blue-mid); }
+    .nav-links .nav-cta a { background: var(--green-cta); color: #fff !important; border-radius: 99px; padding: 8px 18px; font-weight: 600; }
+    .nav-links .nav-cta a:hover { background: var(--green-brand); text-decoration: none; }
+    .nav-lang { display: flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 600; }
+    .nav-lang a { padding: 5px 8px; border-radius: 6px; color: var(--text2); text-decoration: none; transition: background .15s; }
+    .nav-lang a:hover, .nav-lang a.active { background: var(--bg-apple-solid); color: var(--blue-mid); }
+    .nav-lang span { color: var(--border); }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; transition: .3s; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 24px 20px; }
+    }
+
+    /* ─── LAYOUT ────────────────────────────────────────────────────── */
+    .band { padding: 80px 0; }
+    .band--hero { background: linear-gradient(180deg, var(--green-bg) 0%, #fff 100%); padding: 40px 0 60px; text-align: center; }
+    .band--gray { background: var(--bg-gray); }
+    .band--blue { background: var(--bg-apple-solid); }
+    .band--green { background: var(--green-bg); }
+    @media (max-width: 768px) { .band { padding: 50px 0; } }
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ─── TYPOGRAPHY ────────────────────────────────────────────────── */
+    h2 { font-size: 36px; line-height: 1.08; letter-spacing: -.01em; margin-bottom: 12px; text-transform: uppercase; display: inline-block; background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid) 55%, var(--blue-light)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-weight: 800; }
+    @media (max-width: 768px) { h2 { font-size: 28px; } }
+    h2.hero-h2 { font-size: 64px; line-height: 1.08; letter-spacing: -.02em; display: block; text-transform: none; }
+    @media (max-width: 768px) { h2.hero-h2 { font-size: 42px; } }
+    .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-brand); margin-bottom: 12px; }
+
+    /* ─── BUTTONS ───────────────────────────────────────────────────── */
+    .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--green-cta); color: #fff !important; padding: 14px 30px; border-radius: 99px; font-size: 18px; font-weight: 600; cursor: pointer; text-decoration: none !important; border: none; transition: background .2s, transform .15s; }
+    .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
+    .btn-cta--sm { font-size: 16px; padding: 10px 24px; }
+
+    /* ─── BENTO ─────────────────────────────────────────────────────── */
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 40px; }
+    .bc { background: #fff; border-radius: var(--radius); padding: 32px; border: 1px solid var(--border); position: relative; overflow: hidden; }
+    .bc.s7 { grid-column: span 7; }
+    .bc.s5 { grid-column: span 5; }
+    .bc.s4 { grid-column: span 4; }
+    .bc.s6 { grid-column: span 6; }
+    .bc.bluefill { background: var(--bg-apple-solid); border-color: rgba(31,95,166,.1); }
+    .bc.greenfill { background: var(--green-bg); border-color: rgba(110,155,18,.2); }
+    @media (max-width: 900px) { .bento { grid-template-columns: 1fr 1fr; } .bc.s7, .bc.s5 { grid-column: span 2; } .bc.s4, .bc.s6 { grid-column: span 1; } }
+    @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .bc { grid-column: span 1 !important; } }
+    .bc-title { font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -.02em; color: var(--text-strong); margin-bottom: 8px; }
+    .bc-text { font-size: 16px; line-height: 1.5; color: var(--text2); }
+    .bignum { font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; }
+
+    /* ─── 2-COL ─────────────────────────────────────────────────────── */
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .g2.top { align-items: start; }
+    @media (max-width: 900px) { .g2 { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* ─── FEATURES ──────────────────────────────────────────────────── */
+    .feats { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+    .fi { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.5; }
+    .fck { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); display: flex; align-items: center; justify-content: center; }
+
+    /* ─── REVIEWS ───────────────────────────────────────────────────── */
+    .rev-rail-wrap { overflow: hidden; margin-top: 24px; mask-image: linear-gradient(to right, transparent 0%,black 6%,black 94%,transparent 100%); }
+    .rev-rail { display: flex; align-items: stretch; gap: 0; padding: 16px 0 32px; overflow-x: auto; scrollbar-width: none; cursor: grab; }
+    .rev-rail::-webkit-scrollbar { display: none; }
+    .rev-rail:active { cursor: grabbing; }
+    .rev-card { flex: 0 0 clamp(260px,28vw,380px); background: var(--bg-white); border-radius: 18px; border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; min-height: 180px; margin-right: 20px; user-select: none; }
+    .rev-stars { color: #f5b400; font-size: 18px; letter-spacing: 2px; margin-bottom: 12px; }
+    .rev-txt { font-size: 17px; flex: 1; }
+    .rev-meta { font-size: 15px; color: var(--text2); margin-top: 16px; }
+
+    /* ─── MEDIA ─────────────────────────────────────────────────────── */
+    .media-frame { width: 100%; border-radius: var(--radius); overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(#fff,#000); }
+    .media-frame img, .media-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ─── MAC STAGE ─────────────────────────────────────────────────── */
+    .mac-stage { position: relative; width: 100%; line-height: 0; }
+    .mac-stage img { width: 100%; display: block; object-fit: contain; transform-origin: center center; filter: drop-shadow(0 30px 70px rgba(0,0,0,.16)); will-change: transform; }
+    .mac-stage::after { content: ""; position: absolute; left: 50%; bottom: 5%; transform: translateX(-50%); width: 80%; height: 60px; background: radial-gradient(50% 50%,rgba(0,0,0,.16) 0%,transparent 70%); filter: blur(15px); opacity: .6; pointer-events: none; z-index: -1; }
+
+    /* ─── NOTE BOX ──────────────────────────────────────────────────── */
+    .note-box { position: relative; background: linear-gradient(180deg,var(--green-bg) 0%,#fff 100%); border: 2px solid var(--green-brand); border-radius: var(--radius); padding: 36px 28px 28px; margin-top: 40px; box-shadow: 0 10px 26px rgba(110,155,18,.08); }
+    .note-badge { position: absolute; top: -16px; left: 24px; background: var(--green-brand); color: #fff; font-size: 14px; font-weight: 800; text-transform: uppercase; padding: 5px 14px; border-radius: 999px; box-shadow: 0 6px 14px rgba(110,155,18,.22); }
+    .note-title { font-size: 24px; font-weight: 800; line-height: 1.2; margin: 10px 0 12px; color: var(--text-strong); }
+    .note-box p { font-size: 17px; line-height: 1.6; color: var(--text2); margin-bottom: 12px; }
+
+    /* ─── 3-STEP ────────────────────────────────────────────────────── */
+    .three-col { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+    @media (max-width: 860px) { .three-col { grid-template-columns: 1fr; } }
+    @media (min-width: 600px) and (max-width: 860px) { .three-col { grid-template-columns: 1fr 1fr; } }
+
+    /* ─── FAQ ───────────────────────────────────────────────────────── */
+    .faq details { border-bottom: 1px solid var(--border); }
+    .faq details:first-child { border-top: 1px solid var(--border); }
+    .faq summary { list-style: none; cursor: pointer; padding: 18px 40px 18px 0; font-weight: 800; font-size: 18px; line-height: 1.4; position: relative; color: var(--text-strong); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green-brand); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.6; color: var(--text2); }
+
+    /* ─── FOOTER ────────────────────────────────────────────────────── */
+    .site-footer { background: var(--blue-dark); color: rgba(255,255,255,.7); padding: 48px 0 32px; }
+    .footer-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 32px; } }
+    .footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .footer-desc { font-size: 15px; line-height: 1.6; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: 15px; color: rgba(255,255,255,.6); text-decoration: none; transition: color .15s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom { max-width: var(--maxw); margin: 32px auto 0; padding: 16px 24px 0; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 14px; }
+    .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* ─── ANIMATIONS ────────────────────────────────────────────────── */
+    .anim-up { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .fly-left { opacity: 0; transform: translateX(-80px); transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
+    .fly-right { opacity: 0; transform: translateX(80px); transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
+    .anim-up.on, .fly-left.on, .fly-right.on { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .anim-up, .fly-left, .fly-right { transition: none !important; opacity: 1 !important; transform: none !important; } }
+  </style>
+</head>
+<body>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ═══ NAVIGATION ════════════════════════════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home">TAGRA</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/fleet/">For companies</a></li>
+      <li><a href="/driver/" aria-current="page" style="color:var(--green-brand);font-weight:700">For drivers</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li class="nav-cta"><a href="https://www.tdt.cz/vyzkousejte-tagra-trucker-na-30-dni-zdarma" target="_blank" rel="noopener">Try 30 days free</a></li>
+    </ul>
+    <div class="nav-lang">
+      <a href="/driver/" class="active" aria-current="page">EN</a>
+      <span>|</span>
+      <a href="/de/">DE</a>
+      <span>|</span>
+      <a href="/pl/">PL</a>
+    </div>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════════════ -->
+<section class="band band--hero" aria-label="TAGRA Trucker overview">
+  <div class="container">
+    <div class="eyebrow anim-up">TAGRA Trucker · For professional drivers</div>
+    <h2 class="hero-h2 anim-up" style="transition-delay:.05s">Your hours.<br>Your data.</h2>
+    <p class="anim-up" style="font-size:21px;line-height:1.5;max-width:620px;margin:16px auto 32px;color:var(--text2);transition-delay:.1s">
+      Know exactly what's on your driver card — driving times, breaks and rest periods — before any roadside inspection. USB reader included.
+    </p>
+    <div class="anim-up" style="margin-bottom:16px;transition-delay:.15s">
+      <a href="https://www.tdt.cz/vyzkousejte-tagra-trucker-na-30-dni-zdarma" class="btn-cta" target="_blank" rel="noopener">Try free for 30 days</a>
+    </div>
+    <p class="anim-up" style="font-size:15px;color:var(--text2);transition-delay:.2s">Windows · No registration required · Ready for van drivers from July 2026</p>
+
+    <!-- Hero video -->
+    <div class="media-frame anim-up" style="max-width:900px;margin:44px auto 0;border:1px solid var(--border);box-shadow:0 20px 40px rgba(0,0,0,.08);transition-delay:.25s;border-radius:20px;overflow:hidden">
+      <video id="hero-vid"
+             muted loop preload="metadata" playsinline
+             style="width:100%;display:block"
+             poster="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_TRUCKER_wh.jpg">
+        <source src="https://cdn.truckmall.cz/data/user-content/tagra-trucker.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEY PARAMETERS (BENTO) ════════════════════════════════════════ -->
+<section class="band" aria-label="Key features">
+  <div class="container">
+    <div class="eyebrow anim-up">Key features</div>
+    <h2 class="anim-up">Everything a professional<br>driver needs</h2>
+    <div class="bento">
+      <div class="bc s7 fly-left">
+        <div class="eyebrow" style="color:var(--green-brand)">For</div>
+        <div class="bc-title">1 driver · driver card</div>
+        <div class="bc-text">Evaluation and archiving of your own driver card data. Know your hours before an inspector does.</div>
+        <div class="bignum">1</div>
+      </div>
+      <div class="bc s5 greenfill fly-right" style="transition-delay:.1s">
+        <div class="eyebrow" style="color:var(--green-brand)">In the box</div>
+        <div class="bc-title">USB card reader<br>included</div>
+        <div class="bc-text">Nothing extra to buy. Plug in, insert your card, done.</div>
+      </div>
+      <div class="bc s4 fly-left" style="transition-delay:.15s">
+        <div class="eyebrow">Trial period</div>
+        <div class="bc-title">30 days free</div>
+        <div class="bc-text">Download, install, try. No credit card, no commitment.</div>
+      </div>
+      <div class="bc s4 anim-up" style="transition-delay:.25s">
+        <div class="eyebrow">From year 2</div>
+        <div class="bc-title" style="color:var(--green-brand)">€20 / year</div>
+        <div class="bc-text">Annual licence fee excl. VAT — includes updates and support.</div>
+      </div>
+      <div class="bc s4 greenfill fly-right" style="transition-delay:.35s">
+        <div class="eyebrow" style="color:var(--green-brand)">Works</div>
+        <div class="bc-title" style="color:var(--green-brand)">Offline</div>
+        <div class="bc-text">No internet needed for daily use. Just your PC and your card.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ════════════════════════════════════════════════════════ -->
+<section class="band band--gray" aria-label="Customer reviews">
+  <div class="container">
+    <div class="eyebrow anim-up">What drivers say</div>
+    <h2 class="anim-up">Trusted by professional drivers</h2>
+  </div>
+  <div class="rev-rail-wrap anim-up" style="transition-delay:.05s">
+    <div class="rev-rail" id="rev-rail">
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"Great satisfaction and no problems during inspections."</p><p class="rev-meta">Verified customer · Zboží.cz</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"The reader works as it should."</p><p class="rev-meta">Verified customer · Zboží.cz</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"Everything works as it should, the programme is clear and sufficient for my needs. Support was helpful and responsive. Can only recommend."</p><p class="rev-meta">Verified customer · Zboží.cz</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"It takes a bit of getting used to at first, but then you realise the programme is easy, clear and useful for journey planning too. Every driver should have it."</p><p class="rev-meta">Verified customer · Zboží.cz</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"Simple and clear. Downloading, evaluation and archiving of data takes just a few minutes."</p><p class="rev-meta">Verified TRUCKMALL customer</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT TAGRA TRUCKER DOES ════════════════════════════════════════ -->
+<section class="band" aria-label="Software features">
+  <div class="container">
+    <div class="g2 top">
+      <div class="anim-up">
+        <div class="eyebrow">What TAGRA Trucker does</div>
+        <h2>Your card.<br>Your data. Your peace of mind.</h2>
+        <p style="margin-bottom:24px">Know exactly what's on your driver card at all times — and be ready for any roadside inspection.</p>
+        <div class="feats">
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>USB card reader included</strong> — plug in, read your card, done</span></div>
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Driving times, breaks and rest periods per EU 561/2006 and AETR</span></div>
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Instant overview of what's stored on your driver card</span></div>
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Archiving of driver card data — legally compliant</span></div>
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Works offline on any Windows PC or laptop in the cab</span></div>
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Ready for van drivers from July 2026</strong></span></div>
+        </div>
+        <div style="margin-top:28px">
+          <a href="https://www.tdt.cz/vyzkousejte-tagra-trucker-na-30-dni-zdarma" class="btn-cta btn-cta--sm" target="_blank" rel="noopener">Try Trucker free — 30 days</a>
+        </div>
+      </div>
+      <div class="anim-up" style="transition-delay:.1s">
+        <div style="border-radius:var(--radius);overflow:hidden;background:var(--bg-gray);padding:20px;text-align:center">
+          <img src="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_TRUCKER_wh.jpg"
+               alt="TAGRA Trucker – software package including USB driver card reader"
+               loading="lazy" width="600" height="600"
+               style="max-width:320px;margin:0 auto;object-fit:contain">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAC STAGE ═════════════════════════════════════════════════════ -->
+<section class="band" style="background:linear-gradient(180deg,var(--bg-apple-solid) 0%,#fff 74%);padding:60px 0" aria-label="Software preview">
+  <div class="container">
+    <div class="mac-stage">
+      <img id="mac-img"
+           src="https://cdn.truckmall.cz/data/user-content/Trucker_3_ntb.webp"
+           alt="TAGRA Trucker on laptop — driver card data overview"
+           loading="lazy" width="3116" height="2076">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ══════════════════════════════════════════════════ -->
+<section class="band band--gray" aria-label="How to get data into TAGRA Trucker">
+  <div class="container">
+    <div class="anim-up" style="text-align:center;margin-bottom:40px">
+      <div class="eyebrow">Simple process</div>
+      <h2>Three steps.<br>That's it.</h2>
+    </div>
+    <div class="three-col anim-up" style="transition-delay:.05s">
+      <div style="text-align:center;padding:28px 20px">
+        <div style="font-size:52px;font-weight:900;line-height:1;color:rgba(19,74,142,.12);margin-bottom:8px">1</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Plug in the USB reader</div>
+        <p style="font-size:16px;color:var(--text2)">Insert the included USB card reader into your PC or laptop. No extra software needed.</p>
+      </div>
+      <div style="text-align:center;padding:28px 20px;border-left:1px solid var(--border);border-right:1px solid var(--border)">
+        <div style="font-size:52px;font-weight:900;line-height:1;color:rgba(19,74,142,.12);margin-bottom:8px">2</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Insert your driver card</div>
+        <p style="font-size:16px;color:var(--text2)">TAGRA reads your card automatically. All data loads in seconds.</p>
+      </div>
+      <div style="text-align:center;padding:28px 20px">
+        <div style="font-size:52px;font-weight:900;line-height:1;color:rgba(19,74,142,.12);margin-bottom:8px">3</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">See your data</div>
+        <p style="font-size:16px;color:var(--text2)">Driving times, breaks, rest periods — clear overview. Ready for any inspection.</p>
+      </div>
+    </div>
+
+    <div class="note-box anim-up" role="note">
+      <span class="note-badge">Good to know</span>
+      <div class="note-title">Download your card at least every 28 days</div>
+      <p>As a self-employed driver or operator, you are legally required to download your driver card data at least every 28 days. TAGRA Trucker makes this quick and painless — and keeps your archive in order.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRY IT ════════════════════════════════════════════════════════ -->
+<section class="band" id="try" aria-label="Download trial">
+  <div class="container">
+    <div class="anim-up" style="text-align:center;max-width:600px;margin:0 auto">
+      <h2>TRY TAGRA TRUCKER FREE FOR 30 DAYS</h2>
+      <p style="margin-top:8px;color:var(--text2)">Download, install and use the full software. No credit card, no registration required.</p>
+      <div style="margin-top:28px">
+        <a href="https://www.tdt.cz/vyzkousejte-tagra-trucker-na-30-dni-zdarma" class="btn-cta" target="_blank" rel="noopener">Download trial version</a>
+      </div>
+      <p style="margin-top:14px;font-size:15px;color:var(--text2)">Windows · Free · USB reader included in the purchased version</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ════════════════════════════════════════════════════════ -->
+<section class="band band--gray" aria-label="Pricing">
+  <div class="container">
+    <div class="anim-up" style="max-width:560px">
+      <div class="eyebrow">Price &amp; terms</div>
+      <h2 style="text-transform:none">Transparent pricing.<br>No hidden fees.</h2>
+      <p style="margin:16px 0 24px">Start with the free trial. When you're ready, select your licence directly inside the software and pay online.</p>
+      <div style="background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;margin-bottom:24px">
+        <div style="display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)"><span style="color:var(--text2)">Trial period</span><span style="font-weight:600;color:var(--green-brand)">30 days free</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)"><span style="color:var(--text2)">TAGRA Trucker (incl. USB reader)</span><span style="font-weight:600">€49 excl. VAT</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)"><span style="color:var(--text2)">Annual licence (from year 2)</span><span style="font-weight:600">€20 / year</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)"><span style="color:var(--text2)">Includes</span><span style="font-weight:600">Updates + support</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 20px"><span style="color:var(--text2)">Payment</span><span style="font-weight:600">Online · QR code</span></div>
+      </div>
+      <p style="font-size:15px;color:var(--text2)">Questions? <a href="tel:+420739005345">+420 739 005 345</a> · <a href="mailto:obchod@tdt.cz">obchod@tdt.cz</a></p>
+      <div style="margin-top:24px">
+        <a href="https://www.tdt.cz/vyzkousejte-tagra-trucker-na-30-dni-zdarma" class="btn-cta btn-cta--sm" target="_blank" rel="noopener">Download trial version</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ════════════════════════════════════════════════════════════ -->
+<section class="band band--blue" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="eyebrow anim-up">Frequently asked questions</div>
+    <h2 class="anim-up">FAQ</h2>
+    <div class="faq anim-up" style="transition-delay:.05s">
+      <details>
+        <summary>Who is TAGRA Trucker designed for?</summary>
+        <div class="faq-a">For professional drivers — truck and van drivers — who want to keep track of their own card data and monitor compliance with driving times and rest periods.</div>
+      </details>
+      <details>
+        <summary>Is the USB card reader included?</summary>
+        <div class="faq-a">Yes. The USB driver card reader is included in the box. You can read your card immediately without buying anything extra.</div>
+      </details>
+      <details>
+        <summary>How do I get data into the software?</summary>
+        <div class="faq-a">Connect the included USB reader, insert your driver card, and TAGRA reads the data automatically. You can also import <strong>.DDD</strong> or <strong>.C1B</strong> files you've already downloaded elsewhere.</div>
+      </details>
+      <details>
+        <summary>How often should I download my card?</summary>
+        <div class="faq-a">As an operator or self-employed driver you are legally required to download driver card data at least every <strong>28 days.</strong> Even as an employed driver, regular downloads help you stay on top of your hours and avoid unexpected violations.</div>
+      </details>
+      <details>
+        <summary>Does TAGRA Trucker work offline?</summary>
+        <div class="faq-a">Yes. TAGRA Trucker works fully offline. Internet is only needed to download the installer and receive updates.</div>
+      </details>
+      <details>
+        <summary>Is TAGRA Trucker ready for the July 2026 van obligation?</summary>
+        <div class="faq-a">Yes. TAGRA Trucker is fully prepared for van drivers (2.5–3.5 t vehicles in international transport) affected by the new tachograph obligation from July 2026.</div>
+      </details>
+      <details>
+        <summary>How do I buy TAGRA Trucker after the trial?</summary>
+        <div class="faq-a">At the end of the trial — or whenever you're ready — open the licence menu inside the software, select TAGRA Trucker and pay online by QR code or bank transfer. Your licence is activated immediately.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ALSO FOR COMPANIES ════════════════════════════════════════════ -->
+<section class="band" aria-label="TAGRA for fleet operators">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:16px 0">
+      <div>
+        <div class="eyebrow">Also available</div>
+        <p style="font-size:19px;font-weight:700;color:var(--text-strong);margin-top:4px">TAGRA for fleet operators</p>
+        <p style="color:var(--text2);margin-top:6px;max-width:480px">Managing vehicles for a company? TAGRA 1/2/4/6/MAX covers tachograph units and driver cards for 1 to unlimited vehicles.</p>
+      </div>
+      <a href="/fleet/" class="btn-cta btn-cta--sm" style="flex-shrink:0;background:var(--blue-mid)">Fleet solution →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MANUFACTURER ══════════════════════════════════════════════════ -->
+<section class="band band--gray" aria-label="Manufacturer information">
+  <div class="container">
+    <div class="eyebrow anim-up">Developer &amp; manufacturer</div>
+    <h2 class="anim-up">Truck Data Technology, s.r.o.</h2>
+    <address class="anim-up" style="font-style:normal;margin-top:10px;line-height:1.8;transition-delay:.05s">
+      <strong>Headquarters &amp; support:</strong> Czech Republic<br>
+      <strong>Phone:</strong> <a href="tel:+420739005345">+420 739 005 345</a><br>
+      <strong>Email:</strong> <a href="mailto:obchod@tdt.cz">obchod@tdt.cz</a><br>
+      <strong>Web:</strong> <a href="https://www.tdt.cz" target="_blank" rel="noopener">www.tdt.cz</a>
+    </address>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">TAGRA</div>
+      <p class="footer-desc">Professional tachograph data management software. Compliant with EU 561/2006 and the Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="/fleet/">For fleet operators</a></li>
+        <li><a href="/driver/">For professional drivers</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
+        <li><a href="/de/">Deutsch</a></li>
+        <li><a href="/pl/">Polski</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> · <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+  </div>
+</footer>
+
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════ -->
+<script>
+(function() {
+  /* SCROLL PROGRESS */
+  var bar = document.getElementById('scroll-progress');
+  if (bar) {
+    window.addEventListener('scroll', function() {
+      var top = document.documentElement.scrollTop || document.body.scrollTop;
+      var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      bar.style.width = (top / h * 100) + '%';
+    }, { passive: true });
+  }
+  /* MOBILE NAV */
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+  /* ANIMATIONS */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.anim-up, .fly-left, .fly-right').forEach(function(el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.anim-up, .fly-left, .fly-right').forEach(function(el) { el.classList.add('on'); });
+  }
+  /* REVIEWS SLIDER */
+  var rail = document.getElementById('rev-rail');
+  if (rail) {
+    rail.innerHTML += rail.innerHTML + rail.innerHTML;
+    var speed = 0.9, busy = false, pos = 0, isDown = false, startX, startScroll, resumeTimer;
+    function tick() { if (!busy) { pos += speed; if (pos >= 1) { rail.scrollLeft += Math.floor(pos); pos -= Math.floor(pos); } if (rail.scrollLeft >= rail.scrollWidth / 3) rail.scrollLeft = 0; } requestAnimationFrame(tick); }
+    function pause() { busy = true; clearTimeout(resumeTimer); }
+    function resume() { resumeTimer = setTimeout(function() { busy = false; }, 2000); }
+    rail.addEventListener('mousedown', function(e) { isDown = true; pause(); startX = e.pageX - rail.offsetLeft; startScroll = rail.scrollLeft; });
+    rail.addEventListener('mouseleave', function() { isDown = false; resume(); });
+    rail.addEventListener('mouseup', function() { isDown = false; resume(); });
+    rail.addEventListener('mousemove', function(e) { if (!isDown) return; e.preventDefault(); rail.scrollLeft = startScroll - (e.pageX - rail.offsetLeft - startX) * 1.5; });
+    rail.addEventListener('touchstart', pause, { passive: true });
+    rail.addEventListener('touchend', resume, { passive: true });
+    tick();
+  }
+  /* MAC STAGE ZOOM */
+  var macImg = document.getElementById('mac-img');
+  if (macImg) {
+    var ticking = false;
+    function zoom() { var r = macImg.getBoundingClientRect(); var dist = Math.abs(window.innerHeight / 2 - (r.top + r.height / 2)); var prog = Math.max(0, 1 - dist / (window.innerHeight * 0.65)); var eased = Math.sin(prog * Math.PI / 2); var s = 1 + eased * (window.innerWidth < 768 ? 0.2 : 0.38); macImg.style.transform = 'scale(' + s.toFixed(3) + ')'; ticking = false; }
+    function onScroll() { if (!ticking) { requestAnimationFrame(zoom); ticking = true; } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    setTimeout(zoom, 150);
+  }
+  /* HERO VIDEO */
+  var heroVid = document.getElementById('hero-vid');
+  if (heroVid && 'IntersectionObserver' in window) {
+    var hvObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { heroVid.play().catch(function(){}); } else { heroVid.pause(); } });
+    }, { threshold: 0.1 });
+    hvObs.observe(heroVid);
+    document.addEventListener('touchstart', function() { if (heroVid.paused) heroVid.play().catch(function(){}); }, { once: true, passive: true });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TAGRA Trucker – Tachograph Software for Professional Drivers",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "description": "Software for professional drivers to evaluate and archive driver card data. USB card reader included. Driving times, breaks and rest periods per EU 561/2006 and AETR. Free 30-day trial. Ready for van drivers from July 2026.",
+  "url": "https://tagra.eu/driver/",
+  "inLanguage": "en",
+  "author": { "@type": "Organization", "name": "Truck Data Technology, s.r.o.", "url": "https://www.tdt.cz" },
+  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "20", "description": "Annual licence fee from year 2. First year included in purchase price.", "availability": "https://schema.org/InStock" }
+}
+</script>
+
+</body>
+</html>
