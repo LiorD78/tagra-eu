@@ -1,1 +1,624 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>How it works – TAGRA</title><link rel="stylesheet" href="/assets/css/main.css"></head><body><nav><div class="nav-inner"><a href="/" class="nav-logo">TAGRA</a></div></nav><section class="hero"><div class="container"><h1>How it works</h1><p class="lead">Coming soon.</p></div></section></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How TAGRA works – Tachograph Data Management</title>
+  <meta name="description" content="Learn how TAGRA works: download data from your tachograph, evaluate driving times and rest periods, archive everything automatically. Free 30-day trial.">
+  <link rel="canonical" href="https://tagra.eu/how-it-works/">
+  <meta property="og:title" content="How TAGRA works – Tachograph Data Management">
+  <meta property="og:description" content="TAGRA helps transport companies stay compliant with EU tachograph regulations. Free 30-day trial.">
+  <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/tagra/Tagra_screen_2xb.webp">
+  <meta property="og:url" content="https://tagra.eu/how-it-works/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    /* ─── DESIGN TOKENS ────────────────────────────────────────── */
+    :root {
+      --blue-dark:    #0b2c4a;
+      --blue-mid:     #134a8e;
+      --blue-light:   #1f5fa6;
+      --green-cta:    #5C820F;
+      --green-brand:  #6E9B12;
+      --green-bg:     #f0f6e4;
+      --bg-light:     #eef4fa;
+      --bg-apple:     linear-gradient(180deg,#f5f9fc 0%,#eaf3f8 35%,#dcecf6 70%,#eef5f9 100%);
+      --bg-apple-solid: #eaf3f8;
+      --bg-white:     #ffffff;
+      --bg-gray:      #f5f5f7;
+      --text:         #1d1d1f;
+      --text2:        #515154;
+      --text-strong:  #0b0b0c;
+      --border:       rgba(0,0,0,0.08);
+      --radius:       20px;
+      --maxw:         1180px;
+      --nav-h:        64px;
+    }
+
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: var(--green-brand); text-decoration: none; }
+    a:hover { color: var(--green-cta); text-decoration: underline; text-underline-offset: .18em; }
+    img { max-width: 100%; height: auto; display: block; }
+    ul { list-style: none; }
+    p + p { margin-top: 12px; }
+    p:empty { display: none; }
+
+    /* ─── SCROLL PROGRESS ──────────────────────────────────────── */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green-brand), var(--blue-light));
+      width: 0%; z-index: 9999; pointer-events: none;
+      transition: width .1s ease-out;
+    }
+
+    /* ─── NAVIGATION ───────────────────────────────────────────── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 900;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--maxw);
+      margin: 0 auto; padding: 0 24px;
+      height: 100%;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .nav-logo {
+      font-size: 22px; font-weight: 900; letter-spacing: -.02em;
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+      list-style: none;
+    }
+    .nav-links li a {
+      font-size: 15px; font-weight: 500; color: var(--text);
+      padding: 8px 12px; border-radius: 8px;
+      transition: background .15s, color .15s;
+      text-decoration: none;
+    }
+    .nav-links li a:hover { background: var(--bg-apple-solid); color: var(--blue-mid); }
+    .nav-links .nav-cta a {
+      background: var(--green-cta); color: #fff !important;
+      border-radius: 99px; padding: 8px 18px; font-weight: 600;
+    }
+    .nav-links .nav-cta a:hover { background: var(--green-brand); }
+    .nav-lang {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 14px; font-weight: 600;
+    }
+    .nav-lang a {
+      padding: 5px 8px; border-radius: 6px; color: var(--text2);
+      text-decoration: none; transition: background .15s;
+    }
+    .nav-lang a:hover, .nav-lang a.active { background: var(--bg-apple-solid); color: var(--blue-mid); }
+    .nav-lang span { color: var(--border); }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; transition: .3s; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+        position: absolute; top: var(--nav-h); left: 0; right: 0;
+        background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border); padding: 12px 24px 20px;
+      }
+    }
+
+    /* ─── LAYOUT ───────────────────────────────────────────────── */
+    .band { padding: 80px 0; }
+    .band--hero  { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%); padding: 40px 0 60px; text-align: center; }
+    .band--gray  { background: var(--bg-gray); }
+    .band--blue  { background: var(--bg-apple-solid); }
+    .band--machero { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 74%); padding: 60px 0; }
+    @media (max-width: 768px) { .band { padding: 50px 0; } }
+
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
+    h1, h2, h3 { font-weight: 800; }
+    h2 {
+      font-size: 36px; line-height: 1.08; letter-spacing: -.01em;
+      margin-bottom: 12px; text-transform: uppercase;
+      display: inline-block;
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid) 55%, var(--blue-light));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    @media (max-width: 768px) { h2 { font-size: 28px; } }
+    h2.hero-h2 {
+      font-size: 64px; line-height: 1.08; letter-spacing: -.02em;
+      display: block; text-transform: none;
+    }
+    @media (max-width: 768px) { h2.hero-h2 { font-size: 42px; } }
+
+    .eyebrow {
+      font-size: 15px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--green-brand); margin-bottom: 12px;
+    }
+
+    /* ─── BUTTONS ──────────────────────────────────────────────── */
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-cta); color: #fff !important;
+      padding: 14px 30px; border-radius: 99px;
+      font-size: 18px; font-weight: 600; cursor: pointer;
+      text-decoration: none !important; border: none;
+      transition: background .2s, transform .15s;
+    }
+    .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
+    .btn-cta--sm { font-size: 16px; padding: 10px 24px; }
+
+    /* ─── BENTO GRID ───────────────────────────────────────────── */
+    .bento {
+      display: grid; grid-template-columns: repeat(12, 1fr);
+      gap: 14px; margin-top: 40px;
+    }
+    .bc {
+      background: var(--bg-white); border-radius: var(--radius);
+      padding: 32px; border: 1px solid var(--border); position: relative; overflow: hidden;
+    }
+    .bc.s7 { grid-column: span 7; }
+    .bc.s5 { grid-column: span 5; }
+    .bc.s4 { grid-column: span 4; }
+    .bc.s8 { grid-column: span 8; }
+    .bc.s6 { grid-column: span 6; }
+    .bc.bluefill { background: var(--bg-apple-solid); border-color: rgba(31,95,166,.1); }
+    .bc.greenfill { background: var(--green-bg); border-color: rgba(110,155,18,.2); }
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: 1fr 1fr; }
+      .bc.s7, .bc.s5, .bc.s8 { grid-column: span 2; }
+      .bc.s4, .bc.s6 { grid-column: span 1; }
+    }
+    @media (max-width: 600px) {
+      .bento { grid-template-columns: 1fr; }
+      .bc { grid-column: span 1 !important; }
+    }
+    .bc-title { font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -.02em; color: var(--text-strong); margin-bottom: 8px; }
+    .bc-text  { font-size: 16px; line-height: 1.5; color: var(--text2); }
+    .bignum   { font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; }
+
+    /* ─── 2-COL & 3-COL ────────────────────────────────────────── */
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .g2.top { align-items: start; }
+    @media (max-width: 900px) { .g2 { grid-template-columns: 1fr; gap: 40px; } }
+
+    .three-col { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+    @media (max-width: 860px) { .three-col { grid-template-columns: 1fr; } }
+    @media (min-width: 600px) and (max-width: 860px) { .three-col { grid-template-columns: 1fr 1fr; } }
+
+    .two-col { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    @media (min-width: 992px) { .two-col { grid-template-columns: 1fr 1fr; gap: 38px; } }
+    @media (min-width: 992px) { .two-col.stretch { gap: 64px; align-items: stretch; } }
+
+    /* ─── CALLOUT CARDS ────────────────────────────────────────── */
+    .callout {
+      border-radius: var(--radius); background: var(--bg-white);
+      padding: 32px; box-shadow: 0 12px 32px rgba(0,0,0,.04);
+      border: 1px solid var(--border); position: relative;
+    }
+    .callout--plain { border: none; background: transparent; padding: 0; box-shadow: none; }
+    @media (min-width: 992px) { .stretch > .callout--plain { padding-top: 40px; } }
+
+    /* GREEN CALLOUT */
+    .callout--green {
+      background: linear-gradient(90deg,#74A81A,var(--green-brand) 55%,#638719);
+      border-radius: var(--radius); padding: 40px; position: relative; overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,.06);
+    }
+    .callout--green h2 {
+      background: linear-gradient(90deg,#052037,var(--blue-dark) 55%,#0e3a73);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      text-transform: none; margin-bottom: 8px;
+    }
+    .callout--green p, .callout--green li { color: #0b0b0c !important; }
+    .callout--green a { color: #052037 !important; }
+    .callout--green .cg-bg {
+      font-size: 200px; font-weight: 900; position: absolute;
+      right: -20px; bottom: -40px; color: rgba(255,255,255,.12);
+      line-height: 1; pointer-events: none;
+    }
+    ul li { padding: 3px 0; }
+
+    /* ─── FEATURE LIST ─────────────────────────────────────────── */
+    .feats { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+    .fi { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.5; }
+    .fck {
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fck svg { flex-shrink: 0; }
+
+    /* ─── WARNING / NOTE BOXES ─────────────────────────────────── */
+    .note-box {
+      position: relative; background: linear-gradient(180deg,var(--green-bg) 0%,#fff 100%);
+      border: 2px solid var(--green-brand); border-radius: var(--radius);
+      padding: 36px 28px 28px; margin-top: 40px;
+      box-shadow: 0 10px 26px rgba(110,155,18,.08);
+    }
+    .note-badge {
+      position: absolute; top: -16px; left: 24px;
+      background: var(--green-brand); color: #fff;
+      font-size: 14px; font-weight: 800; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 999px;
+      box-shadow: 0 6px 14px rgba(110,155,18,.22);
+    }
+    .note-title { font-size: 24px; font-weight: 800; line-height: 1.2; margin: 10px 0 12px; color: var(--text-strong); }
+    .note-box p  { font-size: 17px; line-height: 1.6; color: var(--text2); margin-bottom: 12px; }
+
+    /* ─── REVIEWS SLIDER ───────────────────────────────────────── */
+    .rev-rail-wrap {
+      overflow: hidden; margin-top: 24px;
+      mask-image: linear-gradient(to right, transparent 0%,black 6%,black 94%,transparent 100%);
+    }
+    .rev-rail {
+      display: flex; align-items: stretch; gap: 0; padding: 16px 0 32px;
+      overflow-x: auto; scrollbar-width: none; cursor: grab;
+    }
+    .rev-rail::-webkit-scrollbar { display: none; }
+    .rev-rail:active { cursor: grabbing; }
+    .rev-card {
+      flex: 0 0 clamp(260px,28vw,380px); background: var(--bg-white);
+      border-radius: 18px; border: 1px solid var(--border);
+      padding: 24px; display: flex; flex-direction: column;
+      min-height: 180px; margin-right: 20px; user-select: none;
+    }
+    .rev-stars { color: #f5b400; font-size: 18px; letter-spacing: 2px; margin-bottom: 12px; }
+    .rev-txt   { font-size: 17px; flex: 1; }
+    .rev-meta  { font-size: 15px; color: var(--text2); margin-top: 16px; }
+
+    /* ─── METHOD CARDS ─────────────────────────────────────────── */
+    .method-card { display: flex; flex-direction: column; height: 100%; }
+    .method-frame {
+      background: var(--bg-white); aspect-ratio: 4/3; padding: 20px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      margin-bottom: 20px; overflow: hidden;
+    }
+    .method-frame img { width: 100%; height: 100%; object-fit: contain; }
+    .snum { font-size: 44px; font-weight: 800; color: rgba(19,74,142,.15); line-height: 1; margin-bottom: 8px; }
+    .stit { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: var(--text-strong); }
+
+    /* ─── SPECS TABLE ──────────────────────────────────────────── */
+    .specs { margin-top: 24px; }
+    .spec { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .spec:last-child { border-bottom: none; }
+    .sk { color: var(--text2); }
+    .sv { font-weight: 600; text-align: right; }
+
+    /* ─── COMPARISON TABLE ─────────────────────────────────────── */
+    .compare-wrap { width: 100%; overflow-x: auto; margin-top: 14px; padding-top: 32px; -webkit-overflow-scrolling: touch; }
+    .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 680px; }
+    .compare-table th, .compare-table td { padding: 14px; border-bottom: 1px solid var(--border); vertical-align: middle; text-align: left; }
+    .compare-table th { font-weight: 700; font-size: 15px; color: var(--text2); border-bottom: 2px solid var(--border); vertical-align: top; }
+    .compare-table .col-blue { background: var(--bg-apple-solid); position: relative; }
+    .compare-table th.col-blue { padding-top: 48px !important; color: var(--blue-mid); border-top: 2px solid var(--blue-mid); border-left: 2px solid var(--blue-mid); border-right: 2px solid var(--blue-mid); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom: 2px solid var(--border); }
+    .compare-table td.col-blue { border-left: 2px solid var(--blue-mid); border-right: 2px solid var(--blue-mid); border-bottom: 1px solid rgba(19,74,142,.1); }
+    .compare-table tr:last-child td.col-blue { border-bottom: 2px solid var(--blue-mid); border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; }
+    .compare-table .col-green { background: #f4f9ea; position: relative; }
+    .compare-table th.col-green { padding-top: 48px !important; color: var(--green-brand); border-top: 2px solid var(--green-brand); border-left: 2px solid var(--green-brand); border-right: 2px solid var(--green-brand); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom: 2px solid var(--border); }
+    .compare-table td.col-green { border-left: 2px solid var(--green-brand); border-right: 2px solid var(--green-brand); border-bottom: 1px solid rgba(110,155,18,.1); }
+    .compare-table tr:last-child td.col-green { border-bottom: 2px solid var(--green-brand); border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; }
+    .winner-badge, .winner-badge-green {
+      position: absolute; top: -18px; left: 16px;
+      display: inline-flex; align-items: center; color: #fff;
+      font-size: 13px; font-weight: 800; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 20px; letter-spacing: .05em;
+      box-shadow: 0 6px 14px rgba(0,0,0,.15); z-index: 2; white-space: nowrap;
+    }
+    .winner-badge       { background: var(--blue-mid); }
+    .winner-badge-green { background: var(--green-brand); }
+    .tc-val { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--text2); }
+    td.col-blue .tc-val, td.col-green .tc-val { font-weight: 700; color: var(--text-strong); }
+    .tc-val.no-icon { padding-left: 0; }
+    .tb-icon { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; }
+    .tb-icon--blue  { background: linear-gradient(135deg,var(--blue-dark),var(--blue-mid)); }
+    .tb-icon--green { background: linear-gradient(135deg,#74A81A,var(--green-brand)); }
+    .tb-icon--gray  { background: #f2f2f7; }
+    .tb-icon--cross { background: #fff0f0; }
+    .tb-icon svg    { width: 12px; height: 12px; }
+
+    /* ─── FAQ ──────────────────────────────────────────────────── */
+    .faq details { border-bottom: 1px solid var(--border); }
+    .faq details:first-child { border-top: 1px solid var(--border); }
+    .faq summary {
+      list-style: none; cursor: pointer; padding: 18px 40px 18px 0;
+      font-weight: 800; font-size: 18px; line-height: 1.4;
+      position: relative; color: var(--text-strong);
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green-brand); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.6; color: var(--text2); }
+
+    /* ─── MAC STAGE ────────────────────────────────────────────── */
+    .mac-stage { position: relative; width: 100%; line-height: 0; }
+    .mac-stage img { width: 100%; display: block; object-fit: contain; transform-origin: center center; filter: drop-shadow(0 30px 70px rgba(0,0,0,.16)); }
+    .mac-stage::after { content: ""; position: absolute; left: 50%; bottom: 5%; transform: translateX(-50%); width: 80%; height: 60px; background: radial-gradient(50% 50%,rgba(0,0,0,.16) 0%,transparent 70%); filter: blur(15px); opacity: .6; pointer-events: none; z-index: -1; }
+
+    /* ─── MEDIA FRAME ──────────────────────────────────────────── */
+    .media-frame { width: 100%; border-radius: var(--radius); overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(#fff,#000); }
+    .media-frame img, .media-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ─── RELATED / ARTICLE GRID ───────────────────────────────── */
+    .related-featured {
+      display: flex; flex-direction: column; position: relative;
+      margin-top: 34px; padding: 36px 28px 28px;
+      background: linear-gradient(180deg,var(--bg-apple-solid) 0%,#fff 100%);
+      border: 2px solid var(--blue-mid); border-radius: var(--radius);
+      text-decoration: none !important; color: inherit !important;
+      box-shadow: 0 10px 26px rgba(19,74,142,.08);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .related-featured:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(19,74,142,.15); }
+    .related-badge, .article-eyebrow-badge {
+      position: absolute; top: -16px; left: 24px;
+      background: var(--blue-mid); color: #fff; font-size: 13px; font-weight: 800;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 999px;
+      box-shadow: 0 6px 14px rgba(19,74,142,.22);
+    }
+    .related-title { font-size: 24px; font-weight: 800; line-height: 1.25; color: var(--text-strong) !important; margin: 8px 0; }
+    .related-text  { font-size: 17px; line-height: 1.6; color: var(--text2) !important; margin-bottom: 16px; }
+    .article-grid  { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+    .article-card  {
+      position: relative; display: flex; flex-direction: column; height: 100%;
+      padding: 22px; background: var(--bg-white); border: 1.5px solid var(--border);
+      border-radius: var(--radius); text-decoration: none !important; color: inherit !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,.04); transition: transform .18s, box-shadow .18s, border-color .18s;
+    }
+    .article-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.08); border-color: rgba(110,155,18,.45); }
+    .article-eyebrow { font-size: 14px; font-weight: 800; text-transform: uppercase; color: var(--blue-mid) !important; margin-bottom: 8px; display: block; }
+    .article-title  { font-size: 17px; font-weight: 800; line-height: 1.35; color: var(--text-strong) !important; margin-bottom: 10px; display: block; }
+    .article-meta   { font-size: 15px; line-height: 1.5; color: var(--text2) !important; margin-bottom: 16px; display: block; }
+    .article-chip   { display: inline-flex; margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--blue-dark) !important; background: var(--bg-apple-solid); padding: 7px 13px; border-radius: 999px; transition: background .2s; }
+    .article-card:hover .article-chip, .related-featured:hover .article-chip { background: var(--green-brand); color: #fff !important; }
+
+    /* ─── ANIMATIONS ───────────────────────────────────────────── */
+    .anim-up   { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .fly-left  { opacity: 0; transform: translateX(-80px); transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
+    .fly-right { opacity: 0; transform: translateX(80px);  transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
+    .anim-up.on, .fly-left.on, .fly-right.on { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .anim-up, .fly-left, .fly-right { transition: none !important; opacity: 1 !important; transform: none !important; } }
+
+    /* ─── FOOTER ───────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--blue-dark); color: rgba(255,255,255,.7);
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+    }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 32px; } }
+    .footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .footer-desc { font-size: 15px; line-height: 1.6; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: 15px; color: rgba(255,255,255,.6); text-decoration: none; transition: color .15s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom { max-width: var(--maxw); margin: 32px auto 0; padding: 16px 24px 0; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 14px; }
+    .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .footer-bottom a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+<div id="scroll-progress" aria-hidden="true"></div>
+<!-- ═══ NAVIGATION ════════════════════════════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home">TAGRA</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/fleet/">For companies</a></li>
+      <li><a href="/driver/">For drivers</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li class="nav-cta"><a href="/fleet/#try">Try free</a></li>
+    </ul>
+    <div class="nav-lang">
+      <a href="/how-it-works/" class="active" aria-current="page">EN</a>
+      <span>|</span>
+      <a href="/de/">DE</a>
+      <span>|</span>
+      <a href="/pl/">PL</a>
+    </div>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════════════ -->
+<section class="band band--hero" aria-label="How TAGRA works">
+  <div class="container" style="text-align:center">
+    <div class="eyebrow anim-up">How it works</div>
+    <h2 class="hero-h2 anim-up" style="transition-delay:.05s">Simple process.<br>Full compliance.</h2>
+    <p class="anim-up" style="font-size:21px;line-height:1.5;max-width:620px;margin:16px auto 0;color:var(--text2);transition-delay:.1s">
+      From downloading your tachograph data to legally compliant evaluation and archiving — TAGRA handles the whole process.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ THE THREE STEPS ══════════════════════════════════════════════ -->
+<section class="band" aria-label="Three steps">
+  <div class="container">
+    <div class="eyebrow anim-up" style="text-align:center">The process</div>
+    <h2 class="anim-up" style="display:block;text-align:center">Three steps to full compliance</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-top:48px">
+
+      <div class="anim-up" style="text-align:center;padding:32px 24px;background:var(--bg-apple-solid);border-radius:var(--radius)">
+        <div style="font-size:56px;font-weight:900;line-height:1;color:rgba(19,74,142,.15);margin-bottom:16px">1</div>
+        <div style="font-size:20px;font-weight:800;color:var(--text-strong);margin-bottom:12px">Download</div>
+        <p style="color:var(--text2);font-size:16px">Connect the <strong>Download Box II S</strong> to your tachograph and driver cards. Data is transferred to your PC in minutes.</p>
+      </div>
+
+      <div class="anim-up" style="text-align:center;padding:32px 24px;background:var(--bg-apple-solid);border-radius:var(--radius);transition-delay:.1s">
+        <div style="font-size:56px;font-weight:900;line-height:1;color:rgba(19,74,142,.15);margin-bottom:16px">2</div>
+        <div style="font-size:20px;font-weight:800;color:var(--text-strong);margin-bottom:12px">Evaluate</div>
+        <p style="color:var(--text2);font-size:16px">TAGRA automatically analyses driving times, breaks, rest periods and working time against EU 561/2006 and the Working Time Directive.</p>
+      </div>
+
+      <div class="anim-up" style="text-align:center;padding:32px 24px;background:var(--bg-apple-solid);border-radius:var(--radius);transition-delay:.2s">
+        <div style="font-size:56px;font-weight:900;line-height:1;color:rgba(19,74,142,.15);margin-bottom:16px">3</div>
+        <div style="font-size:20px;font-weight:800;color:var(--text-strong);margin-bottom:12px">Archive</div>
+        <p style="color:var(--text2);font-size:16px">All data is stored and archived automatically. Reports are ready for any authority inspection at any time.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAC STAGE ════════════════════════════════════════════════════ -->
+<section class="band" style="background:linear-gradient(180deg,var(--bg-apple-solid) 0%,#fff 74%);padding:60px 0">
+  <div class="container">
+    <div class="mac-stage">
+      <img id="mac-img"
+           src="https://cdn.truckmall.cz/data/user-content/tagra/Tagra_screen_2xb.webp"
+           alt="TAGRA software interface – driver working time overview"
+           loading="lazy" width="3116" height="2076">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DEADLINES ════════════════════════════════════════════════════ -->
+<section class="band band--blue" aria-label="Legal deadlines">
+  <div class="container">
+    <div class="eyebrow anim-up">Legal deadlines</div>
+    <h2 class="anim-up">When must data be downloaded?</h2>
+    <p class="anim-up" style="max-width:580px;margin-bottom:32px;transition-delay:.05s">These are not recommendations — they are legal obligations under EU Regulation 561/2006. Missing a deadline puts you at risk of fines.</p>
+
+    <div class="bento anim-up" style="margin-top:0;transition-delay:.1s">
+      <div class="bc s6">
+        <div class="eyebrow">Driver cards</div>
+        <div class="bc-title" style="font-size:48px;color:var(--blue-mid)">28 days</div>
+        <p>Driver card data must be downloaded at least every 28 days. TAGRA tracks deadlines and alerts you in advance.</p>
+      </div>
+      <div class="bc s6">
+        <div class="eyebrow">Tachograph unit</div>
+        <div class="bc-title" style="font-size:48px;color:var(--blue-mid)">90 days</div>
+        <p>Vehicle unit data must be downloaded at least every 90 days. All data must be archived for a minimum of 1 year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRIAL FLOW ════════════════════════════════════════════════════ -->
+<section class="band" aria-label="How to get started">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="eyebrow anim-up">Getting started</div>
+      <h2 class="anim-up">Try free, then activate inside the software</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px" class="anim-up">
+      <div style="padding:24px;border-left:3px solid var(--blue-mid)">
+        <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-mid);margin-bottom:8px">Step 1</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Download</div>
+        <p style="font-size:15px;color:var(--text2)">Download the installer from tdt.cz. Windows only. No registration required.</p>
+      </div>
+      <div style="padding:24px;border-left:3px solid var(--blue-mid)">
+        <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-mid);margin-bottom:8px">Step 2</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Try free</div>
+        <p style="font-size:15px;color:var(--text2)">Use the full software for up to 30 days with your real data. No limitations.</p>
+      </div>
+      <div style="padding:24px;border-left:3px solid var(--blue-mid)">
+        <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-mid);margin-bottom:8px">Step 3</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Choose version</div>
+        <p style="font-size:15px;color:var(--text2)">Inside the software, select the version matching your number of vehicles (1, 2, 4, 6 or MAX).</p>
+      </div>
+      <div style="padding:24px;border-left:3px solid var(--green-brand)">
+        <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--green-brand);margin-bottom:8px">Step 4</div>
+        <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Activate</div>
+        <p style="font-size:15px;color:var(--text2)">Pay online by QR code or transfer. Licence is issued instantly. Continue in the same environment.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px" class="anim-up">
+      <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" class="btn-cta" target="_blank" rel="noopener">Download trial version — free</a>
+      <p style="font-size:15px;color:var(--text2);margin-top:12px">Windows · No credit card · No registration</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ALSO FOR DRIVERS ══════════════════════════════════════════════ -->
+<section class="band band--gray">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:16px 0">
+      <div>
+        <div class="eyebrow">Professional drivers</div>
+        <p style="font-size:19px;font-weight:700;color:var(--text-strong);margin-top:4px">TAGRA Trucker works the same way — for your driver card</p>
+        <p style="color:var(--text2);margin-top:6px;max-width:480px">Just plug in the included USB reader, insert your card, and TAGRA reads everything automatically.</p>
+      </div>
+      <a href="/driver/" class="btn-cta btn-cta--sm" style="flex-shrink:0;background:var(--green-cta)">TAGRA Trucker →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">TAGRA</div>
+      <p class="footer-desc">Professional tachograph data management software. Compliant with EU 561/2006 and the Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Software</h4>
+      <ul>
+        <li><a href="/product/">TAGRA Software</a></li>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/for-whom/">For whom</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
+        <li><a href="/de/">Deutsch</a></li>
+        <li><a href="/pl/">Polski</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> · <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var bar = document.getElementById('scroll-progress');
+  if (bar) { window.addEventListener('scroll', function() { var top = document.documentElement.scrollTop || document.body.scrollTop; var h = document.documentElement.scrollHeight - document.documentElement.clientHeight; bar.style.width = (top / h * 100) + '%'; }, { passive: true }); }
+  var toggle = document.getElementById('nav-toggle'); var links = document.getElementById('nav-links');
+  if (toggle && links) { toggle.addEventListener('click', function() { var open = links.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); }); }
+  if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: 0.1 }); document.querySelectorAll('.anim-up').forEach(function(el) { io.observe(el); }); } else { document.querySelectorAll('.anim-up').forEach(function(el) { el.classList.add('on'); }); }
+  var macImg = document.getElementById('mac-img');
+  if (macImg) { var ticking = false; function zoom() { var r = macImg.getBoundingClientRect(); var dist = Math.abs(window.innerHeight / 2 - (r.top + r.height / 2)); var prog = Math.max(0, 1 - dist / (window.innerHeight * 0.65)); var eased = Math.sin(prog * Math.PI / 2); var s = 1 + eased * (window.innerWidth < 768 ? 0.2 : 0.38); macImg.style.transform = 'scale(' + s.toFixed(3) + ')'; ticking = false; } function onScroll() { if (!ticking) { requestAnimationFrame(zoom); ticking = true; } } window.addEventListener('scroll', onScroll, { passive: true }); window.addEventListener('resize', onScroll, { passive: true }); setTimeout(zoom, 150); }
+})();
+</script>
+
+</body>
+</html>
