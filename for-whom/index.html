@@ -85,8 +85,10 @@
   
     /* 3-col group grid */
     /* who-card flex layout — CTA vždy dole, nadpis stejná výška */
+    /* Zarovnání nadpisů ve stejné výšce */
+    .who-card > div:first-child { min-height: 96px; display: flex; flex-direction: column; justify-content: flex-end; }
+
     .who-card { display: flex; flex-direction: column; }
-    .who-card > div:first-child { min-height: 72px; }
     .who-card p { flex-shrink: 0; }
     .who-card .check-list { flex: 1; }
     .who-card > div:last-child { margin-top: auto; padding-top: 16px; }
