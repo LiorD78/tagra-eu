@@ -1,0 +1,497 @@
+<div id="tmx-prod-wrap-tagra-control" class="tmx-cat-wrap">
+<style>
+    /* ── Έλεγχος-specific overrides ── */
+    .enf-hero { background: linear-gradient(180deg,#eef4fa 0%,#f4f8fc 52%,#ffffff 100%); padding: 80px 0 60px; text-align: center; }
+    .enf-eyebrow { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--green); background: rgba(110,155,18,.1); padding: 5px 14px; border-radius: 40px; margin-bottom: 18px; }
+    .enf-hero h1 { font-size: clamp(36px,5vw,64px); font-weight: 800; line-height: 1.05; background: linear-gradient(90deg,#0b2c4a 0%,#134a8e 55%,#1f5fa6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 18px; }
+    .enf-hero p.lead { font-size: 20px; color: #515154; max-width: 640px; margin: 0 auto 32px; line-height: 1.55; }
+    .enf-btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+
+    /* bento grid */
+    .bento { display: grid; grid-template-columns: repeat(12,1fr); gap: 14px; margin-top: 40px; }
+    .bc { background:#fff; border-radius: 20px; padding: 32px; border: 1px solid rgba(0,0,0,.08); position: relative; overflow: hidden; }
+    .bc.s4 { grid-column: span 4; }
+    .bc.s5 { grid-column: span 5; }
+    .bc.s6 { grid-column: span 6; }
+    .bc.s7 { grid-column: span 7; }
+    .bc.s8 { grid-column: span 8; }
+    .bc.s12 { grid-column: span 12; }
+    .bc.bluefill { background: #eaf3f8; border-color: rgba(31,95,166,.1); }
+    .bc.greenfill { background: #f0f6e4; border-color: rgba(110,155,18,.2); }
+    .bc.darkfill { background: linear-gradient(135deg,#0b2c4a 0%,#134a8e 100%); border-color: transparent; }
+    .bc.darkfill .bc-title, .bc.darkfill .bc-text, .bc.darkfill p, .bc.darkfill li { color: rgba(255,255,255,.88) !important; }
+    .bc.darkfill .bc-label { color: rgba(255,255,255,.55) !important; }
+    @media (max-width: 900px) { .bento { grid-template-columns: 1fr; } .bc { grid-column: span 1 !important; } }
+    .bc-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; display: block; }
+    .bc-title { font-size: 28px; font-weight: 800; color: #0b0b0c; line-height: 1.2; margin-bottom: 8px; letter-spacing: -.02em; }
+    .bc-text { font-size: 16px; color: #515154; line-height: 1.55; }
+    .bignum { font-size: 110px; font-weight: 800; line-height: 1; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; letter-spacing: -.04em; }
+
+    /* ref cards (who uses) */
+    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 14px; margin-top: 32px; }
+    .ref-card { background: #fff; border-radius: 20px; border: 1.5px solid rgba(0,0,0,.08); padding: 26px 20px; display: flex; flex-direction: column; gap: 4px; position: relative; overflow: hidden; transition: transform .18s, box-shadow .18s, border-color .18s; }
+    .ref-card::before { content: ''; position: absolute; inset: 0; background-size: cover; background-position: center; opacity: .05; pointer-events: none; }
+    .ref-card > * { position: relative; z-index: 1; }
+    .ref-card--cz::before { background-image: url('https://flagcdn.com/w320/cz.png'); }
+    .ref-card--sk::before { background-image: url('https://flagcdn.com/w320/sk.png'); }
+    .ref-card--hu::before { background-image: url('https://flagcdn.com/w320/hu.png'); }
+    .ref-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(19,74,142,.10); border-color: rgba(19,74,142,.3); }
+    .ref-flag { font-size: 28px; line-height: 1; margin-bottom: 4px; }
+    .ref-country { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+    .ref-name { font-size: 17px; font-weight: 800; color: #0b0b0c; line-height: 1.3; }
+    .ref-note { font-size: 14px; color: #515154; margin-top: 4px; line-height: 1.4; }
+
+    /* feats list */
+    .feats { display: flex; flex-direction: column; gap: 13px; margin-top: 20px; }
+    .fi { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.5; color: #1d1d1f; }
+    .fck { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; background: linear-gradient(135deg,#0b2c4a 0%,#134a8e 100%); display: flex; align-items: center; justify-content: center; }
+    .fck::after { content: ''; width: 12px; height: 12px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center/contain; }
+
+    /* steps */
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 32px; }
+    @media (max-width: 768px) { .steps { grid-template-columns: 1fr; } }
+    .step-card { background: #fff; border-radius: 20px; padding: 28px 24px; border: 1px solid rgba(0,0,0,.08); display: flex; flex-direction: column; }
+    .step-card .step-header { min-height: 100px; }
+    .snum { font-size: 44px; font-weight: 800; color: rgba(19,74,142,.15); line-height: 1; margin-bottom: 8px; display: block; letter-spacing: -.02em; }
+    .stit { font-size: 20px; font-weight: 800; color: #0b0b0c; margin-bottom: 8px; display: block; }
+
+    /* reports grid */
+    .reports-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 14px; margin-top: 28px; }
+    .report-item { background: #fff; border-radius: 16px; border: 1px solid rgba(0,0,0,.08); padding: 20px 22px; display: flex; align-items: flex-start; gap: 14px; }
+    .report-icon { font-size: 32px; font-weight: 800; color: rgba(19,74,142,.18); line-height: 1.1; padding-top: 2px; flex-shrink: 0; width: 36px; text-align: center; }
+    .report-label { font-size: 16px; font-weight: 700; color: #0b0b0c; line-height: 1.3; margin-bottom: 4px; display: block; }
+    .report-desc { font-size: 15px; color: #515154; line-height: 1.4; }
+
+    /* legislation table */
+    .leg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+    @media (max-width: 600px) { .leg-grid { grid-template-columns: 1fr; } }
+    .leg-item { display: flex; align-items: center; gap: 10px; background: rgba(19,74,142,.04); border-radius: 10px; padding: 12px 16px; font-size: 16px; font-weight: 600; color: #0b2c4a; }
+    .leg-item::before { content: '✓'; font-size: 15px; font-weight: 800; color: var(--green); flex-shrink: 0; }
+
+    /* device card */
+    .device-card { background: linear-gradient(135deg,#eaf3f8 0%,#f5f9fd 100%); border-radius: 20px; border: 1px solid rgba(31,95,166,.12); padding: 36px; display: flex; gap: 36px; align-items: center; margin-top: 32px; }
+    @media (max-width: 768px) { .device-card { flex-direction: column; gap: 24px; } }
+    .device-img { width: 180px; flex-shrink: 0; border-radius: 12px; overflow: hidden; }
+    .device-img img { width: 100%; height: auto; display: block; object-fit: contain; }
+    .device-specs { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+    .dspec { display: flex; gap: 10px; font-size: 16px; }
+    .dspec-k { color: #515154; min-width: 120px; flex-shrink: 0; }
+    .dspec-v { font-weight: 600; color: #0b0b0c; }
+
+    /* training list */
+    .training-list { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .training-list li { padding-left: 20px; position: relative; font-size: 17px; color: #1d1d1f; line-height: 1.5; }
+    .training-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg,#0b2c4a 0%,#134a8e 100%); }
+
+    /* callout green */
+    .callout-green { background: linear-gradient(90deg,#74A81A 0%,#6E9B12 55%,#638719 100%); border-radius: 20px; padding: 48px 40px; position: relative; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.06); margin-top: 40px; }
+    .callout-green h2 { background: linear-gradient(90deg,#052037 0%,#0b2c4a 55%,#0e3a73 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    .callout-green p, .callout-green li { color: #0b0b0c !important; font-size: 17px; }
+    .callout-green a { color: #052037 !important; font-weight: 600; }
+    .callout-green a:hover { text-decoration: underline; text-decoration-color: rgba(0,0,0,.35); }
+    .cg-bg { font-size: 200px; font-weight: 900; position: absolute; right: -20px; bottom: -40px; color: rgba(255,255,255,.12); line-height: 1; pointer-events: none; }
+    @media (max-width: 600px) { .cg-bg { font-size: 80px; right: -10px; bottom: -20px; } .callout-green { padding: 36px 24px; } }
+
+    /* media frame */
+    .tmx-media-frame { border-radius: 20px; overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(#fff,#000); }
+    .tmx-media-frame img { width: 100%; display: block; object-fit: cover; }
+
+    /* faq */
+    .faq-block details { border-bottom: 1px solid rgba(0,0,0,.08); }
+    .faq-block details:first-child { border-top: 1px solid rgba(0,0,0,.08); }
+    .faq-block summary { list-style: none; cursor: pointer; padding: 18px 40px 18px 0; font-weight: 700; font-size: 18px; line-height: 1.4; position: relative; color: #0b0b0c; }
+    .faq-block summary::-webkit-details-marker { display: none; }
+    .faq-block summary::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green); }
+    .faq-block details[open] summary::after { content: '−'; }
+    .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.65; color: #515154; }
+
+    /* anim */
+    .anim-up { opacity: 0; transform: translateY(28px); transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
+    .fly-left { opacity: 0; transform: translateX(-50px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .fly-right { opacity: 0; transform: translateX(50px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .anim-up.on, .fly-left.on, .fly-right.on { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .anim-up, .fly-left, .fly-right { transition: none !important; opacity: 1 !important; transform: none !important; } }
+
+    /* section spacing */
+    .section { padding: 80px 0; }
+    .section--gray { background: #f5f5f7; }
+    .section--blue { background: #eaf3f8; }
+    @media (max-width: 768px) { .section { padding: 52px 0; } }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; display: block; }
+    .section-h2 { font-size: clamp(28px,3.5vw,40px); font-weight: 800; line-height: 1.1; background: linear-gradient(90deg,#0b2c4a 0%,#134a8e 55%,#1f5fa6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 16px; }
+    .section-intro { font-size: 18px; color: #515154; max-width: 680px; line-height: 1.6; margin-bottom: 8px; }
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .g2.top { align-items: start; }
+    @media (max-width: 900px) { .g2 { grid-template-columns: 1fr; gap: 36px; } }
+  </style>
+<!-- HERO -->
+<section class="enf-hero">
+  <div class="container">
+    <span class="enf-eyebrow">Για Αρχές Ελέγχου</span>
+    <h1>TAGRA Control</h1>
+    <p class="lead">Γρήγορη και ακριβής ανάλυση δεδομένων κάρτας οδηγού και ψηφιακών ταχογράφων. Το εργαλείο που χρησιμοποιούν οι αρχές ελέγχου σε όλη την Κεντρική Ευρώπη.</p>
+    <div class="enf-btn-row">
+      <a href="/contact/" class="btn" style="background:linear-gradient(135deg,#0b2c4a,#134a8e);color:#fff;padding:14px 32px;font-size:17px;border-radius:50px;text-decoration:none;font-weight:600;">Επικοινωνία με TDT</a>
+      <div style="display:flex;align-items:center;gap:6px;background:#fff;border:1.5px solid rgba(19,74,142,.2);border-radius:50px;padding:8px 16px;">
+        <span style="font-size:13px;font-weight:600;color:#515154;margin-right:4px;">Επίσης στο tdt.cz:</span>
+        <a href="https://www.tdt.cz/tagra-control" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;color:#134a8e;text-decoration:none;padding:4px 8px;border-radius:30px;transition:background .15s;" onmouseover="this.style.background='#eef4fa'" onmouseout="this.style.background='transparent'"><img src="https://flagcdn.com/w40/cz.png" width="20" height="14" style="border-radius:2px;object-fit:cover;" alt="CZ"> CZ</a>
+        <a href="https://www.tdt.cz/tagra-control" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;color:#134a8e;text-decoration:none;padding:4px 8px;border-radius:30px;transition:background .15s;" onmouseover="this.style.background='#eef4fa'" onmouseout="this.style.background='transparent'"><img src="https://flagcdn.com/w40/sk.png" width="20" height="14" style="border-radius:2px;object-fit:cover;" alt="SK"> SK</a>
+        <a href="https://www.tdt.cz/node/461" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;color:#134a8e;text-decoration:none;padding:4px 8px;border-radius:30px;transition:background .15s;" onmouseover="this.style.background='#eef4fa'" onmouseout="this.style.background='transparent'"><img src="https://flagcdn.com/w40/gb.png" width="20" height="14" style="border-radius:2px;object-fit:cover;" alt="EN"> EN</a>
+        <a href="https://www.tdt.cz/node/463" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;color:#134a8e;text-decoration:none;padding:4px 8px;border-radius:30px;transition:background .15s;" onmouseover="this.style.background='#eef4fa'" onmouseout="this.style.background='transparent'"><img src="https://flagcdn.com/w40/gr.png" width="20" height="14" style="border-radius:2px;object-fit:cover;" alt="GR"> GR</a>
+      </div>
+    </div>
+    <div class="tmx-media-frame anim-up" style="max-width:800px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.12);">
+      <img src="/assets/img/tagra-control-screenshot.webp" alt="TAGRA Control – διεπαφή ανάλυσης δεδομένων ταχογράφου" width="800" height="600">
+    </div>
+  </div>
+</section>
+
+<!-- KEY METRICS BENTO -->
+<section class="section">
+  <div class="container">
+    <div class="bento">
+      <div class="bc bluefill s4">
+        <span class="bc-label">Ταχύτητα</span>
+        <div class="bc-title">Άμεσα αποτελέσματα</div>
+        <p class="bc-text" style="margin-top:8px;">Κάρτα οδηγού ή ταχογράφος → έκθεση παραβάσεων σε δευτερόλεπτα. Χωρίς αναμονή για επεξεργασία διακομιστή.</p>
+        <div class="bignum">01</div>
+      </div>
+      <div class="bc bluefill s4">
+        <span class="bc-label">Νομοθεσία</span>
+        <div class="bc-title">EU 561/2006 + 1054/2020</div>
+        <p class="bc-text" style="margin-top:8px;">Πλήρως ενημερωμένο με τους ισχύοντες κανονισμούς, συμπεριλαμβανομένων AETR, 478/2000 και 462/2007.</p>
+        <div class="bignum">02</div>
+      </div>
+      <div class="bc bluefill s4">
+        <span class="bc-label">Ταχογράφοι</span>
+        <div class="bc-title">Όλες οι γενιές</div>
+        <p class="bc-text" style="margin-top:8px;">Digital G1 and smart G2V2 intelligent tachographs. All formats in one tool: .DDD, .C1B, .V1B, ESM.</p>
+        <div class="bignum">03</div>
+      </div>
+      <div class="bc darkfill s6 fly-left">
+        <span class="bc-label" style="color:rgba(255,255,255,.55);">Ανάπτυξη</span>
+        <div class="bc-title">Συναναπτύσσεται με αρχές ελέγχου</div>
+        <p class="bc-text" style="margin-top:8px;color:rgba(255,255,255,.82);">Οι λειτουργίες αναπτύσσονται σε άμεση συνεργασία με επιθεωρητές. Το λογισμικό αντικατοπτρίζει την πραγματική πρακτική ελέγχου.</p>
+      </div>
+      <div class="bc greenfill s6 fly-right">
+        <span class="bc-label">Εκθέσεις</span>
+        <div class="bc-title">Έντυπα έτοιμα για ελέγχους</div>
+        <p class="bc-text" style="margin-top:8px;">Αποτελέσματα προσαρμοσμένα για οδικούς και εταιρικούς ελέγχους. Πανομοιότυπα με αυτά που υποβάλλουν οι μεταφορείς.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO USES -->
+<section class="section section--gray">
+  <div class="container anim-up">
+    <span class="section-label">Αποδεδειγμένο στην πράξη</span>
+    <h2 class="section-h2">Ποιοι χρησιμοποιούν το TAGRA CONTROL</h2>
+    <p class="section-intro">Το TAGRA Control είναι το τυπικό εργαλείο αρχών ελέγχου στην Τσεχική Δημοκρατία, τη Σλοβακία και την Ουγγαρία. Το λογισμικό ενημερώνεται συνεχώς βάσει σχολίων από επιθεωρητές πεδίου.</p>
+    <div class="ref-grid">
+      <div class="ref-card ref-card--cz">
+        <div class="ref-flag">🇨🇿</div>
+        <div class="ref-country">Τσεχική Δημοκρατία</div>
+        <div class="ref-name">Τσέχικη Αστυνομία</div>
+        <div class="ref-note">Οδικοί έλεγχοι στην Τσεχική Δημοκρατία</div>
+      </div>
+      <div class="ref-card ref-card--cz">
+        <div class="ref-flag">🇨🇿</div>
+        <div class="ref-country">Τσεχική Δημοκρατία</div>
+        <div class="ref-name">Τσέχικη Τελωνειακή Υπηρεσία</div>
+        <div class="ref-note">Τελωνειακοί και οδικοί έλεγχοι</div>
+      </div>
+      <div class="ref-card ref-card--cz">
+        <div class="ref-flag">🇨🇿</div>
+        <div class="ref-country">Τσεχική Δημοκρατία</div>
+        <div class="ref-name">Υπουργείο Μεταφορών Τσεχίας</div>
+        <div class="ref-note">Διοικητικός και μεθοδολογικός έλεγχος</div>
+      </div>
+      <div class="ref-card ref-card--cz">
+        <div class="ref-flag">🇨🇿</div>
+        <div class="ref-country">Τσεχική Δημοκρατία</div>
+        <div class="ref-name">Κρατική Επιθεώρηση Εργασίας</div>
+        <div class="ref-note">Έλεγχος χρόνου εργασίας οδηγών στους εργοδότες</div>
+      </div>
+      <div class="ref-card ref-card--cz">
+        <div class="ref-flag">🇨🇿</div>
+        <div class="ref-country">Τσεχική Δημοκρατία</div>
+        <div class="ref-name">Regional Authorities & ORP</div>
+        <div class="ref-note">Δήμοι με εκτεταμένες αρμοδιότητες σε όλη την Τσεχική Δημοκρατία</div>
+      </div>
+      <div class="ref-card ref-card--sk">
+        <div class="ref-flag">🇸🇰</div>
+        <div class="ref-country">Σλοβακική Δημοκρατία</div>
+        <div class="ref-name">Επιθεωρήσεις Εργασίας Σλοβακίας</div>
+        <div class="ref-note">Οδικοί και εταιρικοί έλεγχοι στη Σλοβακία</div>
+      </div>
+      <div class="ref-card ref-card--hu">
+        <div class="ref-flag">🇭🇺</div>
+        <div class="ref-country">Ουγγαρία</div>
+        <div class="ref-name">Υπουργείο Μεταφορών Ουγγαρίας</div>
+        <div class="ref-note">Ελεγκτική και μεθοδολογική εποπτεία στη ρύθμιση ταχογράφων</div>
+      </div>
+    </div>
+    <blockquote style="margin:36px 0 0;padding:28px 32px;background:#fff;border-radius:16px;border-left:4px solid var(--green);font-size:17px;font-style:italic;color:#515154;line-height:1.65;">
+      "Το λογισμικό TAGRA Control ενημερώνεται συνεχώς βάσει της πρακτικής εμπειρίας των επιθεωρητών – για την πιο αποδοτική διαδικασία ελέγχου."
+      
+    </blockquote>
+  </div>
+</section>
+
+<!-- WHAT IT DETECTS -->
+<section class="section">
+  <div class="container">
+    <div class="g2 anim-up">
+      <div class="fly-left">
+        <span class="section-label">Ανάλυση παραβάσεων</span>
+        <h2 class="section-h2">Τι εντοπίζει άμεσα το TAGRA CONTROL</h2>
+        <p style="font-size:17px;color:#515154;line-height:1.6;margin-bottom:20px;">Το λογισμικό αναλύει κάθε χρονικό τμήμα από κάρτα οδηγού ή αρχείο ταχογράφου και επισημαίνει σαφώς κάθε παράβαση της ισχύουσας νομοθεσίας.</p>
+        <div class="feats">
+          <div class="fi"><div class="fck"></div><span>Παράβαση ημερήσιων και εβδομαδιαίων χρόνων οδήγησης βάσει ΕΕ 561/2006</span></div>
+          <div class="fi"><div class="fck"></div><span>Ανεπαρκείς υποχρεωτικές διαλείμματα ανάπαυσης</span></div>
+          <div class="fi"><div class="fck"></div><span>Ανεπαρκείς ημερήσιες και εβδομαδιαίες περίοδοι ανάπαυσης</span></div>
+          <div class="fi"><div class="fck"></div><span>Οδήγηση χωρίς εισαγμένη κάρτα οδηγού</span></div>
+          <div class="fi"><div class="fck"></div><span>Παραποίηση ταχογράφου (ασυνήθιστες εγγραφές)</span></div>
+          <div class="fi"><div class="fck"></div><span>Έλεγχος 14ήμερων κύκλων και σωρευτικής υπερωρίας</span></div>
+          <div class="fi"><div class="fck"></div><span>Θέση GPS από έξυπνους ταχογράφους G2V2</span></div>
+        </div>
+      </div>
+      <div class="fly-right">
+        <span class="section-label" style="display:block;margin-bottom:12px;">Ισχύουσα νομοθεσία</span>
+        <div class="leg-grid">
+          <div class="leg-item">Κανονισμός (ΕΚ) αρ. 561/2006</div>
+          <div class="leg-item">Κανονισμός (ΕΕ) αρ. 1054/2020</div>
+          <div class="leg-item">AETR (διεθνής)</div>
+          <div class="leg-item">Κανονισμός 478/2000</div>
+          <div class="leg-item">Κανονισμός 462/2007 (SK)</div>
+          <div class="leg-item">Κανονισμός 3821/1985</div>
+          <div class="leg-item">Νόμος αρ. 589/2006 (CZ)</div>
+          <div class="leg-item">Εργατικός Κώδικας 262/2006 (CZ)</div>
+        </div>
+        <p style="margin-top:16px;font-size:15px;color:#515154;line-height:1.55;">Το λογισμικό ενημερώνεται συνεχώς με κάθε αλλαγή στην ευρωπαϊκή και εθνική νομοθεσία.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPORTS -->
+<section class="section section--blue">
+  <div class="container anim-up">
+    <span class="section-label">Έτοιμο για επιχειρησιακή χρήση</span>
+    <h2 class="section-h2">Εκθέσεις και έντυπα για ελεγκτική δραστηριότητα</h2>
+    <p class="section-intro">Το TAGRA Control διαθέτει όλα τα απαραίτητα αποτελέσματα και έντυπα για οδικούς και εταιρικούς ελέγχους – έτοιμα για άμεση χρήση.</p>
+    <div class="reports-grid">
+      <div class="report-item">
+        <div class="report-icon">1</div>
+        <div><span class="report-label">Έκθεση παραβάσεων οδηγού</span><span class="report-desc">Χρονολογική επισκόπηση όλων των παραβάσεων με ακριβή χρόνο και τύπο παράβασης.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">2</div>
+        <div><span class="report-label">Έκθεση χρόνου οδήγησης και ανάπαυσης</span><span class="report-desc">Ημερήσιοι, εβδομαδιαίοι και 14ήμεροι κύκλοι βάσει ΕΕ 561/2006.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">3</div>
+        <div><span class="report-label">Έκθεση χρόνου εργασίας</span><span class="report-desc">Ώρες εργασίας συμπεριλαμβανομένης νυχτερινής εργασίας, υπερωριών και εφημεριών.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">4</div>
+        <div><span class="report-label">Έκθεση δραστηριότητας οχήματος</span><span class="report-desc">Επισκόπηση διαδρομών, στάσεων και δραστηριοτήτων συνδεδεμένων με την κάρτα οδηγού.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">5</div>
+        <div><span class="report-label">Θέση GPS (G2V2)</span><span class="report-desc">Θέση οχήματος από εγγραφές έξυπνου ταχογράφου δεύτερης γενιάς.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">6</div>
+        <div><span class="report-label">Σύνοψη για εταιρικούς ελέγχους</span><span class="report-desc">Πλήρης επισκόπηση για επιλεγμένη περίοδο – για ελέγχους σε μεταφορικές εταιρείες.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">7</div>
+        <div><span class="report-label">Επισκόπηση διαδρομών χωρίς κάρτα</span><span class="report-desc">Εντοπισμός περιόδων κατά τις οποίες ο οδηγός οδήγησε χωρίς εισαγμένη κάρτα οδηγού.</span></div>
+      </div>
+      <div class="report-item">
+        <div class="report-icon">8</div>
+        <div><span class="report-label">Εξαγωγή για διοικητικές διαδικασίες</span><span class="report-desc">Print and electronic export for administrative and infringement proceedings.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADSIDE STEPS -->
+<section class="section">
+  <div class="container anim-up">
+    <span class="section-label">Διαδικασία ελέγχου</span>
+    <h2 class="section-h2">Οδικός έλεγχος σε τρία βήματα</h2>
+    <div class="steps">
+      <div class="step-card fly-left">
+        <div class="step-header"><span class="snum">01</span>
+        <span class="stit">Load card or tachog</div><div class="tmx-media-frame" style="margin:12px 0;max-height:180px;background:#f5f5f7;">
+          <img src="https://cdn.truckmall.cz/data/user-content/Download%20Box%20IIS_produkt2.webp" alt="DOWNLOAD BOX II S – συσκευή ανάγνωσης για αρχές ελέγχου" style="width:100%;height:180px;object-fit:contain;object-position:center;">
+        </div>
+        <p style="font-size:16px;color:#515154;line-height:1.55;">Εισάγετε την κάρτα οδηγού στο DOWNLOAD BOX IIS ή συνδέστε τη συσκευή στη θύρα δεδομένων του ταχογράφου. Η λήψη δεδομένων διαρκεί μόνο δευτερόλεπτα.</p>
+      </div>
+      <div class="step-card anim-up">
+        <div class="step-header"><span class="snum">02</span>
+        <span class="stit">Instant analysis in TAGRA Con</div><div class="tmx-media-frame" style="margin:12px 0;">
+          <img src="/assets/img/tagra-control-screenshot.webp" alt="TAGRA Control – άμεση ανάλυση παραβάσεων" width="400" height="300">
+        </div>
+        <p style="font-size:16px;color:#515154;line-height:1.55;">Το λογισμικό αξιολογεί αυτόματα όλες τις εγγραφές και επισημαίνει κάθε παράβαση με ακριβή χρόνο, τύπο παράβασης και διάρκεια.</p>
+      </div>
+      <div class="step-card fly-right">
+        <div class="step-header"><span class="snum">03</span>
+        <span class="stit">Report for the prot</div><div class="tmx-media-frame" style="margin:12px 0;">
+          <img src="/assets/img/road-check-form-tagra.webp" alt="Έντυπο οδικού ελέγχου – αποτέλεσμα TAGRA Control" width="400" height="300">
+        </div>
+        <p style="font-size:16px;color:#515154;line-height:1.55;">Έκθεση παραβάσεων έτοιμη για εκτύπωση ή ηλεκτρονική εξαγωγή. Έτοιμη για διοικητικές και ποινικές διαδικασίες.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVICE -->
+<section class="section section--gray">
+  <div class="container anim-up">
+    <span class="section-label">Συνιστώμενη συσκευή</span>
+    <h2 class="section-h2">DOWNLOAD BOX II S</h2>
+    <div class="device-card">
+      <div class="device-img">
+        <img src="https://cdn.truckmall.cz/data/user-content/Download%20Box%20IIS_produkt2.webp" alt="DOWNLOAD BOX II S – συσκευή ανάγνωσης για αρχές ελέγχου" width="180" height="180">
+      </div>
+      <div>
+        <p style="font-size:17px;color:#515154;line-height:1.6;margin-bottom:16px;">Συμπαγής συσκευή ανάγνωσης κάρτας οδηγού και κλειδί λήψης για ψηφιακούς ταχογράφους. Κατασκευάζεται στην Τσεχική Δημοκρατία, πλήρως συμβατό με όλους τους τύπους ψηφιακών και έξυπνων ταχογράφων G2V2.</p>
+        <div class="device-specs">
+          <div class="dspec"><span class="dspec-k">Compatibility</span><span class="dspec-v">Όλοι οι ψηφιακοί ταχογράφοι + G2V2</span></div>
+          <div class="dspec"><span class="dspec-k">Driver card</span><span class="dspec-v">Μέσω ενσωματωμένης συσκευής ανάγνωσης</span></div>
+          <div class="dspec"><span class="dspec-k">Connection</span><span class="dspec-v">USB σε φορητό υπολογιστή</span></div>
+          <div class="dspec"><span class="dspec-k">Manufacturer</span><span class="dspec-v">Truck Data Technology, Τσεχική Δημοκρατία</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="section">
+  <div class="container">
+    <div class="g2 top anim-up">
+      <div class="fly-left">
+        <span class="section-label">Training</span>
+        <h2 class="section-h2">Εκπαίδευση για αρχές ελέγχου</h2>
+        <p style="font-size:17px;color:#515154;line-height:1.6;margin-bottom:16px;">Η Truck Data Technology, s.r.o. παρέχει επαγγελματική εκπαίδευση στη χρήση του TAGRA Control απευθείας σε αρχές ελέγχου. Η εκπαίδευση προσαρμόζεται στις ανάγκες και ροές εργασίας κάθε οργανισμού.</p>
+        <ul class="training-list">
+          <li>Λειτουργία προγράμματος – ανάγνωση καρτών οδηγού και ταχογράφων</li>
+          <li>Ερμηνεία αποτελεσμάτων – πώς να διαβάζετε εκθέσεις παραβάσεων</li>
+          <li>Νομοθετικό πλαίσιο – ΕΕ 561/2006, AETR, εθνικοί κανονισμοί</li>
+          <li>Εξαγωγές και πρωτόκολλα – προετοιμασία τεκμηρίωσης για διοικητικές διαδικασίες</li>
+          <li>Εκπαίδευση στα αγγλικά – για διεθνείς αρχές ελέγχου</li>
+        </ul>
+        <p style="margin-top:20px;font-size:16px;color:#515154;">Training contact: <strong><a href="tel:+420739005345">+420 739 005 345</a> · <a href="mailto:obchod@tdt.cz">obchod@tdt.cz</a></strong></p>
+      </div>
+      <div class="fly-right">
+        <div class="callout-green">
+          <div class="cg-bg">TDT</div>
+          <h2 style="font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:14px;display:inline-block;">Ενδιαφέρεστε για το TAGRA Control;</h2>
+          <p style="margin-bottom:8px;">Θα χαρούμε να ετοιμάσουμε μια πρόταση και να διοργανώσουμε εκπαίδευση για την ομάδα σας.</p>
+          <p>Επικοινωνήστε μαζί μας τις εργάσιμες ημέρες από 8:00 έως 16:00. Απαντάμε και στα αγγλικά.</p>
+          <p style="margin-top:20px;"><strong>Web:</strong> <a href="https://www.tdt.cz/tagra-control" target="_blank" rel="noopener">tdt.cz/tagra-control</a></p>
+          <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="mailto:obchod@tdt.cz" class="btn" style="background:#fff;color:#0b2c4a;padding:12px 24px;border-radius:50px;font-weight:700;font-size:16px;text-decoration:none;">Αποστολή e-mail</a>
+            <a href="tel:+420739005345" class="btn" style="background:rgba(255,255,255,.2);color:#fff;padding:12px 24px;border-radius:50px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid rgba(255,255,255,.5);">Τηλεφωνική επικοινωνία</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--gray">
+  <div class="container anim-up">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-h2">Συχνές ερωτήσεις για αρχές ελέγχου</h2>
+    <div class="faq-block" style="margin-top:28px;max-width:820px;">
+      <details>
+        <summary>Ποιους τύπους ταχογράφους υποστηρίζει το TAGRA Control;</summary>
+        <p class="faq-a">Το TAGRA Control αναλύει εγγραφές από ψηφιακούς ταχογράφους πρώτης γενιάς (G1) και έξυπνους ταχογράφους δεύτερης γενιάς (G2V2). Υποστηρίζονται τυπικές μορφές αρχείων (.DDD, .C1B, .V1B, ESM).</p>
+      </details>
+      <details>
+        <summary>Τι αποκαλύπτει η ανάλυση κάρτας οδηγού;</summary>
+        <p class="faq-a">Το λογισμικό αξιολογεί χρόνους οδήγησης, διαλείμματα, περιόδους ανάπαυσης, ώρες εργασίας και οδήγηση χωρίς κάρτα. Κάθε παράβαση εμφανίζεται με ακριβή ημερομηνία, ώρα και διάρκεια. Για κάρτες G2V2 διατίθενται επίσης συντεταγμένες GPS.</p>
+      </details>
+      <details>
+        <summary>Πόσο γρήγορα γίνεται η ανάλυση κατά τον οδικό έλεγχο;</summary>
+        <p class="faq-a">Η ανάγνωση κάρτας οδηγού μέσω DOWNLOAD BOX II S διαρκεί συνήθως 10–60 δευτερόλεπτα ανάλογα με την ποσότητα δεδομένων στην κάρτα. Η ανάλυση και εμφάνιση της έκθεσης παραβάσεων γίνεται άμεσα μετά τη φόρτωση δεδομένων.</p>
+      </details>
+      <details>
+        <summary>Μπορεί το TAGRA Control να χρησιμοποιηθεί εκτός σύνδεσης χωρίς διαδίκτυο;</summary>
+        <p class="faq-a">Ναι. Το TAGRA Control λειτουργεί πλήρως εκτός σύνδεσης. Σύνδεση στο διαδίκτυο απαιτείται μόνο για εγκατάσταση ενημερώσεων. Η ελεγκτική δραστηριότητα και ανάλυση δεδομένων λειτουργεί χωρίς συνδεσιμότητα δικτύου.</p>
+      </details>
+      <details>
+        <summary>Σε ποιες συσκευές λειτουργεί το TAGRA Control;</summary>
+        <p class="faq-a">Το λογισμικό λειτουργεί σε Windows 7 SP1 και νεότερα (Windows 8.1, 10, 11 – 32 και 64-bit). Κατάλληλο για φορητούς και επιτραπέζιους υπολογιστές. Ελάχιστες απαιτήσεις υλικού.</p>
+      </details>
+      <details>
+        <summary>Παρέχεται εκπαίδευση στα αγγλικά για διεθνείς αρχές ελέγχου;</summary>
+        <p class="faq-a">Ναι. Η Truck Data Technology παρέχει εκπαίδευση στα αγγλικά για διεθνείς αρχές ελέγχου και συνεργαζόμενους φορείς. Επικοινωνήστε μαζί μας στο obchod@tdt.cz για να συμφωνήσουμε όρους και ημερομηνία.</p>
+      </details>
+      <details>
+        <summary>Πώς διατηρείται ενημερωμένη η νομοθεσία στο λογισμικό;</summary>
+        <p class="faq-a">Το λογισμικό ενημερώνεται συνεχώς με κάθε αλλαγή στη σχετική ευρωπαϊκή και εθνική νομοθεσία. Οι ενημερώσεις είναι διαθέσιμες σε όλους τους κατόχους έγκυρης άδειας. Το ίδιο το πρόγραμμα ειδοποιεί τους χρήστες όταν υπάρχει διαθέσιμη ενημέρωση.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURER -->
+<section class="section">
+  <div class="container anim-up">
+    <div style="max-width:600px;">
+      <span class="section-label">Developer & manufacturer</span>
+      <h2 class="section-h2">Truck Data Technology, s.r.o.</h2>
+      <p style="font-size:17px;color:#515154;line-height:1.6;margin-bottom:20px;">Τσέχος κατασκευαστής λογισμικού και υλικού για διαχείριση δεδομένων ταχογράφου με πάνω από 20 χρόνια εμπειρίας. Άμεσος κατασκευαστής – χωρίς ενδιάμεσο.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:16px;">
+        <div><span style="color:#515154;min-width:80px;display:inline-block;">Έδρα</span> <strong>Τσεχική Δημοκρατία</strong></div>
+        <div><span style="color:#515154;min-width:80px;display:inline-block;">Phone</span> <a href="tel:+420739005345" style="color:#134a8e;font-weight:600;">+420 739 005 345</a></div>
+        <div><span style="color:#515154;min-width:80px;display:inline-block;">Email</span> <a href="mailto:obchod@tdt.cz" style="color:#134a8e;font-weight:600;">obchod@tdt.cz</a></div>
+        <div><span style="color:#515154;min-width:80px;display:inline-block;">Web</span> <a href="https://www.tdt.cz" target="_blank" rel="noopener" style="color:#134a8e;font-weight:600;">www.tdt.cz</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TAGRA Control – λογισμικό για αρχές ελέγχου",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "description": "Professional software for rapid analysis of driver card data and digital tachograph files for enforcement authorities. Evaluates offences under EU 561/2006, 1054/2020, AETR. Used by the Τσέχικη Αστυνομία, Τσέχικη Τελωνειακή Υπηρεσία, Czech Ministry of Transport, Slovak Labour Inspectorates and the Hungarian Ministry of Transport.",
+  "url": "https://tagra.eu/enforcement/",
+  "inLanguage": "el",
+  "author": {
+    "@type": "Organization",
+    "name": "Truck Data Technology, s.r.o.",
+    "url": "https://www.tdt.cz",
+    "telephone": "+420739005345",
+    "email": "obchod@tdt.cz"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Ποιους τύπους ταχογράφους υποστηρίζει το TAGRA Control;","acceptedAnswer":{"@type":"Answer","text":"Το TAGRA Control αναλύει εγγραφές από ψηφιακούς ταχογράφους πρώτης γενιάς (G1) και έξυπνους ταχογράφους δεύτερης γενιάς (G2V2). Υποστηρίζονται τυπικές μορφές αρχείων (.DDD, .C1B, .V1B, ESM)."}},
+    {"@type":"Question","name":"Μπορεί το TAGRA Control να χρησιμοποιηθεί εκτός σύνδεσης χωρίς διαδίκτυο;","acceptedAnswer":{"@type":"Answer","text":"Ναι. Το TAGRA Control λειτουργεί πλήρως εκτός σύνδεσης. Σύνδεση στο διαδίκτυο απαιτείται μόνο για εγκατάσταση ενημερώσεων. Η ελεγκτική δραστηριότητα και ανάλυση δεδομένων λειτουργεί χωρίς συνδεσιμότητα δικτύου."}},
+    {"@type":"Question","name":"Παρέχεται εκπαίδευση στα αγγλικά για διεθνείς αρχές ελέγχου;","acceptedAnswer":{"@type":"Answer","text":"Ναι. Η Truck Data Technology παρέχει εκπαίδευση στα αγγλικά για διεθνείς αρχές ελέγχου και συνεργαζόμενους φορείς. Επικοινωνήστε μαζί μας στο obchod@tdt.cz για να συμφωνήσουμε όρους και ημερομηνία."}}
+  ]
+}
+</script>
+</div>
