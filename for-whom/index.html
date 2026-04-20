@@ -84,6 +84,14 @@
     @media(prefers-reduced-motion:reduce){.anim-up{transition:none!important;opacity:1!important;transform:none!important;}}
   
     /* 3-col group grid */
+    /* who-card flex layout — CTA vždy dole, nadpis stejná výška */
+    .who-card { display: flex; flex-direction: column; }
+    .who-card > div:first-child { min-height: 72px; }
+    .who-card p { flex-shrink: 0; }
+    .who-card .check-list { flex: 1; }
+    .who-card > div:last-child { margin-top: auto; padding-top: 16px; }
+    /* check-list items white on dark */
+    .who-card .check-list li::before { background-color: currentColor; }
     .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     @media (max-width: 900px) { .g3 { grid-template-columns: 1fr; } }
     /* Enforcement 2-col responsive */
@@ -91,6 +99,9 @@
       .enf-2col { grid-template-columns: 1fr !important; }
     }
 
+  
+    .who-card[style*="0b2c4a"] .check-list li { color: rgba(255,255,255,.9); }
+    .who-card[style*="0b2c4a"] .check-list li::before { background: rgba(255,255,255,.7) !important; }
   </style>
 </head>
 <body>
@@ -173,22 +184,22 @@
       </div>
 
       <!-- Enforcement -->
-      <div class="who-card anim-up" style="background:linear-gradient(160deg,#eef4fa 0%,#e8f0f8 100%);border-color:rgba(19,74,142,.15);transition-delay:.2s">
+      <div class="who-card anim-up" style="background:linear-gradient(160deg,#0b2c4a 0%,#134a8e 100%);border-color:transparent;transition-delay:.2s">
         <div>
-          <div class="eyebrow" style="color:var(--blue-mid)">Enforcement authorities</div>
-          <div style="font-size:24px;font-weight:800;color:var(--text-strong);line-height:1.2;margin-top:4px">TAGRA Control</div>
+          <div class="eyebrow" style="color:rgba(255,255,255,.6)">Enforcement authorities</div>
+          <div style="font-size:24px;font-weight:800;color:#ffffff;line-height:1.2;margin-top:4px">TAGRA Control</div>
         </div>
-        <p style="color:var(--text2)">Police forces, Customs Administrations, Labour Inspectorates and Ministries of Transport use TAGRA Control — dedicated software for roadside and company inspections.</p>
-        <ul class="check-list">
-          <li>Instant violation analysis from driver cards and tachographs</li>
-          <li>All tachograph generations: G1 and smart G2V2</li>
-          <li>EU 561/2006, 1054/2020, AETR — always up to date</li>
-          <li>Roadside check forms ready for proceedings</li>
-          <li>Czech Police, Customs, Slovak Labour Inspectorates, Hungarian MoT</li>
-          <li>Training available in English</li>
+        <p style="color:rgba(255,255,255,.82)">Police forces, Customs Administrations, Labour Inspectorates and Ministries of Transport use TAGRA Control — dedicated software for roadside and company inspections.</p>
+        <ul class="check-list" style="--check-color:rgba(255,255,255,.9);--check-mark:rgba(255,255,255,.7)">
+          <li style="color:rgba(255,255,255,.9)">Instant violation analysis from driver cards and tachographs</li>
+          <li style="color:rgba(255,255,255,.9)">All tachograph generations: G1 and smart G2V2</li>
+          <li style="color:rgba(255,255,255,.9)">EU 561/2006, 1054/2020, AETR — always up to date</li>
+          <li style="color:rgba(255,255,255,.9)">Roadside check forms ready for proceedings</li>
+          <li style="color:rgba(255,255,255,.9)">Czech Police, Customs, Slovak Labour Inspectorates, Hungarian MoT</li>
+          <li style="color:rgba(255,255,255,.9)">Training available in English</li>
         </ul>
         <div style="margin-top:8px">
-          <a href="/enforcement/" class="btn-cta btn-cta--sm" style="background:linear-gradient(135deg,#0b2c4a,#134a8e)">Enforcement solution →</a>
+          <a href="/enforcement/" class="btn-cta btn-cta--sm" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.4)">Enforcement solution →</a>
         </div>
       </div>
 
