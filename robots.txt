@@ -1,0 +1,8 @@
+# robots.txt for tagra.eu
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tagra.eu/sitemap.xml
+
+# Crawl-delay none — small site, no issue

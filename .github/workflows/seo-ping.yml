@@ -1,0 +1,38 @@
+name: SEO Ping (IndexNow + Facebook OG)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+
+jobs:
+  seo-ping:
+    runs-on: ubuntu-latest
+    # Wait for Netlify deploy to complete (~30s typical)
+    steps:
+      - name: Wait for Netlify deploy
+        run: sleep 45
+
+      - name: Ping IndexNow + refresh Facebook OG cache
+        uses: LiorD78/seo-pipeline@v2
+        with:
+          mode: deploy-driven
+          host: tagra.eu
+          indexnow-key: ${{ secrets.INDEXNOW_KEY }}
+          fb-access-token: ${{ secrets.FB_APP_ACCESS_TOKEN }}
+          url-list: |
+            https://tagra.eu/
+            https://tagra.eu/fleet/
+            https://tagra.eu/driver/
+            https://tagra.eu/enforcement/
+            https://tagra.eu/how-it-works/
+            https://tagra.eu/for-whom/
+            https://tagra.eu/faq/
+            https://tagra.eu/contact/
+            https://tagra.eu/integrations/dkv-live/
+            https://tagra.eu/articles/
+            https://tagra.eu/articles/how-to-download-evaluate-archive-tachograph-data/
+            https://tagra.eu/articles/tachographs-for-vans-new-obligation-july-2026/
+            https://tagra.eu/articles/who-must-evaluate-tachograph-data-2026/
