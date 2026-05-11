@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAGRA â Tachograph Data Management for Fleet Operators</title>
+  <title>TAGRA – Tachograph Data Management for Fleet Operators</title>
   <meta name="description" content="TAGRA helps fleet operators stay compliant with EU tachograph regulations. Evaluation and archiving for 1 to unlimited vehicles. Free 30-day trial.">
   <link rel="canonical" href="https://tagra.eu/fleet/">
-  <meta property="og:title" content="TAGRA â Fleet Tachograph Data Management">
+  <meta property="og:title" content="TAGRA – Fleet Tachograph Data Management">
   <meta property="og:description" content="TAGRA helps transport companies stay compliant with EU tachograph regulations. Free 30-day trial.">
   <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg">
   <meta property="og:url" content="https://tagra.eu/fleet/">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    /* âââ DESIGN TOKENS ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── DESIGN TOKENS ────────────────────────────────────────── */
     :root {
       --blue-dark:    #0b2c4a;
       --blue-mid:     #134a8e;
@@ -35,7 +35,7 @@
       --nav-h:        64px;
     }
 
-    /* âââ RESET & BASE âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -54,7 +54,7 @@
     p + p { margin-top: 12px; }
     p:empty { display: none; }
 
-    /* âââ SCROLL PROGRESS ââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── SCROLL PROGRESS ──────────────────────────────────────── */
     #scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px;
       background: linear-gradient(90deg, var(--green-brand), var(--blue-light));
@@ -62,7 +62,7 @@
       transition: width .1s ease-out;
     }
 
-    /* âââ NAVIGATION âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── NAVIGATION ───────────────────────────────────────────── */
     .site-nav {
       position: sticky; top: 0; z-index: 900;
       height: var(--nav-h);
@@ -124,7 +124,7 @@
       }
     }
 
-    /* âââ LAYOUT âââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── LAYOUT ───────────────────────────────────────────────── */
     .band { padding: 80px 0; }
     .band--hero  { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%); padding: 40px 0 60px; text-align: center; }
     .band--gray  { background: var(--bg-gray); }
@@ -134,7 +134,7 @@
 
     .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
-    /* âââ TYPOGRAPHY âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
     h1, h2, h3 { font-weight: 800; }
     h2 {
       font-size: 36px; line-height: 1.08; letter-spacing: -.01em;
@@ -156,7 +156,7 @@
       text-transform: uppercase; color: var(--green-brand); margin-bottom: 12px;
     }
 
-    /* âââ BUTTONS ââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── BUTTONS ──────────────────────────────────────────────── */
     .btn-cta {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--green-cta); color: #fff !important;
@@ -168,7 +168,7 @@
     .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
     .btn-cta--sm { font-size: 16px; padding: 10px 24px; }
 
-    /* âââ BENTO GRID âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── BENTO GRID ───────────────────────────────────────────── */
     .bento {
       display: grid; grid-template-columns: repeat(12, 1fr);
       gap: 14px; margin-top: 40px;
@@ -197,7 +197,7 @@
     .bc-text  { font-size: 16px; line-height: 1.5; color: var(--text2); }
     .bignum   { font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; }
 
-    /* âââ 2-COL & 3-COL ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── 2-COL & 3-COL ────────────────────────────────────────── */
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .g2.top { align-items: start; }
     @media (max-width: 900px) { .g2 { grid-template-columns: 1fr; gap: 40px; } }
@@ -210,7 +210,7 @@
     @media (min-width: 992px) { .two-col { grid-template-columns: 1fr 1fr; gap: 38px; } }
     @media (min-width: 992px) { .two-col.stretch { gap: 64px; align-items: stretch; } }
 
-    /* âââ CALLOUT CARDS ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── CALLOUT CARDS ────────────────────────────────────────── */
     .callout {
       border-radius: var(--radius); background: var(--bg-white);
       padding: 32px; box-shadow: 0 12px 32px rgba(0,0,0,.04);
@@ -240,7 +240,7 @@
     }
     ul li { padding: 3px 0; }
 
-    /* âââ FEATURE LIST âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── FEATURE LIST ─────────────────────────────────────────── */
     .feats { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
     .fi { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.5; }
     .fck {
@@ -250,7 +250,7 @@
     }
     .fck svg { flex-shrink: 0; }
 
-    /* âââ WARNING / NOTE BOXES âââââââââââââââââââââââââââââââââââ */
+    /* ─── WARNING / NOTE BOXES ─────────────────────────────────── */
     .note-box {
       position: relative; background: linear-gradient(180deg,var(--green-bg) 0%,#fff 100%);
       border: 2px solid var(--green-brand); border-radius: var(--radius);
@@ -267,7 +267,7 @@
     .note-title { font-size: 24px; font-weight: 800; line-height: 1.2; margin: 10px 0 12px; color: var(--text-strong); }
     .note-box p  { font-size: 17px; line-height: 1.6; color: var(--text2); margin-bottom: 12px; }
 
-    /* âââ REVIEWS SLIDER âââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── REVIEWS SLIDER ───────────────────────────────────────── */
     .rev-rail-wrap {
       overflow: hidden; margin-top: 24px;
       mask-image: linear-gradient(to right, transparent 0%,black 6%,black 94%,transparent 100%);
@@ -288,7 +288,7 @@
     .rev-txt   { font-size: 17px; flex: 1; }
     .rev-meta  { font-size: 15px; color: var(--text2); margin-top: 16px; }
 
-    /* âââ METHOD CARDS âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── METHOD CARDS ─────────────────────────────────────────── */
     .method-card { display: flex; flex-direction: column; height: 100%; }
     .method-frame {
       background: var(--bg-white); aspect-ratio: 4/3; padding: 20px;
@@ -299,14 +299,14 @@
     .snum { font-size: 44px; font-weight: 800; color: rgba(19,74,142,.15); line-height: 1; margin-bottom: 8px; }
     .stit { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: var(--text-strong); }
 
-    /* âââ SPECS TABLE ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── SPECS TABLE ──────────────────────────────────────────── */
     .specs { margin-top: 24px; }
     .spec { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); }
     .spec:last-child { border-bottom: none; }
     .sk { color: var(--text2); }
     .sv { font-weight: 600; text-align: right; }
 
-    /* âââ COMPARISON TABLE âââââââââââââââââââââââââââââââââââââââ */
+    /* ─── COMPARISON TABLE ─────────────────────────────────────── */
     .compare-wrap { width: 100%; overflow-x: auto; margin-top: 14px; padding-top: 32px; -webkit-overflow-scrolling: touch; }
     .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 680px; }
     .compare-table th, .compare-table td { padding: 14px; border-bottom: 1px solid var(--border); vertical-align: middle; text-align: left; }
@@ -338,7 +338,7 @@
     .tb-icon--cross { background: #fff0f0; }
     .tb-icon svg    { width: 12px; height: 12px; }
 
-    /* âââ FAQ ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── FAQ ──────────────────────────────────────────────────── */
     .faq details { border-bottom: 1px solid var(--border); }
     .faq details:first-child { border-top: 1px solid var(--border); }
     .faq summary {
@@ -348,19 +348,19 @@
     }
     .faq summary::-webkit-details-marker { display: none; }
     .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green-brand); }
-    .faq details[open] summary::after { content: "â"; }
+    .faq details[open] summary::after { content: "−"; }
     .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.6; color: var(--text2); }
 
-    /* âââ MAC STAGE ââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── MAC STAGE ────────────────────────────────────────────── */
     .mac-stage { position: relative; width: 100%; line-height: 0; }
     .mac-stage img { width: 100%; display: block; object-fit: contain; transform-origin: center center; filter: drop-shadow(0 30px 70px rgba(0,0,0,.16)); }
     .mac-stage::after { content: ""; position: absolute; left: 50%; bottom: 5%; transform: translateX(-50%); width: 80%; height: 60px; background: radial-gradient(50% 50%,rgba(0,0,0,.16) 0%,transparent 70%); filter: blur(15px); opacity: .6; pointer-events: none; z-index: -1; }
 
-    /* âââ MEDIA FRAME ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── MEDIA FRAME ──────────────────────────────────────────── */
     .media-frame { width: 100%; border-radius: var(--radius); overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(#fff,#000); }
     .media-frame img, .media-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* âââ RELATED / ARTICLE GRID âââââââââââââââââââââââââââââââââ */
+    /* ─── RELATED / ARTICLE GRID ───────────────────────────────── */
     .related-featured {
       display: flex; flex-direction: column; position: relative;
       margin-top: 34px; padding: 36px 28px 28px;
@@ -393,14 +393,14 @@
     .article-chip   { display: inline-flex; margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--blue-dark) !important; background: var(--bg-apple-solid); padding: 7px 13px; border-radius: 999px; transition: background .2s; }
     .article-card:hover .article-chip, .related-featured:hover .article-chip { background: var(--green-brand); color: #fff !important; }
 
-    /* âââ ANIMATIONS âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── ANIMATIONS ───────────────────────────────────────────── */
     .anim-up   { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .fly-left  { opacity: 0; transform: translateX(-80px); transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
     .fly-right { opacity: 0; transform: translateX(80px);  transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
     .anim-up.on, .fly-left.on, .fly-right.on { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .anim-up, .fly-left, .fly-right { transition: none !important; opacity: 1 !important; transform: none !important; } }
 
-    /* âââ FOOTER âââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── FOOTER ───────────────────────────────────────────────── */
     .site-footer {
       background: var(--blue-dark); color: rgba(255,255,255,.7);
       padding: 48px 0 32px;
@@ -425,10 +425,10 @@
 <body>
 <div id="scroll-progress" aria-hidden="true"></div>
 
-<!-- âââ NAVIGATION âââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════════ -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="TAGRA â Home">TAGRA</a>
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home">TAGRA</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/fleet/" aria-current="page" style="color:var(--blue-mid);font-weight:700">For companies</a></li>
       <li><a href="/driver/">For drivers</a></li>
@@ -449,18 +449,18 @@
   </div>
 </nav>
 
-<!-- âââ HERO ââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
 <section class="band band--hero" aria-label="TAGRA overview">
   <div class="container">
-    <div class="eyebrow anim-up">TAGRA Â· For fleet operators</div>
+    <div class="eyebrow anim-up">TAGRA · For fleet operators</div>
     <h2 class="hero-h2 anim-up" style="transition-delay:.05s">Fleet compliance.<br>Without the headache.</h2>
     <p class="anim-up" style="font-size:21px;line-height:1.5;max-width:640px;margin:16px auto 32px;color:var(--text2);transition-delay:.1s">
-      Downloading isn't enough â the law requires <strong>evaluation and archiving.</strong> TAGRA covers 1 to unlimited vehicles. Try free for 30 days.
+      Downloading isn't enough — the law requires <strong>evaluation and archiving.</strong> TAGRA covers 1 to unlimited vehicles. Try free for 30 days.
     </p>
     <div class="anim-up" style="margin-bottom:16px;transition-delay:.15s">
       <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" class="btn-cta" target="_blank" rel="noopener">Try free for 30 days</a>
     </div>
-    <p class="anim-up" style="font-size:15px;color:var(--text2);transition-delay:.2s">Windows Â· Free 30-day trial Â· Ready for vans from July 2026</p>
+    <p class="anim-up" style="font-size:15px;color:var(--text2);transition-delay:.2s">Windows · Free 30-day trial · Ready for vans from July 2026</p>
 
     <!-- Hero video -->
     <div class="media-frame anim-up" style="margin:44px auto 0;border:1px solid var(--border);box-shadow:0 20px 40px rgba(0,0,0,.08);transition-delay:.25s;border-radius:20px;overflow:hidden">
@@ -474,7 +474,7 @@
   </div>
 </section>
 
-<!-- âââ KEY PARAMETERS (BENTO) ââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ KEY PARAMETERS (BENTO) ════════════════════════════════════ -->
 <section class="band" aria-label="Key features">
   <div class="container">
     <div class="eyebrow anim-up">Key features</div>
@@ -483,8 +483,8 @@
       <div class="bc s7 fly-left">
         <div class="eyebrow" style="color:var(--blue-mid)">Vehicles</div>
         <div class="bc-title">1 to unlimited vehicles</div>
-        <div class="bc-text">Evaluation and archiving for digital tachographs and driver cards. Choose the version that fits your fleet â from sole traders to large operators.</div>
-        <div class="bignum">â</div>
+        <div class="bc-text">Evaluation and archiving for digital tachographs and driver cards. Choose the version that fits your fleet — from sole traders to large operators.</div>
+        <div class="bignum">∞</div>
       </div>
       <div class="bc s5 bluefill fly-right" style="transition-delay:.1s">
         <div class="eyebrow" style="color:var(--blue-mid)">Trial period</div>
@@ -493,8 +493,8 @@
       </div>
       <div class="bc s4 greenfill fly-left" style="transition-delay:.15s">
         <div class="eyebrow">From year 2</div>
-        <div class="bc-title" style="color:var(--green-brand)">â¬83 / year</div>
-        <div class="bc-text">Annual licence fee excl. VAT â includes updates and Czech technical support. TAGRA MAX: â¬145/year.</div>
+        <div class="bc-title" style="color:var(--green-brand)">€83 / year</div>
+        <div class="bc-text">Annual licence fee excl. VAT — includes updates and Czech technical support. TAGRA MAX: €145/year.</div>
       </div>
       <div class="bc s4 anim-up" style="transition-delay:.25s">
         <div class="eyebrow">Ready for</div>
@@ -510,21 +510,21 @@
   </div>
 </section>
 
-<!-- âââ ALSO FOR DRIVERS âââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ ALSO FOR DRIVERS ═══════════════════════════════════════════ -->
 <section class="band band--gray" aria-label="TAGRA Trucker for individual drivers">
   <div class="container">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:16px 0">
       <div>
         <div class="eyebrow">Also available</div>
-        <p style="font-size:19px;font-weight:700;color:var(--text-strong);margin-top:4px">TAGRA Trucker â for professional drivers</p>
-        <p style="color:var(--text2);margin-top:6px;max-width:480px">Driving professionally on your own account? TAGRA Trucker is built for individual drivers â with a USB card reader included in the box.</p>
+        <p style="font-size:19px;font-weight:700;color:var(--text-strong);margin-top:4px">TAGRA Trucker — for professional drivers</p>
+        <p style="color:var(--text2);margin-top:6px;max-width:480px">Driving professionally on your own account? TAGRA Trucker is built for individual drivers — with a USB card reader included in the box.</p>
       </div>
-      <a href="/driver/" class="btn-cta btn-cta--sm" style="flex-shrink:0">Learn about TAGRA Trucker â</a>
+      <a href="/driver/" class="btn-cta btn-cta--sm" style="flex-shrink:0">Learn about TAGRA Trucker →</a>
     </div>
   </div>
 </section>
 
-<!-- âââ REVIEWS âââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ REVIEWS ═══════════════════════════════════════════════════ -->
 <section class="band band--gray" aria-label="Customer reviews">
   <div class="container">
     <div class="eyebrow anim-up">What customers say</div>
@@ -532,23 +532,23 @@
   </div>
   <div class="rev-rail-wrap anim-up" style="transition-delay:.05s">
     <div class="rev-rail" id="rev-rail">
-      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">âââââ</div><p class="rev-txt">"TAGRA handles a huge volume of data and significantly simplified our violation checks and archiving."</p><p class="rev-meta">David C. Â· Verified customer</p></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">âââââ</div><p class="rev-txt">"We've been using TAGRA for a few months â easy download and evaluation, clear outputs. Finally peace of mind."</p><p class="rev-meta">Patrik S. Â· Verified customer</p></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">âââââ</div><p class="rev-txt">"The programme is straightforward and easy to follow. When I needed help, they were there."</p><p class="rev-meta">Milan K. Â· Verified customer</p></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">âââââ</div><p class="rev-txt">"Simple and clear. Downloading, evaluation and archiving of data takes just a few minutes."</p><p class="rev-meta">Josef Z. Â· Verified customer</p></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">âââââ</div><p class="rev-txt">"TAGRA keeps us on top of violations and archiving. Really easy to work with."</p><p class="rev-meta">Verified TRUCKMALL customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"TAGRA handles a huge volume of data and significantly simplified our violation checks and archiving."</p><p class="rev-meta">David C. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"We've been using TAGRA for a few months — easy download and evaluation, clear outputs. Finally peace of mind."</p><p class="rev-meta">Patrik S. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"The programme is straightforward and easy to follow. When I needed help, they were there."</p><p class="rev-meta">Milan K. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"Simple and clear. Downloading, evaluation and archiving of data takes just a few minutes."</p><p class="rev-meta">Josef Z. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"TAGRA keeps us on top of violations and archiving. Really easy to work with."</p><p class="rev-meta">Verified TRUCKMALL customer</p></div>
     </div>
   </div>
 </section>
 
-<!-- âââ WHAT TAGRA DOES ââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ WHAT TAGRA DOES ════════════════════════════════════════════ -->
 <section class="band" aria-label="Software features">
   <div class="container">
     <div class="g2 top">
       <div class="anim-up">
         <div class="eyebrow">What TAGRA does</div>
         <h2>More than just<br>downloading data</h2>
-        <p style="margin-bottom:24px">Simply downloading is not enough â the law requires regular evaluation and archiving. TAGRA covers everything without unnecessary extra administration, for 1 to unlimited vehicles.</p>
+        <p style="margin-bottom:24px">Simply downloading is not enough — the law requires regular evaluation and archiving. TAGRA covers everything without unnecessary extra administration, for 1 to unlimited vehicles.</p>
         <div class="feats">
           <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Evaluation of driving times, breaks and rest periods per EU 561/2006 and AETR</span></div>
           <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Working time evaluation per the Working Time Directive</span></div>
@@ -560,19 +560,19 @@
       <div class="anim-up" style="transition-delay:.1s">
         <div class="media-frame" style="background:var(--bg-gray);border-radius:var(--radius);overflow:hidden">
           <img src="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg"
-               alt="TAGRA MAX â tachograph data management software package" loading="lazy" width="800" height="800" style="object-fit:contain;width:100%;height:auto;">
+               alt="TAGRA MAX – tachograph data management software package" loading="lazy" width="800" height="800" style="object-fit:contain;width:100%;height:auto;">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- âââ WHY (OBLIGATION) ââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ WHY (OBLIGATION) ══════════════════════════════════════════ -->
 <section class="band band--blue" aria-label="Legal obligations">
   <div class="container">
     <div class="eyebrow">Why it matters</div>
     <h2 class="anim-up">Downloading alone<br>is not enough</h2>
-    <p class="anim-up" style="max-width:580px;margin-bottom:32px;transition-delay:.05s">The law requires operators to regularly evaluate and archive tachograph data. Without the right software you risk fines â even if you already have the data downloaded.</p>
+    <p class="anim-up" style="max-width:580px;margin-bottom:32px;transition-delay:.05s">The law requires operators to regularly evaluate and archive tachograph data. Without the right software you risk fines — even if you already have the data downloaded.</p>
     <div class="bento anim-up" style="margin-top:0;transition-delay:.1s">
       <div class="bc s6">
         <div class="eyebrow">Driver cards</div>
@@ -588,13 +588,13 @@
       </div>
       <div class="bc s6">
         <div class="eyebrow">Vans</div>
-        <p>From <strong>July 2026</strong> this applies to 2.5â3.5 t vehicles in international transport. We're ready.</p>
+        <p>From <strong>July 2026</strong> this applies to 2.5–3.5 t vehicles in international transport. We're ready.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- âââ TRUSTED BY AUTHORITIES ââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ TRUSTED BY AUTHORITIES ════════════════════════════════════ -->
 <section class="band">
   <div class="container">
     <div class="anim-up" style="text-align:center;max-width:780px;margin:0 auto">
@@ -604,19 +604,19 @@
   </div>
 </section>
 
-<!-- âââ MAC STAGE ââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ MAC STAGE ══════════════════════════════════════════════════ -->
 <section class="band band--machero" aria-label="Software preview">
   <div class="container">
     <div class="mac-stage">
       <img id="mac-img"
            src="https://cdn.truckmall.cz/data/user-content/tagra/Tagra_screen_2xb.webp"
-           alt="TAGRA software interface â driver working time overview"
+           alt="TAGRA software interface – driver working time overview"
            loading="lazy" width="3116" height="2076">
     </div>
   </div>
 </section>
 
-<!-- âââ COMPARISON TABLE ââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ COMPARISON TABLE ══════════════════════════════════════════ -->
 <section class="band" aria-label="Solution comparison">
   <div class="container anim-up">
     <div class="eyebrow">Comparison</div>
@@ -637,7 +637,7 @@
           <tr>
             <td style="font-weight:700;color:var(--text-strong)">Annual cost</td>
             <td><div class="tc-val no-icon">Varies (often modules or extra fees)</div></td>
-            <td class="col-blue"><div class="tc-val no-icon">â¬83 / year (from year 2) Â· TAGRA MAX: â¬145/year</div></td>
+            <td class="col-blue"><div class="tc-val no-icon">€83 / year (from year 2) · TAGRA MAX: €145/year</div></td>
           </tr>
           <tr>
             <td style="font-weight:700;color:var(--text-strong)">EU Regulation 561/2006</td>
@@ -647,7 +647,7 @@
           <tr>
             <td style="font-weight:700;color:var(--text-strong)">Working Time Directive</td>
             <td><div class="tc-val no-icon">Depends on solution</div></td>
-            <td class="col-blue"><div class="tc-val"><span class="tb-icon tb-icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Yes â incl. shifts, overtime, night work</div></td>
+            <td class="col-blue"><div class="tc-val"><span class="tb-icon tb-icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Yes — incl. shifts, overtime, night work</div></td>
           </tr>
           <tr>
             <td style="font-weight:700;color:var(--text-strong)">Violation detection</td>
@@ -668,17 +668,17 @@
       <span class="note-badge">Legal obligation</span>
       <div class="note-title">Evaluation and archiving of tachograph data is mandatory</div>
       <p>Under EU Regulation (EC) No 561/2006, Chapter III, Article 10b(2), evaluation and archiving of tachograph data is a strict legal obligation for transport operators.</p>
-      <p style="margin-bottom:0"><strong>Without a specialist solution, you risk fines of up to â¬14,000</strong> from the transport authority â and up to <strong>â¬80,000</strong> for violations of drivers' working time.</p>
+      <p style="margin-bottom:0"><strong>Without a specialist solution, you risk fines of up to €14,000</strong> from the transport authority — and up to <strong>€80,000</strong> for violations of drivers' working time.</p>
     </div>
   </div>
 </section>
 
-<!-- âââ TRY IT ââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ TRY IT ════════════════════════════════════════════════════ -->
 <section class="band band--gray">
   <div class="container">
     <div class="anim-up" style="text-align:center;max-width:680px;margin:0 auto 48px">
       <h2>TRY TAGRA FREE FOR 30 DAYS</h2>
-      <p style="font-size:19px;color:var(--text2);margin-top:8px">Download, install and use the full software â no credit card, no commitment.</p>
+      <p style="font-size:19px;color:var(--text2);margin-top:8px">Download, install and use the full software — no credit card, no commitment.</p>
     </div>
 
     <!-- How it works: 3-step flow -->
@@ -686,17 +686,17 @@
       <div style="text-align:center;padding:28px 20px">
         <div style="font-size:52px;font-weight:900;line-height:1;color:rgba(19,74,142,.12);margin-bottom:8px">1</div>
         <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Download &amp; install</div>
-        <p style="font-size:16px;color:var(--text2)">Download the installer and run TAGRA on Windows. The trial gives you the complete software â no limitations.</p>
+        <p style="font-size:16px;color:var(--text2)">Download the installer and run TAGRA on Windows. The trial gives you the complete software — no limitations.</p>
       </div>
       <div style="text-align:center;padding:28px 20px;border-left:1px solid var(--border);border-right:1px solid var(--border)">
         <div style="font-size:52px;font-weight:900;line-height:1;color:rgba(19,74,142,.12);margin-bottom:8px">2</div>
         <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Try for up to 30 days</div>
-        <p style="font-size:16px;color:var(--text2)">Use TAGRA with your real data. Choose how many vehicles you need â 1, 2, 4, 6 or unlimited. The software guides you through.</p>
+        <p style="font-size:16px;color:var(--text2)">Use TAGRA with your real data. Choose how many vehicles you need — 1, 2, 4, 6 or unlimited. The software guides you through.</p>
       </div>
       <div style="text-align:center;padding:28px 20px">
         <div style="font-size:52px;font-weight:900;line-height:1;color:rgba(19,74,142,.12);margin-bottom:8px">3</div>
         <div style="font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px">Activate your licence</div>
-        <p style="font-size:16px;color:var(--text2)">When ready, select your version inside the software and pay online. Your licence is issued instantly â you continue in the same environment.</p>
+        <p style="font-size:16px;color:var(--text2)">When ready, select your version inside the software and pay online. Your licence is issued instantly — you continue in the same environment.</p>
       </div>
     </div>
 
@@ -704,14 +704,14 @@
       <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" class="btn-cta" target="_blank" rel="noopener">
         Download trial version
       </a>
-      <p style="margin-top:14px;font-size:15px;color:var(--text2)">Windows Â· Free Â· No registration required</p>
+      <p style="margin-top:14px;font-size:15px;color:var(--text2)">Windows · Free · No registration required</p>
     </div>
   </div>
 </section>
 
-<!-- âââ HOW TO GET DATA âââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ HOW TO GET DATA ═══════════════════════════════════════════ -->
 
-<!-- ─── DKV LIVE INTEGRATION CALLOUT (added 2026-05-11) ─── -->
+<!--     DKV LIVE INTEGRATION CALLOUT (added 2026-05-11)     -->
 <section class="band band--gray" aria-label="DKV LIVE telematics integration" style="padding-bottom:0">
   <div class="container">
     <div class="g2 top">
@@ -741,7 +741,7 @@
       <div>
         <div style="border-radius:var(--radius);overflow:hidden">
           <img src="https://cdn.truckmall.cz/data/user-content/Download%20Box%20IIS_produkt2.webp"
-               alt="Download Box II S â handheld tachograph reader"
+               alt="Download Box II S – handheld tachograph reader"
                loading="lazy" style="object-fit:contain;width:100%;height:auto;display:block">
         </div>
       </div>
@@ -753,12 +753,12 @@
         <div class="feats">
           <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Reads both the tachograph unit and driver cards</span></div>
           <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Transfers data to TAGRA via USB</span></div>
-          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Compact, portable â works in the vehicle or at the office</span></div>
+          <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Compact, portable — works in the vehicle or at the office</span></div>
           <div class="fi"><div class="fck"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Compatible with all digital tachographs incl. G2V2</span></div>
         </div>
         <a href="https://www.truckmall.cz/stahovaci-klic-pro-tachografy-download-box-ii-s-p230206/"
            target="_blank" rel="noopener"
-           style="display:inline-block;margin-top:24px">View DOWNLOAD BOX II S â</a>
+           style="display:inline-block;margin-top:24px">View DOWNLOAD BOX II S →</a>
       </div>
     </div>
 
@@ -771,7 +771,7 @@
   </div>
 </section>
 
-<!-- âââ PRICING ââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ PRICING ════════════════════════════════════════════════════ -->
 <section class="band" aria-label="Pricing and services">
   <div class="container">
     <div class="anim-up">
@@ -779,7 +779,7 @@
       <div class="callout callout--plain">
         <div class="eyebrow">Price &amp; terms</div>
         <h2 style="text-transform:none">Transparent pricing.<br>No hidden fees.</h2>
-        <p style="margin:16px 0 24px">Start with the free trial. When you're ready, select your version directly inside the software and pay online â your licence is issued instantly.</p>
+        <p style="margin:16px 0 24px">Start with the free trial. When you're ready, select your version directly inside the software and pay online — your licence is issued instantly.</p>
 
         <!-- Version price table -->
         <div style="width:100%;overflow-x:auto;margin-bottom:24px">
@@ -796,32 +796,32 @@
               <tr style="border-bottom:1px solid var(--border)">
                 <td style="padding:12px;font-weight:700;color:var(--text-strong)">TAGRA 1</td>
                 <td style="padding:12px;color:var(--text2)">1</td>
-                <td style="padding:12px;text-align:right;font-weight:600">â¬156 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
-                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">â¬83 / yr</td>
+                <td style="padding:12px;text-align:right;font-weight:600">€156 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
+                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">€83 / yr</td>
               </tr>
               <tr style="border-bottom:1px solid var(--border)">
                 <td style="padding:12px;font-weight:700;color:var(--text-strong)">TAGRA 2</td>
                 <td style="padding:12px;color:var(--text2)">2</td>
-                <td style="padding:12px;text-align:right;font-weight:600">â¬280 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
-                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">â¬83 / yr</td>
+                <td style="padding:12px;text-align:right;font-weight:600">€280 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
+                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">€83 / yr</td>
               </tr>
               <tr style="border-bottom:1px solid var(--border)">
                 <td style="padding:12px;font-weight:700;color:var(--text-strong)">TAGRA 4</td>
                 <td style="padding:12px;color:var(--text2)">4</td>
-                <td style="padding:12px;text-align:right;font-weight:600">â¬384 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
-                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">â¬83 / yr</td>
+                <td style="padding:12px;text-align:right;font-weight:600">€384 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
+                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">€83 / yr</td>
               </tr>
               <tr style="border-bottom:1px solid var(--border)">
                 <td style="padding:12px;font-weight:700;color:var(--text-strong)">TAGRA 6</td>
                 <td style="padding:12px;color:var(--text2)">6</td>
-                <td style="padding:12px;text-align:right;font-weight:600">â¬544 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
-                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">â¬83 / yr</td>
+                <td style="padding:12px;text-align:right;font-weight:600">€544 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
+                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">€83 / yr</td>
               </tr>
               <tr>
                 <td style="padding:12px;font-weight:700;color:var(--text-strong)">TAGRA MAX</td>
                 <td style="padding:12px;color:var(--text2)">Unlimited</td>
-                <td style="padding:12px;text-align:right;font-weight:600">â¬699 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
-                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">â¬145 / yr</td>
+                <td style="padding:12px;text-align:right;font-weight:600">€699 <span style="font-size:13px;color:var(--text2)">excl. VAT</span></td>
+                <td style="padding:12px;text-align:right;color:var(--green-brand);font-weight:700">€145 / yr</td>
               </tr>
             </tbody>
           </table>
@@ -831,9 +831,9 @@
           <div class="spec"><span class="sk">Trial period</span><span class="sv" style="color:var(--green-brand)">30 days free</span></div>
           <div class="spec"><span class="sk">1st year licence fee</span><span class="sv" style="color:var(--green-brand)">Included in purchase price</span></div>
           <div class="spec"><span class="sk">Includes</span><span class="sv">Updates + support</span></div>
-          <div class="spec"><span class="sk">Payment</span><span class="sv">Online Â· QR code</span></div>
+          <div class="spec"><span class="sk">Payment</span><span class="sv">Online · QR code</span></div>
         </div>
-        <p style="margin-top:12px">Questions? <a href="tel:+420739005345">+420 739 005 345</a> Â· <a href="mailto:obchod@tdt.cz">obchod@tdt.cz</a></p>
+        <p style="margin-top:12px">Questions? <a href="tel:+420739005345">+420 739 005 345</a> · <a href="mailto:obchod@tdt.cz">obchod@tdt.cz</a></p>
         <div style="margin-top:24px">
           <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" class="btn-cta btn-cta--sm" target="_blank" rel="noopener">Download trial version</a>
         </div>
@@ -852,7 +852,7 @@
   </div>
 </section>
 
-<!-- âââ FAQ ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ FAQ ════════════════════════════════════════════════════════ -->
 <section class="band band--blue" aria-label="Frequently asked questions">
   <div class="container">
     <div class="eyebrow anim-up">Frequently asked questions</div>
@@ -860,11 +860,11 @@
     <div class="faq anim-up" style="transition-delay:.05s">
       <details>
         <summary>How do I buy TAGRA after the trial?</summary>
-        <div class="faq-a">Everything happens directly inside the software. At the end of the trial â or whenever you're ready â open the licence menu, select the version that matches your number of vehicles (TAGRA 1, 2, 4, 6 or MAX), and pay online. Payment is made by QR code or online transfer. Your licence is issued and activated immediately â you continue working in the same environment with all your data intact.</div>
+        <div class="faq-a">Everything happens directly inside the software. At the end of the trial — or whenever you're ready — open the licence menu, select the version that matches your number of vehicles (TAGRA 1, 2, 4, 6 or MAX), and pay online. Payment is made by QR code or online transfer. Your licence is issued and activated immediately — you continue working in the same environment with all your data intact.</div>
       </details>
       <details>
         <summary>For whom is TAGRA designed?</summary>
-        <div class="faq-a">TAGRA is designed for any transport operator required to download and evaluate tachograph data â from sole traders with one vehicle to large fleets with hundreds of vehicles. Choose the version that matches your number of vehicles: TAGRA 1, 2, 4, 6 or MAX (unlimited).</div>
+        <div class="faq-a">TAGRA is designed for any transport operator required to download and evaluate tachograph data — from sole traders with one vehicle to large fleets with hundreds of vehicles. Choose the version that matches your number of vehicles: TAGRA 1, 2, 4, 6 or MAX (unlimited).</div>
       </details>
       <details>
         <summary>How do I get data into the software?</summary>
@@ -876,15 +876,15 @@
       </details>
       <details>
         <summary>What file formats does TAGRA support?</summary>
-        <div class="faq-a">Tachograph data is most commonly stored as <strong>.DDD</strong> files. Some countries also use <strong>.C1B</strong> (driver card) and <strong>.V1B</strong> or <strong>ESM</strong> (vehicle). These files <strong>cannot be opened with a standard viewer</strong> â you need dedicated tachograph analysis software like TAGRA.</div>
+        <div class="faq-a">Tachograph data is most commonly stored as <strong>.DDD</strong> files. Some countries also use <strong>.C1B</strong> (driver card) and <strong>.V1B</strong> or <strong>ESM</strong> (vehicle). These files <strong>cannot be opened with a standard viewer</strong> — you need dedicated tachograph analysis software like TAGRA.</div>
       </details>
       <details>
         <summary>What does the annual licence fee cover?</summary>
-        <div class="faq-a">The annual fee covers continued licensing, software updates and technical support. The first year is included in the purchase price; from year 2 the fee is <strong>â¬83 excl. VAT per year</strong> (TAGRA 1, 2, 4, 6) or <strong>â¬145 excl. VAT per year</strong> (TAGRA MAX).</div>
+        <div class="faq-a">The annual fee covers continued licensing, software updates and technical support. The first year is included in the purchase price; from year 2 the fee is <strong>€83 excl. VAT per year</strong> (TAGRA 1, 2, 4, 6) or <strong>€145 excl. VAT per year</strong> (TAGRA MAX).</div>
       </details>
       <details>
         <summary>Is TAGRA ready for the July 2026 van obligation?</summary>
-        <div class="faq-a">Yes. All versions of TAGRA are fully prepared for vans (2.5â3.5 t vehicles in international transport) to which the new obligation to install a digital tachograph and download data regularly will apply from July 2026 under EU regulations.</div>
+        <div class="faq-a">Yes. All versions of TAGRA are fully prepared for vans (2.5–3.5 t vehicles in international transport) to which the new obligation to install a digital tachograph and download data regularly will apply from July 2026 under EU regulations.</div>
       </details>
       <details>
         <summary>Does TAGRA support Generation 2 V2 smart tachographs?</summary>
@@ -892,13 +892,13 @@
       </details>
       <details>
         <summary>Can TAGRA be installed on multiple computers?</summary>
-        <div class="faq-a">Each licence is bound to one specific computer. If you need to move the software to a different machine, contact the manufacturer Truck Data Technology to arrange a licence transfer. Network versions (TAGRA 4, 6, MAX) support multiple workstations sharing a central database â contact us for details.</div>
+        <div class="faq-a">Each licence is bound to one specific computer. If you need to move the software to a different machine, contact the manufacturer Truck Data Technology to arrange a licence transfer. Network versions (TAGRA 4, 6, MAX) support multiple workstations sharing a central database — contact us for details.</div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- âââ FURTHER READING âââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ FURTHER READING ═══════════════════════════════════════════ -->
 <section class="band band--gray" aria-label="Related guides and articles">
   <div class="container anim-up">
     <div class="eyebrow">Learn more</div>
@@ -908,7 +908,7 @@
       <span class="related-badge">Complete guide</span>
       <span class="related-title">Digital tachograph: how to correctly download, evaluate and archive data</span>
       <span class="related-text">Read the complete operator compliance guide. Find out exactly what you need to do so that any authority inspection passes without a fine or stress.</span>
-      <span class="article-chip">Read the guide â</span>
+      <span class="article-chip">Read the guide →</span>
     </a>
 
     <div class="article-grid">
@@ -916,25 +916,25 @@
         <span class="article-eyebrow">New legislation</span>
         <span class="article-title">Tachographs for vans: new obligation from July 2026</span>
         <span class="article-meta">Who exactly is affected and what you as an operator need to prepare in time.</span>
-        <span class="article-chip">Read about tachographs for vans 2026 â</span>
+        <span class="article-chip">Read about tachographs for vans 2026 →</span>
       </a>
       <a class="article-card" href="/articles/who-must-evaluate-tachograph-data-2026/" target="_blank" rel="noopener">
         <span class="article-eyebrow">Overview</span>
         <span class="article-title">Who must evaluate tachograph data from 2026</span>
         <span class="article-meta">A clear overview of all transport types subject to the download and evaluation obligation.</span>
-        <span class="article-chip">Read who must evaluate data â</span>
+        <span class="article-chip">Read who must evaluate data →</span>
       </a>
       <a class="article-card" href="https://www.truckmall.cz/dalkove-stahovani-dat-tagra-download-box-remote-a143/" target="_blank" rel="noopener">
         <span class="article-eyebrow">Solution overview</span>
         <span class="article-title">Remote data download: TAGRA + Download Box Remote</span>
         <span class="article-meta">Learn how fully automatic data downloading without visiting vehicles works in practice.</span>
-        <span class="article-chip">Read about remote tachograph download â</span>
+        <span class="article-chip">Read about remote tachograph download →</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- âââ MANUFACTURER ââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ MANUFACTURER ══════════════════════════════════════════════ -->
 <section class="band" aria-label="Manufacturer information">
   <div class="container">
     <div class="eyebrow anim-up">Developer &amp; manufacturer</div>
@@ -948,7 +948,7 @@
   </div>
 </section>
 
-<!-- âââ FOOTER ââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <div>
@@ -975,12 +975,12 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Â© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
-    <span><a href="/contact/">Contact</a> Â· <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+    <span>© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> · <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
   </div>
 </footer>
 
-<!-- âââ JAVASCRIPT ââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════ -->
 <script>
 (function() {
   /* 1. SCROLL PROGRESS */
@@ -1003,7 +1003,7 @@
     });
   }
 
-  /* 3. INTERSECTION OBSERVER â ANIMATIONS */
+  /* 3. INTERSECTION OBSERVER – ANIMATIONS */
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
@@ -1082,14 +1082,14 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "TAGRA â Fleet Tachograph Data Management Software",
+  "name": "TAGRA – Fleet Tachograph Data Management Software",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows",
   "description": "Software for fleet operators to evaluate and archive tachograph data for 1 to unlimited vehicles. Compliant with EU 561/2006, AETR and the Working Time Directive. Free 30-day trial. Ready for vans from July 2026.",
   "url": "https://tagra.eu/fleet/",
   "inLanguage": "en",
   "author": { "@type": "Organization", "name": "Truck Data Technology, s.r.o.", "url": "https://www.tdt.cz" },
-  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "83", "description": "Annual licence fee from year 2. TAGRA 1/2/4/6: â¬83/year, TAGRA MAX: â¬145/year. First year included in purchase price.", "availability": "https://schema.org/InStock" }
+  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "83", "description": "Annual licence fee from year 2. TAGRA 1/2/4/6: €83/year, TAGRA MAX: €145/year. First year included in purchase price.", "availability": "https://schema.org/InStock" }
 }
 </script>
 
