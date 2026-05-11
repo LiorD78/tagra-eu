@@ -172,6 +172,95 @@
     .anim-up.on { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .anim-up { transition: none !important; opacity: 1 !important; transform: none !important; } }
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://tagra.eu/#organization",
+  "name": "Truck Data Technology, s.r.o.",
+  "alternateName": "TDT",
+  "url": "https://www.tdt.cz",
+  "logo": "https://tagra.eu/assets/img/logo-light.svg",
+  "foundingDate": "2000",
+  "areaServed": [
+    { "@type": "Country", "name": "Czech Republic" },
+    { "@type": "Country", "name": "Slovakia" },
+    { "@type": "Country", "name": "Hungary" },
+    { "@type": "Country", "name": "Poland" },
+    { "@type": "Country", "name": "Germany" }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+420-739-005-345",
+    "email": "obchod@tdt.cz",
+    "contactType": "sales",
+    "availableLanguage": ["English", "Czech", "Slovak"]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://tagra.eu/#website",
+  "url": "https://tagra.eu/",
+  "name": "TAGRA",
+  "description": "Professional software for tachograph data management",
+  "publisher": { "@id": "https://tagra.eu/#organization" },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "TAGRA for fleet operators",
+  "url": "https://tagra.eu/fleet/",
+  "provider": { "@id": "https://tagra.eu/#organization" },
+  "serviceType": "Tachograph data management software",
+  "description": "Evaluation, archiving and reporting for fleet operators from 1 to unlimited vehicles. Compliant with EU 561/2006 and Working Time Directive.",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Fleet operators and transport companies"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Czech Republic" },
+    { "@type": "Country", "name": "Slovakia" },
+    { "@type": "Country", "name": "Hungary" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "TAGRA Trucker for professional drivers",
+  "url": "https://tagra.eu/driver/",
+  "provider": { "@id": "https://tagra.eu/#organization" },
+  "serviceType": "Personal tachograph data tool",
+  "description": "Personal tool for professional drivers to download their own driver card, review driving times and rest periods. USB card reader included.",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Professional truck and bus drivers"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "TAGRA Control for enforcement authorities",
+  "url": "https://tagra.eu/enforcement/",
+  "provider": { "@id": "https://tagra.eu/#organization" },
+  "serviceType": "Inspection and enforcement software",
+  "description": "Roadside and company inspection software for Police, Customs, Labour Inspectorates and Ministries of Transport. The de-facto standard across Central Europe.",
+  "audience": {
+    "@type": "GovernmentService",
+    "audienceType": "Enforcement authorities, Police, Customs, Labour Inspectorates"
+  }
+}
+</script>
 </head>
 <body>
 <div id="scroll-progress" aria-hidden="true"></div>

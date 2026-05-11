@@ -1,21 +1,79 @@
+# ────────────────────────────────────────────────
+# Security headers — applied to ALL responses
+# ────────────────────────────────────────────────
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
   X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+# ────────────────────────────────────────────────
+# HTML — short cache, must revalidate, stale-while-revalidate for speed
+# ────────────────────────────────────────────────
+/
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
 
 /*.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
 
-/
-  Cache-Control: public, max-age=0, must-revalidate
+# Sub-pages without .html extension (Netlify pretty URLs)
+/fleet/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
 
-/assets/*
+/driver/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/enforcement/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/how-it-works/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/for-whom/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/faq/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/contact/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/integrations/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+/articles/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+# ────────────────────────────────────────────────
+# Static assets — aggressive caching (1 year, immutable)
+# ────────────────────────────────────────────────
+/assets/img/*
   Cache-Control: public, max-age=31536000, immutable
 
+/assets/css/*
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: text/css; charset=UTF-8
+
+/assets/js/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# ────────────────────────────────────────────────
+# XML / TXT / JSON metadata
+# ────────────────────────────────────────────────
 /sitemap.xml
   Cache-Control: public, max-age=3600
+  Content-Type: application/xml; charset=UTF-8
 
 /robots.txt
   Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=UTF-8
+
+/llms.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=UTF-8
+
+# IndexNow + verification files
+/*.txt
+  Cache-Control: public, max-age=3600
