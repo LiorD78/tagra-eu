@@ -1,0 +1,46 @@
+{
+  "name": "TAGRA — Tachograph Data Management Software",
+  "short_name": "TAGRA",
+  "description": "Professional software for tachograph data management. Used by transport companies, professional drivers and enforcement authorities across Central Europe.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b2c4a",
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/img/logo-light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "For fleet operators",
+      "short_name": "Fleet",
+      "description": "TAGRA for transport companies",
+      "url": "/fleet/"
+    },
+    {
+      "name": "For professional drivers",
+      "short_name": "Driver",
+      "description": "TAGRA Trucker for individual drivers",
+      "url": "/driver/"
+    },
+    {
+      "name": "For enforcement",
+      "short_name": "Enforcement",
+      "description": "TAGRA Control for Police, Customs and Labour Inspectorates",
+      "url": "/enforcement/"
+    },
+    {
+      "name": "Try 30 days free",
+      "short_name": "Trial",
+      "url": "https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma"
+    }
+  ]
+}
