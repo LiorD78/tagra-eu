@@ -185,26 +185,33 @@
 </script>
 </head>
 <body>
+<div id="scroll-progress" aria-hidden="true"></div>
 
-<div id="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#6E9B12,#1f5fa6);z-index:9999;width:0%;transition:width .1s ease-out;pointer-events:none;"></div>
-
-<!-- NAV -->
-<header style="position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.07);">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:58px;">
-    <a href="/" aria-label="TAGRA – Home" style="display:inline-block;line-height:0;"><img src="/assets/img/logo-light.svg" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"></a>
-    <nav id="nav-links" style="display:flex;gap:28px;align-items:center;">
-      <a href="/fleet/" style="font-size:15px;color:#1d1d1f;text-decoration:none;font-weight:500;">For companies</a>
-      <a href="/driver/" style="font-size:15px;color:#1d1d1f;text-decoration:none;font-weight:500;">For drivers</a>
-      <a href="/enforcement/" style="font-size:15px;color:var(--blue);text-decoration:none;font-weight:700;">Enforcement</a>
-      <a href="/faq/" style="font-size:15px;color:#1d1d1f;text-decoration:none;font-weight:500;">FAQ</a>
-      <a href="/contact/" style="font-size:15px;color:#1d1d1f;text-decoration:none;font-weight:500;">Contact</a>
-      <a href="https://www.tdt.cz/vyzkousejte-tagra-trucker-na-30-dni-zdarma" target="_blank" rel="noopener" class="btn" style="padding:9px 20px;font-size:14px;">Try 30 days free</a>
-    </nav>
-    <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;padding:6px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home"><img src="/assets/img/logo-light.svg" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/fleet/">For companies</a></li>
+      <li><a href="/driver/">For drivers</a></li>
+      <li><a href="/enforcement/" aria-current="page" style="color:var(--blue-mid);font-weight:700">Enforcement</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li class="nav-cta"><a href="/contact/">Contact us</a></li>
+    </ul>
+    <div class="nav-lang">
+      <a href="/" class="active" aria-current="page">EN</a>
+      <span>|</span>
+      <a href="/de/">DE</a>
+      <span>|</span>
+      <a href="/pl/">PL</a>
+    </div>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="nav-toggle">
+      <span></span><span></span><span></span>
     </button>
   </div>
-</header>
+</nav>
+
 
 <!-- HERO -->
 <section class="enf-hero">
