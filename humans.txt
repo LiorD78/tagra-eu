@@ -1,0 +1,18 @@
+/* TEAM */
+Developer: Truck Data Technology, s.r.o. (TDT)
+Site: https://www.tdt.cz/
+Contact: obchod [at] tdt.cz
+From: Czech Republic
+Specialty: Tachograph compliance software since 2000
+
+/* THANKS */
+Continental — VDO Fleet integration
+Stoneridge — tachograph file format compatibility
+DKV LIVE — automatic SFTP data import partnership
+
+/* SITE */
+Last update: 2026-05-11
+Standards: HTML5, CSS3, Schema.org JSON-LD
+Components: Vanilla JS, no frameworks
+Hosting: Netlify Edge
+Markets: Czech Republic, Slovakia, Hungary, UK, Ireland, EU
