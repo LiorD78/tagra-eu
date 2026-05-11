@@ -408,7 +408,7 @@
     }
     .footer-inner {
       max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
     }
     @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 32px; } }
     .footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 12px; }
@@ -578,35 +578,42 @@
 
 <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">TAGRA</div>
-      <p class="footer-desc">Professional tachograph data management software. Compliant with EU 561/2006 and the Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">TAGRA</div>
+        <p class="footer-desc">Professional tachograph data management software. Compliant with EU 561/2006 and the Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/fleet/">For fleet operators</a></li>
+          <li><a href="/driver/">For professional drivers</a></li>
+          <li><a href="/how-it-works/">How it works</a></li>
+          <li><a href="/for-whom/">For whom</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Integrations</h4>
+        <ul>
+          <li><a href="/integrations/dkv-live/">DKV LIVE&reg;</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
+          <li><a href="/de/">Deutsch</a></li>
+          <li><a href="/pl/">Polski</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Software</h4>
-      <ul>
-        <li><a href="/product/">TAGRA Software</a></li>
-        <li><a href="/how-it-works/">How it works</a></li>
-        <li><a href="/for-whom/">For whom</a></li>
-        <li><a href="/faq/">FAQ</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+      <span><a href="/contact/">Contact</a> &middot; <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
     </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
-        <li><a href="/de/">Deutsch</a></li>
-        <li><a href="/pl/">Polski</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
-    <span><a href="/contact/">Contact</a> · <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
-  </div>
-</footer>
+  </footer>
 
 <script>
 (function() {
