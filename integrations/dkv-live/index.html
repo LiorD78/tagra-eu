@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAGRA × DKV LIVE — Automatic Tachograph Data Import</title>
-  <meta name="description" content="Already using DKV LIVE for remote tachograph data download? TAGRA imports the data automatically via SFTP — no manual file transfers, no extra clicks.">
+  <title>TAGRA � DKV LIVE  Automatic Tachograph Data Import</title>
+  <meta name="description" content="Already using DKV LIVE for remote tachograph data download? TAGRA imports the data automatically via SFTP  no manual file transfers, no extra clicks.">
   <link rel="canonical" href="https://tagra.eu/integrations/dkv-live/">
-  <meta property="og:title" content="TAGRA × DKV LIVE — Automatic Tachograph Data Import">
-  <meta property="og:description" content="Already using DKV LIVE for remote tachograph data download? TAGRA imports the data automatically via SFTP — no manual file transfers, no extra clicks.">
+  <meta property="og:title" content="TAGRA � DKV LIVE  Automatic Tachograph Data Import">
+  <meta property="og:description" content="Already using DKV LIVE for remote tachograph data download? TAGRA imports the data automatically via SFTP  no manual file transfers, no extra clicks.">
   <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg">
   <meta property="og:url" content="https://tagra.eu/integrations/dkv-live/">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    /* âââ DESIGN TOKENS ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── DESIGN TOKENS ────────────────────────────────────────── */
     :root {
       --blue-dark:    #0b2c4a;
       --blue-mid:     #134a8e;
@@ -35,7 +35,7 @@
       --nav-h:        64px;
     }
 
-    /* âââ RESET & BASE âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -54,7 +54,7 @@
     p + p { margin-top: 12px; }
     p:empty { display: none; }
 
-    /* âââ SCROLL PROGRESS ââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── SCROLL PROGRESS ──────────────────────────────────────── */
     #scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px;
       background: linear-gradient(90deg, var(--green-brand), var(--blue-light));
@@ -62,7 +62,7 @@
       transition: width .1s ease-out;
     }
 
-    /* âââ NAVIGATION âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── NAVIGATION ───────────────────────────────────────────── */
     .site-nav {
       position: sticky; top: 0; z-index: 900;
       height: var(--nav-h);
@@ -124,7 +124,7 @@
       }
     }
 
-    /* âââ LAYOUT âââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── LAYOUT ───────────────────────────────────────────────── */
     .band { padding: 80px 0; }
     .band--hero  { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%); padding: 40px 0 60px; text-align: center; }
     .band--gray  { background: var(--bg-gray); }
@@ -134,7 +134,7 @@
 
     .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
-    /* âââ TYPOGRAPHY âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
     h1, h2, h3 { font-weight: 800; }
     h2 {
       font-size: 36px; line-height: 1.08; letter-spacing: -.01em;
@@ -156,7 +156,7 @@
       text-transform: uppercase; color: var(--green-brand); margin-bottom: 12px;
     }
 
-    /* âââ BUTTONS ââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── BUTTONS ──────────────────────────────────────────────── */
     .btn-cta {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--green-cta); color: #fff !important;
@@ -168,7 +168,7 @@
     .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
     .btn-cta--sm { font-size: 16px; padding: 10px 24px; }
 
-    /* âââ BENTO GRID âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── BENTO GRID ───────────────────────────────────────────── */
     .bento {
       display: grid; grid-template-columns: repeat(12, 1fr);
       gap: 14px; margin-top: 40px;
@@ -197,7 +197,7 @@
     .bc-text  { font-size: 16px; line-height: 1.5; color: var(--text2); }
     .bignum   { font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; }
 
-    /* âââ 2-COL & 3-COL ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── 2-COL & 3-COL ────────────────────────────────────────── */
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .g2.top { align-items: start; }
     @media (max-width: 900px) { .g2 { grid-template-columns: 1fr; gap: 40px; } }
@@ -210,7 +210,7 @@
     @media (min-width: 992px) { .two-col { grid-template-columns: 1fr 1fr; gap: 38px; } }
     @media (min-width: 992px) { .two-col.stretch { gap: 64px; align-items: stretch; } }
 
-    /* âââ CALLOUT CARDS ââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── CALLOUT CARDS ────────────────────────────────────────── */
     .callout {
       border-radius: var(--radius); background: var(--bg-white);
       padding: 32px; box-shadow: 0 12px 32px rgba(0,0,0,.04);
@@ -240,7 +240,7 @@
     }
     ul li { padding: 3px 0; }
 
-    /* âââ FEATURE LIST âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── FEATURE LIST ─────────────────────────────────────────── */
     .feats { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
     .fi { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.5; }
     .fck {
@@ -250,7 +250,7 @@
     }
     .fck svg { flex-shrink: 0; }
 
-    /* âââ WARNING / NOTE BOXES âââââââââââââââââââââââââââââââââââ */
+    /* ─── WARNING / NOTE BOXES ─────────────────────────────────── */
     .note-box {
       position: relative; background: linear-gradient(180deg,var(--green-bg) 0%,#fff 100%);
       border: 2px solid var(--green-brand); border-radius: var(--radius);
@@ -267,7 +267,7 @@
     .note-title { font-size: 24px; font-weight: 800; line-height: 1.2; margin: 10px 0 12px; color: var(--text-strong); }
     .note-box p  { font-size: 17px; line-height: 1.6; color: var(--text2); margin-bottom: 12px; }
 
-    /* âââ REVIEWS SLIDER âââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── REVIEWS SLIDER ───────────────────────────────────────── */
     .rev-rail-wrap {
       overflow: hidden; margin-top: 24px;
       mask-image: linear-gradient(to right, transparent 0%,black 6%,black 94%,transparent 100%);
@@ -288,7 +288,7 @@
     .rev-txt   { font-size: 17px; flex: 1; }
     .rev-meta  { font-size: 15px; color: var(--text2); margin-top: 16px; }
 
-    /* âââ METHOD CARDS âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── METHOD CARDS ─────────────────────────────────────────── */
     .method-card { display: flex; flex-direction: column; height: 100%; }
     .method-frame {
       background: var(--bg-white); aspect-ratio: 4/3; padding: 20px;
@@ -299,14 +299,14 @@
     .snum { font-size: 44px; font-weight: 800; color: rgba(19,74,142,.15); line-height: 1; margin-bottom: 8px; }
     .stit { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: var(--text-strong); }
 
-    /* âââ SPECS TABLE ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── SPECS TABLE ──────────────────────────────────────────── */
     .specs { margin-top: 24px; }
     .spec { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); }
     .spec:last-child { border-bottom: none; }
     .sk { color: var(--text2); }
     .sv { font-weight: 600; text-align: right; }
 
-    /* âââ COMPARISON TABLE âââââââââââââââââââââââââââââââââââââââ */
+    /* ─── COMPARISON TABLE ─────────────────────────────────────── */
     .compare-wrap { width: 100%; overflow-x: auto; margin-top: 14px; padding-top: 32px; -webkit-overflow-scrolling: touch; }
     .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 680px; }
     .compare-table th, .compare-table td { padding: 14px; border-bottom: 1px solid var(--border); vertical-align: middle; text-align: left; }
@@ -338,7 +338,7 @@
     .tb-icon--cross { background: #fff0f0; }
     .tb-icon svg    { width: 12px; height: 12px; }
 
-    /* âââ FAQ ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── FAQ ──────────────────────────────────────────────────── */
     .faq details { border-bottom: 1px solid var(--border); }
     .faq details:first-child { border-top: 1px solid var(--border); }
     .faq summary {
@@ -348,19 +348,19 @@
     }
     .faq summary::-webkit-details-marker { display: none; }
     .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green-brand); }
-    .faq details[open] summary::after { content: "â"; }
+    .faq details[open] summary::after { content: "−"; }
     .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.6; color: var(--text2); }
 
-    /* âââ MAC STAGE ââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── MAC STAGE ────────────────────────────────────────────── */
     .mac-stage { position: relative; width: 100%; line-height: 0; }
     .mac-stage img { width: 100%; display: block; object-fit: contain; transform-origin: center center; filter: drop-shadow(0 30px 70px rgba(0,0,0,.16)); }
     .mac-stage::after { content: ""; position: absolute; left: 50%; bottom: 5%; transform: translateX(-50%); width: 80%; height: 60px; background: radial-gradient(50% 50%,rgba(0,0,0,.16) 0%,transparent 70%); filter: blur(15px); opacity: .6; pointer-events: none; z-index: -1; }
 
-    /* âââ MEDIA FRAME ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── MEDIA FRAME ──────────────────────────────────────────── */
     .media-frame { width: 100%; border-radius: var(--radius); overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(#fff,#000); }
     .media-frame img, .media-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* âââ RELATED / ARTICLE GRID âââââââââââââââââââââââââââââââââ */
+    /* ─── RELATED / ARTICLE GRID ───────────────────────────────── */
     .related-featured {
       display: flex; flex-direction: column; position: relative;
       margin-top: 34px; padding: 36px 28px 28px;
@@ -393,14 +393,14 @@
     .article-chip   { display: inline-flex; margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--blue-dark) !important; background: var(--bg-apple-solid); padding: 7px 13px; border-radius: 999px; transition: background .2s; }
     .article-card:hover .article-chip, .related-featured:hover .article-chip { background: var(--green-brand); color: #fff !important; }
 
-    /* âââ ANIMATIONS âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── ANIMATIONS ───────────────────────────────────────────── */
     .anim-up   { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .fly-left  { opacity: 0; transform: translateX(-80px); transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
     .fly-right { opacity: 0; transform: translateX(80px);  transition: opacity 2.8s cubic-bezier(.16,1,.3,1), transform 2.8s cubic-bezier(.16,1,.3,1); }
     .anim-up.on, .fly-left.on, .fly-right.on { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .anim-up, .fly-left, .fly-right { transition: none !important; opacity: 1 !important; transform: none !important; } }
 
-    /* âââ FOOTER âââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── FOOTER ───────────────────────────────────────────────── */
     .site-footer {
       background: var(--blue-dark); color: rgba(255,255,255,.7);
       padding: 48px 0 32px;
@@ -431,7 +431,7 @@
       "name": "Which TAGRA versions support DKV LIVE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All current TAGRA versions — TAGRA 1, 2, 4, 6 and MAX — support DKV LIVE import from version 345 onwards. The version number is shown at the bottom of the TAGRA window. Updates are included in your annual licence."
+        "text": "All current TAGRA versions  TAGRA 1, 2, 4, 6 and MAX  support DKV LIVE import from version 345 onwards. The version number is shown at the bottom of the TAGRA window. Updates are included in your annual licence."
       }
     },
     {
@@ -481,10 +481,10 @@
 <body>
   <a href="#content" class="skip-link">Skip to content</a>
 
-<!-- âââ NAVIGATION âââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════════ -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="TAGRA â Home">TAGRA</a>
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home">TAGRA</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/fleet/">For companies</a></li>
       <li><a href="/driver/">For drivers</a></li>
@@ -508,7 +508,7 @@
 
 <main id="content">
 
-<!-- ─── HERO ─────────────────────────────────────────── -->
+<!--     HERO                                             -->
 <section class="band band--hero" aria-label="DKV LIVE integration overview">
   <div class="container">
     <div class="eyebrow anim-up">Integration</div>
@@ -523,7 +523,7 @@
   </div>
 </section>
 
-<!-- ─── WHAT THE INTEGRATION GIVES YOU ─────────────── -->
+<!--     WHAT THE INTEGRATION GIVES YOU                 -->
 <section class="band" aria-label="What the integration gives you">
   <div class="container">
     <div class="g2 top">
@@ -545,7 +545,7 @@
   </div>
 </section>
 
-<!-- ─── WHAT YOU'LL NEED ───────────────────────────── -->
+<!--     WHAT YOU'LL NEED                               -->
 <section class="band band--blue" aria-label="What you'll need">
   <div class="container">
     <div class="eyebrow anim-up">Before you start</div>
@@ -570,7 +570,7 @@
   </div>
 </section>
 
-<!-- ─── SETUP STEP BY STEP ─────────────────────────── -->
+<!--     SETUP STEP BY STEP                             -->
 <section class="band band--gray" aria-label="Step by step setup guide">
   <div class="container">
     <div class="eyebrow anim-up">Setup guide</div>
@@ -619,7 +619,7 @@
   </div>
 </section>
 
-<!-- ─── AUTOMATIC VS MANUAL ────────────────────────── -->
+<!--     AUTOMATIC VS MANUAL                            -->
 <section class="band" aria-label="Automatic vs manual">
   <div class="container">
     <div class="g2 top">
@@ -647,7 +647,7 @@
   </div>
 </section>
 
-<!-- ─── HELP / SUPPORT ─────────────────────────────── -->
+<!--     HELP / SUPPORT                                 -->
 <section class="band band--blue" aria-label="Need help">
   <div class="container">
     <div class="anim-up">
@@ -660,7 +660,7 @@
   </div>
 </section>
 
-<!-- ─── FAQ ────────────────────────────────────────── -->
+<!--     FAQ                                            -->
 <section class="band" aria-label="Frequently asked questions">
   <div class="container">
     <div class="eyebrow anim-up">Common questions</div>
@@ -727,13 +727,13 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Â© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
-    <span><a href="/contact/">Contact</a> Â· <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+    <span>© 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> · <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
   </div>
 </footer>
 
 
-<!-- âââ JAVASCRIPT ââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════ -->
 <script>
 (function() {
   /* 1. SCROLL PROGRESS */
@@ -756,7 +756,7 @@
     });
   }
 
-  /* 3. INTERSECTION OBSERVER â ANIMATIONS */
+  /* 3. INTERSECTION OBSERVER – ANIMATIONS */
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
@@ -835,14 +835,14 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "TAGRA â Fleet Tachograph Data Management Software",
+  "name": "TAGRA – Fleet Tachograph Data Management Software",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows",
   "description": "Software for fleet operators to evaluate and archive tachograph data for 1 to unlimited vehicles. Compliant with EU 561/2006, AETR and the Working Time Directive. Free 30-day trial. Ready for vans from July 2026.",
   "url": "https://tagra.eu/fleet/",
   "inLanguage": "en",
   "author": { "@type": "Organization", "name": "Truck Data Technology, s.r.o.", "url": "https://www.tdt.cz" },
-  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "83", "description": "Annual licence fee from year 2. TAGRA 1/2/4/6: â¬83/year, TAGRA MAX: â¬145/year. First year included in purchase price.", "availability": "https://schema.org/InStock" }
+  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "83", "description": "Annual licence fee from year 2. TAGRA 1/2/4/6: €83/year, TAGRA MAX: €145/year. First year included in purchase price.", "availability": "https://schema.org/InStock" }
 }
 </script>
 
