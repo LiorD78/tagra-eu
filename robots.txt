@@ -1,8 +1,64 @@
 # robots.txt for tagra.eu
+# Truck Data Technology, s.r.o. — TAGRA tachograph software
+# Contact: obchod@tdt.cz
+
+# ──────────────────────────────────────────────────────────
+# Default — all bots welcome on public content
+# ──────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://tagra.eu/sitemap.xml
+# Internal/dev paths (none currently, future-proof)
+Disallow: /.github/
 
-# Crawl-delay none — small site, no issue
+# ──────────────────────────────────────────────────────────
+# Mainstream search engines — explicit allow
+# ──────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ──────────────────────────────────────────────────────────
+# AI / LLM training & retrieval crawlers
+# Allowed — TAGRA content is intentionally public B2B info
+# ──────────────────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ──────────────────────────────────────────────────────────
+# Sitemap & host
+# ──────────────────────────────────────────────────────────
+Sitemap: https://tagra.eu/sitemap.xml
+Host: https://tagra.eu

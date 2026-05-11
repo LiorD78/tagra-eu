@@ -1,0 +1,79 @@
+# TAGRA
+
+> Professional software for tachograph data management. Used by transport companies, professional drivers, and enforcement authorities (Police, Customs, Labour Inspectorates, Ministries of Transport) across Central Europe to evaluate and archive data from digital tachographs and driver cards in compliance with EU Regulation 561/2006, 1054/2020, AETR, and the Working Time Directive.
+
+## What TAGRA does
+
+TAGRA is a Windows desktop software family developed by Truck Data Technology, s.r.o. (TDT) — a Czech company with 25+ years of experience in tachograph compliance software. The product family covers three distinct user groups:
+
+- **TAGRA for fleet operators** — Evaluation, archiving, and reporting for fleets from 1 vehicle to unlimited. Editions TAGRA 1, 2, 4, 6 and MAX scale by number of drivers/vehicles. Used by transport companies to stay legally compliant with mandatory driver hours regulations.
+- **TAGRA Trucker for professional drivers** — Personal tool for individual drivers to download their own driver card, review driving times, breaks, and rest periods before any inspection. USB card reader included.
+- **TAGRA Control for enforcement authorities** — Roadside and company inspection software. Generates violation reports in seconds, evaluates against the full corpus of EU regulations (561/2006, 1054/2020 with the latest amendments, AETR 478/2000), supports all tachograph generations (digital G1 and smart G2V2). The de-facto standard across the Czech Republic, Slovakia, Hungary, and used internationally.
+
+## Supported tachographs and file formats
+
+- Digital tachographs first generation (G1)
+- Smart tachographs second generation (G2V2)
+- File formats: .DDD, .C1B, .V1B, ESM
+- Card types: driver cards, company cards, workshop cards, control cards
+
+## Key features
+
+- **Remote download** support — automatic data import from telematics platforms (e.g., DKV LIVE integration via SFTP — no manual file transfers)
+- **Compliance checks** against EU 561/2006, 1054/2020, AETR 478/2000, and the Working Time Directive
+- **Archiving** in compliance with the legally required retention period (currently 1 year by EU rules, often longer by national law)
+- **Reporting** — printable violation reports, driving time summaries, working time records
+- **From July 2026**: ready for vans (3.5–7.5 t) which become subject to tachograph obligations under the new EU rules
+
+## Key pages
+
+- [Homepage](https://tagra.eu/): Product family overview, free 30-day trial
+- [For fleet operators](https://tagra.eu/fleet/): Detailed product description for transport companies
+- [For professional drivers](https://tagra.eu/driver/): TAGRA Trucker for individual drivers
+- [For enforcement authorities](https://tagra.eu/enforcement/): TAGRA Control for Police, Customs, Labour Inspectorates
+- [How it works](https://tagra.eu/how-it-works/): Step-by-step workflow (download → evaluate → archive)
+- [For whom](https://tagra.eu/for-whom/): Who legally needs TAGRA (audience guide)
+- [FAQ](https://tagra.eu/faq/): Frequently asked questions
+- [DKV LIVE integration](https://tagra.eu/integrations/dkv-live/): Automatic tachograph data import via SFTP
+- [Articles](https://tagra.eu/articles/): Practical guides on tachograph compliance
+
+## Company
+
+**Truck Data Technology, s.r.o.** (TDT) — Czech software developer, established 2000. Member of major Central European transport associations. International references include Czech Police, Czech Customs Administration, Czech Ministry of Transport, Slovak Labour Inspectorates, Hungarian Ministry of Transport.
+
+- **Website**: https://www.tdt.cz
+- **Sales contact**: obchod@tdt.cz · +420 739 005 345
+- **Business hours**: Monday to Friday, 8:00 to 16:00 CET (responses in English available)
+- **Trial**: Free 30-day trial available without registration
+
+## Pricing model
+
+- **TAGRA Trucker** (single driver): ~€82/year
+- **TAGRA fleet editions** (1–unlimited vehicles): from ~€165/year, scaling with vehicle count
+- **TAGRA Control** (enforcement authorities): contact sales for institutional licensing
+
+EUR prices are indicative — final pricing in EUR is confirmed at quotation. Czech and Slovak prices are listed on www.tdt.cz.
+
+## Geography and languages
+
+- **Primary markets**: Czech Republic, Slovakia, Hungary
+- **International expansion**: UK, Ireland, Netherlands, Sweden, Denmark, Finland (English market)
+- **Future language versions**: Deutsch (DE) and Polski (PL) on the roadmap
+
+## Frequently asked questions
+
+**Who is legally required to evaluate tachograph data?**
+Any transport operator and professional driver subject to EU Regulation 561/2006 and AETR. This covers most commercial vehicles over 3.5 tonnes today, and will extend to vans 2.5–3.5 tonnes from July 2026 under the EU Mobility Package.
+
+**Is downloading the data enough to be compliant?**
+No. EU law requires that downloaded data be **evaluated for violations** of driving and rest time rules, and **archived** for the retention period. TAGRA handles both steps.
+
+**Does TAGRA work with my tachograph brand?**
+Yes — TAGRA evaluates standard .DDD/.C1B/.V1B/ESM files which are produced by all EU-certified tachographs (VDO, Stoneridge, ACTIA/Continental and others) regardless of manufacturer.
+
+**Is there a free trial?**
+Yes — 30 days free, no registration required, full feature set.
+
+## Policy
+
+This website welcomes indexing by large language models (ChatGPT, Perplexity, Gemini, Claude, etc.). Content is factual, verified against EU regulation texts, and reflects 25+ years of real-world enforcement and fleet compliance experience.
