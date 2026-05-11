@@ -1,16 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tagra.eu/</loc><lastmod>2026-05-11</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://tagra.eu/fleet/</loc><lastmod>2026-05-11</lastmod><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://tagra.eu/driver/</loc><lastmod>2026-05-11</lastmod><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://tagra.eu/enforcement/</loc><lastmod>2026-05-11</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tagra.eu/how-it-works/</loc><lastmod>2026-05-11</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tagra.eu/for-whom/</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tagra.eu/faq/</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tagra.eu/contact/</loc><lastmod>2026-05-11</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tagra.eu/integrations/dkv-live/</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tagra.eu/articles/</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://tagra.eu/articles/how-to-download-evaluate-archive-tachograph-data/</loc><lastmod>2026-05-11</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://tagra.eu/articles/tachographs-for-vans-new-obligation-july-2026/</loc><lastmod>2026-05-11</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://tagra.eu/articles/who-must-evaluate-tachograph-data-2026/</loc><lastmod>2026-05-11</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://tagra.eu/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg</image:loc>
+      <image:title>TAGRA — Tachograph Data Management Software</image:title>
+      <image:caption>Professional Windows software for evaluating and archiving tachograph data, used by fleets and enforcement authorities across Central Europe.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tagra.eu/fleet/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg</image:loc>
+      <image:title>TAGRA for fleet operators</image:title>
+      <image:caption>Tachograph data management for fleets from 1 to unlimited vehicles. Free 30-day trial.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.truckmall.cz/data/user-content/TAGRA-monitory-2.webp</image:loc>
+      <image:title>TAGRA software interface — fleet view</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tagra.eu/driver/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_TRUCKER_wh.jpg</image:loc>
+      <image:title>TAGRA Trucker for professional drivers</image:title>
+      <image:caption>Personal tachograph data tool for individual drivers. USB card reader included.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tagra.eu/enforcement/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://tagra.eu/assets/img/tagra-control-screenshot.webp</image:loc>
+      <image:title>TAGRA Control — interface for enforcement authorities</image:title>
+      <image:caption>Roadside and company inspection software for Police, Customs and Labour Inspectorates.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tagra.eu/assets/img/road-check-form-tagra.webp</image:loc>
+      <image:title>Roadside check form ready for enforcement</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tagra.eu/how-it-works/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://cdn.truckmall.cz/data/user-content/tagra/Tagra_screen_2xb.webp</image:loc>
+      <image:title>TAGRA workflow — download, evaluate, archive</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tagra.eu/for-whom/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tagra.eu/faq/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tagra.eu/contact/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://tagra.eu/integrations/dkv-live/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg</image:loc>
+      <image:title>TAGRA — DKV LIVE integration</image:title>
+      <image:caption>Automatic tachograph data import via SFTP. No manual file transfers.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tagra.eu/articles/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tagra.eu/articles/how-to-download-evaluate-archive-tachograph-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://tagra.eu/articles/tachographs-for-vans-new-obligation-july-2026/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://tagra.eu/articles/who-must-evaluate-tachograph-data-2026/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
