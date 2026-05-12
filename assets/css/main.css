@@ -11,6 +11,12 @@
   --text-muted:  #515154;
   --maxw:        1180px;
   --radius:      16px;
+  /* Tokens used by shared nav.css (must be available on pages that lack inline :root) */
+  --nav-h:           64px;
+  --text:            #1d1d1f;
+  --text2:           #515154;
+  --border:          rgba(0,0,0,0.08);
+  --bg-apple-solid:  #eaf3f8;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
