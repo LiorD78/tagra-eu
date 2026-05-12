@@ -12,6 +12,9 @@
   <link rel="alternate" hreflang="en" href="https://tagra.eu/try/">
   <link rel="alternate" hreflang="de" href="https://tagra.eu/try/de/">
   <link rel="alternate" hreflang="pl" href="https://tagra.eu/try/pl/">
+  <link rel="alternate" hreflang="cs" href="https://tagra.eu/try/cz/">
+  <link rel="alternate" hreflang="sk" href="https://tagra.eu/try/sk/">
+  <link rel="alternate" hreflang="el" href="https://tagra.eu/try/gr/">
   <link rel="alternate" hreflang="x-default" href="https://tagra.eu/try/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -21,10 +24,9 @@
   <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg">
   <meta property="og:url" content="https://tagra.eu/try/de/">
 
-  <link rel="stylesheet" href="/assets/css/main.css?v=e">
+  <link rel="stylesheet" href="/assets/css/main.css?v=f">
   <link rel="stylesheet" href="/assets/css/nav.css?v=20260513b">
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
-  <link rel="stylesheet" href="/try/try.css?v=20260513">
 </head>
 <body>
 
@@ -32,21 +34,21 @@
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="TAGRA – Home"><img src="/assets/img/logo-light.svg" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"></a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="/fleet/de/">Für Unternehmen</a></li>
-      <li><a href="/driver/de/">Für Fahrer</a></li>
-      <li><a href="/enforcement/de/">Kontrollbehörden</a></li>
-      <li><a href="/articles/">Artikel</a></li>
+      <li><a href="/fleet/">For companies</a></li>
+      <li><a href="/driver/">For drivers</a></li>
+      <li><a href="/enforcement/">Enforcement</a></li>
+      <li><a href="/articles/">Articles</a></li>
       <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/contact/">Kontakt</a></li>
-      <li class="nav-cta"><a href="/try/de/" aria-current="page" style="color:var(--blue-mid)">30 Tage kostenlos testen</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li class="nav-cta"><a href="/try/de/" aria-current="page" style="color:var(--blue-mid)">Try 30 days free</a></li>
     </ul>
     <div class="nav-lang">
-      <a href="/try/">EN</a>
+      <a href="/try/" hreflang="en">EN</a>
       <a href="/try/de/" class="active" aria-current="page">DE</a>
-      <a href="/try/pl/" class="">PL</a>
-      <a href="https://www.tdt.cz/node/463" hreflang="el" target="_blank" rel="noopener">GR</a>
-      <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" hreflang="cs" target="_blank" rel="noopener">CZ</a>
-      <a href="https://www.tdt.cz/vyzkousejte-tagra-na-30-dni-zdarma" hreflang="sk" target="_blank" rel="noopener">SK</a>
+      <a href="/try/pl/" hreflang="pl">PL</a>
+      <a href="/try/gr/" hreflang="el">GR</a>
+      <a href="/try/cz/" hreflang="cs">CZ</a>
+      <a href="/try/sk/" hreflang="sk">SK</a>
     </div>
     <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="nav-toggle">
       <span></span><span></span><span></span>
@@ -76,12 +78,25 @@
       </ul>
       <div class="try-trust">
         <div class="try-stat"><strong>20+</strong><span>Jahre auf dem Markt</span></div>
-        <div class="try-stat"><strong>4,000+</strong><span>Flotten nutzen TAGRA</span></div>
+        <div class="try-stat"><strong>6,000+</strong><span>Flotten nutzen TAGRA</span></div>
       </div>
       <p class="try-help">Benötigen Sie Hilfe bei der Entscheidung? Schreiben Sie an <a href="mailto:obchod@tdt.cz">obchod@tdt.cz</a> oder rufen Sie uns an unter <a href="tel:+420274777390">+420 274 777 390</a>.</p>
     </aside>
 
     <div class="try-form-wrap">
+
+      <!-- Hidden form for Netlify build-time form detection -->
+      <form name="tagra-trial" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name">
+        <input type="text" name="company">
+        <input type="email" name="email">
+        <input type="tel" name="phone">
+        <input type="text" name="country">
+        <textarea name="message"></textarea>
+        <input type="text" name="audience">
+        <input type="text" name="language">
+        <input type="text" name="source_url">
+      </form>
 
       <form
         id="trialForm"
@@ -145,38 +160,38 @@
         <label class="form-field">
           <span class="form-label">Land <em>*</em></span>
           <select name="country" required>
-            <option value="">— auswählen —</option>
-            <option value="AT">Österreich</option>
-            <option value="BE">Belgien</option>
-            <option value="BG">Bulgarien</option>
-            <option value="HR">Kroatien</option>
-            <option value="CY">Zypern</option>
-            <option value="CZ">Tschechien</option>
-            <option value="DK">Dänemark</option>
-            <option value="EE">Estland</option>
-            <option value="FI">Finnland</option>
-            <option value="FR">Frankreich</option>
-            <option value="DE">Deutschland</option>
-            <option value="GR">Griechenland</option>
-            <option value="HU">Ungarn</option>
-            <option value="IE">Irland</option>
-            <option value="IT">Italien</option>
-            <option value="LV">Lettland</option>
-            <option value="LT">Litauen</option>
-            <option value="LU">Luxemburg</option>
-            <option value="MT">Malta</option>
-            <option value="NL">Niederlande</option>
-            <option value="NO">Norwegen</option>
-            <option value="PL">Polen</option>
-            <option value="PT">Portugal</option>
-            <option value="RO">Rumänien</option>
-            <option value="SK">Slowakei</option>
-            <option value="SI">Slowenien</option>
-            <option value="ES">Spanien</option>
-            <option value="SE">Schweden</option>
-            <option value="CH">Schweiz</option>
-            <option value="GB">Vereinigtes Königreich</option>
-            <option value="OTHER">Anderes</option>
+              <option value="">— auswählen —</option>
+              <option value="AT">Österreich</option>
+              <option value="BE">Belgien</option>
+              <option value="BG">Bulgarien</option>
+              <option value="HR">Kroatien</option>
+              <option value="CY">Zypern</option>
+              <option value="CZ">Tschechien</option>
+              <option value="DK">Dänemark</option>
+              <option value="EE">Estland</option>
+              <option value="FI">Finnland</option>
+              <option value="FR">Frankreich</option>
+              <option value="DE">Deutschland</option>
+              <option value="GR">Griechenland</option>
+              <option value="HU">Ungarn</option>
+              <option value="IE">Irland</option>
+              <option value="IT">Italien</option>
+              <option value="LV">Lettland</option>
+              <option value="LT">Litauen</option>
+              <option value="LU">Luxemburg</option>
+              <option value="MT">Malta</option>
+              <option value="NL">Niederlande</option>
+              <option value="NO">Norwegen</option>
+              <option value="PL">Polen</option>
+              <option value="PT">Portugal</option>
+              <option value="RO">Rumänien</option>
+              <option value="SK">Slowakei</option>
+              <option value="SI">Slowenien</option>
+              <option value="ES">Spanien</option>
+              <option value="SE">Schweden</option>
+              <option value="CH">Schweiz</option>
+              <option value="GB">Vereinigtes Königreich</option>
+              <option value="OTHER">Anderes</option>
           </select>
         </label>
 
@@ -209,43 +224,43 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="TAGRA" width="140" height="32"></div>
-      <p class="footer-desc">Professionelle Tachographen-Analysesoftware. Download von Fahrerkarten, digitale Tachographen-Analyse, EU-Lenk- und Ruhezeiten sowie Lkw-Arbeitszeitrichtlinie. Entwickelt von Truck Data Technology, s.r.o.</p>
+      <p class="footer-desc">Professional tachograph analysis software. Driver card download, digital tachograph analysis, EU drivers' hours and HGV Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
     </div>
     <div class="footer-col">
-      <h4>Produkt</h4>
+      <h4>Product</h4>
       <ul>
-        <li><a href="/fleet/de/">Für Flottenbetreiber</a></li>
-        <li><a href="/driver/de/">Für Berufskraftfahrer</a></li>
-        <li><a href="/enforcement/de/">Für Kontrollbehörden</a></li>
-        <li><a href="/how-it-works/">So funktioniert es</a></li>
-        <li><a href="/for-whom/">Für wen</a></li>
+        <li><a href="/fleet/">For fleet operators</a></li>
+        <li><a href="/driver/">For professional drivers</a></li>
+        <li><a href="/enforcement/">For enforcement</a></li>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/for-whom/">For whom</a></li>
         <li><a href="/faq/">FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Ressourcen</h4>
+      <h4>Resources</h4>
       <ul>
-        <li><a href="/articles/">Artikel</a></li>
-        <li><a href="/articles/digital-tachograph-symbols/">Tachographen-Symbole</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/articles/digital-tachograph-symbols/">Tachograph symbols</a></li>
         <li><a href="/integrations/dkv-live/">DKV LIVE&reg;</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Unternehmen</h4>
+      <h4>Company</h4>
       <ul>
-        <li><a href="/contact/">Kontakt</a></li>
+        <li><a href="/contact/">Contact</a></li>
         <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
-        <li><a href="/try/">English</a></li>
-        <li><a href="/try/pl/">Polski</a></li>
+        <li><a href="/de/">Deutsch</a></li>
+        <li><a href="/pl/">Polski</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Truck Data Technology, s.r.o. Alle Rechte vorbehalten.</span>
-    <span><a href="/contact/">Kontakt</a> &middot; <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+    <span>&copy; 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> &middot; <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
   </div>
 </footer>
 
-<script src="/try/try.js?v=20260513" defer></script>
+<script src="/try/try.js?v=20260513c" defer></script>
 </body>
 </html>
