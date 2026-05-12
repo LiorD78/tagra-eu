@@ -108,7 +108,7 @@
         novalidate
       >
         <input type="hidden" name="form-name" value="tagra-trial">
-        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <p hidden aria-hidden="true"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
         <fieldset class="audience-picker">
           <legend>Jsem</legend>
@@ -205,7 +205,7 @@
 
         <label class="gdpr-check">
           <input type="checkbox" name="gdpr_consent" value="yes" required>
-          <span>Souhlasím se zpracováním osobních údajů za účelem kontaktování ohledně produktu TAGRA. Podrobnosti v <a href="/privacy/" target="_blank">zásadách ochrany osobních údajů</a>. <em>*</em></span>
+          <span>Souhlasím se zpracováním osobních údajů za účelem kontaktování ohledně produktu TAGRA. Podrobnosti v <a href="/privacy/" target="_blank" rel="noopener noreferrer">zásadách ochrany osobních údajů</a>. <em>*</em></span>
         </label>
 
         <button type="submit" class="btn btn-primary btn-submit">
