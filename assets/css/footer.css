@@ -7,7 +7,7 @@
    ────────────────────────────────────────────────────────────────────────── */
 
 .site-footer {
-  background: var(--blue-dark);
+  background: linear-gradient(135deg, #062035 0%, var(--blue-dark) 50%, var(--blue-mid) 100%);
   color: rgba(255,255,255,.7);
   padding: 48px 0 32px;
 }

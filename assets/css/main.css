@@ -44,7 +44,7 @@ p.lead { font-size: 19px; color: var(--text-muted); margin-bottom: 48px; }
 .stat { text-align: center; }
 .stat-value { font-size: 48px; font-weight: 700; color: var(--blue-mid); line-height: 1; }
 .stat-label { font-size: 15px; color: var(--text-muted); margin-top: 8px; }
-.cta-band { background: var(--blue-dark); color: #fff; padding: 80px 0; text-align: center; }
+.cta-band { background: linear-gradient(135deg, #062035 0%, var(--blue-dark) 50%, var(--blue-mid) 100%); color: #fff; padding: 80px 0; text-align: center; }
 .cta-band h2 { color: #fff; -webkit-text-fill-color: #fff; background: none; margin-bottom: 16px; }
 .cta-band p { color: rgba(255,255,255,0.75); font-size: 18px; margin-bottom: 32px; }
 @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } nav .hero { padding: 60px 0 50px; } section { padding: 48px 0; } }
