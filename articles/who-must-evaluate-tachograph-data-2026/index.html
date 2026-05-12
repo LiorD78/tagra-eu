@@ -90,21 +90,9 @@
     .related-card-eye{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-mid);margin-bottom:6px;}
     .related-card-title{font-size:16px;font-weight:700;color:var(--text-strong);line-height:1.4;}
     /* FOOTER */
-    .site-footer{background:var(--blue-dark);color:rgba(255,255,255,.7);padding:48px 0 32px;}
-    .footer-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;}
-    @media(max-width:700px){.footer-inner{grid-template-columns:1fr;gap:32px;}}
-    .footer-logo{font-size:20px;font-weight:900;color:#fff;margin-bottom:10px;}
-    .footer-desc{font-size:15px;line-height:1.6;}
-    .footer-col h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:12px;}
-    .footer-col ul{list-style:none;padding:0;}
-    .footer-col ul li{margin-bottom:8px;}
-    .footer-col ul li a{font-size:15px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;}
-    .footer-col ul li a:hover{color:#fff;}
-    .footer-bottom{max-width:1180px;margin:32px auto 0;padding:16px 24px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;}
-    .footer-bottom a{color:rgba(255,255,255,.5);text-decoration:none;}
-    .footer-bottom a:hover{color:#fff;}
   </style>
   <link rel="stylesheet" href="/assets/css/nav.css?v=20260513b">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=20260513a">
 </head>
 <body>
 <div id="scroll-progress" aria-hidden="true"></div>
@@ -296,13 +284,45 @@
   </div>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div><div class="footer-logo">TAGRA</div><p class="footer-desc">Professional tachograph data management software. Compliant with EU 561/2006 and the Working Time Directive. Developed by Truck Data Technology, s.r.o.</p></div>
-    <div class="footer-col"><h4>Solutions</h4><ul><li><a href="/fleet/">For fleet operators</a></li><li><a href="/driver/">For professional drivers</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="/contact/">Contact</a></li><li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li></ul></div>
+    <div>
+      <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="TAGRA" width="140" height="32"></div>
+      <p class="footer-desc">Professional tachograph analysis software. Driver card download, digital tachograph analysis, EU drivers' hours and HGV Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/fleet/">For fleet operators</a></li>
+        <li><a href="/driver/">For professional drivers</a></li>
+        <li><a href="/enforcement/">For enforcement</a></li>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/for-whom/">For whom</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/articles/digital-tachograph-symbols/">Tachograph symbols</a></li>
+        <li><a href="/integrations/dkv-live/">DKV LIVE&reg;</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
+        <li><a href="/de/">Deutsch</a></li>
+        <li><a href="/pl/">Polski</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Truck Data Technology, s.r.o. All rights reserved.</span><span><a href="/contact/">Contact</a> · <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> &middot; <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+  </div>
 </footer>
 <script>(function(){var bar=document.getElementById('scroll-progress');if(bar)window.addEventListener('scroll',function(){var t=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(t/h*100)+'%';},{passive:true});var toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');if(toggle&&links)toggle.addEventListener('click',function(){var o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});})();</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Must I just download tachograph data, or must I also evaluate it?","acceptedAnswer":{"@type":"Answer","text":"Downloading alone is not enough. The law requires regular evaluation — checking driving times, breaks and rest periods. Without evaluation you risk a fine."}},{"@type":"Question","name":"How often must data be downloaded?","acceptedAnswer":{"@type":"Answer","text":"Driver card at least every 28 days, vehicle unit at least every 90 days."}},{"@type":"Question","name":"Does the new obligation apply to vans that travel only domestically?","acceptedAnswer":{"@type":"Answer","text":"No. The obligation from July 2026 applies only to vans of 2.5–3.5 t in international transport for hire or reward or cabotage."}},{"@type":"Question","name":"What is cabotage?","acceptedAnswer":{"@type":"Answer","text":"Cabotage is when you, as a carrier, transport goods inside another EU country. Example: you unload in Hamburg and then carry a shipment from Hamburg to Berlin."}},{"@type":"Question","name":"What fines are at stake?","acceptedAnswer":{"@type":"Answer","text":"Companies can receive fines of up to €14,000. Drivers can face a roadside security deposit of up to €8,000 for the most serious violations."}}]}</script>
