@@ -46,6 +46,14 @@
 /articles/*
   Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
 
+/try/*
+  Cache-Control: public, max-age=0, must-revalidate, stale-while-revalidate=86400
+
+# /try/try.js is a single small file — own override (CSS rule below catches main.css)
+/try/try.js
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: application/javascript; charset=UTF-8
+
 # ────────────────────────────────────────────────
 # Static assets — aggressive caching (1 year, immutable)
 # ────────────────────────────────────────────────
