@@ -37,11 +37,39 @@
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
   text-decoration: none; flex-shrink: 0;
-  /* Fixní slot napříč všemi stránkami — TAGRA Control logo (~245px) i TAGRA logo (~140px)
-     se vejdou; ostatní nav items tak nemění pozici mezi stránkami */
-  width: 245px; display: flex; align-items: center;
+  position: relative; /* anchor pro případné product variant lockup (např. Control) */
 }
-.nav-logo img { max-width: 100%; }
+
+/* Product variant lockup — přidává " | Control" napravo od loga
+   bez ovlivnění flex layoutu (absolute pozicování, pointer-events:none) */
+.nav-logo-variant {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  color: var(--blue-dark);
+  -webkit-text-fill-color: var(--blue-dark);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.nav-logo-variant::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 24px;
+  background: var(--blue-dark);
+  opacity: 0.35;
+}
+@media (max-width: 900px) {
+  .nav-logo-variant { display: none; } /* na mobilu skryjeme abychom nepřekreslili hamburger */
+}
 .nav-links {
   display: flex; align-items: center; gap: 4px;
   list-style: none;
