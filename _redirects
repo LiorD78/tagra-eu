@@ -1,1 +1,39 @@
-# Netlify redirects
+# Netlify redirects — TAGRA.EU
+
+# ──────────────────────────────────────────────────────────────────
+# Language fallbacks
+# DE/PL versions of these pages don't exist yet — redirect to EN
+# so the nav-lang switcher never lands on a 404.
+# Status 302 = temporary; once a DE/PL version ships, the redirect
+# becomes a no-op (the real file wins over the redirect rule).
+# ──────────────────────────────────────────────────────────────────
+
+# Fleet section — DE/PL not yet translated
+/fleet/de/                /fleet/                 302
+/fleet/pl/                /fleet/                 302
+
+# Driver section — DE/PL not yet translated
+/driver/de/               /driver/                302
+/driver/pl/               /driver/                302
+
+# Articles — DE/PL not yet translated
+/articles/de/             /articles/              302
+/articles/pl/             /articles/              302
+
+# Articles individual posts — DE/PL not yet translated
+/articles/*/de/           /articles/:splat/       302
+/articles/*/pl/           /articles/:splat/       302
+
+# Misc top-level pages — DE/PL not yet translated
+/faq/de/                  /faq/                   302
+/faq/pl/                  /faq/                   302
+/contact/de/              /contact/               302
+/contact/pl/              /contact/               302
+/how-it-works/de/         /how-it-works/          302
+/how-it-works/pl/         /how-it-works/          302
+/for-whom/de/             /for-whom/              302
+/for-whom/pl/             /for-whom/              302
+
+# Integrations — DE/PL not yet translated
+/integrations/*/de/       /integrations/:splat/   302
+/integrations/*/pl/       /integrations/:splat/   302
