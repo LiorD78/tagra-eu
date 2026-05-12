@@ -1,4 +1,6 @@
-/* TAGRA.EU — Main Stylesheet */
+/* TAGRA.EU — Main Stylesheet (legacy, used by enforcement pages)
+   NOTE: Footer rules removed (moved to /assets/css/footer.css).
+   See git log for commit c118b2a -> revert. */
 :root {
   --blue-dark:   #0b2c4a;
   --blue-mid:    #134a8e;
@@ -45,9 +47,4 @@ p.lead { font-size: 19px; color: var(--text-muted); margin-bottom: 48px; }
 .cta-band { background: var(--blue-dark); color: #fff; padding: 80px 0; text-align: center; }
 .cta-band h2 { color: #fff; -webkit-text-fill-color: #fff; background: none; margin-bottom: 16px; }
 .cta-band p { color: rgba(255,255,255,0.75); font-size: 18px; margin-bottom: 32px; }
-footer { background: var(--bg-light); padding: 48px 0; border-top: 1px solid rgba(0,0,0,0.07); }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-.footer-copy { color: var(--text-muted); font-size: 14px; }
-.footer-links { display: flex; gap: 24px; }
-.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
 @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } nav .hero { padding: 60px 0 50px; } section { padding: 48px 0; } }
