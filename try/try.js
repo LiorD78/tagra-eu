@@ -30,6 +30,8 @@
       const sameSite = refUrl.host === window.location.host
         || refUrl.host === 'tagra.eu'
         || refUrl.host === 'www.tagra.eu'
+        || refUrl.host === 'tagra.app'
+        || refUrl.host === 'www.tagra.app'
         || refUrl.host.endsWith('.netlify.app');
       if (sameSite) {
         const path = refUrl.pathname.toLowerCase();
