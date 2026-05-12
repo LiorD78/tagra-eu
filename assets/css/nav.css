@@ -92,15 +92,20 @@
 }
 .nav-links .nav-cta a:hover { background: var(--green-brand, #6E9B12); }
 .nav-lang {
-  display: flex; align-items: center; gap: 4px;
-  font-size: 14px; font-weight: 600;
+  /* 2-row grid: max 3 jazyků na řádek, extensible (4+ jazyky se zalomí do druhého řádku) */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  align-items: center; justify-items: center;
+  column-gap: 4px; row-gap: 4px;
+  font-size: 13px; font-weight: 600;
+  max-width: 140px; /* udrží lang switcher kompaktní napravo */
 }
+.nav-lang span { display: none; } /* separator | nepotřebujeme v gridu */
 .nav-lang a {
   padding: 5px 8px; border-radius: 6px; color: var(--text2, #515154);
   text-decoration: none; transition: background .15s;
 }
 .nav-lang a:hover, .nav-lang a.active { background: var(--bg-apple-solid, #eaf3f8); color: var(--blue-mid, #134a8e); }
-.nav-lang span { color: var(--border, rgba(0,0,0,0.08)); }
 .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-mobile-toggle span {
   display: block; width: 22px; height: 2px;
