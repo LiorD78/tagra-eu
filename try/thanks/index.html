@@ -204,9 +204,16 @@
 
   // ─── Parse URL ───
   const params = new URLSearchParams(window.location.search);
-  const audience = (params.get('audience') || 'fleet').toLowerCase();
-  let lang = (params.get('lang') || 'en').toLowerCase();
+  let storedAudience = '', storedLang = '';
+  try {
+    storedAudience = sessionStorage.getItem('tagra_audience') || '';
+    storedLang = sessionStorage.getItem('tagra_language') || '';
+  } catch (e) { /* private mode */ }
+  const audience = (params.get('audience') || storedAudience || 'fleet').toLowerCase();
+  let lang = (params.get('lang') || storedLang || 'en').toLowerCase();
   if (!I18N[lang]) lang = 'en';
+  // Clean up after reading (so refresh doesn't carry old values)
+  try { sessionStorage.removeItem('tagra_audience'); sessionStorage.removeItem('tagra_language'); } catch (e) {}
   const t = I18N[lang];
 
   // ─── Apply language ───

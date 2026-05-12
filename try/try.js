@@ -62,13 +62,14 @@
       btnText.hidden = true;
       btnLoading.hidden = false;
     }
-    // Carry audience + language into the thanks page via URL
-    // Netlify's POST handler will follow `action="/try/thanks/"` with redirect=true,
-    // but to pass our metadata we override action with query string
+    // Store audience + language in sessionStorage so thanks page can read them
+    // (Netlify keeps form action clean; redirect goes to /try/thanks/ with no params)
     const audience = form.querySelector('input[name="audience"]:checked')?.value || 'fleet';
     const language = form.querySelector('input[name="language"]')?.value || 'en';
-    const baseAction = '/try/thanks/';
-    form.action = `${baseAction}?audience=${audience}&lang=${language}`;
+    try {
+      sessionStorage.setItem('tagra_audience', audience);
+      sessionStorage.setItem('tagra_language', language);
+    } catch (e) { /* private mode — fall back to defaults on thanks page */ }
   });
 
   // ─── 5. Clear has-error on input ───
