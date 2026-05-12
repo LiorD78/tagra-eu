@@ -143,19 +143,19 @@
     /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
     h1, h2, h3 { font-weight: 800; }
     h2 {
-      font-size: 36px; line-height: 1.08; letter-spacing: -.01em;
+      font-size: 36px; line-height: 1.15; letter-spacing: -.01em;
       margin-bottom: 12px; text-transform: uppercase;
       display: inline-block;
       background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid) 55%, var(--blue-light));
       -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
+      -webkit-text-fill-color: transparent; color: transparent;padding-bottom:0.08em;
     }
     @media (max-width: 768px) { h2 { font-size: 28px; } }
     h2.hero-h2 {
-      font-size: 64px; line-height: 1.08; letter-spacing: -.02em;
-      display: block; text-transform: none;
+      font-size: 64px; line-height: 1.15; letter-spacing: -.02em;
+      display: block; text-transform: none; padding-bottom: 0.08em;
     }
-    @media (max-width: 768px) { h2.hero-h2 { font-size: 42px; } }
+    @media (max-width: 768px) { h2.hero-h2 { font-size: 42px; padding-bottom:0.08em;} }
 
     .eyebrow {
       font-size: 15px; font-weight: 700; letter-spacing: .1em;
@@ -236,7 +236,7 @@
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
       text-transform: none; margin-bottom: 8px;
-    }
+    padding-bottom:0.08em;}
     .callout--green p, .callout--green li { color: #0b0b0c !important; }
     .callout--green a { color: #052037 !important; }
     .callout--green .cg-bg {

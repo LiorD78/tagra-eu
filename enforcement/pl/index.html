@@ -45,7 +45,7 @@
     .bc.darkfill .bc-title, .bc.darkfill .bc-text, .bc.darkfill p, .bc.darkfill li { color: rgba(255,255,255,.88) !important; }
     .bc.darkfill .bc-label { color: rgba(255,255,255,.55) !important; }
     @media (max-width: 900px) { .bento { grid-template-columns: 1fr; } .bc { grid-column: span 1 !important; } }
-    .bc-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; display: block; }
+    .bc-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-brand); margin-bottom: 6px; display: block; }
     .bc-title { font-size: 28px; font-weight: 800; color: #0b0b0c; line-height: 1.2; margin-bottom: 8px; letter-spacing: -.02em; }
     .bc-text { font-size: 16px; color: #515154; line-height: 1.55; }
     .bignum { font-size: 110px; font-weight: 800; line-height: 1; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; letter-spacing: -.04em; }
@@ -89,7 +89,7 @@
     .leg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
     @media (max-width: 600px) { .leg-grid { grid-template-columns: 1fr; } }
     .leg-item { display: flex; align-items: center; gap: 10px; background: rgba(19,74,142,.04); border-radius: 10px; padding: 12px 16px; font-size: 16px; font-weight: 600; color: #0b2c4a; }
-    .leg-item::before { content: '✓'; font-size: 15px; font-weight: 800; color: var(--green); flex-shrink: 0; }
+    .leg-item::before { content: '✓'; font-size: 15px; font-weight: 800; color: var(--green-brand); flex-shrink: 0; }
 
     /* device card */
     .device-card { background: linear-gradient(135deg,#eaf3f8 0%,#f5f9fd 100%); border-radius: 20px; border: 1px solid rgba(31,95,166,.12); padding: 36px; display: flex; gap: 36px; align-items: center; margin-top: 32px; }
@@ -124,7 +124,7 @@
     .faq-block details:first-child { border-top: 1px solid rgba(0,0,0,.08); }
     .faq-block summary { list-style: none; cursor: pointer; padding: 18px 40px 18px 0; font-weight: 700; font-size: 18px; line-height: 1.4; position: relative; color: #0b0b0c; }
     .faq-block summary::-webkit-details-marker { display: none; }
-    .faq-block summary::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green); }
+    .faq-block summary::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green-brand); }
     .faq-block details[open] summary::after { content: '−'; }
     .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.65; color: #515154; }
 
@@ -140,7 +140,7 @@
     .section--gray { background: #f5f5f7; }
     .section--blue { background: #eaf3f8; }
     @media (max-width: 768px) { .section { padding: 52px 0; } }
-    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; display: block; }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-brand); margin-bottom: 8px; display: block; }
     .section-h2 { font-size: clamp(28px,3.5vw,40px); font-weight: 800; line-height: 1.1; background: linear-gradient(90deg,#0b2c4a 0%,#134a8e 55%,#1f5fa6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 16px; }
     .section-intro { font-size: 18px; color: #515154; max-width: 680px; line-height: 1.6; margin-bottom: 8px; }
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -328,10 +328,10 @@
         <div class="ref-note">Enforcement and methodological agenda</div>
       </div>
     </div>
-    <blockquote style="margin:36px 0 0;padding:28px 32px;background:#fff;border-radius:16px;border-left:4px solid var(--green);font-size:17px;font-style:italic;color:#515154;line-height:1.65;">
-      "TAGRA Control software is continuously adjusted based on practical experience from inspectors — for the most efficient inspection workflow possible."
-      <footer style="margin-top:12px;font-style:normal;font-weight:700;font-size:15px;color:#0b0b0c;">Truck Data Technology, s.r.o.</footer>
-    </blockquote>
+    <div class="commitment-callout" style="margin:36px 0 0;padding:32px 36px;background:#fff;border-radius:16px;border-left:4px solid var(--green-brand);font-size:17px;color:#515154;line-height:1.65;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-brand);margin-bottom:10px;">Nasze zobowiązanie</div>
+      <p style="margin:0;color:#1d1d1f;">TAGRA Control jest stale dostosowywana na podstawie praktycznych doświadczeń inspektorów w terenie — dla najefektywniejszego przebiegu kontroli. Każda zmiana legislacyjna w UE i państwach członkowskich jest uwzględniana w oprogramowaniu w każdej wersji.</p>
+    </div>
   </div>
 </section>
 
