@@ -29,7 +29,18 @@
     .enf-hero h1 { font-size: clamp(36px,5vw,64px); font-weight: 800; line-height: 1.05; background: linear-gradient(90deg,#0b2c4a 0%,#134a8e 55%,#1f5fa6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-bottom: 18px; }
     
     .enf-hero p.lead { font-size: 20px; color: #515154; max-width: 640px; margin: 0 auto 32px; line-height: 1.55; }
-    .enf-btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+    .enf-btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-cta); color: #fff !important;
+      padding: 14px 30px; border-radius: 99px;
+      font-size: 18px; font-weight: 600; cursor: pointer;
+      text-decoration: none !important; border: none;
+      transition: background .2s, transform .15s;
+    }
+    .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
+    .btn-cta.btn-blue { background: var(--blue-mid); }
+    .btn-cta.btn-blue:hover { background: var(--blue-dark); }
 
     /* bento grid */
     .bento { display: grid; grid-template-columns: repeat(12,1fr); gap: 14px; margin-top: 40px; }
@@ -222,6 +233,12 @@
     <div class="enf-eyebrow">TAGRA · For Enforcement Authorities</div>
     <h1>TAGRA Control</h1>
     <p class="lead">Professional software for rapid analysis of tachograph data at roadside and company inspections. The standard across Central Europe.</p>
+
+    <div class="enf-btn-row anim-up">
+      <a href="https://www.tdt.cz/tagra-control" target="_blank" rel="noopener" class="btn-cta">Try free for 30 days</a>
+      <a href="/contact/?topic=training" class="btn-cta btn-blue">Contact us for training</a>
+    </div>
+    <p class="anim-up" style="font-size:15px;color:var(--text2);margin-bottom:0;transition-delay:.2s">Windows · Free 30-day trial · Used in Czech Republic, Slovakia and Hungary</p>
     
     <div class="tmx-media-frame anim-up" style="margin:44px auto 0;border:1px solid rgba(0,0,0,.08);box-shadow:0 20px 40px rgba(0,0,0,.08);">
       <img src="/assets/img/tagra-control-screenshot.webp" alt="TAGRA Control – tachograph data analysis interface" width="800" height="600">
