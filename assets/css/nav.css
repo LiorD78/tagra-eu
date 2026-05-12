@@ -37,7 +37,11 @@
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
   text-decoration: none; flex-shrink: 0;
+  /* Fixní slot napříč všemi stránkami — TAGRA Control logo (~245px) i TAGRA logo (~140px)
+     se vejdou; ostatní nav items tak nemění pozici mezi stránkami */
+  width: 245px; display: flex; align-items: center;
 }
+.nav-logo img { max-width: 100%; }
 .nav-links {
   display: flex; align-items: center; gap: 4px;
   list-style: none;
