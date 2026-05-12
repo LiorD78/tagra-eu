@@ -64,8 +64,17 @@ jobs:
           
           FAILED=0
           for url in "${URLS[@]}"; do
-            # Follow redirects (-L), output only HTTP code, 10s timeout
-            code=$(curl -sS -L -o /dev/null -w "%{http_code}" --max-time 10 -A "GitHub-Actions-LinkCheck/1.0" "$url" || echo "000")
+            # HEAD request: skips body download, perfect for 156 MB ZIP files
+            # -I forces HEAD, -L follows redirects, --max-time 15 for slower CDN
+            code=$(curl -sS -L -I -o /dev/null -w "%{http_code}" --max-time 15 -A "GitHub-Actions-LinkCheck/1.0" "$url" || echo "000")
+            
+            # Some servers don't support HEAD properly (return 4xx). Fall back to GET with range header
+            if [ "$code" != "200" ]; then
+              code=$(curl -sS -L -o /dev/null -w "%{http_code}" --max-time 15 -H "Range: bytes=0-0" -A "GitHub-Actions-LinkCheck/1.0" "$url" || echo "000")
+              # Range request returns 206 (Partial Content) for valid resources
+              [ "$code" = "206" ] && code="200"
+            fi
+            
             if [ "$code" = "200" ]; then
               echo "  ✓ $code  $url"
             else
