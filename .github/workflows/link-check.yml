@@ -1,0 +1,151 @@
+name: Link Check (post-deploy)
+
+on:
+  # Run after every push to main, waiting for Netlify deploy first
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - '_redirects'
+      - '_headers'
+
+  # Also run nightly to catch external link rot + Netlify regressions
+  schedule:
+    - cron: '0 3 * * *'  # 03:00 UTC = 04:00/05:00 CET/CEST
+
+  # Manual trigger for debugging
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Netlify deploy
+        if: github.event_name == 'push'
+        run: sleep 60
+
+      - name: Check critical URLs
+        run: |
+          set -e
+          
+          # Critical paths — all must return HTTP 200 (after redirects if any)
+          URLS=(
+            # Trial pages
+            "https://tagra-eu.netlify.app/try/"
+            "https://tagra-eu.netlify.app/try/de/"
+            "https://tagra-eu.netlify.app/try/pl/"
+            "https://tagra-eu.netlify.app/try/cz/"
+            "https://tagra-eu.netlify.app/try/sk/"
+            "https://tagra-eu.netlify.app/try/gr/"
+            "https://tagra-eu.netlify.app/try/thanks/"
+            # Main pages
+            "https://tagra-eu.netlify.app/"
+            "https://tagra-eu.netlify.app/fleet/"
+            "https://tagra-eu.netlify.app/driver/"
+            "https://tagra-eu.netlify.app/enforcement/"
+            "https://tagra-eu.netlify.app/enforcement/de/"
+            "https://tagra-eu.netlify.app/enforcement/pl/"
+            "https://tagra-eu.netlify.app/enforcement/gr/"
+            "https://tagra-eu.netlify.app/articles/"
+            "https://tagra-eu.netlify.app/faq/"
+            "https://tagra-eu.netlify.app/contact/"
+            "https://tagra-eu.netlify.app/how-it-works/"
+            "https://tagra-eu.netlify.app/for-whom/"
+            "https://tagra-eu.netlify.app/integrations/dkv-live/"
+            # Critical assets
+            "https://tagra-eu.netlify.app/assets/css/main.css"
+            "https://tagra-eu.netlify.app/try/try.js"
+            "https://tagra-eu.netlify.app/sitemap.xml"
+            "https://tagra-eu.netlify.app/robots.txt"
+            # External TDT download files (lead conversion depends on these)
+            "https://www.tdt.cz/download/TAGRA_eu.zip"
+            "https://www.tdt.cz/download/Trucker.zip"
+          )
+          
+          FAILED=0
+          for url in "${URLS[@]}"; do
+            # Follow redirects (-L), output only HTTP code, 10s timeout
+            code=$(curl -sS -L -o /dev/null -w "%{http_code}" --max-time 10 -A "GitHub-Actions-LinkCheck/1.0" "$url" || echo "000")
+            if [ "$code" = "200" ]; then
+              echo "  ✓ $code  $url"
+            else
+              echo "  ✗ $code  $url"
+              FAILED=$((FAILED+1))
+            fi
+          done
+          
+          echo ""
+          if [ $FAILED -gt 0 ]; then
+            echo "❌ $FAILED URL(s) failed"
+            exit 1
+          else
+            echo "✅ All ${#URLS[@]} URLs OK"
+          fi
+
+      - name: Check redirect rules
+        run: |
+          set -e
+          # /fleet/de/, /driver/de/ etc. must return 302 → /fleet/, /driver/
+          REDIRECTS=(
+            "/fleet/de/=/fleet/"
+            "/fleet/pl/=/fleet/"
+            "/driver/de/=/driver/"
+            "/driver/pl/=/driver/"
+            "/articles/de/=/articles/"
+            "/faq/de/=/faq/"
+            "/contact/de/=/contact/"
+            "/how-it-works/de/=/how-it-works/"
+          )
+          
+          FAILED=0
+          for pair in "${REDIRECTS[@]}"; do
+            src="${pair%%=*}"
+            expected_path="${pair##*=}"
+            
+            # Check raw status is 301 or 302
+            raw=$(curl -sS -o /dev/null -w "%{http_code}" --max-time 10 "https://tagra-eu.netlify.app$src" || echo "000")
+            # And final URL ends with expected path
+            final=$(curl -sS -L -o /dev/null -w "%{url_effective}" --max-time 10 "https://tagra-eu.netlify.app$src" || echo "")
+            
+            if [[ "$raw" =~ ^30[12]$ ]] && [[ "$final" == *"$expected_path" ]]; then
+              echo "  ✓ $src → $raw → $final"
+            else
+              echo "  ✗ $src → $raw → $final (expected 30x → *$expected_path)"
+              FAILED=$((FAILED+1))
+            fi
+          done
+          
+          echo ""
+          if [ $FAILED -gt 0 ]; then
+            echo "❌ $FAILED redirect(s) misconfigured"
+            exit 1
+          else
+            echo "✅ All ${#REDIRECTS[@]} redirects OK"
+          fi
+
+      - name: Check security headers on critical pages
+        run: |
+          set -e
+          # All pages must have these security headers
+          REQUIRED=(
+            "strict-transport-security"
+            "x-content-type-options"
+            "x-frame-options"
+            "referrer-policy"
+          )
+          
+          for path in "/try/" "/try/thanks/" "/fleet/" "/"; do
+            echo "Checking $path…"
+            headers=$(curl -sS -I --max-time 10 "https://tagra-eu.netlify.app$path" | tr '[:upper:]' '[:lower:]')
+            
+            for hdr in "${REQUIRED[@]}"; do
+              if echo "$headers" | grep -q "^$hdr:"; then
+                echo "  ✓ $hdr present"
+              else
+                echo "  ✗ $hdr MISSING"
+                exit 1
+              fi
+            done
+          done
+          
+          echo "✅ All security headers present"
