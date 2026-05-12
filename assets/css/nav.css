@@ -11,7 +11,7 @@
 /* ─── SCROLL PROGRESS ──────────────────────────────────────── */
 #scroll-progress {
   position: fixed; top: 0; left: 0; height: 3px;
-  background: linear-gradient(90deg, var(--green-brand), var(--blue-light));
+  background: linear-gradient(90deg, var(--green-brand, #6E9B12), var(--blue-light, #1f5fa6));
   width: 0%; z-index: 9999; pointer-events: none;
   transition: width .1s ease-out;
 }
@@ -19,21 +19,21 @@
 /* ─── NAVIGATION ───────────────────────────────────────────── */
 .site-nav {
   position: sticky; top: 0; z-index: 900;
-  height: var(--nav-h);
+  height: var(--nav-h, 64px);
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
 }
 .nav-inner {
-  max-width: var(--maxw);
+  max-width: var(--maxw, 1180px);
   margin: 0 auto; padding: 0 24px;
   height: 100%;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .nav-logo {
   font-size: 22px; font-weight: 900; letter-spacing: -.02em;
-  background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+  background: linear-gradient(90deg, var(--blue-dark, #0b2c4a), var(--blue-mid, #134a8e));
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
   text-decoration: none; flex-shrink: 0;
@@ -54,8 +54,8 @@
   font-size: 19px;
   font-weight: 400;
   letter-spacing: -.01em;
-  color: var(--blue-dark);
-  -webkit-text-fill-color: var(--blue-dark);
+  color: var(--blue-dark, #0b2c4a);
+  -webkit-text-fill-color: var(--blue-dark, #0b2c4a);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -64,7 +64,7 @@
   display: inline-block;
   width: 1px;
   height: 24px;
-  background: var(--blue-dark);
+  background: var(--blue-dark, #0b2c4a);
   opacity: 0.35;
 }
 @media (max-width: 900px) {
@@ -76,31 +76,31 @@
   margin: 0; padding: 0;
 }
 .nav-links li a {
-  font-size: 15px; font-weight: 500; color: var(--text);
+  font-size: 15px; font-weight: 500; color: var(--text, #1d1d1f);
   padding: 8px 12px; border-radius: 8px;
   transition: background .15s, color .15s;
   text-decoration: none;
 }
-.nav-links li a:hover { background: var(--bg-apple-solid); color: var(--blue-mid); }
+.nav-links li a:hover { background: var(--bg-apple-solid, #eaf3f8); color: var(--blue-mid, #134a8e); }
 .nav-links .nav-cta a {
-  background: var(--green-cta); color: #fff !important;
+  background: var(--green-cta, #5C820F); color: #fff !important;
   border-radius: 99px; padding: 8px 18px; font-weight: 600;
 }
-.nav-links .nav-cta a:hover { background: var(--green-brand); }
+.nav-links .nav-cta a:hover { background: var(--green-brand, #6E9B12); }
 .nav-lang {
   display: flex; align-items: center; gap: 4px;
   font-size: 14px; font-weight: 600;
 }
 .nav-lang a {
-  padding: 5px 8px; border-radius: 6px; color: var(--text2);
+  padding: 5px 8px; border-radius: 6px; color: var(--text2, #515154);
   text-decoration: none; transition: background .15s;
 }
-.nav-lang a:hover, .nav-lang a.active { background: var(--bg-apple-solid); color: var(--blue-mid); }
-.nav-lang span { color: var(--border); }
+.nav-lang a:hover, .nav-lang a.active { background: var(--bg-apple-solid, #eaf3f8); color: var(--blue-mid, #134a8e); }
+.nav-lang span { color: var(--border, rgba(0,0,0,0.08)); }
 .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-mobile-toggle span {
   display: block; width: 22px; height: 2px;
-  background: var(--text); margin: 5px 0;
+  background: var(--text, #1d1d1f); margin: 5px 0;
   border-radius: 2px; transition: .3s;
 }
 
@@ -109,8 +109,8 @@
   .nav-mobile-toggle { display: block; }
   .nav-links.open {
     display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
-    position: absolute; top: var(--nav-h); left: 0; right: 0;
+    position: absolute; top: var(--nav-h, 64px); left: 0; right: 0;
     background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border); padding: 12px 24px 20px;
+    border-bottom: 1px solid var(--border, rgba(0,0,0,0.08)); padding: 12px 24px 20px;
   }
 }
