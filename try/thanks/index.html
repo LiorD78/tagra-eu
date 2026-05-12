@@ -147,7 +147,7 @@
       step2_p: 'Open TAGRA and choose "30-day trial". No license key required.',
       step3_h: 'Need help?',
       step3_p: 'Write to <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — our team responds within hours.',
-      nav_articles: 'Articles', nav_faq: 'FAQ', nav_contact: 'Contact',
+            nav_for_companies: 'For companies',       nav_for_drivers: 'For drivers',       nav_enforcement: 'Enforcement', nav_articles: 'Articles', nav_faq: 'FAQ', nav_contact: 'Contact',
       footer_desc: 'Professional tachograph analysis software. Driver card download, digital tachograph analysis, EU drivers\' hours and HGV Working Time Directive. Developed by Truck Data Technology, s.r.o.',
       footer_product: 'Product', footer_for_fleet: 'For fleet operators', footer_for_driver: 'For professional drivers', footer_for_enforcement: 'For enforcement',
       footer_company: 'Company', footer_rights: 'All rights reserved.',
@@ -171,7 +171,7 @@
       step2_p: 'Öffnen Sie TAGRA und wählen Sie "30-Tage-Testversion". Kein Lizenzschlüssel erforderlich.',
       step3_h: 'Benötigen Sie Hilfe?',
       step3_p: 'Schreiben Sie an <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — unser Team antwortet innerhalb von Stunden.',
-      nav_articles: 'Artikel', nav_faq: 'FAQ', nav_contact: 'Kontakt',
+            nav_for_companies: 'Für Unternehmen',       nav_for_drivers: 'Für Fahrer',       nav_enforcement: 'Kontrollbehörden', nav_articles: 'Artikel', nav_faq: 'FAQ', nav_contact: 'Kontakt',
       footer_desc: 'Professionelle Tachographen-Analysesoftware. Download von Fahrerkarten, digitale Tachographen-Analyse, EU-Lenk- und Ruhezeiten sowie Lkw-Arbeitszeitrichtlinie. Entwickelt von Truck Data Technology, s.r.o.',
       footer_product: 'Produkt', footer_for_fleet: 'Für Flottenbetreiber', footer_for_driver: 'Für Berufskraftfahrer', footer_for_enforcement: 'Für Kontrollbehörden',
       footer_company: 'Unternehmen', footer_rights: 'Alle Rechte vorbehalten.',
@@ -195,7 +195,7 @@
       step2_p: 'Otwórz TAGRA i wybierz "30-dniowy okres próbny". Klucz licencyjny nie jest wymagany.',
       step3_h: 'Potrzebują Państwo pomocy?',
       step3_p: 'Napisz na <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — nasz zespół odpowiada w ciągu kilku godzin.',
-      nav_articles: 'Artykuły', nav_faq: 'FAQ', nav_contact: 'Kontakt',
+            nav_for_companies: 'Dla firm',       nav_for_drivers: 'Dla kierowców',       nav_enforcement: 'Służby kontrolne', nav_articles: 'Artykuły', nav_faq: 'FAQ', nav_contact: 'Kontakt',
       footer_desc: 'Profesjonalne oprogramowanie do analizy tachografów. Pobieranie kart kierowców, analiza cyfrowych tachografów, czas pracy kierowców UE oraz dyrektywa o czasie pracy. Twórca: Truck Data Technology, s.r.o.',
       footer_product: 'Produkt', footer_for_fleet: 'Dla zarządzających flotą', footer_for_driver: 'Dla kierowców zawodowych', footer_for_enforcement: 'Dla służb kontrolnych',
       footer_company: 'Firma', footer_rights: 'Wszelkie prawa zastrzeżone.',
@@ -222,10 +222,17 @@
 
   // ─── Localize nav links ───
   document.querySelectorAll('[data-i18n-link]').forEach((a) => {
+    const slug = a.getAttribute('data-i18n-link');
+    // Update href to lang-specific path (except EN which has no /lang/ suffix)
     if (lang !== 'en') {
-      const slug = a.getAttribute('data-i18n-link');
       a.href = `/${slug}/${lang}/`;
     }
+    // Update label text
+    const labelKey = slug === 'fleet' ? 'nav_for_companies'
+                   : slug === 'driver' ? 'nav_for_drivers'
+                   : slug === 'enforcement' ? 'nav_enforcement'
+                   : null;
+    if (labelKey && t[labelKey]) a.textContent = t[labelKey];
   });
 
   // ─── Branch by audience ───
