@@ -92,6 +92,11 @@
     .related-card-title{font-size:16px;font-weight:700;color:var(--text-strong);line-height:1.4;}
 
     .art-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:16px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.04);border-radius:var(--radius);overflow:hidden;}
+    .sym-cell{display:flex;align-items:center;gap:14px;}
+    .sym-icon{flex-shrink:0;width:48px;height:48px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--blue-dark);}
+    .sym-icon svg{display:block;width:100%;height:100%;}
+    .sym-icon img{display:block;width:100%;height:100%;}
+    @media(max-width:680px){.sym-icon{width:40px;height:40px;padding:7px;}}
     .art-body thead{background:var(--blue-mid);color:#fff;}
     .art-body th{padding:14px 16px;text-align:left;font-weight:700;font-size:14px;letter-spacing:.02em;}
     .art-body td{padding:14px 16px;border-top:1px solid var(--border);vertical-align:top;line-height:1.55;font-size:15px;}
@@ -161,22 +166,22 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Driving</strong><br>(steering wheel icon)</td>
+      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/driving.svg" alt="" width="48" height="48"></span><strong>Driving</strong></div></td>
       <td>Automatically whenever the vehicle is in motion.</td>
       <td>Counts as driving time under EU/GB drivers' hours rules. Contributes to the 4 hours 30 minutes driving limit before a break is due, and the 9/10-hour daily driving limits.</td>
     </tr>
     <tr>
-      <td><strong>Other work</strong><br>(crossed hammers icon)</td>
+      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/other-work.svg" alt="" width="48" height="48"></span><strong>Other work</strong></div></td>
       <td>Physical or non-driving work such as loading, unloading, cleaning, paperwork, and your vehicle walkaround check.</td>
       <td>Counts as working time under the Road Transport Working Time Regulations. Does not reset the driving-time break requirement.</td>
     </tr>
     <tr>
-      <td><strong>Availability</strong><br>(rectangle/box icon)</td>
+      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/availability.svg" alt="" width="48" height="48"></span><strong>Availability</strong></div></td>
       <td>Waiting time where you must be available but not working — for example, a second driver while the vehicle moves, or depot queueing where the end time is known.</td>
       <td>Recorded as a Period of Availability (POA). Not working time and not rest. Does not count towards breaks and does not reset the 4h30 driving limit.</td>
     </tr>
     <tr>
-      <td><strong>Rest / Break</strong><br>(bed icon)</td>
+      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/rest.svg" alt="" width="48" height="48"></span><strong>Rest / Break</strong></div></td>
       <td>Breaks and rest periods when you are free of all work.</td>
       <td>Only this activity satisfies drivers' hours break requirements. A 45-minute break (which can be split 15+30) resets the 4h30 driving limit. Used for daily and weekly rest.</td>
     </tr>
