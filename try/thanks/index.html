@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you — TAGRA</title>
+  <meta name="theme-color" content="#0b2c4a">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://tagra.eu/try/thanks/">
+
+  <link rel="stylesheet" href="/assets/css/main.css?v=e">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513b">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
+  <link rel="stylesheet" href="/try/try.css?v=20260513">
+</head>
+<body>
+
+<!-- Nav (will be language-aware via JS) -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home"><img src="/assets/img/logo-light.svg" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/fleet/" data-i18n-link="fleet">For companies</a></li>
+      <li><a href="/driver/" data-i18n-link="driver">For drivers</a></li>
+      <li><a href="/enforcement/" data-i18n-link="enforcement">Enforcement</a></li>
+      <li><a href="/articles/" data-i18n="nav_articles">Articles</a></li>
+      <li><a href="/faq/" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="/contact/" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── Default: success hero with download button ─── -->
+<section class="thanks-hero" id="thanksDownload">
+  <div class="container">
+    <div class="thanks-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg>
+    </div>
+    <h1 data-i18n="thanks_title">Your TAGRA trial is ready</h1>
+    <p data-i18n="thanks_body">Click the button below to download. We've also sent the link to your email.</p>
+
+    <a id="downloadBtn" href="https://www.tdt.cz/download/TAGRA_eu.zip" class="thanks-download" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"></path>
+      </svg>
+      <span id="downloadLabel" data-i18n="download_tagra">Download TAGRA (Windows, 156 MB)</span>
+    </a>
+
+    <p class="thanks-meta" data-i18n="thanks_meta">Compatible with Windows 10 and 11. The file is a ZIP containing the installer.</p>
+  </div>
+</section>
+
+<!-- ─── Enforcement variant: no download, "we'll contact you" ─── -->
+<section class="thanks-hero thanks-enforcement" id="thanksEnforcement" hidden>
+  <div class="container">
+    <div class="thanks-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg>
+    </div>
+    <h1 data-i18n="thanks_enforcement_title">Request received</h1>
+    <p data-i18n="thanks_enforcement_body">Thank you for your interest in TAGRA Control. Our team will contact you within one business day with demo access details.</p>
+    <p class="thanks-meta" data-i18n="thanks_enforcement_meta">In the meantime, feel free to browse our documentation or reach out to obchod@tdt.cz.</p>
+    <p style="margin-top: 24px;">
+      <a href="/" class="btn btn-secondary" data-i18n="back_home">Back to TAGRA</a>
+    </p>
+  </div>
+</section>
+
+<!-- ─── Next steps ─── -->
+<section class="thanks-next" id="thanksNext">
+  <div class="container">
+    <h2 data-i18n="next_h">Next steps</h2>
+    <div class="thanks-steps">
+      <div class="thanks-step">
+        <div class="thanks-step-num">1</div>
+        <h3 data-i18n="step1_h">Install</h3>
+        <p data-i18n="step1_p">Unzip the file and run the installer. Follow the on-screen instructions.</p>
+      </div>
+      <div class="thanks-step">
+        <div class="thanks-step-num">2</div>
+        <h3 data-i18n="step2_h">Activate trial</h3>
+        <p data-i18n="step2_p">Open TAGRA and choose "30-day trial". No license key required.</p>
+      </div>
+      <div class="thanks-step">
+        <div class="thanks-step-num">3</div>
+        <h3 data-i18n="step3_h">Need help?</h3>
+        <p data-i18n="step3_p">Write to <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — our team responds within hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer (language-aware) ─── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="TAGRA" width="140" height="32"></div>
+      <p class="footer-desc" data-i18n="footer_desc">Professional tachograph analysis software. Driver card download, digital tachograph analysis, EU drivers' hours and HGV Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_product">Product</h4>
+      <ul>
+        <li><a href="/fleet/" data-i18n="footer_for_fleet">For fleet operators</a></li>
+        <li><a href="/driver/" data-i18n="footer_for_driver">For professional drivers</a></li>
+        <li><a href="/enforcement/" data-i18n="footer_for_enforcement">For enforcement</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_company">Company</h4>
+      <ul>
+        <li><a href="/contact/" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Truck Data Technology, s.r.o. <span data-i18n="footer_rights">All rights reserved.</span></span>
+  </div>
+</footer>
+
+<script>
+/* ─── /try/thanks/ — language-aware hydration ─── */
+(function () {
+  'use strict';
+
+  // ─── i18n dictionary inline ─── (so user sees content immediately, no fetch race)
+  const I18N = {
+    en: {
+      page_title: 'Thank you — TAGRA',
+      thanks_title: 'Your TAGRA trial is ready',
+      thanks_title_trucker: 'Your TAGRA TRUCKER trial is ready',
+      thanks_body: "Click the button below to download. We've also sent the link to your email.",
+      download_tagra: 'Download TAGRA (Windows, 156 MB)',
+      download_trucker: 'Download TAGRA TRUCKER (Windows, 153 MB)',
+      thanks_meta: 'Compatible with Windows 10 and 11. The file is a ZIP containing the installer.',
+      thanks_enforcement_title: 'Request received',
+      thanks_enforcement_body: 'Thank you for your interest in TAGRA Control. Our team will contact you within one business day with demo access details.',
+      thanks_enforcement_meta: 'In the meantime, feel free to browse our documentation or reach out to obchod@tdt.cz.',
+      back_home: 'Back to TAGRA',
+      next_h: 'Next steps',
+      step1_h: 'Install',
+      step1_p: 'Unzip the file and run the installer. Follow the on-screen instructions.',
+      step2_h: 'Activate trial',
+      step2_p: 'Open TAGRA and choose "30-day trial". No license key required.',
+      step3_h: 'Need help?',
+      step3_p: 'Write to <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — our team responds within hours.',
+      nav_articles: 'Articles', nav_faq: 'FAQ', nav_contact: 'Contact',
+      footer_desc: 'Professional tachograph analysis software. Driver card download, digital tachograph analysis, EU drivers\' hours and HGV Working Time Directive. Developed by Truck Data Technology, s.r.o.',
+      footer_product: 'Product', footer_for_fleet: 'For fleet operators', footer_for_driver: 'For professional drivers', footer_for_enforcement: 'For enforcement',
+      footer_company: 'Company', footer_rights: 'All rights reserved.',
+    },
+    de: {
+      page_title: 'Vielen Dank — TAGRA',
+      thanks_title: 'Ihre TAGRA-Testversion ist bereit',
+      thanks_title_trucker: 'Ihre TAGRA TRUCKER-Testversion ist bereit',
+      thanks_body: 'Klicken Sie auf die Schaltfläche unten zum Herunterladen. Wir haben den Link auch an Ihre E-Mail-Adresse gesendet.',
+      download_tagra: 'TAGRA herunterladen (Windows, 156 MB)',
+      download_trucker: 'TAGRA TRUCKER herunterladen (Windows, 153 MB)',
+      thanks_meta: 'Kompatibel mit Windows 10 und 11. Die Datei ist ein ZIP-Archiv mit dem Installationsprogramm.',
+      thanks_enforcement_title: 'Anfrage eingegangen',
+      thanks_enforcement_body: 'Vielen Dank für Ihr Interesse an TAGRA Control. Unser Team wird Sie innerhalb eines Werktags mit den Zugangsdaten zur Demo kontaktieren.',
+      thanks_enforcement_meta: 'In der Zwischenzeit können Sie gerne unsere Dokumentation durchsuchen oder sich an obchod@tdt.cz wenden.',
+      back_home: 'Zurück zu TAGRA',
+      next_h: 'Nächste Schritte',
+      step1_h: 'Installieren',
+      step1_p: 'Entpacken Sie die Datei und führen Sie das Installationsprogramm aus. Folgen Sie den Anweisungen auf dem Bildschirm.',
+      step2_h: 'Testversion aktivieren',
+      step2_p: 'Öffnen Sie TAGRA und wählen Sie "30-Tage-Testversion". Kein Lizenzschlüssel erforderlich.',
+      step3_h: 'Benötigen Sie Hilfe?',
+      step3_p: 'Schreiben Sie an <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — unser Team antwortet innerhalb von Stunden.',
+      nav_articles: 'Artikel', nav_faq: 'FAQ', nav_contact: 'Kontakt',
+      footer_desc: 'Professionelle Tachographen-Analysesoftware. Download von Fahrerkarten, digitale Tachographen-Analyse, EU-Lenk- und Ruhezeiten sowie Lkw-Arbeitszeitrichtlinie. Entwickelt von Truck Data Technology, s.r.o.',
+      footer_product: 'Produkt', footer_for_fleet: 'Für Flottenbetreiber', footer_for_driver: 'Für Berufskraftfahrer', footer_for_enforcement: 'Für Kontrollbehörden',
+      footer_company: 'Unternehmen', footer_rights: 'Alle Rechte vorbehalten.',
+    },
+    pl: {
+      page_title: 'Dziękujemy — TAGRA',
+      thanks_title: 'Wersja próbna TAGRA jest gotowa',
+      thanks_title_trucker: 'Wersja próbna TAGRA TRUCKER jest gotowa',
+      thanks_body: 'Kliknij przycisk poniżej, aby pobrać. Link wysłaliśmy również na Państwa adres e-mail.',
+      download_tagra: 'Pobierz TAGRA (Windows, 156 MB)',
+      download_trucker: 'Pobierz TAGRA TRUCKER (Windows, 153 MB)',
+      thanks_meta: 'Zgodne z systemami Windows 10 i 11. Plik ZIP zawiera instalator.',
+      thanks_enforcement_title: 'Zgłoszenie otrzymane',
+      thanks_enforcement_body: 'Dziękujemy za zainteresowanie TAGRA Control. Nasz zespół skontaktuje się z Państwem w ciągu jednego dnia roboczego z dostępem demo.',
+      thanks_enforcement_meta: 'W międzyczasie zapraszamy do przeglądania naszej dokumentacji lub kontaktu pod adresem obchod@tdt.cz.',
+      back_home: 'Powrót do TAGRA',
+      next_h: 'Następne kroki',
+      step1_h: 'Zainstaluj',
+      step1_p: 'Rozpakuj plik i uruchom instalator. Postępuj zgodnie z instrukcjami na ekranie.',
+      step2_h: 'Aktywuj wersję próbną',
+      step2_p: 'Otwórz TAGRA i wybierz "30-dniowy okres próbny". Klucz licencyjny nie jest wymagany.',
+      step3_h: 'Potrzebują Państwo pomocy?',
+      step3_p: 'Napisz na <a href="mailto:helpdesk@tdt.cz">helpdesk@tdt.cz</a> — nasz zespół odpowiada w ciągu kilku godzin.',
+      nav_articles: 'Artykuły', nav_faq: 'FAQ', nav_contact: 'Kontakt',
+      footer_desc: 'Profesjonalne oprogramowanie do analizy tachografów. Pobieranie kart kierowców, analiza cyfrowych tachografów, czas pracy kierowców UE oraz dyrektywa o czasie pracy. Twórca: Truck Data Technology, s.r.o.',
+      footer_product: 'Produkt', footer_for_fleet: 'Dla zarządzających flotą', footer_for_driver: 'Dla kierowców zawodowych', footer_for_enforcement: 'Dla służb kontrolnych',
+      footer_company: 'Firma', footer_rights: 'Wszelkie prawa zastrzeżone.',
+    },
+  };
+
+  // ─── Parse URL ───
+  const params = new URLSearchParams(window.location.search);
+  const audience = (params.get('audience') || 'fleet').toLowerCase();
+  let lang = (params.get('lang') || 'en').toLowerCase();
+  if (!I18N[lang]) lang = 'en';
+  const t = I18N[lang];
+
+  // ─── Apply language ───
+  document.documentElement.lang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  document.title = t.page_title;
+
+  // ─── Translate i18n nodes ───
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  // ─── Localize nav links ───
+  document.querySelectorAll('[data-i18n-link]').forEach((a) => {
+    if (lang !== 'en') {
+      const slug = a.getAttribute('data-i18n-link');
+      a.href = `/${slug}/${lang}/`;
+    }
+  });
+
+  // ─── Branch by audience ───
+  const sectionDownload = document.getElementById('thanksDownload');
+  const sectionEnforcement = document.getElementById('thanksEnforcement');
+  const sectionNext = document.getElementById('thanksNext');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const downloadLabel = document.getElementById('downloadLabel');
+
+  if (audience === 'enforcement') {
+    sectionDownload.hidden = true;
+    sectionEnforcement.hidden = false;
+    sectionNext.hidden = true; // no install steps for enforcement
+  } else if (audience === 'driver') {
+    downloadBtn.href = 'https://www.tdt.cz/download/Trucker.zip';
+    downloadLabel.innerHTML = t.download_trucker;
+    const titleEl = sectionDownload.querySelector('h1');
+    if (titleEl) titleEl.innerHTML = t.thanks_title_trucker;
+  } else {
+    // fleet (default)
+    downloadBtn.href = 'https://www.tdt.cz/download/TAGRA_eu.zip';
+    downloadLabel.innerHTML = t.download_tagra;
+  }
+
+  // ─── Mobile nav toggle ───
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  // ─── Analytics breadcrumb (for debugging via Network tab) ───
+  if (typeof console !== 'undefined') {
+    console.info(`[TAGRA /try/thanks/] audience=${audience} lang=${lang}`);
+  }
+})();
+</script>
+
+</body>
+</html>
