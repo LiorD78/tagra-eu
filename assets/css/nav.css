@@ -37,6 +37,10 @@
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
   text-decoration: none; flex-shrink: 0;
+  /* explicit dimensions tak aby výška nav byla identická na všech stránkách
+     bez ohledu na to jestli je uvnitř Control variant nebo ne */
+  display: inline-flex; align-items: center;
+  height: 32px; line-height: 1;
   position: relative; /* anchor pro případné product variant lockup (např. Control) */
 }
 
