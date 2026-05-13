@@ -122,10 +122,11 @@
       pointer-events: none;
       user-select: none;
     }
-    .hero-video-poster { opacity: 1; transition: opacity .4s ease-out; }
-    .hero-video { opacity: 0; transition: opacity .8s ease-in; }
-    .hero-video.is-ready { opacity: 1; }
-    .hero-video.is-ready + .hero-video-poster { opacity: 0; }
+    .hero-video-poster { opacity: 1; transition: opacity .4s ease-out; z-index: 0; }
+    .hero-video { opacity: 0; transition: opacity 1.2s ease-in-out; z-index: 1; }
+    .hero-video.is-active { opacity: 1; }
+    /* Once any video is active, hide the poster */
+    .hero.has-video-ready .hero-video-poster { opacity: 0; }
 
     .hero > .container { position: relative; z-index: 2; }
 
@@ -351,7 +352,11 @@
 <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section class="hero" aria-label="TAGRA – Choose your solution">
   <img class="hero-video-poster" src="/assets/img/hero-poster.jpg?v=2026-05-13b" alt="" aria-hidden="true" loading="eager" fetchpriority="high">
-  <video class="hero-video" id="heroVideo" muted playsinline preload="metadata" aria-hidden="true" poster="/assets/img/hero-poster.jpg?v=2026-05-13b">
+  <video class="hero-video" id="heroVideoA" muted playsinline preload="auto" aria-hidden="true" poster="/assets/img/hero-poster.jpg?v=2026-05-13b">
+    <source src="/assets/video/hero-1080.webm?v=2026-05-13b" type="video/webm">
+    <source src="/assets/video/hero-1080.mp4?v=2026-05-13b" type="video/mp4">
+  </video>
+  <video class="hero-video" id="heroVideoB" muted playsinline preload="auto" aria-hidden="true" poster="/assets/img/hero-poster.jpg?v=2026-05-13b">
     <source src="/assets/video/hero-1080.webm?v=2026-05-13b" type="video/webm">
     <source src="/assets/video/hero-1080.mp4?v=2026-05-13b" type="video/mp4">
   </video>
@@ -518,50 +523,104 @@
 
 <script>
 (function() {
-  var video = document.getElementById('heroVideo');
-  if (!video) return;
+  var videoA = document.getElementById('heroVideoA');
+  var videoB = document.getElementById('heroVideoB');
+  var hero = document.querySelector('.hero');
+  if (!videoA || !videoB || !hero) return;
 
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (window.matchMedia && window.matchMedia('(max-width: 1024px)').matches) return;
 
-  var hasPlayedThisVisit = false;
+  // Crossfade duration must match the CSS transition (.hero-video opacity 1.2s)
+  var CROSSFADE_MS = 1200;
+  var CROSSFADE_S = CROSSFADE_MS / 1000;
 
-  function playFromStart() {
+  var current = videoA;   // currently playing & opaque
+  var next = videoB;      // pre-buffered, hidden
+  var swapping = false;
+  var rafId = null;
+  var isPaused = false;
+
+  function tryPlay(v) {
     try {
-      video.currentTime = 0;
-      var p = video.play();
-      if (p && typeof p.catch === 'function') {
-        p.catch(function() {});
-      }
+      var p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(function() {});
     } catch (e) {}
   }
 
-  video.addEventListener('loadeddata', function() {
-    video.classList.add('is-ready');
-    if (!hasPlayedThisVisit) {
-      playFromStart();
-      hasPlayedThisVisit = true;
+  function swap() {
+    if (swapping || isPaused) return;
+    swapping = true;
+    // Start the next video from the beginning
+    try { next.currentTime = 0; } catch (e) {}
+    tryPlay(next);
+    // Crossfade: bring next to opacity 1, take current to 0
+    next.classList.add('is-active');
+    current.classList.remove('is-active');
+    // After the fade completes, the now-hidden video becomes "next"
+    setTimeout(function() {
+      try { current.pause(); current.currentTime = 0; } catch (e) {}
+      var tmp = current;
+      current = next;
+      next = tmp;
+      swapping = false;
+    }, CROSSFADE_MS + 50);
+  }
+
+  // rAF loop checks playback time; when current is within CROSSFADE_S of end, swap
+  function tick() {
+    rafId = null;
+    if (!isPaused && current && !current.paused && !isNaN(current.duration) && current.duration > 0) {
+      var timeLeft = current.duration - current.currentTime;
+      if (timeLeft <= CROSSFADE_S && !swapping) {
+        swap();
+      }
     }
-  });
+    rafId = requestAnimationFrame(tick);
+  }
 
-  video.addEventListener('ended', function() {
-    try { video.pause(); } catch (e) {}
-  });
+  // Boot: when video A has data, mark it active and start playback + loop
+  function boot() {
+    hero.classList.add('has-video-ready');
+    current.classList.add('is-active');
+    tryPlay(current);
+    if (rafId === null) rafId = requestAnimationFrame(tick);
+  }
 
+  // Both videos load the same file; boot as soon as A is ready
+  if (videoA.readyState >= 2) {
+    boot();
+  } else {
+    videoA.addEventListener('loadeddata', boot, { once: true });
+  }
+
+  // Pause loop while hero is off-screen, resume when it returns
   if ('IntersectionObserver' in window) {
-    var leftViewport = false;
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (!entry.isIntersecting) {
-          leftViewport = true;
-        } else if (entry.isIntersecting && leftViewport) {
-          leftViewport = false;
-          playFromStart();
+        if (entry.isIntersecting) {
+          isPaused = false;
+          if (current && current.paused) tryPlay(current);
+        } else {
+          isPaused = true;
+          try { current.pause(); } catch (e) {}
+          try { next.pause(); } catch (e) {}
         }
       });
-    }, { threshold: 0.15 });
-    observer.observe(video);
+    }, { threshold: 0.05 });
+    observer.observe(hero);
   }
+
+  // Pause when tab loses visibility (saves CPU/bandwidth)
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      isPaused = true;
+      try { current.pause(); } catch (e) {}
+      try { next.pause(); } catch (e) {}
+    } else if (!isPaused) {
+      if (current && current.paused) tryPlay(current);
+    }
+  });
 })();
 </script>
 </body>
