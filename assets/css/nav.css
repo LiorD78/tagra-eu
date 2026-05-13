@@ -204,3 +204,11 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 .nav-links a[aria-current="page"]:hover {
   color: var(--blue-dark, #0b2c4a);
 }
+
+/* Logo lockup never gets an underline, even on hover/focus. */
+.nav-logo,
+.nav-logo:hover,
+.nav-logo:focus,
+.nav-logo:active {
+  text-decoration: none;
+}
