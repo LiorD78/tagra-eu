@@ -140,8 +140,25 @@
     .section--gray { background: #f5f5f7; }
     .section--blue { background: #eaf3f8; }
     @media (max-width: 768px) { .section { padding: 52px 0; } }
-    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-brand); margin-bottom: 8px; display: block; }
-    .section-h2 { font-size: clamp(28px,3.5vw,40px); font-weight: 800; line-height: 1.1; background: linear-gradient(90deg,#052037,var(--blue-dark) 55%,#0e3a73); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 16px; }
+    .section-label {
+      font-size: 16px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green-brand, #6E9B12);
+      margin-bottom: 12px; display: block;
+    }
+    .section-h2 {
+      font-size: 36px; font-weight: 800;
+      line-height: 1.1; letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--blue-mid, #134a8e);
+      background: linear-gradient(90deg, var(--blue-dark, #0b2c4a) 0%, var(--blue-mid, #134a8e) 55%, var(--blue-light, #1f5fa6) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block; max-width: 100%; margin-bottom: 14px;
+      padding: 0.12em 0.15em 0.08em 0;
+    }
+    @media (max-width: 768px) {
+      .section-h2 { font-size: 30px; }
+    }
     .section-intro { font-size: 18px; color: #515154; max-width: 680px; line-height: 1.6; margin-bottom: 8px; }
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .g2.top { align-items: start; }
@@ -184,8 +201,8 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/main.css?v=20260513e">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513j">
-  <script src="/assets/js/nav.js?v=20260513j" defer></script>
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513o">
+  <script src="/assets/js/nav.js?v=20260513o" defer></script>
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <link rel="alternate" hreflang="en" href="https://www.tagra.eu/enforcement/">
   <link rel="alternate" hreflang="de" href="https://www.tagra.eu/enforcement/de/">
