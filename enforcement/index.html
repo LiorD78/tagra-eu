@@ -55,7 +55,8 @@
     .bc.darkfill { background: linear-gradient(135deg,#0b2c4a 0%,#134a8e 100%); border-color: transparent; }
     .bc.darkfill .bc-title, .bc.darkfill .bc-text, .bc.darkfill p, .bc.darkfill li { color: rgba(255,255,255,.88) !important; }
     .bc.darkfill .bc-label { color: rgba(255,255,255,.55) !important; }
-    @media (max-width: 900px) { .bento { grid-template-columns: 1fr; } .bc { grid-column: span 1 !important; } }
+    @media (max-width: 900px) { .bento { grid-template-columns: 1fr 1fr; } .bc.s7, .bc.s8, .bc.s12 { grid-column: span 2; } .bc.s4, .bc.s5, .bc.s6 { grid-column: span 1; } }
+    @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .bc { grid-column: span 1 !important; } }
     .bc-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-brand); margin-bottom: 6px; display: block; }
     .bc-title { font-size: 28px; font-weight: 800; color: #0b0b0c; line-height: 1.2; margin-bottom: 8px; letter-spacing: -.02em; }
     .bc-text { font-size: 16px; color: #515154; line-height: 1.55; }
