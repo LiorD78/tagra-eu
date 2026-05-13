@@ -25,7 +25,9 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg-page);
-  padding-top: var(--nav-h, 64px);
+  /* No top padding — the first section's hero must extend behind the
+     transparent liquid-glass nav. Sections add their own top padding
+     to leave room for the nav (`padding-top: calc(var(--nav-h) + …)`). */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -259,7 +261,8 @@ a:hover, a:focus {
    .enf-hero on the enforcement page. */
 .band--hero {
   text-align: center;
-  padding: 80px 0 60px;
+  /* Top padding accounts for the fixed transparent nav (64px) + breathing room */
+  padding: calc(var(--nav-h, 64px) + 60px) 0 60px;
 }
 @media (max-width: 768px) {
   .band--hero {
