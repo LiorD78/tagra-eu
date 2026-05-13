@@ -431,3 +431,32 @@
   object-fit: cover;
   display: block;
 }
+
+/* === Card title — used in audience-picker style cards on homepage ===
+   TRUCKMALL section-h2 styling at a smaller size: UPPERCASE, weight 800,
+   3-stop brighter gradient. Tight inline-block so the gradient spans
+   the visible text exactly. Mobile shrinks proportionally. */
+.card-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  padding: 0.06em 0 0.06em 0;
+  display: inline-block;
+  max-width: 100%;
+  color: var(--blue-mid);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .card-title {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  .card-title { font-size: 24px; }
+}

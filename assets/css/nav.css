@@ -191,3 +191,15 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     border-bottom: 1px solid var(--border, rgba(0,0,0,0.08)); padding: 12px 24px 20px;
   }
 }
+
+/* === Active page indicator ===
+   The self-link gets aria-current="page" (see HTML). Style it with the
+   brand mid-blue + heavier weight so users can see where they are
+   without disturbing the uniform layout. */
+.nav-links a[aria-current="page"] {
+  color: var(--blue-mid, #134a8e);
+  font-weight: 700;
+}
+.nav-links a[aria-current="page"]:hover {
+  color: var(--blue-dark, #0b2c4a);
+}
