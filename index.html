@@ -72,15 +72,12 @@
     }
     .hero .eyebrow {
       color: var(--green-brand);
-      /* Strong white halo + dark drop-shadow so green text reads
-         against any frame of the hero video (bright sky or dark
-         road). The white halo lifts it off dark backgrounds; the
-         dark shadow keeps it readable on light backgrounds. */
+      /* Dark grey drop shadow only — no white halo (looked smeared).
+         Multiple layered shadows give depth without colour bleed. */
       text-shadow:
-        0 0 8px rgba(255,255,255,0.95),
-        0 0 16px rgba(255,255,255,0.7),
-        0 2px 6px rgba(0,0,0,0.45),
-        0 1px 2px rgba(0,0,0,0.35);
+        0 1px 0 rgba(40,40,40,0.6),
+        0 2px 4px rgba(40,40,40,0.55),
+        0 3px 10px rgba(0,0,0,0.45);
       margin-bottom: 10px;
       letter-spacing: 0.12em;
       font-weight: 700;
@@ -502,7 +499,21 @@
         outline-offset: 3px;
       }
     }
-  </style>
+  
+    /* hero-h1-override: H1 in hero needs deeper, more opaque navy gradient
+       so it stays readable on the video, regardless of frame. */
+    .hero h1 {
+      background: linear-gradient(90deg,
+        #051a30 0%,
+        #0b2c4a 50%,
+        #134a8e 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4))
+              drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+    </style>
 
 <script type="application/ld+json">
 {
@@ -592,10 +603,10 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20260513zo">
-  <link rel="stylesheet" href="assets/css/base.css?v=20260513zo">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260513zo">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513zo">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260513zp">
+  <link rel="stylesheet" href="assets/css/base.css?v=20260513zp">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260513zp">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513zp">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
