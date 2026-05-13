@@ -101,6 +101,8 @@ h1, h2.hero-h2, .hero-h2 {
    se neporušila existující velikost karet. */
 .split-card .card-title {
   color: var(--blue-mid);
+  display: inline-block;  /* gradient přes celý vícerádkový text, ne per-line per-card-width */
+  max-width: 100%;
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .split-card .card-title {
