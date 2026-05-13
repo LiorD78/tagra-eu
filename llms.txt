@@ -48,7 +48,7 @@ TAGRA is a Windows desktop software family developed by Truck Data Technology, s
 
 ## Pricing model
 
-- **TAGRA Trucker** (single driver): ~€82/year
+- **TAGRA Trucker** (single driver): ~€79/year
 - **TAGRA fleet editions** (1–unlimited vehicles): from ~€165/year, scaling with vehicle count
 - **TAGRA Control** (enforcement authorities): contact sales for institutional licensing
 
