@@ -69,7 +69,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   white-space: nowrap;
   pointer-events: none;
   line-height: 1;
-  transform: translateY(-4px);
+  transform: translateY(1px);
 }
 @media (max-width: 900px) {
   .nav-logo-variant { display: none; } /* na mobilu skryjeme abychom nepřekreslili hamburger */
