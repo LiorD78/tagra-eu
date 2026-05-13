@@ -19,39 +19,9 @@
 
   <style>
     /* ─── DESIGN TOKENS ────────────────────────────────────────── */
-    :root {
-      --blue-dark:    #0b2c4a;
-      --blue-mid:     #134a8e;
-      --blue-light:   #1f5fa6;
-      --green-cta:    #5C820F;
-      --green-brand:  #6E9B12;
-      --green-bg:     #f0f6e4;
-      --bg-light:     #eef4fa;
-      --bg-apple:     linear-gradient(180deg,#f5f9fc 0%,#eaf3f8 35%,#dcecf6 70%,#eef5f9 100%);
-      --bg-apple-solid: #eaf3f8;
-      --bg-white:     #ffffff;
-      --bg-gray:      #f5f5f7;
-      --text:         #1d1d1f;
-      --text2:        #515154;
-      --text-strong:  #0b0b0c;
-      --border:       rgba(0,0,0,0.08);
-      --radius:       20px;
-      --maxw:         1180px;
-      --nav-h:        64px;
-    }
-
     /* ─── RESET & BASE ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg-white);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
     a { color: var(--green-brand); text-decoration: none; }
     a:hover { color: var(--green-cta); text-decoration: underline; text-underline-offset: .18em; }
     img { max-width: 100%; height: auto; display: block; }
@@ -128,9 +98,6 @@
     .band--blue  { background: var(--bg-apple-solid); }
     .band--machero { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 74%); padding: 60px 0; }
     @media (max-width: 768px) { .band { padding: 50px 0; } }
-
-    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-
     /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
     h1, h2, h3 { font-weight: 800; }
     h2 {
@@ -468,10 +435,10 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260513q">
-  <link rel="stylesheet" href="../../assets/css/base.css?v=20260513q">
-  <link rel="stylesheet" href="../../assets/css/components.css?v=20260513q">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513q">
+  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260513r">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=20260513r">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=20260513r">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513r">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
