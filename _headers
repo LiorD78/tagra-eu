@@ -60,6 +60,16 @@
 /assets/img/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Hero poster: override the 1-year immutable cache above so a new
+# deploy can replace it. Cache-bust via ?v=… is the canonical strategy,
+# but this is an extra safety net for anyone who somehow misses it.
+/assets/img/hero-poster.jpg
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Hero background videos — short cache, always revalidate
+/assets/video/*
+  Cache-Control: public, max-age=300, must-revalidate
+
 /assets/css/*
   Cache-Control: public, max-age=86400, must-revalidate
   Content-Type: text/css; charset=UTF-8
