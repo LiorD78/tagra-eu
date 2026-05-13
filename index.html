@@ -348,34 +348,33 @@
       line-height: 1.25; }
     .ref-note { font-size: 14px; color: var(--text2); line-height: 1.5; margin-top: 4px; }
 
-    /* ─── TESTIMONIALS ─────────────────────────────────────────────── */
-    .testimonial-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 18px; margin-top: 44px;
+    /* ─── REVIEWS SLIDER (auto-scroll loop, drag to pause) ─────────── */
+    .rev-rail-wrap {
+      overflow: hidden; margin-top: 44px;
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
     }
-    .testimonial {
-      background: #fff; border-radius: var(--radius);
-      border: 1px solid var(--border); padding: 30px;
-      display: flex; flex-direction: column; gap: 18px;
-      position: relative;
+    .rev-rail {
+      display: flex; align-items: stretch; gap: 0;
+      padding: 16px 0 32px;
+      overflow-x: auto; scrollbar-width: none; cursor: grab;
     }
-    .testimonial::before {
-      content: '"'; position: absolute; top: 8px; left: 22px;
-      font-size: 90px; line-height: 1; color: rgba(19,74,142,.10);
-      font-family: Georgia, serif; pointer-events: none;
+    .rev-rail::-webkit-scrollbar { display: none; }
+    .rev-rail:active { cursor: grabbing; }
+    .rev-card {
+      flex: 0 0 clamp(260px, 28vw, 380px);
+      background: var(--bg-white);
+      border-radius: 18px; border: 1px solid var(--border);
+      padding: 24px; margin-right: 20px;
+      display: flex; flex-direction: column;
+      min-height: 180px; user-select: none;
     }
-    .testimonial-quote {
-      font-size: 17px; line-height: 1.55; color: var(--text-strong);
-      font-weight: 500; position: relative; z-index: 1;
+    .rev-stars {
+      color: #f5b400; font-size: 18px; letter-spacing: 2px;
+      margin-bottom: 12px;
     }
-    .testimonial-attribution {
-      font-size: 14px; color: var(--text2); line-height: 1.4;
-      border-top: 1px solid var(--border); padding-top: 14px;
-    }
-    .testimonial-attribution strong { color: var(--text-strong); font-weight: 700; display: block; }
-    @media (max-width: 900px) {
-      .testimonial-grid { grid-template-columns: 1fr; }
-    }
+    .rev-txt { font-size: 17px; line-height: 1.5; color: var(--text); flex: 1; }
+    .rev-meta { font-size: 15px; color: var(--text2); margin-top: 16px; }
 
     /* ─── PRICING TEASER ───────────────────────────────────────────── */
     .pricing-teaser {
@@ -751,36 +750,22 @@
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ══════════════════════════════════════════════════ -->
-<section class="section section--white" aria-label="What practitioners say">
+<!-- ═══ REVIEWS (auto-scroll loop, matches /fleet/) ═══════════════════ -->
+<section class="section section--white" aria-label="Customer reviews">
   <div class="section-inner">
     <div class="section-head anim-up">
-      <span class="section-label">In their words</span>
-      <h2 class="section-h2">What practitioners say</h2>
-      <p class="section-intro">Real-world feedback from the people who use TAGRA every day.</p>
+      <span class="section-label">What customers say</span>
+      <h2 class="section-h2">Thousands of operators trust us</h2>
+      <p class="section-intro">Five-star feedback from verified customers across Central Europe.</p>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial fly-left">
-        <p class="testimonial-quote">The reports are exactly what inspectors want to see. Our audit prep dropped from hours to minutes — and we're now confident in every roadside check.</p>
-        <div class="testimonial-attribution">
-          <strong>Fleet Manager</strong>
-          Haulage operator · Czech Republic
-        </div>
-      </div>
-      <div class="testimonial anim-up" style="transition-delay:.1s">
-        <p class="testimonial-quote">At the roadside we need precise infringement detection in seconds. TAGRA gives us EU drivers' hours evaluation we can rely on — in court if it comes to that.</p>
-        <div class="testimonial-attribution">
-          <strong>Roadside Inspector</strong>
-          Police unit · Slovakia
-        </div>
-      </div>
-      <div class="testimonial fly-right" style="transition-delay:.2s">
-        <p class="testimonial-quote">I'm an owner-driver — installation took ten minutes. Download the card, click analyse, done. No cloud, no fuss. Just compliant.</p>
-        <div class="testimonial-attribution">
-          <strong>Owner-operator</strong>
-          International transport · Hungary
-        </div>
-      </div>
+  </div>
+  <div class="rev-rail-wrap anim-up" style="transition-delay:.05s">
+    <div class="rev-rail" id="rev-rail">
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"TAGRA handles a huge volume of data and significantly simplified our violation checks and archiving."</p><p class="rev-meta">David C. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"We've been using TAGRA for a few months — easy download and evaluation, clear outputs. Finally peace of mind."</p><p class="rev-meta">Patrik S. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"The software is intuitive and easy to use. When I needed help, they were there."</p><p class="rev-meta">Milan K. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"Simple and clear. Downloading, evaluation and archiving of data takes just a few minutes."</p><p class="rev-meta">Josef Z. · Verified customer</p></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 out of 5">★★★★★</div><p class="rev-txt">"TAGRA keeps us on top of violations and archiving. Really easy to work with."</p><p class="rev-meta">Verified TRUCKMALL customer</p></div>
     </div>
   </div>
 </section>
@@ -1062,6 +1047,47 @@
   document.querySelectorAll('.fly-left, .fly-right, .anim-up').forEach(function(el) {
     io.observe(el);
   });
+
+  /* Reviews slider — auto-scroll loop, drag/touch to pause. */
+  var rail = document.getElementById('rev-rail');
+  if (rail) {
+    // Triple the content so the loop wraps without a visible jump.
+    rail.innerHTML += rail.innerHTML + rail.innerHTML;
+    var speed = 0.9, busy = false, pos = 0;
+    var isDown = false, startX = 0, startScroll = 0, resumeTimer = null;
+
+    function tick() {
+      if (!busy) {
+        pos += speed;
+        if (pos >= 1) {
+          rail.scrollLeft += Math.floor(pos);
+          pos -= Math.floor(pos);
+        }
+        if (rail.scrollLeft >= rail.scrollWidth / 3) {
+          rail.scrollLeft = 0;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    function pause()  { busy = true; clearTimeout(resumeTimer); }
+    function resume() { resumeTimer = setTimeout(function() { busy = false; }, 2000); }
+
+    rail.addEventListener('mousedown',  function(e) {
+      isDown = true; pause();
+      startX = e.pageX - rail.offsetLeft;
+      startScroll = rail.scrollLeft;
+    });
+    rail.addEventListener('mouseleave', function() { isDown = false; resume(); });
+    rail.addEventListener('mouseup',    function() { isDown = false; resume(); });
+    rail.addEventListener('mousemove',  function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      rail.scrollLeft = startScroll - (e.pageX - rail.offsetLeft - startX) * 1.5;
+    });
+    rail.addEventListener('touchstart', pause,  { passive: true });
+    rail.addEventListener('touchend',   resume, { passive: true });
+    tick();
+  }
 })();
 </script>
 </body>
