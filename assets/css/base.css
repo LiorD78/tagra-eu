@@ -66,19 +66,23 @@ h2, .section-h2 {
   h2:not(.hero-h2), .section-h2 { font-size: 30px; }
 }
 
-/* === Hero heading — larger, mixed-case === */
-h2.hero-h2, .hero-h2 {
+/* === Hero heading — larger, mixed-case ===
+   Applies to <h1> page headings AND any <h2 class="hero-h2"> hero
+   pattern. The brighter TRUCKMALL gradient is shared with section H2,
+   only the size and casing differ. */
+h1, h2.hero-h2, .hero-h2 {
   font-size: 64px;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
   text-transform: none;
   margin: 0 0 16px;
-  padding: 0;
+  padding: 0 0 0.08em 0;
   display: block;
+  color: var(--blue-mid);
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  h2.hero-h2, .hero-h2 {
+  h1, h2.hero-h2, .hero-h2 {
     background: var(--heading-gradient);
     -webkit-background-clip: text;
     background-clip: text;
@@ -87,7 +91,18 @@ h2.hero-h2, .hero-h2 {
   }
 }
 @media (max-width: 768px) {
-  h2.hero-h2, .hero-h2 { font-size: 42px; }
+  h1, h2.hero-h2, .hero-h2 { font-size: 42px; }
+}
+/* Safety: never apply hero styling to h1/h2 sitting inside the nav. */
+nav h1, nav h2 {
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: none;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 /* === Smaller headings === */
