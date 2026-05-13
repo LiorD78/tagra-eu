@@ -71,13 +71,18 @@
       width: 100%;
     }
     .hero .eyebrow {
-      color: #fff;
+      color: var(--green-brand);
+      /* Strong white halo + dark drop-shadow so green text reads
+         against any frame of the hero video (bright sky or dark
+         road). The white halo lifts it off dark backgrounds; the
+         dark shadow keeps it readable on light backgrounds. */
       text-shadow:
-        0 2px 12px rgba(0,0,0,0.7),
-        0 1px 3px rgba(0,0,0,0.55),
-        0 0 1px rgba(0,0,0,0.4);
+        0 0 8px rgba(255,255,255,0.95),
+        0 0 16px rgba(255,255,255,0.7),
+        0 2px 6px rgba(0,0,0,0.45),
+        0 1px 2px rgba(0,0,0,0.35);
       margin-bottom: 10px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       font-weight: 700;
     }
     .hero .hero-sub {
@@ -587,10 +592,10 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20260513zn">
-  <link rel="stylesheet" href="assets/css/base.css?v=20260513zn">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260513zn">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513zn">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260513zo">
+  <link rel="stylesheet" href="assets/css/base.css?v=20260513zo">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260513zo">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513zo">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
