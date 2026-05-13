@@ -107,8 +107,8 @@
     }
     .hero .hero-sub strong { color: var(--blue-dark); }
     @media (max-width: 1024px) {
-      .hero { aspect-ratio: auto; max-height: none; padding: 50px 0 30px; background: var(--bg-apple-solid); }
-      .hero > .container { position: static; transform: none; padding-top: 0; }
+      .hero { aspect-ratio: 9 / 16; max-height: 90vh; padding-top: 6vh; background: #87b9d8; align-items: flex-start; }
+      .hero > .container { position: relative; padding-top: 0; }
     }
 
     .hero-video, .hero-video-poster {
@@ -131,7 +131,9 @@
     .hero > .container { position: relative; z-index: 2; }
 
     @media (max-width: 1024px) {
-      .hero-video { display: none; }
+      /* Keep video on mobile, but crop with top-aligned object-position
+         so the sky stays visible behind the hero text. */
+      .hero-video { object-position: center top; }
     }
     @media (prefers-reduced-motion: reduce) {
       .hero-video { display: none; }
@@ -353,10 +355,12 @@
 <section class="hero" aria-label="TAGRA – Choose your solution">
   <img class="hero-video-poster" src="/assets/img/hero-poster.jpg?v=2026-05-13b" alt="" aria-hidden="true" loading="eager" fetchpriority="high">
   <video class="hero-video" id="heroVideoA" muted playsinline preload="auto" aria-hidden="true" poster="/assets/img/hero-poster.jpg?v=2026-05-13b">
+    <source src="/assets/video/hero-720.mp4?v=2026-05-13b" type="video/mp4" media="(max-width: 1024px)">
     <source src="/assets/video/hero-1080.webm?v=2026-05-13b" type="video/webm">
     <source src="/assets/video/hero-1080.mp4?v=2026-05-13b" type="video/mp4">
   </video>
   <video class="hero-video" id="heroVideoB" muted playsinline preload="auto" aria-hidden="true" poster="/assets/img/hero-poster.jpg?v=2026-05-13b">
+    <source src="/assets/video/hero-720.mp4?v=2026-05-13b" type="video/mp4" media="(max-width: 1024px)">
     <source src="/assets/video/hero-1080.webm?v=2026-05-13b" type="video/webm">
     <source src="/assets/video/hero-1080.mp4?v=2026-05-13b" type="video/mp4">
   </video>
@@ -529,7 +533,6 @@
   if (!videoA || !videoB || !hero) return;
 
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.matchMedia && window.matchMedia('(max-width: 1024px)').matches) return;
 
   // Crossfade duration must match the CSS transition (.hero-video opacity 1.2s)
   var CROSSFADE_MS = 1200;
