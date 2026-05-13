@@ -94,6 +94,23 @@ h1, h2.hero-h2, .hero-h2 {
     color: transparent;
   }
 }
+
+/* === Split-card titles: share section H2 gradient ===
+   .split-card .card-title je <div>, ne <h2>, takže nedědí gradient z h2/.section-h2.
+   Aplikujeme jen barevný gradient + clip — žádnou size/weight/text-transform aby
+   se neporušila existující velikost karet. */
+.split-card .card-title {
+  color: var(--blue-mid);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .split-card .card-title {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
 @media (max-width: 768px) {
   h1, h2.hero-h2, .hero-h2 { font-size: 42px; }
 }
