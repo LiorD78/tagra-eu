@@ -1,0 +1,238 @@
+/* TAGRA.EU — Base styles
+   Reset, body typography, headings (section + hero), eyebrow,
+   buttons, container, animation primitives.
+   
+   Heading styles match TRUCKMALL.cz: UPPERCASE 36/30px section H2
+   with 3-stop blue gradient + brighter mid stop. Hero H2 stays
+   mixed-case + larger (intentional differentiation).
+   
+   Last refactor: 2026-05-13.
+*/
+
+/* === Reset === */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+html { scroll-padding-top: calc(var(--nav-h, 64px) + 12px); }
+
+body {
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg-page);
+  padding-top: var(--nav-h, 64px);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Container === */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* === Section headings (TRUCKMALL style) ===
+   Used on all section H2 / .section-h2 across the site.
+   .hero-h2 below overrides with larger, mixed-case styling. */
+h2, .section-h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  margin: 0 0 14px;
+  padding: 0.12em 0.15em 0.08em 0;
+  display: inline-block;
+  max-width: 100%;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  h2, .section-h2 {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  h2:not(.hero-h2), .section-h2 { font-size: 30px; }
+}
+
+/* === Hero heading — larger, mixed-case === */
+h2.hero-h2, .hero-h2 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: block;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  h2.hero-h2, .hero-h2 {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  h2.hero-h2, .hero-h2 { font-size: 42px; }
+}
+
+/* === Smaller headings === */
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--blue-dark);
+  margin: 0 0 12px;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--strong);
+  margin: 0 0 10px;
+}
+
+/* === Eyebrow (small green uppercase label above headings) === */
+.eyebrow, .section-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-brand);
+  margin: 0 0 12px;
+}
+
+/* === Body text === */
+p { margin: 0 0 16px; line-height: 1.6; }
+p:last-child { margin-bottom: 0; }
+p.lead {
+  font-size: 19px;
+  color: var(--text2);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+strong { font-weight: 700; color: var(--strong); }
+
+/* === Links === */
+a {
+  color: var(--green-brand);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+a:hover, a:focus {
+  color: var(--green-cta);
+  text-decoration: underline;
+}
+
+/* === Buttons === */
+.btn,
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 99px;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none !important;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  font-family: inherit;
+}
+.btn-cta,
+.btn-primary {
+  background: var(--green-cta);
+  color: #fff !important;
+}
+.btn-cta:hover,
+.btn-primary:hover {
+  background: var(--green-brand);
+  transform: scale(1.02);
+  text-decoration: none !important;
+}
+.btn-outline,
+.btn-secondary {
+  background: transparent;
+  color: var(--blue-mid) !important;
+  border: 2px solid var(--blue-mid);
+}
+.btn-outline:hover,
+.btn-secondary:hover {
+  background: var(--blue-mid);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.btn-cta--sm { padding: 10px 22px; font-size: 15px; }
+
+/* === Animation primitives === */
+.anim-up,
+.rev-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.anim-up.on,
+.rev-anim.on { opacity: 1; transform: translateY(0); }
+
+.fly-left, .fly-right {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fly-left  { transform: translateX(-60px); }
+.fly-right { transform: translateX(60px); }
+.fly-left.on, .fly-right.on { opacity: 1; transform: translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-up, .rev-anim, .fly-left, .fly-right {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* === Scroll progress bar (used on some pages) === */
+#scroll-progress,
+#tmx-scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green-brand), var(--blue-light));
+  z-index: 999999;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
+}
+
+/* === Bands (full-width section backgrounds) === */
+.band, .tmx-band {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg-page);
+}
+.band--gray,    .tmx-band--gray    { background: var(--bg-gray); }
+.band--blue,    .tmx-band--blue    { background: var(--bg-apple-solid); }
+.band--hero,    .tmx-band--hero    {
+  background: linear-gradient(180deg, var(--bg-apple-solid) 0%, var(--bg-page) 100%);
+}
+@media (max-width: 768px) {
+  .band, .tmx-band { padding: 50px 0; }
+}

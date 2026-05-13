@@ -1,0 +1,54 @@
+/* TAGRA.EU — Design tokens
+   Single source of truth for colors, spacing, gradients, typography.
+   Every page links tokens.css FIRST so these variables are available
+   to nav.css, base.css, components.css, and any inline overrides.
+   
+   Last refactor: 2026-05-13 (extract from per-page inline styles).
+*/
+:root {
+  /* === Brand colors — aligned with TRUCKMALL.cz === */
+  --blue-dark:   #0b2c4a;   /* darkest stop in heading gradient */
+  --blue-mid:    #134a8e;   /* mid stop, also nav active color */
+  --blue-light:  #1f5fa6;   /* lightest stop in heading gradient */
+  --green-brand: #6E9B12;   /* logo green, eyebrow color */
+  --green-cta:   #5C820F;   /* darker green for buttons */
+
+  /* === Surfaces === */
+  --bg-page:         #ffffff;
+  --bg-light:        #eef4fa;
+  --bg-gray:         #f5f5f7;
+  --bg-apple-solid:  #eaf3f8;   /* Apple light blue solid */
+  --bg-apple-top:    #f5f9fc;
+  --bg-apple-mid:    #eaf3f8;
+  --bg-apple-bottom: #dcecf6;
+  --bg-apple-end:    #eef5f9;
+  --bg-apple: linear-gradient(180deg,
+    var(--bg-apple-top) 0%,
+    var(--bg-apple-mid) 35%,
+    var(--bg-apple-bottom) 70%,
+    var(--bg-apple-end) 100%);
+
+  /* === Text === */
+  --text:    #1d1d1f;
+  --text2:   #515154;
+  --strong:  #0b0b0c;
+  --border:  rgba(0,0,0,0.08);
+
+  /* === Heading gradient (3-stop, brighter — matches TRUCKMALL) === */
+  --heading-gradient: linear-gradient(90deg,
+    var(--blue-dark) 0%,
+    var(--blue-mid) 55%,
+    var(--blue-light) 100%);
+
+  /* === Layout === */
+  --maxw:    1180px;
+  --radius:  16px;
+  --radius-lg: 20px;
+  --nav-h:   64px;
+
+  /* === Typography === */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                  "Segoe UI", Roboto, sans-serif;
+}
