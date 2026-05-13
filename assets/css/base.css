@@ -252,3 +252,28 @@ a:hover, a:focus {
 @media (max-width: 768px) {
   .band, .tmx-band { padding: 50px 0; }
 }
+
+/* === Hero band ===
+   Used on driver/, fleet/ and any "<section class='band band--hero'>"
+   page. Centred content with comfortable top/bottom padding, matching
+   .enf-hero on the enforcement page. */
+.band--hero {
+  text-align: center;
+  padding: 80px 0 60px;
+}
+@media (max-width: 768px) {
+  .band--hero {
+    padding: 56px 0 44px;
+  }
+}
+/* The intro paragraph below an H1 hero on subpages. */
+p.lead {
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 640px;
+  margin: 16px auto 32px;
+  color: var(--text2, #6e6e73);
+}
+@media (max-width: 768px) {
+  p.lead { font-size: 18px; }
+}
