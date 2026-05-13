@@ -74,8 +74,8 @@ h1, h2.hero-h2, .hero-h2 {
   font-size: 64px;
   font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-transform: none;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;  /* uniform cap-height for product names */
   margin: 0 0 16px;
   padding: 0 0 0.08em 0;
   display: inline-block;      /* tight box so gradient spans the text */
