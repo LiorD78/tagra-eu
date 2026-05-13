@@ -78,7 +78,8 @@ h1, h2.hero-h2, .hero-h2 {
   text-transform: none;
   margin: 0 0 16px;
   padding: 0 0 0.08em 0;
-  display: block;
+  display: inline-block;      /* tight box so gradient spans the text */
+  max-width: 100%;
   color: var(--blue-mid);
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
