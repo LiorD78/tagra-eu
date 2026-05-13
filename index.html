@@ -78,12 +78,28 @@
 
     /* ─── HERO ─────────────────────────────────────────────────────── */
     .hero {
-      background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%);
-      padding: 80px 0 60px;
+      background: #0b2c4a;
+      padding: 100px 0 90px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
     }
+    .hero .eyebrow { color: rgba(255,255,255,0.92); text-shadow: 0 1px 3px rgba(0,0,0,0.35); }
+    .hero h1 {
+      color: #fff;
+      background: none;
+      -webkit-text-fill-color: #fff;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.45), 0 1px 3px rgba(0,0,0,0.6);
+    }
+    .hero .hero-sub {
+      color: rgba(255,255,255,0.96);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.55);
+      margin-bottom: 0;
+    }
+    .hero .hero-sub strong { color: #fff; }
 
     .hero-video, .hero-video-poster {
       position: absolute;
@@ -100,18 +116,6 @@
     .hero-video { opacity: 0; transition: opacity .8s ease-in; }
     .hero-video.is-ready { opacity: 1; }
     .hero-video.is-ready + .hero-video-poster { opacity: 0; }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg,
-        rgba(234,243,248,0.55) 0%,
-        rgba(234,243,248,0.78) 45%,
-        rgba(255,255,255,0.92) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
 
     .hero > .container { position: relative; z-index: 2; }
 
@@ -198,6 +202,9 @@
     .card-note { font-size: 13px; color: var(--text2); margin-top: 10px; }
 
     /* ─── TRUST BAR ────────────────────────────────────────────────── */
+    .picker { background: var(--bg-apple-solid); padding: 60px 0 70px; }
+    @media (max-width: 1024px) { .picker { padding: 40px 0 50px; } }
+
     .trust-bar { padding: 40px 0; background: var(--bg-gray); text-align: center; }
     .trust-bar p { font-size: 15px; color: var(--text2); }
     .trust-bar strong { color: var(--text-strong); }
@@ -345,9 +352,14 @@
       Downloading isn't enough — the law requires <strong>evaluation and archiving.</strong><br>
       TAGRA covers everything. Free 30-day trial, no credit card.
     </p>
+  </div>
+</section>
 
-    <!-- SPLIT CARDS -->
-    <div class="split anim-up" style="transition-delay:.15s">
+<!-- ═══ PICKER (3 audience cards) ═══════════════════════════════════ -->
+<section class="picker" aria-label="Choose your TAGRA solution">
+  <div class="container">
+
+    <div class="split anim-up">
 
       <!-- Fleet -->
       <a class="split-card split-card--fleet" href="/fleet/" aria-label="TAGRA for fleet operators">
