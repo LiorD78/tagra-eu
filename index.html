@@ -601,7 +601,7 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513h">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513i">
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body class="home-fullbleed">
@@ -713,6 +713,13 @@
       </a>
 
     </div>
+
+    <div class="picker-dots" role="tablist" aria-label="Picker pagination">
+      <button class="picker-dot is-active" type="button" data-target="0" aria-label="Go to card 1"></button>
+      <button class="picker-dot" type="button" data-target="1" aria-label="Go to card 2"></button>
+      <button class="picker-dot" type="button" data-target="2" aria-label="Go to card 3"></button>
+    </div>
+
   </div>
 </section>
 
@@ -1143,6 +1150,40 @@
     rail.addEventListener('touchend',   resume, { passive: true });
     tick();
   }
+})();
+</script>
+<script>
+(function(){
+
+
+  /* Picker carousel — sync active dot with visible card (mobile only). */
+  (function() {
+    var rail = document.getElementById('picker-rail');
+    var dots = document.querySelectorAll('.picker-dot');
+    if (!rail || dots.length === 0) return;
+    var cards = Array.from(rail.querySelectorAll('.split-card'));
+    if (cards.length === 0) return;
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        var t = cards[i];
+        if (t) t.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+    });
+    if (!('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+          var idx = cards.indexOf(entry.target);
+          if (idx >= 0) {
+            dots.forEach(function(d) { d.classList.remove('is-active'); });
+            if (dots[idx]) dots[idx].classList.add('is-active');
+          }
+        }
+      });
+    }, { root: rail, threshold: [0.6, 0.8, 1.0] });
+    cards.forEach(function(c) { obs.observe(c); });
+  })();
+
 })();
 </script>
 </body>

@@ -30,6 +30,8 @@
 body { padding-top: var(--nav-h, 64px); }
 body.home-fullbleed { padding-top: 0; }
 html { scroll-padding-top: var(--nav-h, 64px); }
+/* Prevent horizontal page scroll caused by inner overflow (review rail, etc). */
+html, body { overflow-x: hidden; max-width: 100vw; }
 .nav-inner {
   /* nav-inner širší než content (1180px) — logo se odsadí ~110px doleva od krajů
      contentu, lépe vyniká a Control variant má víc dýchání od nav-links */
