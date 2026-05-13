@@ -512,17 +512,11 @@
         flex: 0 0 clamp(280px, 78vw, 340px);
         max-width: 340px;
         scroll-snap-align: start;
-        /* Fixed height so all three cards match and the section has a
-           predictable visual rhythm. Content that exceeds scrolls within
-           the card via overflow-y. */
-        height: 380px;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        padding: 28px 24px;  /* slightly tighter than desktop 40px 36px */
+        /* No fixed height — let the card size to its content so the full
+           card is visible without inner scrolling. Cards still match each
+           other's height via align-items: stretch on the parent. */
+        padding: 28px 24px;
       }
-      /* Hide the inner scrollbar to keep the card feeling like a poster. */
-      .picker .split > .split-card::-webkit-scrollbar { display: none; }
-      .picker .split > .split-card { scrollbar-width: none; }
       /* Shorter typography on mobile so the 380px box doesn't feel tight. */
       .picker .split > .split-card .card-title { font-size: 28px; line-height: 1.1; }
       .picker .split > .split-card .card-desc { font-size: 14px; line-height: 1.45; }
@@ -642,8 +636,8 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513k">
-  <script src="/assets/js/nav.js?v=20260513k" defer></script>
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513l">
+  <script src="/assets/js/nav.js?v=20260513l" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body class="home-fullbleed">
