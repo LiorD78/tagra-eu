@@ -78,28 +78,37 @@
 
     /* ─── HERO ─────────────────────────────────────────────────────── */
     .hero {
-      background: #0b2c4a;
-      padding: 100px 0 90px;
+      background: #87b9d8;
       text-align: center;
       position: relative;
       overflow: hidden;
-      min-height: 460px;
-      display: flex;
-      align-items: center;
+      aspect-ratio: 16 / 9;
+      max-height: 80vh;
     }
-    .hero .eyebrow { color: rgba(255,255,255,0.92); text-shadow: 0 1px 3px rgba(0,0,0,0.35); }
-    .hero h1 {
-      color: #fff;
-      background: none;
-      -webkit-text-fill-color: #fff;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.45), 0 1px 3px rgba(0,0,0,0.6);
+    .hero > .container {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding-top: 4vh;
+      padding-bottom: 0;
+    }
+    .hero .eyebrow {
+      color: rgba(11,44,74,0.85);
+      text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+      margin-bottom: 10px;
     }
     .hero .hero-sub {
-      color: rgba(255,255,255,0.96);
-      text-shadow: 0 1px 8px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.55);
-      margin-bottom: 0;
+      max-width: 580px;
+      margin: 0 auto;
+      color: var(--blue-dark);
+      text-shadow: 0 1px 2px rgba(255,255,255,0.5);
     }
-    .hero .hero-sub strong { color: #fff; }
+    .hero .hero-sub strong { color: var(--blue-dark); }
+    @media (max-width: 1024px) {
+      .hero { aspect-ratio: auto; max-height: none; padding: 50px 0 30px; background: var(--bg-apple-solid); }
+      .hero > .container { position: static; transform: none; padding-top: 0; }
+    }
 
     .hero-video, .hero-video-poster {
       position: absolute;
@@ -125,7 +134,7 @@
     @media (prefers-reduced-motion: reduce) {
       .hero-video { display: none; }
     }
-    @media (max-width: 768px) { .hero { padding: 50px 0 40px; } }
+    @media (max-width: 768px) { /* .hero mobile handled inline above with aspect-ratio:auto override */ }
 
     .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-brand); margin-bottom: 12px; }
 
