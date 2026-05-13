@@ -252,6 +252,20 @@ a:hover, a:focus {
 .band--hero,    .tmx-band--hero    {
   background: linear-gradient(180deg, var(--bg-apple-solid) 0%, var(--bg-page) 100%);
 }
+
+/* Hero colour variants per product page.
+   - Company (fleet)     → blue:  apple-solid blue tint
+   - Trucker (driver)    → green: subtle green wash
+   - Control (enforce)   → gray:  neutral light gray (default-ish) */
+.band--hero--blue {
+  background: linear-gradient(180deg, #e7f0fa 0%, #f4f8fc 50%, #ffffff 100%);
+}
+.band--hero--green {
+  background: linear-gradient(180deg, #e9f3d8 0%, #f3f8e8 50%, #ffffff 100%);
+}
+.band--hero--gray {
+  background: linear-gradient(180deg, #e8e8ed 0%, #f5f5f7 52%, #ffffff 100%);
+}
 @media (max-width: 768px) {
   .band, .tmx-band { padding: 50px 0; }
 }
