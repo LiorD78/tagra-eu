@@ -37,8 +37,8 @@
   /* === Heading gradient (3-stop, brighter — matches TRUCKMALL) === */
   --heading-gradient: linear-gradient(90deg,
     #0b2c4a 0%,
-    #0070F3 55%,
-    #00C2FF 100%);
+    #134a8e 55%,
+    #1f5fa6 100%);
 
   /* === Layout === */
   --maxw:    1180px;
