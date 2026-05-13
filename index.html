@@ -100,8 +100,8 @@
     @media (max-width: 768px) { .hero-sub { font-size: 17px; } }
 
     /* ─── SPLIT CARDS ──────────────────────────────────────────────── */
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 960px; margin: 0 auto; }
-    @media (max-width: 700px) { .split { grid-template-columns: 1fr; gap: 16px; } }
+    .split { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1180px; margin: 0 auto; }
+    @media (max-width: 1024px) { .split { grid-template-columns: 1fr; gap: 16px; max-width: 540px; } }
 
     .split-card {
       display: flex; flex-direction: column;
@@ -121,9 +121,15 @@
       border: 2px solid rgba(110,155,18,.2);
     }
 
+    .split-card--enforce {
+      background: linear-gradient(135deg, #dfe5ee 0%, #eef3f8 60%, #f5f8fb 100%);
+      border: 2px solid rgba(11,44,74,.2);
+    }
+
     .card-label { font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
     .split-card--fleet .card-label { color: var(--blue-mid); }
     .split-card--driver .card-label { color: var(--green-brand); }
+    .split-card--enforce .card-label { color: var(--blue-dark); }
 
     .card-title { font-size: 26px; font-weight: 800; color: var(--text-strong); line-height: 1.2; margin-bottom: 14px; }
 
@@ -133,6 +139,7 @@
     .card-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; }
     .split-card--fleet .card-list li::before { content: "✓"; color: var(--blue-mid); font-weight: 900; flex-shrink: 0; }
     .split-card--driver .card-list li::before { content: "✓"; color: var(--green-brand); font-weight: 900; flex-shrink: 0; }
+    .split-card--enforce .card-list li::before { content: "✓"; color: var(--blue-dark); font-weight: 900; flex-shrink: 0; }
 
     .card-cta {
       display: inline-flex; align-items: center; gap: 8px;
@@ -146,6 +153,8 @@
     .split-card--fleet .card-cta:hover { background: var(--blue-dark); }
     .split-card--driver .card-cta { background: var(--green-cta); color: #fff !important; }
     .split-card--driver .card-cta:hover { background: var(--green-brand); }
+    .split-card--enforce .card-cta { background: var(--blue-dark); color: #fff !important; }
+    .split-card--enforce .card-cta:hover { background: var(--blue-mid); }
 
     .card-note { font-size: 13px; color: var(--text2); margin-top: 10px; }
 
@@ -324,6 +333,21 @@
         </ul>
         <span class="card-cta">Driver solution →</span>
         <span class="card-note">30-day free trial · no credit card</span>
+      </a>
+
+      <!-- Enforcement -->
+      <a class="split-card split-card--enforce" href="/enforcement/" aria-label="TAGRA Control for enforcement authorities">
+        <div class="card-label">Enforcement authority</div>
+        <div class="card-title">TAGRA<br>Control</div>
+        <p class="card-desc">You inspect drivers and operators. <strong>Roadside and company inspections</strong> under EU 561/2006, 1054/2020 and AETR.</p>
+        <ul class="card-list">
+          <li>Police · Customs · Labour Inspectorates</li>
+          <li>Czech, Slovak &amp; Greek authorities</li>
+          <li>Court-grade evaluation outputs</li>
+          <li>De-facto standard in Central Europe</li>
+        </ul>
+        <span class="card-cta">Inspection solution →</span>
+        <span class="card-note">Government &amp; institutional use</span>
       </a>
 
     </div>
