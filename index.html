@@ -474,7 +474,12 @@
         top: var(--nav-h, 64px);
         z-index: 1;
         background: var(--bg-apple-solid);
-        min-height: calc(100vh - var(--nav-h, 64px));
+        /* Target a full-viewport-minus-nav height for the Apple feel, but
+           allow the section to grow if the card needs more room. The
+           card itself is ~593px on mobile; with section padding 24+24 we
+           need at least 641px total. On short viewports (iPhone SE 1st
+           gen at 667px) min-height: 0 ensures nothing is clipped. */
+        min-height: max(640px, calc(100vh - var(--nav-h, 64px)));
         display: flex;
         flex-direction: column;
         justify-content: center;  /* vertically center the carousel rail */
@@ -636,8 +641,8 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513l">
-  <script src="/assets/js/nav.js?v=20260513l" defer></script>
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513m">
+  <script src="/assets/js/nav.js?v=20260513m" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body class="home-fullbleed">
