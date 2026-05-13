@@ -25,9 +25,10 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg-page);
-  /* No top padding — the first section's hero must extend behind the
-     transparent liquid-glass nav. Sections add their own top padding
-     to leave room for the nav (`padding-top: calc(var(--nav-h) + …)`). */
+  /* Body has NO top padding — hero sections extend behind the
+     transparent liquid-glass nav. !important to override any
+     inline rules that might still set padding-top. */
+  padding-top: 0 !important;
   -webkit-font-smoothing: antialiased;
 }
 
