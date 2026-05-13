@@ -93,10 +93,10 @@
     }
 
     /* ─── LAYOUT ───────────────────────────────────────────────── */
-    .band { padding: 80px 0; }
-    .band--hero  { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%); padding: 40px 0 60px; text-align: center; }
-    .band--gray  { background: var(--bg-gray); }
-    .band--blue  { background: var(--bg-apple-solid); }
+    
+    
+    
+    
     .band--machero { background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 74%); padding: 60px 0; }
     @media (max-width: 768px) { .band { padding: 50px 0; } }
     /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
@@ -135,33 +135,23 @@
     }
 
     /* ─── BUTTONS ──────────────────────────────────────────────── */
-    .btn-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--green-cta); color: #fff !important;
-      padding: 14px 30px; border-radius: 99px;
-      font-size: 18px; font-weight: 600; cursor: pointer;
-      text-decoration: none !important; border: none;
-      transition: background .2s, transform .15s;
-    }
+    
     .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
-    .btn-cta--sm { font-size: 16px; padding: 10px 24px; }
+    
 
     /* ─── BENTO GRID ───────────────────────────────────────────── */
-    .bento {
-      display: grid; grid-template-columns: repeat(12, 1fr);
-      gap: 14px; margin-top: 40px;
-    }
+    
     .bc {
       background: var(--bg-white); border-radius: var(--radius);
       padding: 32px; border: 1px solid var(--border); position: relative; overflow: hidden;
     }
-    .bc.s7 { grid-column: span 7; }
-    .bc.s5 { grid-column: span 5; }
-    .bc.s4 { grid-column: span 4; }
-    .bc.s8 { grid-column: span 8; }
-    .bc.s6 { grid-column: span 6; }
-    .bc.bluefill { background: var(--bg-apple-solid); border-color: rgba(31,95,166,.1); }
-    .bc.greenfill { background: var(--green-bg); border-color: rgba(110,155,18,.2); }
+    
+    
+    
+    
+    
+    
+    
     @media (max-width: 900px) {
       .bento { grid-template-columns: 1fr 1fr; }
       .bc.s7, .bc.s5, .bc.s8 { grid-column: span 2; }
@@ -171,16 +161,16 @@
       .bento { grid-template-columns: 1fr; }
       .bc { grid-column: span 1 !important; }
     }
-    .bc-title { font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -.02em; color: var(--text-strong); margin-bottom: 8px; }
-    .bc-text  { font-size: 16px; line-height: 1.5; color: var(--text2); }
+    
+    
     .bignum   { font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: rgba(19,74,142,.06); position: absolute; bottom: -16px; right: 16px; pointer-events: none; }
 
     /* ─── 2-COL & 3-COL ────────────────────────────────────────── */
-    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .g2.top { align-items: start; }
+    
+    
     @media (max-width: 900px) { .g2 { grid-template-columns: 1fr; gap: 40px; } }
 
-    .three-col { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+    
     @media (max-width: 860px) { .three-col { grid-template-columns: 1fr; } }
     @media (min-width: 600px) and (max-width: 860px) { .three-col { grid-template-columns: 1fr 1fr; } }
 
@@ -194,7 +184,7 @@
       padding: 32px; box-shadow: 0 12px 32px rgba(0,0,0,.04);
       border: 1px solid var(--border); position: relative;
     }
-    .callout--plain { border: none; background: transparent; padding: 0; box-shadow: none; }
+    
     @media (min-width: 992px) { .stretch > .callout--plain { padding-top: 40px; } }
 
     /* GREEN CALLOUT */
@@ -219,13 +209,9 @@
     ul li { padding: 3px 0; }
 
     /* ─── FEATURE LIST ─────────────────────────────────────────── */
-    .feats { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
-    .fi { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.5; }
-    .fck {
-      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
-      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
-      display: flex; align-items: center; justify-content: center;
-    }
+    
+    
+    
     .fck svg { flex-shrink: 0; }
 
     /* ─── WARNING / NOTE BOXES ─────────────────────────────────── */
@@ -250,21 +236,13 @@
       overflow: hidden; margin-top: 24px;
       mask-image: linear-gradient(to right, transparent 0%,black 6%,black 94%,transparent 100%);
     }
-    .rev-rail {
-      display: flex; align-items: stretch; gap: 0; padding: 16px 0 32px;
-      overflow-x: auto; scrollbar-width: none; cursor: grab;
-    }
+    
     .rev-rail::-webkit-scrollbar { display: none; }
     .rev-rail:active { cursor: grabbing; }
-    .rev-card {
-      flex: 0 0 clamp(260px,28vw,380px); background: var(--bg-white);
-      border-radius: 18px; border: 1px solid var(--border);
-      padding: 24px; display: flex; flex-direction: column;
-      min-height: 180px; margin-right: 20px; user-select: none;
-    }
-    .rev-stars { color: #f5b400; font-size: 18px; letter-spacing: 2px; margin-bottom: 12px; }
-    .rev-txt   { font-size: 17px; flex: 1; }
-    .rev-meta  { font-size: 15px; color: var(--text2); margin-top: 16px; }
+    
+    
+    
+    
 
     /* ─── METHOD CARDS ─────────────────────────────────────────── */
     .method-card { display: flex; flex-direction: column; height: 100%; }
@@ -317,17 +295,17 @@
     .tb-icon svg    { width: 12px; height: 12px; }
 
     /* ─── FAQ ──────────────────────────────────────────────────── */
-    .faq details { border-bottom: 1px solid var(--border); }
-    .faq details:first-child { border-top: 1px solid var(--border); }
+    
+    
     .faq summary {
       list-style: none; cursor: pointer; padding: 18px 40px 18px 0;
       font-weight: 800; font-size: 18px; line-height: 1.4;
       position: relative; color: var(--text-strong);
     }
-    .faq summary::-webkit-details-marker { display: none; }
+    
     .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 300; color: var(--green-brand); }
-    .faq details[open] summary::after { content: "−"; }
-    .faq-a { padding: 0 0 18px; font-size: 17px; line-height: 1.6; color: var(--text2); }
+    
+    
 
     /* ─── MAC STAGE ────────────────────────────────────────────── */
     .mac-stage { position: relative; width: 100%; line-height: 0; }
@@ -357,7 +335,7 @@
     }
     .related-title { font-size: 24px; font-weight: 800; line-height: 1.25; color: var(--text-strong) !important; margin: 8px 0; }
     .related-text  { font-size: 17px; line-height: 1.6; color: var(--text2) !important; margin-bottom: 16px; }
-    .article-grid  { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 16px; margin-top: 16px; }
+    
     .article-card  {
       position: relative; display: flex; flex-direction: column; height: 100%;
       padding: 22px; background: var(--bg-white); border: 1.5px solid var(--border);
@@ -366,9 +344,9 @@
     }
     .article-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.08); border-color: rgba(110,155,18,.45); }
     .article-eyebrow { font-size: 14px; font-weight: 800; text-transform: uppercase; color: var(--blue-mid) !important; margin-bottom: 8px; display: block; }
-    .article-title  { font-size: 17px; font-weight: 800; line-height: 1.35; color: var(--text-strong) !important; margin-bottom: 10px; display: block; }
-    .article-meta   { font-size: 15px; line-height: 1.5; color: var(--text2) !important; margin-bottom: 16px; display: block; }
-    .article-chip   { display: inline-flex; margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--blue-dark) !important; background: var(--bg-apple-solid); padding: 7px 13px; border-radius: 999px; transition: background .2s; }
+    
+    
+    
     .article-card:hover .article-chip, .related-featured:hover .article-chip { background: var(--green-brand); color: #fff !important; }
 
     /* ─── ANIMATIONS ───────────────────────────────────────────── */
@@ -439,10 +417,10 @@
   "inLanguage": "en"
 }
 </script>
-  <link rel="stylesheet" href="../assets/css/tokens.css?v=20260513r">
-  <link rel="stylesheet" href="../assets/css/base.css?v=20260513r">
-  <link rel="stylesheet" href="../assets/css/components.css?v=20260513r">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513r">
+  <link rel="stylesheet" href="../assets/css/tokens.css?v=20260513s">
+  <link rel="stylesheet" href="../assets/css/base.css?v=20260513s">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20260513s">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513s">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>

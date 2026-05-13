@@ -248,32 +248,26 @@
     }
 
     /* ─── BENTO GRID (reused from /fleet/) ─────────────────────────── */
-    .bento {
-      display: grid; grid-template-columns: repeat(12, 1fr);
-      gap: 14px; margin-top: 44px;
-    }
+    
     .bc {
       background: var(--bg-white); border-radius: var(--radius);
       padding: 32px; border: 1px solid var(--border);
       position: relative; overflow: hidden;
     }
-    .bc.s4 { grid-column: span 4; }
-    .bc.s5 { grid-column: span 5; }
-    .bc.s6 { grid-column: span 6; }
-    .bc.s7 { grid-column: span 7; }
-    .bc.s8 { grid-column: span 8; }
-    .bc.bluefill  { background: var(--bg-apple-solid); border-color: rgba(31,95,166,.1); }
-    .bc.greenfill { background: var(--green-bg); border-color: rgba(110,155,18,.2); }
+    
+    
+    
+    
+    
+    
+    
     .bc-eyebrow {
       font-size: 12px; font-weight: 700; letter-spacing: .08em;
       text-transform: uppercase; color: var(--blue-mid);
       margin-bottom: 8px; display: block;
     }
-    .bc-title {
-      font-size: 24px; font-weight: 800; line-height: 1.2;
-      letter-spacing: -.01em; color: var(--text-strong); margin-bottom: 10px;
-    }
-    .bc-text { font-size: 16px; line-height: 1.55; color: var(--text2); }
+    
+    
     .bignum {
       font-size: 110px; font-weight: 800; line-height: 1;
       letter-spacing: -.04em; color: rgba(19,74,142,.06);
@@ -342,27 +336,13 @@
       mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
     }
-    .rev-rail {
-      display: flex; align-items: stretch; gap: 0;
-      padding: 16px 0 32px;
-      overflow-x: auto; scrollbar-width: none; cursor: grab;
-    }
+    
     .rev-rail::-webkit-scrollbar { display: none; }
     .rev-rail:active { cursor: grabbing; }
-    .rev-card {
-      flex: 0 0 clamp(260px, 28vw, 380px);
-      background: var(--bg-white);
-      border-radius: 18px; border: 1px solid var(--border);
-      padding: 24px; margin-right: 20px;
-      display: flex; flex-direction: column;
-      min-height: 180px; user-select: none;
-    }
-    .rev-stars {
-      color: #f5b400; font-size: 18px; letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-    .rev-txt { font-size: 17px; line-height: 1.5; color: var(--text); flex: 1; }
-    .rev-meta { font-size: 15px; color: var(--text2); margin-top: 16px; }
+    
+    
+    
+    
 
     /* ─── PRICING TEASER ───────────────────────────────────────────── */
     .pricing-teaser {
@@ -399,26 +379,22 @@
 
     /* ─── FAQ TEASER ───────────────────────────────────────────────── */
     .faq-block { max-width: 760px; margin: 44px auto 0; }
-    .faq-block details {
-      border-bottom: 1px solid rgba(0,0,0,.08); background: transparent;
-    }
-    .faq-block details:first-child { border-top: 1px solid rgba(0,0,0,.08); }
+    
+    
     .faq-block summary {
       list-style: none; cursor: pointer;
       padding: 18px 44px 18px 0;
       font-weight: 700; font-size: 18px; line-height: 1.4;
       position: relative; color: var(--text-strong);
     }
-    .faq-block summary::-webkit-details-marker { display: none; }
+    
     .faq-block summary::after {
       content: '+'; position: absolute; right: 4px; top: 50%;
       transform: translateY(-50%); font-size: 28px; font-weight: 300;
       color: var(--green-brand); transition: transform .2s;
     }
-    .faq-block details[open] summary::after { content: '−'; }
-    .faq-answer {
-      padding: 0 0 20px; font-size: 16px; line-height: 1.6; color: var(--text2);
-    }
+    
+    
     .faq-cta { text-align: center; margin-top: 28px; }
     .faq-cta a {
       font-size: 16px; font-weight: 600; color: var(--blue-mid);
@@ -428,24 +404,10 @@
     .faq-cta a:hover { color: var(--blue-dark); border-color: var(--blue-dark); }
 
     /* ─── BUTTONS (reuse from picker, but in case missing) ─────────── */
-    .btn-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--green-cta); color: #fff !important;
-      padding: 14px 30px; border-radius: 99px;
-      font-size: 17px; font-weight: 600; cursor: pointer;
-      text-decoration: none !important; border: none;
-      transition: background .2s, transform .2s;
-    }
+    
     .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: var(--blue-mid) !important;
-      padding: 12px 26px; border-radius: 99px;
-      font-size: 16px; font-weight: 600;
-      text-decoration: none !important; border: 1.5px solid var(--blue-mid);
-      transition: background .2s, color .2s;
-    }
-    .btn-outline:hover { background: var(--blue-mid); color: #fff !important; }
+    
+    
 
 
     /* ─── PICKER MOBILE CAROUSEL ─────────────────────────────────────
@@ -629,10 +591,10 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20260513r">
-  <link rel="stylesheet" href="assets/css/base.css?v=20260513r">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260513r">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513r">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260513s">
+  <link rel="stylesheet" href="assets/css/base.css?v=20260513s">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260513s">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513s">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
