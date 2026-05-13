@@ -81,6 +81,45 @@
       background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%);
       padding: 80px 0 60px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-video, .hero-video-poster {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-video-poster { opacity: 1; transition: opacity .4s ease-out; }
+    .hero-video { opacity: 0; transition: opacity .8s ease-in; }
+    .hero-video.is-ready { opacity: 1; }
+    .hero-video.is-ready + .hero-video-poster { opacity: 0; }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(234,243,248,0.55) 0%,
+        rgba(234,243,248,0.78) 45%,
+        rgba(255,255,255,0.92) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero > .container { position: relative; z-index: 2; }
+
+    @media (max-width: 1024px) {
+      .hero-video { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
     }
     @media (max-width: 768px) { .hero { padding: 50px 0 40px; } }
 
@@ -294,6 +333,11 @@
 
 <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section class="hero" aria-label="TAGRA – Choose your solution">
+  <img class="hero-video-poster" src="/assets/img/hero-poster.jpg" alt="" aria-hidden="true" loading="eager" fetchpriority="high">
+  <video class="hero-video" id="heroVideo" muted playsinline preload="metadata" aria-hidden="true" poster="/assets/img/hero-poster.jpg">
+    <source src="/assets/video/hero-1080.webm" type="video/webm">
+    <source src="/assets/video/hero-1080.mp4" type="video/mp4">
+  </video>
   <div class="container">
     <div class="eyebrow anim-up">Tachograph data management software</div>
     <h1 class="anim-up" style="transition-delay:.05s">TAGRA</h1>
@@ -449,5 +493,54 @@
 }
 </script>
 
+
+<script>
+(function() {
+  var video = document.getElementById('heroVideo');
+  if (!video) return;
+
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia && window.matchMedia('(max-width: 1024px)').matches) return;
+
+  var hasPlayedThisVisit = false;
+
+  function playFromStart() {
+    try {
+      video.currentTime = 0;
+      var p = video.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(function() {});
+      }
+    } catch (e) {}
+  }
+
+  video.addEventListener('loadeddata', function() {
+    video.classList.add('is-ready');
+    if (!hasPlayedThisVisit) {
+      playFromStart();
+      hasPlayedThisVisit = true;
+    }
+  });
+
+  video.addEventListener('ended', function() {
+    try { video.pause(); } catch (e) {}
+  });
+
+  if ('IntersectionObserver' in window) {
+    var leftViewport = false;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          leftViewport = true;
+        } else if (entry.isIntersecting && leftViewport) {
+          leftViewport = false;
+          playFromStart();
+        }
+      });
+    }, { threshold: 0.15 });
+    observer.observe(video);
+  }
+})();
+</script>
 </body>
 </html>
