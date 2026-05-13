@@ -44,17 +44,14 @@
   position: relative; /* anchor pro případné product variant lockup (např. Control) */
 }
 
-/* Product variant lockup — přidává " | Control" napravo od loga
-   bez ovlivnění flex layoutu (absolute pozicování, pointer-events:none) */
+/* Product variant lockup — přidává " | Control" napravo od loga.
+   Inline-flex (ne absolute) takže přirozeně zabírá místo v layoutu a flex
+   space-between vytlačí nav-links napravo — nelepí se na první link. */
 .nav-logo-variant {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 6px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  margin-left: 14px;
   font-size: 19px;
   font-weight: 400;
   letter-spacing: -.01em;
