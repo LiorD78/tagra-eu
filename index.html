@@ -460,8 +460,34 @@
     .btn-outline:hover { background: var(--blue-mid); color: #fff !important; }
 
 
-    /* PICKER MOBILE CAROUSEL — desktop unchanged */
+    /* ─── PICKER MOBILE CAROUSEL ─────────────────────────────────────
+       Desktop: 3 cards side-by-side (existing layout unchanged).
+       Mobile (≤900px): sticky picker section + horizontal scroll-snap
+       carousel + vertically centered cards with a fixed 380px height. */
     @media (max-width: 900px) {
+      /* Sticky behavior on the picker section.
+         position: sticky keeps the section anchored just below the nav
+         while the user scrolls past it; once the next sibling section
+         takes over, the picker scrolls away normally. */
+      .picker {
+        position: sticky;
+        top: var(--nav-h, 64px);
+        z-index: 1;
+        background: var(--bg-apple-solid);
+        min-height: calc(100vh - var(--nav-h, 64px));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* vertically center the carousel rail */
+        padding: 24px 0;
+      }
+      /* Make the next section paint over the sticky picker as it scrolls,
+         giving a clean handoff. */
+      .picker + * {
+        position: relative;
+        z-index: 2;
+        background: var(--bg-white);
+      }
+
       .picker .split {
         display: flex !important;
         flex-direction: row !important;
@@ -479,13 +505,28 @@
         scroll-padding-left: 24px;
         mask-image: linear-gradient(to right, black 0%, black 92%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, black 0%, black 92%, transparent 100%);
+        align-items: stretch;  /* equal heights for cards */
       }
       .picker .split::-webkit-scrollbar { display: none; }
       .picker .split > .split-card {
         flex: 0 0 clamp(280px, 78vw, 340px);
         max-width: 340px;
         scroll-snap-align: start;
+        /* Fixed height so all three cards match and the section has a
+           predictable visual rhythm. Content that exceeds scrolls within
+           the card via overflow-y. */
+        height: 380px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 28px 24px;  /* slightly tighter than desktop 40px 36px */
       }
+      /* Hide the inner scrollbar to keep the card feeling like a poster. */
+      .picker .split > .split-card::-webkit-scrollbar { display: none; }
+      .picker .split > .split-card { scrollbar-width: none; }
+      /* Shorter typography on mobile so the 380px box doesn't feel tight. */
+      .picker .split > .split-card .card-title { font-size: 28px; line-height: 1.1; }
+      .picker .split > .split-card .card-desc { font-size: 14px; line-height: 1.45; }
+      .picker .split > .split-card .card-list { font-size: 14px; }
     }
     .picker-dots { display: none; }
     @media (max-width: 900px) {
@@ -601,8 +642,8 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513j">
-  <script src="/assets/js/nav.js?v=20260513j" defer></script>
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513k">
+  <script src="/assets/js/nav.js?v=20260513k" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body class="home-fullbleed">
