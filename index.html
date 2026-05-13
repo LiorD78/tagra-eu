@@ -459,6 +459,58 @@
     }
     .btn-outline:hover { background: var(--blue-mid); color: #fff !important; }
 
+
+    /* PICKER MOBILE CAROUSEL — desktop unchanged */
+    @media (max-width: 900px) {
+      .picker .split {
+        display: flex !important;
+        flex-direction: row !important;
+        grid-template-columns: none !important;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        padding: 0 24px 8px;
+        margin: 0 -24px;
+        scroll-padding-left: 24px;
+        mask-image: linear-gradient(to right, black 0%, black 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 0%, black 92%, transparent 100%);
+      }
+      .picker .split::-webkit-scrollbar { display: none; }
+      .picker .split > .split-card {
+        flex: 0 0 clamp(280px, 78vw, 340px);
+        max-width: 340px;
+        scroll-snap-align: start;
+      }
+    }
+    .picker-dots { display: none; }
+    @media (max-width: 900px) {
+      .picker-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+      }
+      .picker-dot {
+        width: 8px; height: 8px; padding: 0;
+        background: #d0d0d0;
+        border: none; border-radius: 99px;
+        cursor: pointer;
+        transition: width 0.25s ease, background 0.25s ease;
+      }
+      .picker-dot.is-active {
+        width: 28px;
+        background: var(--blue-dark, #0b2c4a);
+      }
+      .picker-dot:focus-visible {
+        outline: 2px solid var(--blue-mid, #134a8e);
+        outline-offset: 3px;
+      }
+    }
   </style>
 
 <script type="application/ld+json">
@@ -549,7 +601,7 @@
   }
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513g">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513h">
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body class="home-fullbleed">
@@ -613,7 +665,7 @@
 <section class="picker" aria-label="Choose your TAGRA solution">
   <div class="container">
 
-    <div class="split anim-up">
+    <div class="split anim-up" id="picker-rail">
 
       <!-- Fleet -->
       <a class="split-card split-card--fleet" href="/fleet/" aria-label="TAGRA for fleet operators">
