@@ -129,9 +129,8 @@
     /* media frame */
     .tmx-media-frame { border-radius: 20px; overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(#fff,#000); }
     .tmx-media-frame img { width: 100%; display: block; object-fit: cover; }
-    /* Hero media frame: enforce 16:9 like other product pages, no vertical crop */
-    .enf-hero .tmx-media-frame { aspect-ratio: 16 / 9; background: var(--bg-gray, #f5f5f7); }
-    .enf-hero .tmx-media-frame img { width: 100%; height: 100%; object-fit: contain; }
+    /* Hero image is already 16:9 (1080x608) so let it set its own aspect ratio. */
+    .enf-hero .tmx-media-frame img { height: auto; }
 
     /* faq */
     .faq-block details { border-bottom: 1px solid rgba(0,0,0,.08); }
@@ -207,7 +206,7 @@
 <!-- ═══ NAVIGATION ═══════════════════════════════════════════════ -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="TAGRA Control – Home"><img src="/assets/img/logo-light.svg" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"><span class="nav-logo-variant">Control</span></a>
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home"><img src="/assets/img/logo-light.svg" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/fleet/">For companies</a></li>
       <li><a href="/driver/">For drivers</a></li>
@@ -246,7 +245,7 @@
     <p class="anim-up" style="font-size:15px;color:var(--text2);margin-bottom:0;transition-delay:.2s">Windows · Free 30-day trial · Used in the Czech Republic, Slovakia and Hungary</p>
     
     <div class="tmx-media-frame anim-up" style="margin:44px auto 0;border:1px solid rgba(0,0,0,.08);box-shadow:0 20px 40px rgba(0,0,0,.08);">
-      <img src="/assets/img/tagra-control-screenshot.webp" alt="TAGRA Control – digital tachograph analysis interface for enforcement authorities" width="800" height="600">
+      <img src="/assets/img/tagra-control-screenshot.webp?v=2026-05-13c" alt="TAGRA Control – digital tachograph analysis interface for enforcement authorities" width="1080" height="608">
     </div>
   </div>
 </section>
