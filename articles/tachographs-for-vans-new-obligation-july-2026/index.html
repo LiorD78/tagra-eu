@@ -47,7 +47,17 @@
     @media(max-width:700px){.art-title{font-size:26px;}}
     .art-meta{font-size:15px;color:var(--text2);padding-bottom:24px;border-bottom:1px solid var(--border);display:flex;gap:20px;flex-wrap:wrap;}
     .art-body{padding:44px 0 60px;}
-    .art-body h2{font-size:26px;font-weight:800;color:var(--text-strong);margin:44px 0 14px;line-height:1.25;letter-spacing:-.01em;}
+    .art-body h2 {
+      font-size: 36px; font-weight: 800;
+      line-height: 1.1; letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--blue-mid, #134a8e);
+      background: linear-gradient(90deg, var(--blue-dark, #0b2c4a) 0%, var(--blue-mid, #134a8e) 55%, var(--blue-light, #1f5fa6) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block; max-width: 100%; margin-bottom: 14px;
+      padding: 0.12em 0.15em 0.08em 0;
+    }
     .art-body h3{font-size:20px;font-weight:700;color:var(--text-strong);margin:28px 0 10px;}
     .art-body p{margin-bottom:18px;}
     .art-body ul,.art-body ol{margin-bottom:20px;}
@@ -115,8 +125,8 @@
     .related-card-title{font-size:16px;font-weight:700;color:var(--text-strong);line-height:1.4;}
     /* FOOTER */
   </style>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513o">
-  <script src="/assets/js/nav.js?v=20260513o" defer></script>
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513p">
+  <script src="/assets/js/nav.js?v=20260513p" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body>

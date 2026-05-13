@@ -134,14 +134,27 @@
     /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
     h1, h2, h3 { font-weight: 800; }
     h2 {
-      font-size: 36px; line-height: 1.15; letter-spacing: -.01em;
-      margin-bottom: 12px; text-transform: uppercase;
-      display: inline-block;
-      background: linear-gradient(90deg,#052037,var(--blue-dark) 55%,#0e3a73);
+      font-size: 36px; font-weight: 800;
+      line-height: 1.1; letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--blue-mid, #134a8e);
+      background: linear-gradient(90deg, var(--blue-dark, #0b2c4a) 0%, var(--blue-mid, #134a8e) 55%, var(--blue-light, #1f5fa6) 100%);
       -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;padding-bottom:0.08em;
+      -webkit-text-fill-color: transparent;
+      display: inline-block; max-width: 100%; margin-bottom: 14px;
+      padding: 0.12em 0.15em 0.08em 0;
     }
-    @media (max-width: 768px) { h2 { font-size: 28px; } }
+    @media (max-width: 768px) { h2 {
+      font-size: 36px; font-weight: 800;
+      line-height: 1.1; letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--blue-mid, #134a8e);
+      background: linear-gradient(90deg, var(--blue-dark, #0b2c4a) 0%, var(--blue-mid, #134a8e) 55%, var(--blue-light, #1f5fa6) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block; max-width: 100%; margin-bottom: 14px;
+      padding: 0.12em 0.15em 0.08em 0;
+    } }
     h2.hero-h2 {
       font-size: 64px; line-height: 1.15; letter-spacing: -.02em;
       display: block; text-transform: none; padding-bottom: 0.08em;
@@ -436,8 +449,8 @@
   "inLanguage": "en"
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513o">
-  <script src="/assets/js/nav.js?v=20260513o" defer></script>
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513p">
+  <script src="/assets/js/nav.js?v=20260513p" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
 <body>
