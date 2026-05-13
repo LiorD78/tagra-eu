@@ -162,7 +162,9 @@ a:hover, a:focus {
 
 /* === Buttons === */
 .btn,
-.btn-cta {
+.btn-cta,
+.btn-outline,
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
