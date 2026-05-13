@@ -233,6 +233,233 @@
     .anim-up { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .anim-up.on { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .anim-up { transition: none !important; opacity: 1 !important; transform: none !important; } }
+
+    /* ─── HOMEPAGE EXPANSION: SECTIONS ─────────────────────────────── */
+    .section { padding: 80px 0; }
+    .section--gray { background: var(--bg-gray, #f5f5f7); }
+    .section--blue { background: var(--bg-apple-solid, #eaf3f8); }
+    .section--white { background: var(--bg-white, #fff); }
+    .section-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .section-head { text-align: center; max-width: 760px; margin: 0 auto 16px; }
+    .section-label {
+      font-size: 13px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--green-brand);
+      margin-bottom: 10px; display: block;
+    }
+    .section-h2 {
+      font-size: clamp(28px, 3.5vw, 40px); font-weight: 800;
+      line-height: 1.1; letter-spacing: -.02em;
+      background: linear-gradient(90deg,#061a2e 0%, var(--blue-mid) 50%, #5ea8e8 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      display: inline-block; margin-bottom: 14px;
+    }
+    .section-intro {
+      font-size: 18px; line-height: 1.6; color: var(--text2);
+      max-width: 680px; margin: 0 auto;
+    }
+
+    /* ─── BENTO GRID (reused from /fleet/) ─────────────────────────── */
+    .bento {
+      display: grid; grid-template-columns: repeat(12, 1fr);
+      gap: 14px; margin-top: 44px;
+    }
+    .bc {
+      background: var(--bg-white); border-radius: var(--radius);
+      padding: 32px; border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .bc.s4 { grid-column: span 4; }
+    .bc.s5 { grid-column: span 5; }
+    .bc.s6 { grid-column: span 6; }
+    .bc.s7 { grid-column: span 7; }
+    .bc.s8 { grid-column: span 8; }
+    .bc.bluefill  { background: var(--bg-apple-solid); border-color: rgba(31,95,166,.1); }
+    .bc.greenfill { background: var(--green-bg); border-color: rgba(110,155,18,.2); }
+    .bc-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--blue-mid);
+      margin-bottom: 8px; display: block;
+    }
+    .bc-title {
+      font-size: 24px; font-weight: 800; line-height: 1.2;
+      letter-spacing: -.01em; color: var(--text-strong); margin-bottom: 10px;
+    }
+    .bc-text { font-size: 16px; line-height: 1.55; color: var(--text2); }
+    .bignum {
+      font-size: 110px; font-weight: 800; line-height: 1;
+      letter-spacing: -.04em; color: rgba(19,74,142,.06);
+      position: absolute; bottom: -16px; right: 16px; pointer-events: none;
+    }
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: 1fr 1fr; }
+      .bc.s7, .bc.s5, .bc.s8 { grid-column: span 2; }
+      .bc.s4, .bc.s6 { grid-column: span 1; }
+    }
+    @media (max-width: 600px) {
+      .bento { grid-template-columns: 1fr; }
+      .bc { grid-column: span 1 !important; padding: 26px; }
+      .bc-title { font-size: 21px; }
+      .bignum { font-size: 80px; }
+    }
+
+    /* ─── FLY-IN ANIMATIONS (intersection observer) ────────────────── */
+    .fly-left  { opacity: 0; transform: translateX(-50px);
+      transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .fly-right { opacity: 0; transform: translateX(50px);
+      transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .fly-left.on, .fly-right.on { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .fly-left, .fly-right { transition: none !important;
+        opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ─── SOCIAL PROOF: REFERENCE GRID ─────────────────────────────── */
+    .ref-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-top: 44px;
+    }
+    .ref-card {
+      background: #fff; border-radius: 20px;
+      border: 1.5px solid rgba(0,0,0,.08); padding: 26px 22px;
+      display: flex; flex-direction: column; gap: 6px;
+      position: relative; overflow: hidden;
+      transition: transform .18s, box-shadow .18s, border-color .18s;
+    }
+    .ref-card::before {
+      content: ''; position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: .05; pointer-events: none;
+    }
+    .ref-card > * { position: relative; z-index: 1; }
+    .ref-card--cz::before { background-image: url('https://flagcdn.com/w320/cz.png'); }
+    .ref-card--sk::before { background-image: url('https://flagcdn.com/w320/sk.png'); }
+    .ref-card--hu::before { background-image: url('https://flagcdn.com/w320/hu.png'); }
+    .ref-card:hover {
+      transform: translateY(-3px); border-color: rgba(19,74,142,.3);
+      box-shadow: 0 14px 28px rgba(19,74,142,.10);
+    }
+    .ref-flag { font-size: 28px; line-height: 1; margin-bottom: 6px; }
+    .ref-country {
+      font-size: 12px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--blue-mid);
+    }
+    .ref-name { font-size: 18px; font-weight: 800; color: var(--text-strong);
+      line-height: 1.25; }
+    .ref-note { font-size: 14px; color: var(--text2); line-height: 1.5; margin-top: 4px; }
+
+    /* ─── TESTIMONIALS ─────────────────────────────────────────────── */
+    .testimonial-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 18px; margin-top: 44px;
+    }
+    .testimonial {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid var(--border); padding: 30px;
+      display: flex; flex-direction: column; gap: 18px;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '"'; position: absolute; top: 8px; left: 22px;
+      font-size: 90px; line-height: 1; color: rgba(19,74,142,.10);
+      font-family: Georgia, serif; pointer-events: none;
+    }
+    .testimonial-quote {
+      font-size: 17px; line-height: 1.55; color: var(--text-strong);
+      font-weight: 500; position: relative; z-index: 1;
+    }
+    .testimonial-attribution {
+      font-size: 14px; color: var(--text2); line-height: 1.4;
+      border-top: 1px solid var(--border); padding-top: 14px;
+    }
+    .testimonial-attribution strong { color: var(--text-strong); font-weight: 700; display: block; }
+    @media (max-width: 900px) {
+      .testimonial-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── PRICING TEASER ───────────────────────────────────────────── */
+    .pricing-teaser {
+      background: linear-gradient(135deg, var(--green-bg) 0%, #fff 100%);
+      border-radius: var(--radius); border: 1px solid rgba(110,155,18,.2);
+      padding: 56px 48px; margin-top: 44px;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center;
+    }
+    .pricing-teaser-headline {
+      font-size: clamp(26px, 3vw, 36px); font-weight: 800;
+      line-height: 1.15; letter-spacing: -.02em;
+      color: var(--text-strong); margin-bottom: 12px;
+    }
+    .pricing-teaser-price {
+      font-size: 17px; line-height: 1.55; color: var(--text2);
+      margin-bottom: 20px;
+    }
+    .pricing-teaser-price strong { color: var(--green-brand); font-size: 22px; font-weight: 800; }
+    .pricing-teaser-features {
+      list-style: none; padding: 0; margin: 0 0 24px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .pricing-teaser-features li {
+      font-size: 15px; color: var(--text); display: flex; gap: 10px; align-items: flex-start;
+    }
+    .pricing-teaser-features li::before {
+      content: '✓'; color: var(--green-brand); font-weight: 800; flex-shrink: 0;
+    }
+    .pricing-teaser-cta { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    .pricing-teaser-cta-note { font-size: 13px; color: var(--text2); }
+    @media (max-width: 900px) {
+      .pricing-teaser { grid-template-columns: 1fr; padding: 40px 28px; gap: 24px; }
+    }
+
+    /* ─── FAQ TEASER ───────────────────────────────────────────────── */
+    .faq-block { max-width: 760px; margin: 44px auto 0; }
+    .faq-block details {
+      border-bottom: 1px solid rgba(0,0,0,.08); background: transparent;
+    }
+    .faq-block details:first-child { border-top: 1px solid rgba(0,0,0,.08); }
+    .faq-block summary {
+      list-style: none; cursor: pointer;
+      padding: 18px 44px 18px 0;
+      font-weight: 700; font-size: 18px; line-height: 1.4;
+      position: relative; color: var(--text-strong);
+    }
+    .faq-block summary::-webkit-details-marker { display: none; }
+    .faq-block summary::after {
+      content: '+'; position: absolute; right: 4px; top: 50%;
+      transform: translateY(-50%); font-size: 28px; font-weight: 300;
+      color: var(--green-brand); transition: transform .2s;
+    }
+    .faq-block details[open] summary::after { content: '−'; }
+    .faq-answer {
+      padding: 0 0 20px; font-size: 16px; line-height: 1.6; color: var(--text2);
+    }
+    .faq-cta { text-align: center; margin-top: 28px; }
+    .faq-cta a {
+      font-size: 16px; font-weight: 600; color: var(--blue-mid);
+      text-decoration: none; border-bottom: 1.5px solid var(--blue-mid);
+      padding-bottom: 2px;
+    }
+    .faq-cta a:hover { color: var(--blue-dark); border-color: var(--blue-dark); }
+
+    /* ─── BUTTONS (reuse from picker, but in case missing) ─────────── */
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-cta); color: #fff !important;
+      padding: 14px 30px; border-radius: 99px;
+      font-size: 17px; font-weight: 600; cursor: pointer;
+      text-decoration: none !important; border: none;
+      transition: background .2s, transform .2s;
+    }
+    .btn-cta:hover { background: var(--green-brand); transform: scale(1.02); color: #fff !important; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--blue-mid) !important;
+      padding: 12px 26px; border-radius: 99px;
+      font-size: 16px; font-weight: 600;
+      text-decoration: none !important; border: 1.5px solid var(--blue-mid);
+      transition: background .2s, color .2s;
+    }
+    .btn-outline:hover { background: var(--blue-mid); color: #fff !important; }
+
   </style>
 
 <script type="application/ld+json">
@@ -441,6 +668,183 @@
   </div>
 </div>
 
+
+<!-- ═══ USP BENTO ═════════════════════════════════════════════════════ -->
+<section class="section section--white" aria-label="Why TAGRA — key features">
+  <div class="section-inner">
+    <div class="section-head anim-up">
+      <span class="section-label">Why TAGRA</span>
+      <h2 class="section-h2">Everything you need for tachograph compliance</h2>
+      <p class="section-intro">Powerful Windows software for digital tachograph analysis, EU drivers' hours and the HGV Working Time Directive — scales from one vehicle to enterprise fleets.</p>
+    </div>
+    <div class="bento">
+      <div class="bc s7 fly-left">
+        <span class="bc-eyebrow">Compliance engine</span>
+        <div class="bc-title">EU drivers' hours + WTD</div>
+        <p class="bc-text">Automatic evaluation of <strong>Regulation (EC) No 561/2006</strong> and the <strong>HGV Working Time Directive</strong> (2002/15/EC). Clear daily and weekly summaries with every infringement flagged by time, type and duration.</p>
+        <div class="bignum">01</div>
+      </div>
+      <div class="bc s5 bluefill fly-right">
+        <span class="bc-eyebrow">Coverage</span>
+        <div class="bc-title">All tachographs supported</div>
+        <p class="bc-text">First-generation digital through <strong>Smart Tachograph G2V2</strong>. Reads <code>.DDD</code>, <code>.C1B</code>, <code>.V1B</code> and ESM files from driver card and vehicle unit downloads.</p>
+      </div>
+      <div class="bc s6 fly-left" style="transition-delay:.05s">
+        <span class="bc-eyebrow">Reports</span>
+        <div class="bc-title">Audit-grade outputs</div>
+        <p class="bc-text">Inspector-ready reports that enforcement officers actually understand. Print, export or share clean, structured outputs for audits, internal reviews and roadside checks.</p>
+      </div>
+      <div class="bc s6 greenfill fly-right" style="transition-delay:.05s">
+        <span class="bc-eyebrow">Scales</span>
+        <div class="bc-title">1 to unlimited vehicles</div>
+        <p class="bc-text">TAGRA Trucker, 1, 2, 4, 6 and MAX tiers. Start with a single truck and grow to an enterprise fleet without changing tools or workflows.</p>
+        <div class="bignum">∞</div>
+      </div>
+      <div class="bc s8 fly-left" style="transition-delay:.1s">
+        <span class="bc-eyebrow">Privacy</span>
+        <div class="bc-title">Desktop. Fast. Yours.</div>
+        <p class="bc-text">Windows software that runs offline on your PC. Driver and vehicle data never leaves your network — no cloud lock-in, no monthly subscription, no GDPR worries about third-party processors.</p>
+      </div>
+      <div class="bc s4 bluefill fly-right" style="transition-delay:.1s">
+        <span class="bc-eyebrow">Future-proof</span>
+        <div class="bc-title">Vans 2026 ready</div>
+        <p class="bc-text">Full compliance with the new tachograph obligation for light commercial vehicles (2.5–3.5 t) from <strong>1 July 2026</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOCIAL PROOF ══════════════════════════════════════════════════ -->
+<section class="section section--blue" aria-label="Trusted by authorities and fleets across Central Europe">
+  <div class="section-inner">
+    <div class="section-head anim-up">
+      <span class="section-label">Verified in practice</span>
+      <h2 class="section-h2">Trusted by authorities. Chosen by fleets.</h2>
+      <p class="section-intro">The same evaluation logic used by Police, Customs and Labour Inspectorates across the Czech Republic, Slovakia and Hungary.</p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card ref-card--cz">
+        <div class="ref-flag">🇨🇿</div>
+        <div class="ref-country">Czech Republic</div>
+        <div class="ref-name">Police &amp; Customs</div>
+        <div class="ref-note">Roadside and company inspections nationwide.</div>
+      </div>
+      <div class="ref-card ref-card--sk">
+        <div class="ref-flag">🇸🇰</div>
+        <div class="ref-country">Slovakia</div>
+        <div class="ref-name">Labour Inspectorate</div>
+        <div class="ref-note">Driver hours and working time enforcement.</div>
+      </div>
+      <div class="ref-card ref-card--hu">
+        <div class="ref-flag">🇭🇺</div>
+        <div class="ref-country">Hungary</div>
+        <div class="ref-name">Enforcement &amp; ministries</div>
+        <div class="ref-note">Cross-border transport compliance.</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-flag">🚚</div>
+        <div class="ref-country">Across Central Europe</div>
+        <div class="ref-name">Hundreds of fleet operators</div>
+        <div class="ref-note">Haulage, bus &amp; coach, rental, municipal fleets, workshops.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════════════════ -->
+<section class="section section--white" aria-label="What practitioners say">
+  <div class="section-inner">
+    <div class="section-head anim-up">
+      <span class="section-label">In their words</span>
+      <h2 class="section-h2">What practitioners say</h2>
+      <p class="section-intro">Real-world feedback from the people who use TAGRA every day.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial fly-left">
+        <p class="testimonial-quote">The reports are exactly what inspectors want to see. Our audit prep dropped from hours to minutes — and we're now confident in every roadside check.</p>
+        <div class="testimonial-attribution">
+          <strong>Fleet Manager</strong>
+          Haulage operator · Czech Republic
+        </div>
+      </div>
+      <div class="testimonial anim-up" style="transition-delay:.1s">
+        <p class="testimonial-quote">At the roadside we need precise infringement detection in seconds. TAGRA gives us EU drivers' hours evaluation we can rely on — in court if it comes to that.</p>
+        <div class="testimonial-attribution">
+          <strong>Roadside Inspector</strong>
+          Police unit · Slovakia
+        </div>
+      </div>
+      <div class="testimonial fly-right" style="transition-delay:.2s">
+        <p class="testimonial-quote">I'm an owner-driver — installation took ten minutes. Download the card, click analyse, done. No cloud, no fuss. Just compliant.</p>
+        <div class="testimonial-attribution">
+          <strong>Owner-operator</strong>
+          International transport · Hungary
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING TEASER ════════════════════════════════════════════════ -->
+<section class="section section--gray" aria-label="Pricing overview">
+  <div class="section-inner">
+    <div class="section-head anim-up">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-h2">Fair pricing. No surprises.</h2>
+      <p class="section-intro">A perpetual licence with an optional annual maintenance fee that scales from a single vehicle to an unlimited fleet.</p>
+    </div>
+    <div class="pricing-teaser anim-up">
+      <div>
+        <div class="pricing-teaser-headline">Start free. Then from €19 a year.</div>
+        <p class="pricing-teaser-price">30-day free trial, no credit card required. Annual maintenance from <strong>€19</strong> (TAGRA Trucker) to €139 (TAGRA MAX, unlimited vehicles).</p>
+        <ul class="pricing-teaser-features">
+          <li>Full EU drivers' hours and Working Time Directive analysis</li>
+          <li>Support for all digital tachographs, including Smart G2V2</li>
+          <li>Free software updates for every regulatory change</li>
+          <li>Dedicated technical support throughout the year</li>
+        </ul>
+      </div>
+      <div class="pricing-teaser-cta">
+        <a href="/fleet/" class="btn-cta">See all tiers &amp; pricing →</a>
+        <a href="/try/" class="btn-outline">Try 30 days free</a>
+        <span class="pricing-teaser-cta-note">No credit card. Windows installer.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ TEASER ════════════════════════════════════════════════════ -->
+<section class="section section--white" aria-label="Frequently asked questions">
+  <div class="section-inner">
+    <div class="section-head anim-up">
+      <span class="section-label">Questions</span>
+      <h2 class="section-h2">Frequently asked</h2>
+      <p class="section-intro">Short answers to the questions we hear most. The full FAQ has more.</p>
+    </div>
+    <div class="faq-block anim-up">
+      <details>
+        <summary>Is TAGRA cloud-based or installed locally?</summary>
+        <div class="faq-answer">TAGRA is <strong>Windows desktop software</strong> that runs entirely offline on your own computer. Driver and vehicle data never leaves your network — there is no cloud upload, no third-party processor, and no monthly subscription. Many fleets prefer this for GDPR and data-protection reasons.</div>
+      </details>
+      <details>
+        <summary>Does TAGRA cover EU drivers' hours and the Working Time Directive?</summary>
+        <div class="faq-answer">Yes. TAGRA evaluates <strong>Regulation (EC) No 561/2006</strong> (EU drivers' hours) and the <strong>HGV Working Time Directive</strong> 2002/15/EC, plus related AETR rules. Every infringement is highlighted in clear driver and vehicle reports with exact time, type and duration.</div>
+      </details>
+      <details>
+        <summary>Which tachographs and card readers does it support?</summary>
+        <div class="faq-answer">All EU digital tachographs, from first-generation through Smart Tachograph G2V2. Compatible with standard smart-card readers (e.g. DOWNLOAD BOX II S) and reads <code>.DDD</code>, <code>.C1B</code>, <code>.V1B</code> and ESM files. Ready for the July 2026 requirements for light commercial vehicles.</div>
+      </details>
+      <details>
+        <summary>How does the 30-day free trial work?</summary>
+        <div class="faq-answer">Download and install the Windows package — you get <strong>30 days of full, unrestricted access</strong> to all features. No credit card, no payment information. If TAGRA fits your operation, you purchase a perpetual licence to continue.</div>
+      </details>
+      <div class="faq-cta">
+        <a href="/faq/">See all FAQs →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
@@ -628,6 +1032,35 @@
     } else if (!isPaused) {
       if (current && current.paused) tryPlay(current);
     }
+  });
+})();
+</script>
+
+<script>
+(function() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.fly-left, .fly-right, .anim-up').forEach(function(el) {
+      el.classList.add('on');
+      el.style.opacity = '1'; el.style.transform = 'none';
+    });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.fly-left, .fly-right, .anim-up').forEach(function(el) {
+      el.classList.add('on');
+    });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fly-left, .fly-right, .anim-up').forEach(function(el) {
+    io.observe(el);
   });
 })();
 </script>
