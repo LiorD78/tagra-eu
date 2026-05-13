@@ -261,7 +261,7 @@ a:hover, a:focus {
   background: linear-gradient(180deg, #eef4fb 0%, #ffffff 100%);
 }
 .band--hero--green {
-  background: linear-gradient(180deg, #f3f7ea 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #e9f3d8 0%, #f3f8e8 52%, #ffffff 100%);
 }
 .band--hero--gray {
   background: linear-gradient(180deg, #ededf2 0%, #ffffff 100%);
