@@ -157,6 +157,19 @@ html { scroll-padding-top: var(--nav-h, 64px); }
   content: '✓'; color: var(--blue-mid, #134a8e);
   font-size: 14px; font-weight: 600;
 }
+/* Mobile-only CTA pill. Hidden on desktop; shown on mobile via media query. */
+.nav-cta-mobile {
+  display: none; /* default hidden — desktop shows in-list CTA instead */
+  background: var(--green-cta, #5C820F); color: #fff !important;
+  border-radius: 99px; padding: 8px 14px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none !important; white-space: nowrap;
+  transition: background .15s, transform .15s;
+}
+.nav-cta-mobile:hover, .nav-cta-mobile:active {
+  background: var(--green-brand, #6E9B12);
+  transform: scale(1.03);
+}
 .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-mobile-toggle span {
   display: block; width: 22px; height: 2px;
@@ -166,6 +179,7 @@ html { scroll-padding-top: var(--nav-h, 64px); }
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .nav-cta-mobile { display: inline-flex; align-items: center; }
   .nav-mobile-toggle { display: block; }
   .nav-links.open {
     display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
