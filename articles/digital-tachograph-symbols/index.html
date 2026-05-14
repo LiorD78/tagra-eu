@@ -111,243 +111,12 @@
     .art-body th:first-child,.art-body td:first-child{width:22%;}
     @media(max-width:680px){.art-body table,.art-body thead,.art-body tbody,.art-body th,.art-body td,.art-body tr{display:block;}.art-body thead{display:none;}.art-body td{border-top:none;border-bottom:1px solid var(--border);}.art-body td:first-child{font-weight:700;background:var(--bg-apple);}}
     .lead{font-size:20px;color:var(--text2);line-height:1.55;}
-  /* ============= ARTICLE EXTRA STYLES (for symbols & error codes) ============= */
-.lead {
-  font-size: 19px;
-  line-height: 1.65;
-  color: var(--text2);
-  margin-bottom: 14px;
-}
-.lead strong { color: var(--text); }
-
-/* Activity 4-card grid */
-.activity-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 28px 0 12px;
-}
-.activity-card {
-  background: #ffffff;
-  border: 1.5px solid var(--border);
-  border-radius: 16px;
-  padding: 22px;
-  display: flex; flex-direction: column; gap: 6px;
-  transition: box-shadow .15s, transform .15s, border-color .15s;
-}
-.activity-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.06); border-color: rgba(19,74,142,.25); }
-.activity-card .ico {
-  width: 44px; height: 44px;
-  display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 12px;
-  font-size: 22px;
-  color: #fff;
-  font-weight: 800;
-}
-.activity-card .ico--drive { background: linear-gradient(135deg, #0070F3, #134a8e); }
-.activity-card .ico--work  { background: linear-gradient(135deg, #5C820F, #6E9B12); }
-.activity-card .ico--avail { background: linear-gradient(135deg, #FBC02D, #F57F17); color:#1f2937;}
-.activity-card .ico--rest  { background: linear-gradient(135deg, #6b7280, #374151); }
-.activity-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-top: 4px; }
-.activity-card p { font-size: 15px; line-height: 1.55; color: var(--text2); }
-
-/* Universal warning callouts (4 panels) */
-.warn-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-.warn-card {
-  border-radius: 16px; padding: 22px; position: relative; border: 1.5px solid;
-}
-.warn-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
-.warn-card p  { font-size: 15px; line-height: 1.55; }
-.warn-card--info  { background:#f0f7ff; border-color: rgba(19,74,142,.15);  }
-.warn-card--info  h3 { color: var(--blue-dark); }
-.warn-card--ok    { background:#f4f9ea; border-color: rgba(110,155,18,.2); }
-.warn-card--ok    h3 { color: var(--green-brand); }
-.warn-card--warn  { background:#fff7e6; border-color: rgba(245,158,11,.25); }
-.warn-card--warn  h3 { color:#a85800; }
-.warn-card--crit  { background:#fef2f2; border-color: rgba(220,38,38,.2); }
-.warn-card--crit  h3 { color:#991b1b; }
-
-/* Vendor section (collapsible) — 4 manufacturers */
-.vendor-stack { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
-.vendor {
-  border: 1.5px solid var(--border);
-  border-radius: 16px;
-  background: #fff;
-  overflow: hidden;
-}
-.vendor summary {
-  list-style: none; cursor: pointer; padding: 22px 56px 22px 24px;
-  position: relative; font-size: 20px; font-weight: 800;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%);
-}
-.vendor summary::-webkit-details-marker { display: none; }
-.vendor summary::after {
-  content: "+"; position: absolute; right: 22px; top: 50%;
-  transform: translateY(-50%); font-size: 28px; color: var(--blue-mid); font-weight: 300;
-}
-.vendor[open] summary::after { content: "−"; }
-.vendor-meta {
-  display: block; font-size: 13px; font-weight: 600; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--green-brand);
-  margin-bottom: 6px;
-}
-.vendor-body { padding: 6px 24px 28px; }
-.vendor-body p { font-size: 16px; line-height: 1.6; color: var(--text2); margin-bottom: 14px; }
-.vendor-body h3 { font-size: 18px; font-weight: 800; margin: 26px 0 12px; color: var(--text); }
-
-/* Code table */
-.code-table-wrap {
-  width: 100%; overflow-x: auto; margin: 10px 0 18px;
-  -webkit-overflow-scrolling: touch;
-}
-.code-table {
-  width: 100%; border-collapse: separate; border-spacing: 0;
-  font-size: 15px; min-width: 700px;
-}
-.code-table th, .code-table td {
-  padding: 13px 14px; border-bottom: 1px solid var(--border);
-  vertical-align: top; text-align: left;
-}
-.code-table th {
-  font-size: 13px; font-weight: 700; color: var(--text2);
-  text-transform: uppercase; letter-spacing: .05em;
-  background: var(--bg-apple-solid);
-  border-bottom: 2px solid var(--border);
-}
-.code-table td:first-child { font-weight: 700; color: var(--text); }
-.code-table tr:hover td { background: rgba(19,74,142,.03); }
-
-/* Severity badges */
-.sev {
-  display: inline-block; padding: 3px 10px; border-radius: 99px;
-  font-size: 12px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: .04em; white-space: nowrap;
-}
-.sev-crit { background: #fee2e2; color: #991b1b; }
-.sev-high { background: #ffedd5; color: #9a3412; }
-.sev-med  { background: #fef3c7; color: #92400e; }
-.sev-low  { background: #dcfce7; color: #166534; }
-.sev-info { background: #dbeafe; color: #1e3a8a; }
-
-/* Crisis steps — numbered ordered list with big numbers */
-.crisis-steps {
-  list-style: none; padding: 0; margin: 18px 0 0;
-  display: flex; flex-direction: column; gap: 14px;
-}
-.crisis-steps li {
-  display: flex; gap: 16px; padding: 18px 20px;
-  background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
-  align-items: flex-start;
-}
-.crisis-steps .num {
-  flex-shrink: 0; width: 36px; height: 36px;
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
-  color: #fff; border-radius: 50%;
-  display: inline-flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 16px;
-}
-.crisis-steps strong { display: block; margin-bottom: 4px; font-size: 16px; color: var(--text); }
-.crisis-steps span.lbl { color: var(--text2); font-size: 15px; line-height: 1.55; }
-
-/* TAGRA inline CTA box */
-.cta-box {
-  margin: 36px 0;
-  border-radius: 18px;
-  padding: 28px 28px;
-  background: linear-gradient(135deg, #052037 0%, var(--blue-dark) 55%, var(--blue-mid) 100%);
-  color: #fff;
-  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
-}
-.cta-box h3 { font-size: 22px; font-weight: 800; color: #fff; margin: 0; }
-.cta-box p  { font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.88); margin: 0; }
-.cta-box a.cta-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--green-cta); color: #fff !important;
-  padding: 12px 28px; border-radius: 99px; font-weight: 600; font-size: 16px;
-  text-decoration: none !important;
-  transition: background .15s, transform .15s;
-}
-.cta-box a.cta-btn:hover { background: var(--green-brand); transform: scale(1.02); }
-
-/* Sources list */
-.sources-list {
-  list-style: none; padding: 0; margin: 14px 0 0;
-  display: flex; flex-direction: column; gap: 10px;
-}
-.sources-list li {
-  padding: 14px 18px; background: #fff;
-  border: 1.5px solid var(--border); border-radius: 12px;
-  font-size: 15px; line-height: 1.55;
-}
-.sources-list li strong { display: block; margin-bottom: 4px; color: var(--text); }
-.sources-list a { color: var(--blue-mid); font-weight: 600; word-break: break-all; }
-
-/* Related articles small grid */
-.related-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px; margin-top: 18px;
-}
-.related-card {
-  display: flex; flex-direction: column; gap: 6px;
-  padding: 18px 20px; background: #fff;
-  border: 1.5px solid var(--border); border-radius: 14px;
-  text-decoration: none !important; color: var(--text) !important;
-  transition: transform .15s, box-shadow .15s, border-color .15s;
-}
-.related-card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.06); border-color: rgba(19,74,142,.25); }
-.related-card .r-eyebrow { font-size: 12px; font-weight: 700; color: var(--green-brand); text-transform: uppercase; letter-spacing: .07em; }
-.related-card .r-title { font-size: 16px; font-weight: 800; line-height: 1.35; }
-.related-card .r-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
-.related-card .r-chip { margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--blue-mid); }
-
-/* FAQ accordion */
-.faq-block details {
-  border-bottom: 1px solid var(--border); padding: 4px 0;
-}
-.faq-block details:first-child { border-top: 1px solid var(--border); }
-.faq-block summary {
-  list-style: none; cursor: pointer; padding: 18px 40px 18px 0;
-  font-weight: 800; font-size: 17px; line-height: 1.4; position: relative;
-  color: var(--text);
-}
-.faq-block summary::-webkit-details-marker { display: none; }
-.faq-block summary::after {
-  content: "+"; position: absolute; right: 4px; top: 50%;
-  transform: translateY(-50%); font-size: 24px; color: var(--green-brand); font-weight: 300;
-}
-.faq-block details[open] summary::after { content: "−"; }
-.faq-block .faq-a { padding: 0 0 18px; font-size: 16px; line-height: 1.6; color: var(--text2); }
-
-/* TOC table-of-contents pill list at top */
-.toc {
-  background: var(--bg-apple-solid);
-  border: 1.5px solid var(--border);
-  border-radius: 16px;
-  padding: 18px 22px;
-  margin: 24px 0 36px;
-}
-.toc strong {
-  display: block; font-size: 13px; font-weight: 700; color: var(--text2);
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px;
-}
-.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: tocnum;
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 18px; }
-.toc ol li { counter-increment: tocnum; margin: 0; padding: 0; }
-.toc ol li::before { content: counter(tocnum, decimal-leading-zero) " "; color: var(--blue-mid); font-weight: 700; font-size: 13px; }
-.toc ol li a { font-size: 14px; color: var(--text); }
-.toc ol li a:hover { color: var(--blue-mid); }
-/* ============ /ARTICLE EXTRA STYLES ============ */
+  
 </style>
-  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260514a">
-  <link rel="stylesheet" href="../../assets/css/base.css?v=20260514a">
-  <link rel="stylesheet" href="../../assets/css/components.css?v=20260514a">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260514a">
+  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260514b">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=20260514b">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=20260514b">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260514b">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
@@ -389,6 +158,12 @@
     <div class="eyebrow">Driver knowledge base</div>
     <h1 class="art-title">Tachograph symbols & error codes: a driver's guide</h1>
     <div class="art-meta"><span>Truck Data Technology</span><span>Updated May 2026</span><span>18 min read</span></div>
+    <div class="art-hero-video" aria-label="Driver operating a digital tachograph">
+      <video preload="metadata" muted autoplay loop playsinline webkit-playsinline poster="symboly-chybove-kody-hero-poster.webp" aria-label="Driver operating a digital tachograph">
+        <source src="symboly-chybove-kody-hero.webm" type="video/webm">
+        <source src="symboly-chybove-kody-hero.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </header>
 
@@ -787,143 +562,148 @@
 <details class="vendor" id="stoneridge">
   <summary>
     <span class="vendor-meta">Stoneridge · UK and Scandinavian default fitment</span>
-    Stoneridge SE5000 Exakt Duo² (Rev 8.1)
+    Stoneridge SE5000 Exakt Duo² (Rev 7.6)
   </summary>
   <div class="vendor-body">
-    <p>Stoneridge SE5000 is the most common smart tachograph fitted to UK-registered HGVs and to fleets in the Nordics. The messages below come from the official <strong>SE5000 Exakt Duo² Driver and Company Manual, Rev 8.1 (Stoneridge Electronics, 2023)</strong>. Stoneridge's message structure mirrors Annex I C: <em>Events</em>, <em>Faults</em>, <em>Warnings</em> and <em>Information</em>.</p>
+    <p>Stoneridge SE5000 is the most common smart tachograph fitted to UK-registered HGVs and to fleets across the Nordics. The messages below are reproduced verbatim from the official <strong>Stoneridge SE5000 Exakt Duo² Driver &amp; Company Manual, Rev 7.6</strong> (Stoneridge Electronics AB, Örebro). Stoneridge's manual organises messages into four families, exactly mirroring the Annex I C classification: <em>Messages</em> (informational), <em>Pre-warnings</em>, <em>Warnings</em> and <em>Faults</em>.</p>
 
-    <h3>Events &amp; faults (most common)</h3>
+    <p style="font-size:14px;color:var(--text2);margin-bottom:18px;"><strong>Manual quote:</strong> "Faults are more critical than warnings and are displayed if there is a fault detected in the tachograph, in the sensor or driver card. In addition faults are presented if tampering with the equipment is detected. Faults are stored and can be printed."</p>
+
+    <h3>Card-related messages</h3>
     <div class="code-table-wrap">
       <table class="code-table">
         <thead>
           <tr>
-            <th style="width: 24%;">Message</th>
-            <th style="width: 32%;">Cause</th>
-            <th style="width: 32%;">What to do</th>
-            <th style="width: 12%;">Severity</th>
+            <th style="width: 26%;">Display</th>
+            <th style="width: 14%;">Type</th>
+            <th style="width: 32%;">Description (verbatim from manual)</th>
+            <th style="width: 28%;">Recommended action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Driving without valid card</td>
-            <td>Vehicle moved with no card in slot 1 or with an expired/invalid card. Annex I C Event.</td>
-            <td>Stop. Insert a valid driver card. Document the period on the printout for any inspection.</td>
-            <td><span class="sev sev-high">High</span></td>
-          </tr>
-          <tr>
-            <td>Card insertion while driving</td>
-            <td>Driver card was inserted after the vehicle had begun to move.</td>
-            <td>Acknowledge. Card data may not record the start of the activity correctly.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Last session not closed</td>
-            <td>The previous tachograph did not close the card session properly when the card was removed.</td>
-            <td>Acknowledge. Note for the fleet manager — driver-side data may be incomplete for that vehicle change.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Time overlap</td>
-            <td>Negative UTC time difference between this VU and the last VU used by this driver card.</td>
-            <td>Acknowledge. Workshop must check / correct the UTC time on the offending unit.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Overspeeding</td>
-            <td>Vehicle exceeded the set speed limit for more than one minute.</td>
-            <td>Reduce speed. Repeated events are visible on download and may be sanctioned.</td>
-            <td><span class="sev sev-high">High</span></td>
-          </tr>
-          <tr>
-            <td>Power supply interruption</td>
-            <td>Voltage to the VU dropped or was disconnected — can be caused by a flat battery, jump-start or wiring fault.</td>
-            <td>Confirm. If it recurs, the wiring and supply should be inspected.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Motion data error</td>
-            <td>The VU lost communication with the motion sensor or detected inconsistent pulse data.</td>
-            <td>Continue with manual records on the printout. Workshop within 7 days.</td>
-            <td><span class="sev sev-crit">Critical</span></td>
-          </tr>
-          <tr>
-            <td>Vehicle motion conflict</td>
-            <td>Disagreement between the motion sensor and a second movement source (typically GNSS).</td>
-            <td>Workshop visit — possible tampering or wiring damage.</td>
-            <td><span class="sev sev-crit">Critical</span></td>
-          </tr>
-          <tr>
-            <td>Security breach</td>
-            <td>VU enclosure opened without authorisation, or stored data integrity compromised.</td>
-            <td>The VU may eject cards automatically. Workshop visit is mandatory.</td>
-            <td><span class="sev sev-crit">Critical</span></td>
-          </tr>
-          <tr>
-            <td>Card conflict</td>
-            <td>An incompatible combination of cards is inserted (e.g. two driver cards in wrong slots, or company + control card).</td>
-            <td>Remove the conflicting card and retry.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Internal fault</td>
-            <td>Generic internal VU malfunction (printer subsystem, real-time clock, memory).</td>
-            <td>Acknowledge. Workshop visit within 7 days. Keep manual records until repaired.</td>
-            <td><span class="sev sev-crit">Critical</span></td>
-          </tr>
-          <tr>
-            <td>Printer fault / No paper</td>
-            <td>Printer mechanism failure or empty paper roll.</td>
-            <td>Replace the paper roll (Stoneridge-approved thermal paper only). If it persists, workshop.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Sensor fault</td>
-            <td>Motion sensor self-test failed.</td>
-            <td>Workshop — sensor replacement is likely.</td>
-            <td><span class="sev sev-crit">Critical</span></td>
-          </tr>
-          <tr>
-            <td>Downloading fault</td>
-            <td>Failure during a download via the front interface or remote download box.</td>
-            <td>Retry. Check cable / download key / remote box configuration.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>GNSS fault / GNSS missing</td>
-            <td>Smart tachograph could not record valid position data for 3 hours of cumulative driving — common in tunnels, urban canyons, or with a damaged antenna.</td>
-            <td>Confirm. Check antenna routing if persistent.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Time conflict (GNSS vs VU)</td>
-            <td>UTC time from GNSS differs from internal RTC by more than 1 minute.</td>
-            <td>Workshop — the VU clock will be re-synchronised.</td>
-            <td><span class="sev sev-med">Medium</span></td>
-          </tr>
+          <tr><td>Card 1 fault</td><td><span class="sev sev-crit">Fault</span></td><td>The card in tray 1 is defective. Similar message for tray 2. Related to the card.</td><td>Eject and inspect visually. Clean with a damp cloth. If still faulty: workshop visit.</td></tr>
+          <tr><td>Card 1 auth.failure</td><td><span class="sev sev-crit">Fault</span></td><td>The tachograph security check for the card in tray 1 failed. Related to the tachograph.</td><td>Eject and clean. If persists: workshop must inspect.</td></tr>
+          <tr><td>Card 1 time overlap</td><td><span class="sev sev-med">Warning</span></td><td>The last withdrawal time of the inserted driver card is later than the date/time of the tachograph. Related to the tachograph.</td><td>Check date/time on tachograph. Wait for overlap to elapse.</td></tr>
+          <tr><td>Card integrity error</td><td><span class="sev sev-crit">Fault</span></td><td>Corrupt data detected when reading data from the card. Related to the card.</td><td>Clean and retry. If persists: replace card and visit workshop.</td></tr>
+          <tr><td>Card conflict</td><td><span class="sev sev-med">Warning</span></td><td>An invalid card combination has been detected. Related to the card.</td><td>Withdraw the offending card.</td></tr>
+          <tr><td>Card ins. while driving</td><td><span class="sev sev-med">Warning</span></td><td>A driver card was inserted while the vehicle was in motion. Related to the operator.</td><td>Continue the journey if the driver card is valid; event is recorded.</td></tr>
+          <tr><td>Card eject without saving</td><td><span class="sev sev-med">Message</span></td><td>Data could not be stored on the card withdrawn from tray 1 due to an error.</td><td>Eject, clean, retry. Self-test if persists.</td></tr>
+          <tr><td>Card expired</td><td><span class="sev sev-info">Message</span></td><td>The card in tray 1 has expired. Related to the operator.</td><td>Remove the card and replace with a valid one.</td></tr>
+          <tr><td>Card expires in xx days</td><td><span class="sev sev-info">Message</span></td><td>The card inserted in tray 1 expires in xx days (0–30). Related to the operator.</td><td>Contact the responsible authority to get a new card.</td></tr>
+          <tr><td>Insertion of a non valid card</td><td><span class="sev sev-med">Warning</span></td><td>A non-valid card has been inserted into a slot. Related to the operator.</td><td>Eject the non-valid card.</td></tr>
+          <tr><td>Last sess. not closed ok</td><td><span class="sev sev-med">Warning</span></td><td>The driver card in tray 1 was ejected incorrectly during the last session. The previous card withdrawal in tray 1 was not completed correctly by the tachograph.</td><td>Eject and clean. Self-test if persists.</td></tr>
+          <tr><td>Wrong PIN! Card locked</td><td><span class="sev sev-high">Message</span></td><td>Wrong PIN entered too many times (workshop card). Related to the card.</td><td>Eject and replace with a valid card.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h3>Driving-time pre-warnings (SE5000 short codes)</h3>
+    <h3>Sensor &amp; vehicle motion faults</h3>
     <div class="code-table-wrap">
       <table class="code-table">
         <thead>
           <tr>
-            <th style="width: 25%;">Display</th>
-            <th style="width: 75%;">Meaning</th>
+            <th style="width: 26%;">Display</th>
+            <th style="width: 14%;">Type</th>
+            <th style="width: 32%;">Description (verbatim)</th>
+            <th style="width: 28%;">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>4h 15</td><td>Continuous driving has reached 4 h 15 min — plan a 45-minute break in the next 15 minutes.</td></tr>
-          <tr><td>4h 30</td><td>Continuous-driving limit reached — break required now.</td></tr>
-          <tr><td>Daily driving</td><td>Daily driving time (9 h, or 10 h on twice-weekly extension) almost reached.</td></tr>
-          <tr><td>Weekly driving</td><td>Weekly driving time (56 h) almost reached.</td></tr>
-          <tr><td>Working time WTD</td><td>Maximum 6 h uninterrupted working time approaching (Directive 2002/15/EC).</td></tr>
+          <tr><td>Sensor auth.failure</td><td><span class="sev sev-crit">Fault</span></td><td>The tachograph does not detect the sensor / does not recognise the connected sensor as the one installed. Related to the motion sensor.</td><td>Visit a digital tachograph workshop.</td></tr>
+          <tr><td>Sensor cable fault</td><td><span class="sev sev-high">Warning</span></td><td>Sensor data error / motion sensor data error. Related to the motion sensor.</td><td>Workshop must check wiring and sensor.</td></tr>
+          <tr><td>Sensor comms error</td><td><span class="sev sev-crit">Fault</span></td><td>Motion sensor communication error. Related to the motion sensor.</td><td>Workshop replacement.</td></tr>
+          <tr><td>Sensor data error</td><td><span class="sev sev-high">Warning</span></td><td>Signal failure between motion sensor and tachograph. Related to the motion sensor.</td><td>Workshop must check.</td></tr>
+          <tr><td>Sensor data integrity error</td><td><span class="sev sev-crit">Fault</span></td><td>Internal motion sensor error, stored data integrity failure. Related to the motion sensor.</td><td>Sensor replacement likely.</td></tr>
+          <tr><td>Sensor data transfer error</td><td><span class="sev sev-crit">Fault</span></td><td>The motion sensor and tachograph do not communicate. Related to the motion sensor.</td><td>Workshop visit.</td></tr>
+          <tr><td>Sensor fault no acknowledge</td><td><span class="sev sev-crit">Fault</span></td><td>Motion sensor communication error.</td><td>Workshop visit.</td></tr>
+          <tr><td>Sensor power high / low</td><td><span class="sev sev-crit">Fault</span></td><td>Motion sensor power too high or too low. Related to the motion sensor.</td><td>Workshop must check supply.</td></tr>
+          <tr><td>Sensor no power signal</td><td><span class="sev sev-crit">Fault</span></td><td>Motion sensor has no power. Related to the motion sensor.</td><td>Workshop must check supply.</td></tr>
+          <tr><td>Sensor unauth. case open</td><td><span class="sev sev-crit">Fault</span></td><td>Unauthorized opening detected. Related to the motion sensor.</td><td>Workshop must inspect — possible tampering.</td></tr>
+          <tr><td>Secondary sensor fault</td><td><span class="sev sev-crit">Fault</span></td><td>No or erroneous data from the second source motion sensor. Related to the motion sensor.</td><td>Workshop must check.</td></tr>
+          <tr><td>Unauth. change of sensor</td><td><span class="sev sev-crit">Fault</span></td><td>The sensor has been changed since last pairing. Related to the motion sensor.</td><td>Workshop must re-pair.</td></tr>
+          <tr><td>Vehicle Motion Conflict</td><td><span class="sev sev-crit">Fault</span></td><td>2nd source of motion sensor and primary motion sensor data contradicts. Related to the motion sensor.</td><td>Workshop must check.</td></tr>
+          <tr><td>Hardware sabotage</td><td><span class="sev sev-crit">Fault</span></td><td>Card has been removed by force or a tampering with the hardware has been detected.</td><td>Workshop visit — investigation required.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p style="font-size:14px;color:var(--text2);margin-top:14px;"><em>Where the SE5000 manual uses a free-form English phrase rather than a coded message, we have reproduced the manual's wording. Numeric DTC codes (5-digit) are accessible only via the workshop diagnostic tool and are not documented in the driver manual.</em></p>
+    <h3>Tachograph (VU) internal faults &amp; power</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 26%;">Display</th>
+            <th style="width: 14%;">Type</th>
+            <th style="width: 32%;">Description (verbatim)</th>
+            <th style="width: 28%;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>VU internal fault</td><td><span class="sev sev-crit">Fault</span></td><td>The tachograph has detected an internal fault. Related to the tachograph.</td><td>Visit a workshop.</td></tr>
+          <tr><td>Data integrity error</td><td><span class="sev sev-crit">Fault</span></td><td>The user data stored in the tachograph has errors. Related to the tachograph.</td><td>Workshop visit immediately.</td></tr>
+          <tr><td>Unauth. VU opening</td><td><span class="sev sev-crit">Fault</span></td><td>The tachograph unit case has been opened. Related to the tachograph.</td><td>Workshop must investigate tampering.</td></tr>
+          <tr><td>Power supply interruption</td><td><span class="sev sev-med">Warning</span></td><td>The tachograph supply voltage is below or above the limit for correct operation or has been disconnected. The power supply has been interrupted for more than 200 milliseconds. Cranking voltage should not cause this event.</td><td>Workshop must check vehicle electrical supply if recurring.</td></tr>
+          <tr><td>Driving w/o valid card</td><td><span class="sev sev-high">Warning</span></td><td>Driving without an appropriate card, or with an inappropriate card combination. Related to the operator.</td><td>Stop and remove inappropriate card. Insert a valid driver card.</td></tr>
+          <tr><td>Over speeding</td><td><span class="sev sev-high">Warning</span></td><td>The vehicle speed has exceeded the speed limit set for 1 minute and will be stored. Related to the operator.</td><td>Observe the specified speed limit.</td></tr>
+          <tr><td>Overspeeding pre-warning</td><td><span class="sev sev-med">Message</span></td><td>The vehicle is exceeding the over speed limit set. After 1 minute of continuous over speeding the warning will be stored.</td><td>Slow down before the 1-minute threshold.</td></tr>
+          <tr><td>Download failed</td><td><span class="sev sev-med">Warning</span></td><td>A failure when trying to download data from the tachograph. Related to the tachograph/card.</td><td>Check connector and equipment, retry. If persists: workshop.</td></tr>
+          <tr><td>UTC adjust not allowed</td><td><span class="sev sev-info">Message</span></td><td>UTC time adjustment more than ±1 minute once a week is not allowed.</td><td>If UTC has deviated by more than 20 min, workshop must calibrate.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Printer messages</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 26%;">Display</th>
+            <th style="width: 14%;">Type</th>
+            <th style="width: 32%;">Description (verbatim)</th>
+            <th style="width: 28%;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Printer high temperature</td><td><span class="sev sev-low">Message</span></td><td>The printing could not start, or the ongoing printing has been interrupted, because the temperature of the printer is too high.</td><td>Wait until the printer cools, then retry.</td></tr>
+          <tr><td>Printer low temperature</td><td><span class="sev sev-low">Message</span></td><td>The printing could not start because the temperature of the printer is too low.</td><td>Wait until printer warms; workshop if persists.</td></tr>
+          <tr><td>Printer low power</td><td><span class="sev sev-low">Message</span></td><td>The ongoing printing has been interrupted because the tachograph input voltage is too low.</td><td>Check ignition is on; check battery voltage and connections.</td></tr>
+          <tr><td>Printer out of paper</td><td><span class="sev sev-info">Message</span></td><td>The ongoing printing has been interrupted because the printer is out of paper.</td><td>Replace paper.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Driving-time warnings (Stoneridge pre-warnings &amp; warnings)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 30%;">Display</th>
+            <th style="width: 14%;">Type</th>
+            <th style="width: 56%;">Meaning (verbatim)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Quarter left reminder</td><td><span class="sev sev-info">Message</span></td><td>The driver has 15 minutes left until the legal maximum continuous driving time of 4½ hours will be exceeded.</td></tr>
+          <tr><td>Time for break</td><td><span class="sev sev-med">Warning</span></td><td>The legal maximum continuous driving time of 4½ hours has elapsed (per Reg 561/2006). Take a minimum 45-minute break, or 15+30 split.</td></tr>
+          <tr><td>reminder break</td><td><span class="sev sev-info">Pre-warning</span></td><td>A reminder for a break according to the 6 h WTD rule (Directive 2002/15/EC).</td></tr>
+          <tr><td>daily drive time</td><td><span class="sev sev-med">Warning</span></td><td>Pre-warning and warning for 9-hour daily drive time.</td></tr>
+          <tr><td>end of daily drive</td><td><span class="sev sev-med">Warning</span></td><td>Maximum daily driving time reached.</td></tr>
+          <tr><td>weekly drive time</td><td><span class="sev sev-med">Pre-warning</span></td><td>Maximum weekly driving time (56 h) approaching.</td></tr>
+          <tr><td>end of weekly drive</td><td><span class="sev sev-med">Warning</span></td><td>Maximum weekly driving time reached.</td></tr>
+          <tr><td>2-week drive time</td><td><span class="sev sev-med">Pre-warning</span></td><td>Maximum 2-week driving time (90 h) approaching.</td></tr>
+          <tr><td>end of 2-week drive</td><td><span class="sev sev-med">Warning</span></td><td>Maximum 2-week driving time reached.</td></tr>
+          <tr><td>weekly work time</td><td><span class="sev sev-med">Pre-warning</span></td><td>Reaching the weekly working time according to the 60-hour WTD rule.</td></tr>
+          <tr><td>end of weekly work</td><td><span class="sev sev-med">Warning</span></td><td>The weekly working time is reached according to the 60-hour WTD rule.</td></tr>
+          <tr><td>reminder daily rest</td><td><span class="sev sev-info">Pre-warning</span></td><td>A reminder for the daily rest period.</td></tr>
+          <tr><td>reminder weekly rest</td><td><span class="sev sev-info">Pre-warning</span></td><td>A reminder for the weekly rest period.</td></tr>
+          <tr><td>time for daily rest</td><td><span class="sev sev-med">Warning</span></td><td>A warning for the start of daily rest.</td></tr>
+          <tr><td>time for weekly rest</td><td><span class="sev sev-med">Warning</span></td><td>A warning for the start of weekly rest.</td></tr>
+          <tr><td>Service pre-warning / Time for service</td><td><span class="sev sev-low">Message</span></td><td>Next calibration pre-warning / the tachograph is out of calibration.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:14px;color:var(--text2);margin-top:18px;"><strong>Source:</strong> All Stoneridge messages above are reproduced from the SE5000 Exakt Duo² (Rev 7.6) Driver &amp; Company Manual published by Stoneridge Electronics AB. The complete table covers all messages a driver may see; messages specific to workshop (calibration) mode are not shown here. The SE5000-8.1 Smart Tachograph 2 unit uses the same Annex I C message family structure with minor wording updates.</p>
   </div>
 </details>
 
