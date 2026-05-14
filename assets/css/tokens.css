@@ -9,7 +9,8 @@
   /* === Brand colors — aligned with TRUCKMALL.cz === */
   --blue-dark:   #0b2c4a;   /* darkest stop in heading gradient */
   --blue-mid:    #134a8e;   /* mid stop, also nav active color */
-  --blue-light:  #1f5fa6;   /* lightest stop in heading gradient */
+  --blue-light:  #1f5fa6;
+  --blue-bright: #3a6ff0;   /* lightest stop in heading gradient */
   --green-brand: #6E9B12;   /* logo green, eyebrow color */
   --green-cta:   #5C820F;   /* darker green for buttons */
 
@@ -36,9 +37,9 @@
 
   /* === Heading gradient (3-stop, brighter — matches TRUCKMALL) === */
   --heading-gradient: linear-gradient(90deg,
-    #0b2c4a 0%,
-    #134a8e 55%,
-    #1f5fa6 100%);
+    var(--blue-dark) 0%,
+    var(--blue-light) 50%,
+    var(--blue-bright) 100%);
 
   /* === Layout === */
   --maxw:    1180px;
