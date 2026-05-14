@@ -448,7 +448,7 @@
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: normal;
-  hyphens: auto;
+  hyphens: none;
   color: var(--blue-mid);
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
