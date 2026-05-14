@@ -564,6 +564,7 @@
 .code-table {
   width: 100%; border-collapse: separate; border-spacing: 0;
   font-size: 15px; min-width: 700px;
+  table-layout: fixed;
 }
 .code-table th, .code-table td {
   padding: 13px 14px; border-bottom: 1px solid var(--border);
