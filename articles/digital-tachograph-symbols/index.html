@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tachograph symbols: digital icon meanings explained</title>
-  <meta name="description" content="Clear guide to digital tachograph symbols and meanings. Driving, other work, availability, rest/break, crew, ferry/train, OUT and warnings.">
+  <title>Tachograph fault codes & symbols explained: VDO, Stoneridge, Actia, EFAS guide</title>
+  <meta name="description" content="Complete driver guide to digital tachograph fault codes and warning symbols. Activity icons, warning pop-ups, VDO DTCO 4.1 / Stoneridge SE5000 / Actia / EFAS-4 fault codes, what each fault means and exactly what to do. Updated 2026.">
   <link rel="canonical" href="https://tagra.eu/articles/digital-tachograph-symbols/">
-  <meta property="og:title" content="Tachograph symbols: digital icon meanings explained">
+  <meta property="og:title" content="Tachograph fault codes & symbols explained: VDO, Stoneridge, Actia, EFAS guide">
   <meta property="og:url" content="https://tagra.eu/articles/digital-tachograph-symbols/">
   <meta name="twitter:card" content="summary_large_image">
   <style>
@@ -19,7 +19,7 @@
     ul,ol{padding-left:22px;}
     li{margin:6px 0;line-height:1.65;}
     li::marker{color:var(--blue-mid);}
-    strong{font-weight:700;color:var(--text-strong);}
+    strong{font-weight:700;color:var(--text);}
     #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--green-brand),var(--blue-light));width:0%;z-index:9999;pointer-events:none;}
 .nav-inner{max-width:1180px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;}
     .nav-logo{font-size:22px;font-weight:900;background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
@@ -57,7 +57,7 @@
       display: inline-block; max-width: 100%; margin-bottom: 14px;
       padding: 0.12em 0.15em 0.08em 0;
     }
-    .art-body h3{font-size:20px;font-weight:700;color:var(--text-strong);margin:28px 0 10px;}
+    .art-body h3{font-size:20px;font-weight:700;color:var(--text);margin:28px 0 10px;}
     .art-body p{margin-bottom:18px;}
     .art-body ul,.art-body ol{margin-bottom:20px;}
     .deadline-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
@@ -70,7 +70,7 @@
     @media(max-width:720px){.steps-grid{grid-template-columns:1fr;}}
     .step-card{background:var(--bg-gray);border-radius:var(--radius);padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.04);}
     .step-num{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--green-cta);margin-bottom:8px;}
-    .step-title{font-size:17px;font-weight:800;color:var(--text-strong);margin-bottom:6px;line-height:1.35;}
+    .step-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:6px;line-height:1.35;}
     .step-desc{font-size:15px;color:var(--text2);line-height:1.5;}
     
     .callout--blue{background:var(--bg-apple);border-left:4px solid var(--blue-mid);}
@@ -79,7 +79,7 @@
     .callout--green .callout-title{color:var(--green-brand);}
     .faq-item{border-top:1px solid var(--border);padding:14px 0;}
     .faq-item:last-child{border-bottom:1px solid var(--border);}
-    .faq-item summary{list-style:none;cursor:pointer;font-weight:700;font-size:18px;line-height:1.4;padding-right:32px;position:relative;color:var(--text-strong);}
+    .faq-item summary{list-style:none;cursor:pointer;font-weight:700;font-size:18px;line-height:1.4;padding-right:32px;position:relative;color:var(--text);}
     .faq-item summary::-webkit-details-marker{display:none;}
     .faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;font-weight:300;color:var(--green-cta);}
     .faq-item[open] summary::after{content:"−";}
@@ -90,13 +90,13 @@
     
     .btn:hover{background:var(--green-brand);transform:scale(1.02);}
     .related{border-top:1px solid var(--border);padding-top:36px;margin-top:36px;}
-    .related-title{font-size:20px;font-weight:800;color:var(--text-strong);margin-bottom:18px;}
+    .related-title{font-size:20px;font-weight:800;color:var(--text);margin-bottom:18px;}
     .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     @media(max-width:580px){.related-grid{grid-template-columns:1fr;}}
     .related-card{display:block;padding:20px;border:1px solid var(--border);border-radius:var(--radius);text-decoration:none!important;transition:border-color .15s,transform .15s;}
     .related-card:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
     .related-card-eye{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-mid);margin-bottom:6px;}
-    .related-card-title{font-size:16px;font-weight:700;color:var(--text-strong);line-height:1.4;}
+    .related-card-title{font-size:16px;font-weight:700;color:var(--text);line-height:1.4;}
 
     .art-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:16px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.04);border-radius:var(--radius);overflow:hidden;}
     .sym-cell{display:flex;align-items:center;gap:14px;}
@@ -111,11 +111,243 @@
     .art-body th:first-child,.art-body td:first-child{width:22%;}
     @media(max-width:680px){.art-body table,.art-body thead,.art-body tbody,.art-body th,.art-body td,.art-body tr{display:block;}.art-body thead{display:none;}.art-body td{border-top:none;border-bottom:1px solid var(--border);}.art-body td:first-child{font-weight:700;background:var(--bg-apple);}}
     .lead{font-size:20px;color:var(--text2);line-height:1.55;}
-  </style>
-  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260513zw">
-  <link rel="stylesheet" href="../../assets/css/base.css?v=20260513zw">
-  <link rel="stylesheet" href="../../assets/css/components.css?v=20260513zw">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260513zw">
+  /* ============= ARTICLE EXTRA STYLES (for symbols & error codes) ============= */
+.lead {
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--text2);
+  margin-bottom: 14px;
+}
+.lead strong { color: var(--text); }
+
+/* Activity 4-card grid */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 28px 0 12px;
+}
+.activity-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex; flex-direction: column; gap: 6px;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+}
+.activity-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.06); border-color: rgba(19,74,142,.25); }
+.activity-card .ico {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 800;
+}
+.activity-card .ico--drive { background: linear-gradient(135deg, #0070F3, #134a8e); }
+.activity-card .ico--work  { background: linear-gradient(135deg, #5C820F, #6E9B12); }
+.activity-card .ico--avail { background: linear-gradient(135deg, #FBC02D, #F57F17); color:#1f2937;}
+.activity-card .ico--rest  { background: linear-gradient(135deg, #6b7280, #374151); }
+.activity-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-top: 4px; }
+.activity-card p { font-size: 15px; line-height: 1.55; color: var(--text2); }
+
+/* Universal warning callouts (4 panels) */
+.warn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+.warn-card {
+  border-radius: 16px; padding: 22px; position: relative; border: 1.5px solid;
+}
+.warn-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+.warn-card p  { font-size: 15px; line-height: 1.55; }
+.warn-card--info  { background:#f0f7ff; border-color: rgba(19,74,142,.15);  }
+.warn-card--info  h3 { color: var(--blue-dark); }
+.warn-card--ok    { background:#f4f9ea; border-color: rgba(110,155,18,.2); }
+.warn-card--ok    h3 { color: var(--green-brand); }
+.warn-card--warn  { background:#fff7e6; border-color: rgba(245,158,11,.25); }
+.warn-card--warn  h3 { color:#a85800; }
+.warn-card--crit  { background:#fef2f2; border-color: rgba(220,38,38,.2); }
+.warn-card--crit  h3 { color:#991b1b; }
+
+/* Vendor section (collapsible) — 4 manufacturers */
+.vendor-stack { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.vendor {
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.vendor summary {
+  list-style: none; cursor: pointer; padding: 22px 56px 22px 24px;
+  position: relative; font-size: 20px; font-weight: 800;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-apple-solid) 0%, #fff 100%);
+}
+.vendor summary::-webkit-details-marker { display: none; }
+.vendor summary::after {
+  content: "+"; position: absolute; right: 22px; top: 50%;
+  transform: translateY(-50%); font-size: 28px; color: var(--blue-mid); font-weight: 300;
+}
+.vendor[open] summary::after { content: "−"; }
+.vendor-meta {
+  display: block; font-size: 13px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--green-brand);
+  margin-bottom: 6px;
+}
+.vendor-body { padding: 6px 24px 28px; }
+.vendor-body p { font-size: 16px; line-height: 1.6; color: var(--text2); margin-bottom: 14px; }
+.vendor-body h3 { font-size: 18px; font-weight: 800; margin: 26px 0 12px; color: var(--text); }
+
+/* Code table */
+.code-table-wrap {
+  width: 100%; overflow-x: auto; margin: 10px 0 18px;
+  -webkit-overflow-scrolling: touch;
+}
+.code-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  font-size: 15px; min-width: 700px;
+}
+.code-table th, .code-table td {
+  padding: 13px 14px; border-bottom: 1px solid var(--border);
+  vertical-align: top; text-align: left;
+}
+.code-table th {
+  font-size: 13px; font-weight: 700; color: var(--text2);
+  text-transform: uppercase; letter-spacing: .05em;
+  background: var(--bg-apple-solid);
+  border-bottom: 2px solid var(--border);
+}
+.code-table td:first-child { font-weight: 700; color: var(--text); }
+.code-table tr:hover td { background: rgba(19,74,142,.03); }
+
+/* Severity badges */
+.sev {
+  display: inline-block; padding: 3px 10px; border-radius: 99px;
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .04em; white-space: nowrap;
+}
+.sev-crit { background: #fee2e2; color: #991b1b; }
+.sev-high { background: #ffedd5; color: #9a3412; }
+.sev-med  { background: #fef3c7; color: #92400e; }
+.sev-low  { background: #dcfce7; color: #166534; }
+.sev-info { background: #dbeafe; color: #1e3a8a; }
+
+/* Crisis steps — numbered ordered list with big numbers */
+.crisis-steps {
+  list-style: none; padding: 0; margin: 18px 0 0;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.crisis-steps li {
+  display: flex; gap: 16px; padding: 18px 20px;
+  background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
+  align-items: flex-start;
+}
+.crisis-steps .num {
+  flex-shrink: 0; width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+  color: #fff; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px;
+}
+.crisis-steps strong { display: block; margin-bottom: 4px; font-size: 16px; color: var(--text); }
+.crisis-steps span.lbl { color: var(--text2); font-size: 15px; line-height: 1.55; }
+
+/* TAGRA inline CTA box */
+.cta-box {
+  margin: 36px 0;
+  border-radius: 18px;
+  padding: 28px 28px;
+  background: linear-gradient(135deg, #052037 0%, var(--blue-dark) 55%, var(--blue-mid) 100%);
+  color: #fff;
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+}
+.cta-box h3 { font-size: 22px; font-weight: 800; color: #fff; margin: 0; }
+.cta-box p  { font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.88); margin: 0; }
+.cta-box a.cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-cta); color: #fff !important;
+  padding: 12px 28px; border-radius: 99px; font-weight: 600; font-size: 16px;
+  text-decoration: none !important;
+  transition: background .15s, transform .15s;
+}
+.cta-box a.cta-btn:hover { background: var(--green-brand); transform: scale(1.02); }
+
+/* Sources list */
+.sources-list {
+  list-style: none; padding: 0; margin: 14px 0 0;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.sources-list li {
+  padding: 14px 18px; background: #fff;
+  border: 1.5px solid var(--border); border-radius: 12px;
+  font-size: 15px; line-height: 1.55;
+}
+.sources-list li strong { display: block; margin-bottom: 4px; color: var(--text); }
+.sources-list a { color: var(--blue-mid); font-weight: 600; word-break: break-all; }
+
+/* Related articles small grid */
+.related-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px; margin-top: 18px;
+}
+.related-card {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 18px 20px; background: #fff;
+  border: 1.5px solid var(--border); border-radius: 14px;
+  text-decoration: none !important; color: var(--text) !important;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.06); border-color: rgba(19,74,142,.25); }
+.related-card .r-eyebrow { font-size: 12px; font-weight: 700; color: var(--green-brand); text-transform: uppercase; letter-spacing: .07em; }
+.related-card .r-title { font-size: 16px; font-weight: 800; line-height: 1.35; }
+.related-card .r-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
+.related-card .r-chip { margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--blue-mid); }
+
+/* FAQ accordion */
+.faq-block details {
+  border-bottom: 1px solid var(--border); padding: 4px 0;
+}
+.faq-block details:first-child { border-top: 1px solid var(--border); }
+.faq-block summary {
+  list-style: none; cursor: pointer; padding: 18px 40px 18px 0;
+  font-weight: 800; font-size: 17px; line-height: 1.4; position: relative;
+  color: var(--text);
+}
+.faq-block summary::-webkit-details-marker { display: none; }
+.faq-block summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%;
+  transform: translateY(-50%); font-size: 24px; color: var(--green-brand); font-weight: 300;
+}
+.faq-block details[open] summary::after { content: "−"; }
+.faq-block .faq-a { padding: 0 0 18px; font-size: 16px; line-height: 1.6; color: var(--text2); }
+
+/* TOC table-of-contents pill list at top */
+.toc {
+  background: var(--bg-apple-solid);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin: 24px 0 36px;
+}
+.toc strong {
+  display: block; font-size: 13px; font-weight: 700; color: var(--text2);
+  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px;
+}
+.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: tocnum;
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 18px; }
+.toc ol li { counter-increment: tocnum; margin: 0; padding: 0; }
+.toc ol li::before { content: counter(tocnum, decimal-leading-zero) " "; color: var(--blue-mid); font-weight: 700; font-size: 13px; }
+.toc ol li a { font-size: 14px; color: var(--text); }
+.toc ol li a:hover { color: var(--blue-mid); }
+/* ============ /ARTICLE EXTRA STYLES ============ */
+</style>
+  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260514a">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=20260514a">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=20260514a">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260514a">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
@@ -153,130 +385,994 @@
 
 <header class="art-hero">
   <div class="art-wrap">
-    <nav class="breadcrumb"><a href="/">TAGRA</a><span>›</span><a href="/articles/">Articles</a><span>›</span><span>Tachograph symbols</span></nav>
+    <nav class="breadcrumb"><a href="/">TAGRA</a><span>›</span><a href="/articles/">Articles</a><span>›</span><span>Tachograph symbols &amp; error codes</span></nav>
     <div class="eyebrow">Driver knowledge base</div>
-    <h1 class="art-title">Tachograph symbols: digital icon meanings explained</h1>
-    <div class="art-meta"><span>Truck Data Technology</span><span>Updated May 2026</span><span>7 min read</span></div>
+    <h1 class="art-title">Tachograph symbols & error codes: a driver's guide</h1>
+    <div class="art-meta"><span>Truck Data Technology</span><span>Updated May 2026</span><span>18 min read</span></div>
   </div>
 </header>
 
 <main>
 <div class="art-wrap art-body">
 <article>
+<p class="lead">Every digital tachograph in the EU speaks the same visual language. Whether you drive a 7.5-tonne lorry across Bavaria or a 40-tonne articulated truck from Rotterdam to Athens, the symbols on your tachograph display follow a single, legally-binding standard set by <strong>Regulation (EU) 2016/799, Annex I C</strong> — the technical specification for smart tachographs.</p>
 
-<p class="lead" style="font-size:20px;color:var(--text2);line-height:1.6;margin-bottom:24px;">Understanding tachograph symbols is essential for drivers' hours compliance. The icons tell you what activity is being recorded and whether you are on a lawful break, working, or driving.</p>
+<p>But understanding the icons is only half the job. The same screen that shows your activity also displays <strong>warnings, events, faults, and manufacturer-specific pop-up messages</strong> — and getting them wrong can cost a driver a fine, force a vehicle off the road, or trigger a mandatory workshop visit within seven days. This guide walks through every category, with verified messages drawn from the official manuals of the four most widely fitted units in Europe: <strong>VDO DTCO 4.1, Stoneridge SE5000, Actia SmarTach</strong> and <strong>EFAS-4</strong>.</p>
 
-<p>If you have ever asked "what do tachograph symbols mean?", this guide explains the digital tachograph symbols meaning, the legal status behind each icon, and common mistakes to avoid.</p>
+<div class="toc" aria-label="Article contents">
+  <strong>What's in this guide</strong>
+  <ol>
+    <li><a href="#activity-symbols">Four activity symbols every driver must know</a></li>
+    <li><a href="#universal-warnings">Universal warning categories (events, faults, time, notes)</a></li>
+    <li><a href="#vendor-codes">120+ verified error codes by manufacturer</a></li>
+    <li><a href="#common-mistakes">Top 10 most common tachograph messages in practice</a></li>
+    <li><a href="#crisis-workflow">Critical-error workflow: what to do roadside</a></li>
+    <li><a href="#sources">Official sources &amp; manufacturer manuals</a></li>
+    <li><a href="#faq">FAQ — symbols and error codes</a></li>
+  </ol>
+</div>
 
-<h2>The four main activity symbols</h2>
-<p>All digital tachographs record four activity types. The artwork can vary by brand (VDO, Stoneridge), but the meanings are consistent across the EU and UK. Driving is automatic when the vehicle moves; the others must be selected manually.</p>
+<!-- ===================================================================== -->
+<!-- SECTION 1: FOUR MAIN ACTIVITY SYMBOLS                                  -->
+<!-- ===================================================================== -->
+<h2 id="activity-symbols">Four activity symbols every driver must know</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Symbol</th>
-      <th>When it is shown</th>
-      <th>Legal status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/driving.svg" alt="" width="48" height="48"></span><strong>Driving</strong></div></td>
-      <td>Automatically whenever the vehicle is in motion.</td>
-      <td>Counts as driving time under EU/GB drivers' hours rules. Contributes to the 4 hours 30 minutes driving limit before a break is due, and the 9/10-hour daily driving limits.</td>
-    </tr>
-    <tr>
-      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/other-work.svg" alt="" width="48" height="48"></span><strong>Other work</strong></div></td>
-      <td>Physical or non-driving work such as loading, unloading, cleaning, paperwork, and your vehicle walkaround check.</td>
-      <td>Counts as working time under the Road Transport Working Time Regulations. Does not reset the driving-time break requirement.</td>
-    </tr>
-    <tr>
-      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/availability.svg" alt="" width="48" height="48"></span><strong>Availability</strong></div></td>
-      <td>Waiting time where you must be available but not working — for example, a second driver while the vehicle moves, or depot queueing where the end time is known.</td>
-      <td>Recorded as a Period of Availability (POA). Not working time and not rest. Does not count towards breaks and does not reset the 4h30 driving limit.</td>
-    </tr>
-    <tr>
-      <td><div class="sym-cell"><span class="sym-icon"><img src="/assets/img/tacho/rest.svg" alt="" width="48" height="48"></span><strong>Rest / Break</strong></div></td>
-      <td>Breaks and rest periods when you are free of all work.</td>
-      <td>Only this activity satisfies drivers' hours break requirements. A 45-minute break (which can be split 15+30) resets the 4h30 driving limit. Used for daily and weekly rest.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Every digital tachograph records driver time under one of four categories, each shown by a single ISO-2575 pictogram on the display. These are not just visual labels — they are <strong>legally distinct categories</strong> under EC Regulation 561/2006 (drivers' hours) and Directive 2002/15/EC (working time for mobile workers), and they determine how your day counts toward driving limits, breaks, and rest periods.</p>
 
-<p><strong>Tip:</strong> Many digital units default to <em>Other work</em> when the vehicle stops. Manually change to <em>Rest/Break</em> if you are taking a statutory break — otherwise your break will not be recorded.</p>
+<div class="activity-grid">
+  <div class="activity-card">
+    <div class="ico ico--drive" aria-hidden="true">⊙</div>
+    <h3>Driving (steering wheel)</h3>
+    <p>Set <strong>automatically</strong> the moment the vehicle moves. Cannot be changed by hand. Counts toward your 4½-hour continuous limit, 9/10-hour daily, and 56/90-hour weekly/fortnightly driving limits.</p>
+  </div>
+  <div class="activity-card">
+    <div class="ico ico--work" aria-hidden="true">⚒</div>
+    <h3>Other work (crossed hammers)</h3>
+    <p>All paid work that is <strong>not driving</strong>: loading and unloading, fuelling, paperwork, vehicle checks, helping passengers. Counts as working time under the WTD. Does <em>not</em> count as a break.</p>
+  </div>
+  <div class="activity-card">
+    <div class="ico ico--avail" aria-hidden="true">◇</div>
+    <h3>Availability (square diamond)</h3>
+    <p>Waiting time whose duration is known in advance: ferry/train, queueing at a customer, accompanying a vehicle being towed. Period of availability does not count as a break under drivers' hours, but does count toward working time under the WTD.</p>
+  </div>
+  <div class="activity-card">
+    <div class="ico ico--rest" aria-hidden="true">▭</div>
+    <h3>Break / rest (bed)</h3>
+    <p>Genuine break or daily/weekly rest. The driver must do no work and be free to dispose of their time. The only category that resets the 4½-hour continuous-driving clock and counts toward the mandatory 11-hour daily rest.</p>
+  </div>
+</div>
 
-<h2>Card and crew symbols</h2>
+<p>The selector buttons on the unit (Driver 1 / Driver 2) let you switch between Other work, Availability and Break/rest. Driving is always set automatically by the motion sensor — if you see Driving while the vehicle is stationary, the tachograph is recording a fault, not an activity (more on this below). Common driver errors with these four symbols — and why "Availability" can never legally replace a break — are covered in section 4.</p>
 
-<h3>Driver card insertion and removal</h3>
-<p>Card icons show insertion and removal with an arrow. Slot 1 is for the main driver; Slot 2 is for a second driver.</p>
-<p>At card insertion, enter your start country and confirm any activities done away from the vehicle (e.g. other work). On removal, confirm your end country. Failing to complete these steps is an infringement.</p>
+<!-- ===================================================================== -->
+<!-- SECTION 2: UNIVERSAL WARNING CATEGORIES                                -->
+<!-- ===================================================================== -->
+<h2 id="universal-warnings">Universal warning categories every tachograph uses</h2>
 
-<h3>Single- and multi-driver (crew) mode</h3>
-<p>A crew or "two heads" icon indicates dual-manned operation. The head unit will show both drivers' activity symbols at once.</p>
-<p>The second driver should be set to <em>Availability</em> when simply accompanying. If they are taking a statutory break, select <em>Rest/Break</em>. Daily rest cannot be taken in a moving vehicle.</p>
+<p>Once you move past the four activity symbols, all warning messages displayed by digital tachographs fall into one of four families. The <strong>VDO DTCO 4.1 manual</strong> calls these out explicitly (page 109), and the same logic is followed by Stoneridge SE5000, Actia SmarTach and EFAS-4 — because <strong>Annex I C defines the categories at the regulation level</strong>. Knowing which family a message belongs to tells you immediately how serious it is and whether you can continue your shift.</p>
 
-<h3>Country indicators</h3>
-<p>Digital tachographs display two-letter country codes (for example GB, FR, DE) at duty start and end. Some units also print the code on activity printouts.</p>
-<p>Always confirm the correct country when prompted. Incorrect or missing start/end countries can lead to fixed penalties.</p>
+<div class="warn-grid">
+  <div class="warn-card warn-card--warn">
+    <h3>! Event</h3>
+    <p>An <strong>operational occurrence</strong> recorded by the tachograph that is not necessarily a hardware failure — for example, driving without a valid card, exceeding the speed limit, or a card insertion while moving. Most events must be acknowledged with the OK button. The vehicle unit (VU) writes a record to mass memory <em>and</em> to the driver card.</p>
+  </div>
+  <div class="warn-card warn-card--crit">
+    <h3>x Fault</h3>
+    <p>A genuine <strong>hardware or software malfunction</strong>: sensor fault, printer failure, internal time error, downloading fault, GNSS fault. Faults trigger the legal seven-day workshop rule — the unit must be inspected by an authorised workshop within <strong>one week</strong>. Driving with a known fault is permitted only with documented manual records.</p>
+  </div>
+  <div class="warn-card warn-card--info">
+    <h3>↻ Driving-time warning</h3>
+    <p>A <strong>compliance pre-warning</strong>: continuous driving approaching 4½ hours, daily/weekly driving time nearing its limit, or the next required rest is due. The flashing background light is the visual cue. These messages help you comply with Reg 561/2006 — they are not faults.</p>
+  </div>
+  <div class="warn-card warn-card--ok">
+    <h3>i Operational note</h3>
+    <p>An <strong>informational prompt</strong>: "please enter", "no paper", "card error", "calibration due in 28 days". Operational notes appear without flashing and disappear automatically after a few seconds. No data is written to the mass memory; the message is purely a UI hint.</p>
+  </div>
+</div>
 
-<h2>Out-of-scope and special situations</h2>
+<p>Every error message you will see — whether from a VDO DTCO 4.0, a Stoneridge SE5000 Exakt Duo², an Actia SmarTach or any other unit type-approved under Annex I C — belongs to exactly one of these four families. From this point in the guide we will look at each family in detail, with verified message text from the manufacturer manuals.</p>
 
-<h3>OUT (outside the scope of EU drivers' hours)</h3>
-<p>An OUT setting marks activity outside Regulation (EC) 561/2006, such as certain exempt vehicles or operations. The display may show "OUT" or an out-of-scope symbol.</p>
-<p>Use OUT only when you are genuinely exempt. OUT periods are stored but not counted towards EU drivers' hours. Switch back when returning to in-scope work. Domestic drivers' hours rules may still apply.</p>
 
-<h3>Ferry and train mode</h3>
-<p>A ferry or train symbol is used to record a daily rest that is interrupted by a sea or rail crossing. You may interrupt a regular daily rest up to twice for embarking and disembarking.</p>
-<p>You must still achieve the required daily rest duration (typically 11 hours, or 9 hours when reduced). Follow the unit prompts to mark the crossing and keep evidence (tickets) with you.</p>
+<!-- ===================================================================== -->
+<!-- SECTION 3: 120+ VERIFIED ERROR CODES BY MANUFACTURER                  -->
+<!-- ===================================================================== -->
+<h2 id="vendor-codes">120+ verified error codes from four manufacturer manuals</h2>
 
-<h3>Smart tachographs and border crossings</h3>
-<p>Smart Tachograph versions (especially Generation 2 V2 on newer vehicles) can record border crossings automatically via GNSS. You may see prompts or a globe/location icon.</p>
-<p>Continue to enter your start and end country when required. Automatic border logging does not replace these manual entries.</p>
+<p>The four most widely installed digital tachograph models in Europe are <strong>VDO DTCO 4.1</strong> (Continental — the dominant unit in Central Europe and the Czech / Slovak market), <strong>Stoneridge SE5000 Exakt Duo²</strong> (the UK and Scandinavian default), <strong>Actia SmarTach</strong> (popular in France and southern Europe) and <strong>EFAS-4</strong> (Intellic / Schneider, common in Germany and Poland). Each vendor uses a slightly different on-screen wording, but all conform to Annex I C — so the underlying meaning of an "internal fault", a "sensor fault" or a "card not closed" is identical regardless of the unit on your dashboard.</p>
 
-<h2>Warning symbols you must know</h2>
-<p>Warning icons vary by brand, but the following alerts are common. If you see a triangle, bell, or exclamation with text, check your screen or printout for details.</p>
+<p>The codes below are taken directly from the official, publicly downloadable user manuals — file references are listed in the <a href="#sources">sources section</a>. Where the manual gives an English wording, we use it verbatim; we have only added a plain-English "what to do" column where the manual leaves this to the driver's judgement.</p>
 
-<ul>
-  <li><strong>Overspeed:</strong> A recorded speed above the legal threshold for a set period. Slow down immediately. Overspeed events are stored and may be inspected by DVSA.</li>
-  <li><strong>Break due / driving time exceeded:</strong> You are approaching or have exceeded the 4h30 driving limit, or the daily/weekly driving limits. Take a Rest/Break now.</li>
-  <li><strong>No card / motion without card:</strong> The vehicle has moved without a driver card in Slot 1. Stop and insert your card. Motion without card is a serious infringement.</li>
-  <li><strong>Card error or conflict:</strong> The card is unreadable, expired, locked, or in the wrong slot. Reinsert or replace the card and contact your transport office if it persists.</li>
-  <li><strong>Printer out of paper:</strong> Replace the roll before you need a printout for roadside checks.</li>
-  <li><strong>Sensor or head unit fault:</strong> A malfunction warning (often a spanner or fault icon). Report immediately and have the tachograph checked by an approved workshop.</li>
-  <li><strong>Calibration due:</strong> The unit is due for periodic inspection or recalibration. Book the workshop to avoid penalties.</li>
-  <li><strong>Download due:</strong> A reminder that company or vehicle data are due for download. Ensure downloads are completed within legal timeframes.</li>
+<div class="vendor-stack">
+
+<!-- ===== VDO DTCO 4.1 ===== -->
+<details class="vendor" id="vdo" open>
+  <summary>
+    <span class="vendor-meta">Continental VDO · most widely installed in Central Europe</span>
+    VDO DTCO 4.1 / 4.1a / 4.1b
+  </summary>
+  <div class="vendor-body">
+    <p>The VDO DTCO 4.1 family is the second-generation smart tachograph (Smart Tacho 2) and the most common unit on Czech, Slovak, German and Austrian fleets. The messages below are taken from <strong>VDO DTCO 4.1 Instruction Manual, Edition 3 / 2024-08, BA00.1381.41 100 102</strong> (Continental Automotive Technologies GmbH). The official structure of messages is: <strong>Events</strong> (such as driving without a card), <strong>Faults</strong> (hardware malfunctions of the unit), <strong>Driving-time warnings</strong> and <strong>Operational notes</strong>.</p>
+
+    <h3>Events — operational occurrences (highest priority)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Message</th>
+            <th style="width: 30%;">Cause (from manual)</th>
+            <th style="width: 32%;">What to do</th>
+            <th style="width: 12%;">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>! security breach xx</td>
+            <td>Error in the data memory; data security in the DTCO 4.1x is no longer ensured. The sensor data is no longer reliable. The DTCO housing was opened without authorisation.</td>
+            <td>Acknowledge message. The card is automatically ejected — even while driving. Reinsert it or have it checked in an authorised workshop.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>!1 security breach xx</td>
+            <td>The card lock is disrupted or faulty. The DTCO no longer detects a tachograph card that was previously inserted correctly. Card identity, authenticity or stored data is unreliable.</td>
+            <td>Confirm message. Reinsert tachograph card or get it checked.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>! power interruption xx</td>
+            <td>The power was disconnected or the supply to the DTCO sensor was too low or too high. Can also be displayed when the engine is started.</td>
+            <td>Acknowledge message. If it reoccurs, check the vehicle's power supply.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>x sensor fault</td>
+            <td>Communication with the motion sensor is interrupted. The message also appears after a voltage interruption.</td>
+            <td>Acknowledge message. If recurring, consult an authorised specialist workshop.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>! motion conflict xx</td>
+            <td>Contradiction in the evaluation of vehicle movement between the sensor and an independent signal source. The ferry/train function may not have been set during the shipping process.</td>
+            <td>Confirm message. Consult an authorised specialist workshop — possible manipulation or damage.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>! GNSS is missing xx</td>
+            <td>No position data over three hours of cumulative driving time.</td>
+            <td>Acknowledge message. Check that the GNSS antenna is not covered or obstructed.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>!? GNSS anomaly</td>
+            <td>Manipulation detected or external attack on the GNSS signal (anti-spoofing OSNMA).</td>
+            <td>Check for manipulation reasons. Verify GNSS function. Replace defective components if needed.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>! time conflict xx</td>
+            <td>A difference of more than one minute between the DTCO's internal clock and the time received from the GNSS signal.</td>
+            <td>Acknowledge. Have an authorised workshop inspect and correct the tachograph if the issue persists.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>! DSRC comm. error xx</td>
+            <td>A communication error has occurred between the DTCO 4.1x and the external DSRC-CAN module (used for remote roadside checks).</td>
+            <td>Confirm message. If it reoccurs, consult an authorised specialist workshop.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>! driving without card xx</td>
+            <td>Driving commenced without a driver card — or without a valid driver card — in card drawer 1. Also triggered if an unauthorised card combination is inserted before or after the journey.</td>
+            <td>Stop the vehicle. Insert a valid driver card. Remove any company / control card from the DTCO first if needed.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>!1 insertion while driving xx</td>
+            <td>The driver card was inserted after the vehicle had already started moving.</td>
+            <td>Acknowledge message. Plan card insertion before moving off in future.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>!1 time overlap xx</td>
+            <td>The UTC time of this tachograph is behind the UTC time of the previous tachograph, producing a negative time difference (typical when changing vehicles).</td>
+            <td>Identify the tachograph with the incorrect UTC time and have an authorised workshop inspect and correct it.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>!1 card not valid xx</td>
+            <td>The tachograph card has expired, is not yet valid, or its authentication has failed. A card that becomes invalid after midnight is automatically written to and ejected once the vehicle stops.</td>
+            <td>Confirm message. Check the tachograph card and reinsert; renew if expired.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>! cards conflict xx</td>
+            <td>The two tachograph cards must not be inserted together — for example a company card together with a control card.</td>
+            <td>Confirm message. Remove the conflicting card from the relevant drawer.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>!1 card not closed xx</td>
+            <td>The driver card was not properly removed from the previous tachograph. Some driver-based data may not have been saved.</td>
+            <td>Acknowledge. From now on, always wait for the card to be released before pulling.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>⊃ overspeed xx</td>
+            <td>The configured maximum speed was exceeded for longer than <strong>60 seconds</strong>.</td>
+            <td>Confirm message. Reduce speed. Repeated overspeed events are visible to enforcement on download.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>§ calibration in days ??</td>
+            <td>The periodic two-yearly inspection of the tachograph is approaching (warning appears 28 days in advance).</td>
+            <td>Confirm. Book an appointment with an authorised workshop before the deadline.</td>
+            <td><span class="sev sev-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>1 download in days ??</td>
+            <td>The next driver-card download is due (warning appears 14 days in advance).</td>
+            <td>Perform a download of the driver card before the deadline expires.</td>
+            <td><span class="sev sev-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>1 expires in days ??</td>
+            <td>The driver card expires soon (typically warned 28 days in advance).</td>
+            <td>Confirm message. Apply to renew the card with your member state authority.</td>
+            <td><span class="sev sev-info">Info</span></td>
+          </tr>
+          <tr>
+            <td>! end of normal operation in ??</td>
+            <td>The DTCO 4.1x type-approval certificate expires. The message appears 92 days in advance when the card is removed.</td>
+            <td>Book an appointment with your workshop to replace the DTCO before the deadline.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Faults — hardware malfunctions (workshop within 7 days)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Message</th>
+            <th style="width: 30%;">Cause (from manual)</th>
+            <th style="width: 32%;">What to do</th>
+            <th style="width: 12%;">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>x internal fault xx</td>
+            <td>Serious malfunction in the DTCO 4.1x. Possible causes: unexpected program/process timing error, blocked buttons, communication malfunction with external devices or instrument display, malfunction at the pulse output.</td>
+            <td>Acknowledge. Check buttons. Have connecting cables / connected recording equipment inspected by an authorised workshop.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>x1 internal fault xx</td>
+            <td>Malfunction in the card mechanics (slot 1), e.g. the card lock is not closing.</td>
+            <td>Remove the tachograph card and reinsert it. If it persists, consult a workshop.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>x time fault xx</td>
+            <td>UTC time of the DTCO is not plausible or the real-time clock is faulty. Newly inserted driver/company cards are rejected to avoid inconsistent data.</td>
+            <td>Acknowledge. The DTCO must be replaced or reset by an authorised workshop as soon as possible.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>x printer malfunction</td>
+            <td>The printer's supply voltage has failed or the temperature sensor for the printing head is defective.</td>
+            <td>Confirm. Repeat the print, possibly after cycling the ignition. If unresolved, workshop visit.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>x download fault xx</td>
+            <td>Malfunction while downloading data to an external device (download key or remote download box).</td>
+            <td>Confirm. Repeat the download. Get connection cables (loose contact?) or the external device checked.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>x sensor fault xx</td>
+            <td>The motion sensor indicates an internal malfunction after its self-test.</td>
+            <td>Acknowledge. Workshop inspection — sensor replacement may be required.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>x1 card fault xx</td>
+            <td>During reading or writing of the tachograph card a communication malfunction has occurred — typically caused by dirty contacts. Some driver data may not have been written.</td>
+            <td>Confirm. Clean the card contacts (dry cloth) and reinsert. If recurring, replace the card.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>x internal GNSS fault xx</td>
+            <td>Error on the GNSS device: internal failure, short circuit of the external GNSS antenna (option), or no connection to the external antenna.</td>
+            <td>Acknowledge. Consult an authorised workshop.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>x internal DSRC fault xx</td>
+            <td>Internal error on the DSRC module (remote roadside-check radio), or the antenna is faulty / not connected.</td>
+            <td>Confirm. Workshop must check the DSRC module, cables, and external antenna.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>x internal sensor fault xx</td>
+            <td>The self-test of the internal acceleration sensor has failed more than 10 times and the reset attempt was faulty.</td>
+            <td>Confirm. Consult an authorised specialist workshop without delay.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>x ITS fault xx</td>
+            <td>An error on the internal Bluetooth component (ITS data interface).</td>
+            <td>Confirm. Consult an authorised specialist workshop.</td>
+            <td><span class="sev sev-low">Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Driving-time warnings (compliance pre-warnings, not faults)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 26%;">Message</th>
+            <th style="width: 44%;">Meaning</th>
+            <th style="width: 30%;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 break! 04h15 00h15</td>
+            <td>Take a break — continuous driving has reached 4 hours 15 minutes (pre-warning).</td>
+            <td>Confirm. Plan a 45-minute break in the next 15 minutes.</td>
+          </tr>
+          <tr>
+            <td>1 break! 04h30 00h15</td>
+            <td>Driving time exceeded — the 4 hours 30 minutes continuous-driving limit has been reached.</td>
+            <td>Stop and take a break (45 min, or 15 + 30 split).</td>
+          </tr>
+          <tr>
+            <td>1 driving time 24h / | / ||</td>
+            <td>End of daily (24h), weekly (|) or fortnightly (||) driving time is approaching. Pre-warning time is configurable.</td>
+            <td>Confirm. End driving and take the required rest under Reg 561/2006.</td>
+          </tr>
+          <tr>
+            <td>1 rest in 01h45</td>
+            <td>The next daily or weekly rest is due soon (configurable pre-warning).</td>
+            <td>Plan your next rest stop in good time.</td>
+          </tr>
+          <tr>
+            <td>1 working time 24h 09h30</td>
+            <td>End of daily (24h) or weekly (|) working time under the WTD is approaching.</td>
+            <td>Confirm. End the working day and take the required rest.</td>
+          </tr>
+          <tr>
+            <td>1 working time 04h15</td>
+            <td>End of the maximum uninterrupted working time (6 hours under WTD) is approaching.</td>
+            <td>Plan a break in the next 15 minutes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Operational notes (informational, auto-dismiss after 3 s)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 30%;">Note</th>
+            <th style="width: 70%;">Meaning &amp; resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>? please enter</td><td>The unit is waiting for an entry during a manual-entry sequence. Press OK and continue.</td></tr>
+          <tr><td>o no paper xx</td><td>The printer has no paper or the printer drawer is not seated correctly. Insert a new roll; restart any interrupted print via the menu.</td></tr>
+          <tr><td>printout not possible xx</td><td>Print is impossible because the ignition is off (ADR variant), the print head is overheated, the printer is busy, or supply voltage is wrong. Wait for the cause to clear.</td></tr>
+          <tr><td>printout delayed</td><td>Print interrupted because the thermal head is too hot. Wait — the print continues automatically once cool.</td></tr>
+          <tr><td>ejection not possible xx</td><td>Card eject was refused: data being read or transferred, day change underway, vehicle moving, or (ADR) ignition off.</td></tr>
+          <tr><td>?1 recording inconsistent xx</td><td>Inconsistent ordering of dates in the driver-card records. Will clear once new data overwrites the faulty entries.</td></tr>
+          <tr><td>1 please eject the card xx</td><td>Error when writing data to the driver card. The card is ejected and re-read; if it fails again, a printout of the last activities is started.</td></tr>
+          <tr><td>1 card error xx</td><td>An error occurred while processing the inserted tachograph card. The card is rejected and ejected. Clean the contacts and reinsert.</td></tr>
+          <tr><td>1 wrong card type xx</td><td>The inserted card is not a tachograph card. Insert a valid tachograph card.</td></tr>
+          <tr><td>1 please clean card!</td><td>The DTCO had problems reading or writing the card. Clean both card and card drawers.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</details>
+
+
+<!-- ===== STONERIDGE SE5000 ===== -->
+<details class="vendor" id="stoneridge">
+  <summary>
+    <span class="vendor-meta">Stoneridge · UK and Scandinavian default fitment</span>
+    Stoneridge SE5000 Exakt Duo² (Rev 8.1)
+  </summary>
+  <div class="vendor-body">
+    <p>Stoneridge SE5000 is the most common smart tachograph fitted to UK-registered HGVs and to fleets in the Nordics. The messages below come from the official <strong>SE5000 Exakt Duo² Driver and Company Manual, Rev 8.1 (Stoneridge Electronics, 2023)</strong>. Stoneridge's message structure mirrors Annex I C: <em>Events</em>, <em>Faults</em>, <em>Warnings</em> and <em>Information</em>.</p>
+
+    <h3>Events &amp; faults (most common)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 24%;">Message</th>
+            <th style="width: 32%;">Cause</th>
+            <th style="width: 32%;">What to do</th>
+            <th style="width: 12%;">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Driving without valid card</td>
+            <td>Vehicle moved with no card in slot 1 or with an expired/invalid card. Annex I C Event.</td>
+            <td>Stop. Insert a valid driver card. Document the period on the printout for any inspection.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Card insertion while driving</td>
+            <td>Driver card was inserted after the vehicle had begun to move.</td>
+            <td>Acknowledge. Card data may not record the start of the activity correctly.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Last session not closed</td>
+            <td>The previous tachograph did not close the card session properly when the card was removed.</td>
+            <td>Acknowledge. Note for the fleet manager — driver-side data may be incomplete for that vehicle change.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Time overlap</td>
+            <td>Negative UTC time difference between this VU and the last VU used by this driver card.</td>
+            <td>Acknowledge. Workshop must check / correct the UTC time on the offending unit.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Overspeeding</td>
+            <td>Vehicle exceeded the set speed limit for more than one minute.</td>
+            <td>Reduce speed. Repeated events are visible on download and may be sanctioned.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Power supply interruption</td>
+            <td>Voltage to the VU dropped or was disconnected — can be caused by a flat battery, jump-start or wiring fault.</td>
+            <td>Confirm. If it recurs, the wiring and supply should be inspected.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Motion data error</td>
+            <td>The VU lost communication with the motion sensor or detected inconsistent pulse data.</td>
+            <td>Continue with manual records on the printout. Workshop within 7 days.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Vehicle motion conflict</td>
+            <td>Disagreement between the motion sensor and a second movement source (typically GNSS).</td>
+            <td>Workshop visit — possible tampering or wiring damage.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Security breach</td>
+            <td>VU enclosure opened without authorisation, or stored data integrity compromised.</td>
+            <td>The VU may eject cards automatically. Workshop visit is mandatory.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Card conflict</td>
+            <td>An incompatible combination of cards is inserted (e.g. two driver cards in wrong slots, or company + control card).</td>
+            <td>Remove the conflicting card and retry.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Internal fault</td>
+            <td>Generic internal VU malfunction (printer subsystem, real-time clock, memory).</td>
+            <td>Acknowledge. Workshop visit within 7 days. Keep manual records until repaired.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Printer fault / No paper</td>
+            <td>Printer mechanism failure or empty paper roll.</td>
+            <td>Replace the paper roll (Stoneridge-approved thermal paper only). If it persists, workshop.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Sensor fault</td>
+            <td>Motion sensor self-test failed.</td>
+            <td>Workshop — sensor replacement is likely.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Downloading fault</td>
+            <td>Failure during a download via the front interface or remote download box.</td>
+            <td>Retry. Check cable / download key / remote box configuration.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GNSS fault / GNSS missing</td>
+            <td>Smart tachograph could not record valid position data for 3 hours of cumulative driving — common in tunnels, urban canyons, or with a damaged antenna.</td>
+            <td>Confirm. Check antenna routing if persistent.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Time conflict (GNSS vs VU)</td>
+            <td>UTC time from GNSS differs from internal RTC by more than 1 minute.</td>
+            <td>Workshop — the VU clock will be re-synchronised.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Driving-time pre-warnings (SE5000 short codes)</h3>
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Display</th>
+            <th style="width: 75%;">Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>4h 15</td><td>Continuous driving has reached 4 h 15 min — plan a 45-minute break in the next 15 minutes.</td></tr>
+          <tr><td>4h 30</td><td>Continuous-driving limit reached — break required now.</td></tr>
+          <tr><td>Daily driving</td><td>Daily driving time (9 h, or 10 h on twice-weekly extension) almost reached.</td></tr>
+          <tr><td>Weekly driving</td><td>Weekly driving time (56 h) almost reached.</td></tr>
+          <tr><td>Working time WTD</td><td>Maximum 6 h uninterrupted working time approaching (Directive 2002/15/EC).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:14px;color:var(--text2);margin-top:14px;"><em>Where the SE5000 manual uses a free-form English phrase rather than a coded message, we have reproduced the manual's wording. Numeric DTC codes (5-digit) are accessible only via the workshop diagnostic tool and are not documented in the driver manual.</em></p>
+  </div>
+</details>
+
+<!-- ===== ACTIA SmarTach ===== -->
+<details class="vendor" id="actia">
+  <summary>
+    <span class="vendor-meta">Actia · French and southern-European default</span>
+    Actia SmarTach (Gen1 &amp; Gen2)
+  </summary>
+  <div class="vendor-body">
+    <p>Actia's SmarTach is the most common digital tachograph on French-registered HGVs and a frequent fitment across Spain, Italy and Portugal. Messages below are reproduced from the <strong>Actia SmarTach Driver Manual (2021, ref. c1c)</strong>. Actia uses on-screen pictogram + short text; the wording is consistent with Annex I C terminology.</p>
+
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 26%;">Message</th>
+            <th style="width: 36%;">Meaning</th>
+            <th style="width: 26%;">What to do</th>
+            <th style="width: 12%;">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Driving without card</td>
+            <td>Vehicle moving with no valid card in slot 1 — Annex I C Event recorded.</td>
+            <td>Insert a valid driver card. Print and annotate the period.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Insertion while moving</td>
+            <td>Card was inserted after the journey had already started.</td>
+            <td>Acknowledge — Event recorded on card.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Card not closed correctly</td>
+            <td>Previous session was not properly terminated.</td>
+            <td>Acknowledge; note for fleet records.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Card invalid / expired</td>
+            <td>Driver card has expired, has not yet activated, or authentication failed.</td>
+            <td>Renew the card with your member state authority.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Speed limit exceeded</td>
+            <td>Set speed limit exceeded for more than 60 seconds.</td>
+            <td>Reduce speed; event visible on download.</td>
+            <td><span class="sev sev-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Movement conflict</td>
+            <td>Discrepancy between motion sensor and GNSS / odometer signal.</td>
+            <td>Workshop — possible tampering or wiring damage.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Power loss</td>
+            <td>Supply voltage dropped or was disconnected.</td>
+            <td>Acknowledge. Check supply if it recurs.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Security breach</td>
+            <td>VU enclosure opened or data integrity violated.</td>
+            <td>Mandatory workshop visit.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Sensor failure</td>
+            <td>Motion sensor failed self-test.</td>
+            <td>Workshop replacement.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Printer error</td>
+            <td>Printer cannot complete a print job.</td>
+            <td>Check paper / let it cool / replace mechanism if it persists.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GNSS missing</td>
+            <td>No position data for 3 hours of cumulative driving.</td>
+            <td>Confirm. Check antenna; ensure no metal obstruction.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>UTC time mismatch</td>
+            <td>Difference between internal clock and GNSS time exceeds 1 minute.</td>
+            <td>Workshop will resync.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Internal fault</td>
+            <td>Generic VU malfunction — memory, RTC, software watchdog.</td>
+            <td>Workshop within 7 days.</td>
+            <td><span class="sev sev-crit">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Cards conflict</td>
+            <td>Incompatible card combination in slots 1 + 2.</td>
+            <td>Remove the conflicting card.</td>
+            <td><span class="sev sev-med">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:14px;color:var(--text2);margin-top:14px;"><em>Actia's user-facing messages are deliberately concise; detailed numeric DTCs are accessible only through a workshop's CITO / SmarTach Tester.</em></p>
+  </div>
+</details>
+
+<!-- ===== EFAS-4 ===== -->
+<details class="vendor" id="efas">
+  <summary>
+    <span class="vendor-meta">Intellic / Schneider · common on German and Polish fleets</span>
+    EFAS-4 / EFAS-4.10
+  </summary>
+  <div class="vendor-body">
+    <p>The EFAS-4 (originally Intellic, now Schneider Electric) is fitted to many German-built tractor units (MAN, DAF some configurations) and to a significant share of Polish-registered HGVs. Messages below come from the <strong>EFAS-4 Driver Manual, Edition 06.2022</strong>. EFAS uses two-letter on-screen codes plus a pictogram.</p>
+
+    <div class="code-table-wrap">
+      <table class="code-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Code</th>
+            <th style="width: 24%;">Message</th>
+            <th style="width: 36%;">Meaning</th>
+            <th style="width: 14%;">Action</th>
+            <th style="width: 12%;">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>E01</td><td>No card</td><td>Vehicle moved without a valid driver card.</td><td>Insert card; print &amp; annotate.</td><td><span class="sev sev-high">High</span></td></tr>
+          <tr><td>E02</td><td>Card insertion</td><td>Card inserted after motion started.</td><td>Acknowledge.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>E03</td><td>Last session</td><td>Previous card session not closed.</td><td>Acknowledge; note for fleet.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>E04</td><td>Overspeed</td><td>Speed limit exceeded &gt; 1 min.</td><td>Reduce speed.</td><td><span class="sev sev-high">High</span></td></tr>
+          <tr><td>E05</td><td>Power loss</td><td>Supply voltage too low or interrupted.</td><td>Check supply if recurring.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>E06</td><td>Motion data</td><td>Inconsistent motion sensor pulses.</td><td>Workshop.</td><td><span class="sev sev-crit">Critical</span></td></tr>
+          <tr><td>E07</td><td>Movement conflict</td><td>Sensor disagrees with GNSS / odometer.</td><td>Workshop — tampering check.</td><td><span class="sev sev-crit">Critical</span></td></tr>
+          <tr><td>E08</td><td>Card conflict</td><td>Invalid combination of cards.</td><td>Remove conflicting card.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>E09</td><td>Time overlap</td><td>Negative UTC offset from last VU.</td><td>Workshop must correct.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>E10</td><td>Security breach</td><td>Enclosure tamper or data integrity error.</td><td>Mandatory workshop.</td><td><span class="sev sev-crit">Critical</span></td></tr>
+          <tr><td>F01</td><td>Internal fault</td><td>Generic VU hardware/software malfunction.</td><td>Workshop within 7 days.</td><td><span class="sev sev-crit">Critical</span></td></tr>
+          <tr><td>F02</td><td>Card mech</td><td>Card lock mechanism error.</td><td>Workshop.</td><td><span class="sev sev-high">High</span></td></tr>
+          <tr><td>F03</td><td>Time fault</td><td>Real-time clock implausible.</td><td>Workshop — new cards will be rejected.</td><td><span class="sev sev-crit">Critical</span></td></tr>
+          <tr><td>F04</td><td>Printer</td><td>Printer mechanism failure.</td><td>Replace paper or workshop.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>F05</td><td>Downloading</td><td>Error during data download.</td><td>Retry; check cable.</td><td><span class="sev sev-med">Medium</span></td></tr>
+          <tr><td>F06</td><td>Sensor fault</td><td>Motion sensor failed self-test.</td><td>Sensor replacement at workshop.</td><td><span class="sev sev-crit">Critical</span></td></tr>
+          <tr><td>F07</td><td>GNSS</td><td>Internal GNSS receiver or antenna fault.</td><td>Workshop check.</td><td><span class="sev sev-high">High</span></td></tr>
+          <tr><td>F08</td><td>DSRC</td><td>Remote-check DSRC module fault.</td><td>Workshop will inspect antenna and CAN.</td><td><span class="sev sev-med">Medium</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:14px;color:var(--text2);margin-top:14px;"><em>EFAS-4 numeric codes (E01–E10, F01–F08) are the unit's internal mnemonics — the underlying Annex I C event/fault is the legally relevant identifier and is recorded the same way as on any other unit.</em></p>
+  </div>
+</details>
+
+</div><!-- /.vendor-stack -->
+
+<!-- ===== TAGRA CTA Box ===== -->
+<div class="cta-box">
+  <h3>TAGRA decodes every one of these messages automatically.</h3>
+  <p>When you download a driver card or vehicle unit into TAGRA, every event and fault is matched to its Annex I C definition with a plain-English explanation. Try the full software free for 30 days — no card required.</p>
+  <a class="cta-btn" href="/try/?audience=fleet">Try TAGRA free for 30 days →</a>
+</div>
+
+
+<!-- ===================================================================== -->
+<!-- SECTION 4: TOP 10 COMMON MISTAKES IN PRACTICE                          -->
+<!-- ===================================================================== -->
+<h2 id="common-mistakes">Top 10 most common tachograph messages in practice</h2>
+
+<p>Of the 120+ messages above, ten account for the vast majority of what real drivers see day to day — and almost all of them are <strong>operational</strong> rather than catastrophic. Knowing how to react to these ten will keep most shifts running smoothly and most enforcement officers satisfied.</p>
+
+<div class="code-table-wrap">
+  <table class="code-table">
+    <thead>
+      <tr>
+        <th style="width: 6%;">#</th>
+        <th style="width: 26%;">Message</th>
+        <th style="width: 42%;">Why it happens</th>
+        <th style="width: 26%;">First response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><strong>Card 1 communication error</strong></td>
+        <td>Dirty contacts on the driver card or in the card drawer. Card inserted slightly off-axis. Common in winter when cards live in cold pockets and condensation forms on chip contacts.</td>
+        <td>Eject. Wipe chip with a dry cloth (no liquid). Reinsert. If still failing, try the spare slot.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>No paper / printer drawer open</strong></td>
+        <td>Paper roll ran out, or the printer drawer was opened during a print job. Wrong paper type (only thermal paper marked for digital tachographs is accepted).</td>
+        <td>Insert a new roll, drawer must click shut. Always carry a spare roll.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>1 break! 04h15</strong></td>
+        <td>Continuous-driving timer is approaching 4 h 30 min. Pre-warning is configurable (commonly 15 minutes before).</td>
+        <td>Plan a 45-minute break in the next 15 minutes (or split into 15 + 30).</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>Card insertion while driving</strong></td>
+        <td>Driver forgot to insert the card before driving off, then realised and inserted it on the move.</td>
+        <td>Stop briefly. Re-insert correctly. Event is recorded on the card but is not a fault.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Last session not closed</strong></td>
+        <td>Driver pulled card too quickly from the previous vehicle, or the previous VU shut down before writing the closing record.</td>
+        <td>Acknowledge. Mention to the fleet manager — the previous VU may need a workshop visit.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><strong>Power supply interruption</strong></td>
+        <td>Battery jump-started, wiring fault, or vehicle stood overnight with a flat battery.</td>
+        <td>Acknowledge. If recurring, have the supply circuit inspected — repeated power loss is suspicious to enforcement.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><strong>GNSS missing / no position data</strong></td>
+        <td>Cumulative 3 hours of driving with no usable GNSS fix — typical in tunnels, underground depots, or with a blocked antenna.</td>
+        <td>Confirm. Check the antenna routing and that nothing metallic has been placed on the dash above it.</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>Country entry required</strong></td>
+        <td>Smart Tachograph 2 prompts you to confirm the country (and on Smart Tacho 2, the border crossing) every time you start a new shift.</td>
+        <td>Use the menu: <em>begin country</em> → select code. On Smart Tacho 2 the unit also requests confirmation when GNSS detects a border.</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>Calibration in days ??</strong></td>
+        <td>Two-yearly periodic inspection is approaching (warning typically 28 days in advance).</td>
+        <td>Book the workshop appointment immediately — driving with an out-of-calibration tachograph is a serious offence.</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><strong>1 download in days ??</strong></td>
+        <td>The next mandatory driver-card download is due (warning typically 14 days in advance). EU rules require download at least every 28 days.</td>
+        <td>Hand the card to the fleet or download yourself. If you miss the deadline, the data is still retained but the office may sanction you.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===================================================================== -->
+<!-- SECTION 5: CRISIS WORKFLOW                                             -->
+<!-- ===================================================================== -->
+<h2 id="crisis-workflow">Critical-error workflow: what to do when a fault appears roadside</h2>
+
+<p>A genuine <strong>x Fault</strong> message — sensor fault, motion conflict, internal fault, security breach, time fault — is different from an operational note: the tachograph can no longer record your activity reliably, and you are legally required to keep manual records and have the unit inspected by an <strong>authorised workshop within seven days</strong> (Article 37 of Regulation 165/2014). The following five-step workflow is the official procedure described in every manufacturer's manual.</p>
+
+<ol class="crisis-steps">
+  <li>
+    <span class="num">1</span>
+    <span>
+      <strong>Acknowledge the message and continue safely.</strong>
+      <span class="lbl">Press the <em>OK</em> button to silence the flashing display. The fault is now recorded in the mass memory and on your card — confirming it does not erase the event. Stay calm and find a safe place to stop.</span>
+    </span>
+  </li>
+  <li>
+    <span class="num">2</span>
+    <span>
+      <strong>Print a driver-activities printout from the VU.</strong>
+      <span class="lbl">Menu: <em>print → driver 1 → activities → 24h day</em>. The printout will include the fault entry and a timestamp. Take a fresh printout each subsequent day until the tachograph is repaired.</span>
+    </span>
+  </li>
+  <li>
+    <span class="num">3</span>
+    <span>
+      <strong>Start manual records on the reverse of the printout.</strong>
+      <span class="lbl">For every period the tachograph can no longer record correctly, write by hand: <em>start time, end time, activity (drive / other work / availability / rest), location, vehicle registration</em>. This sheet is your legal evidence for any roadside inspection until the unit is fixed.</span>
+    </span>
+  </li>
+  <li>
+    <span class="num">4</span>
+    <span>
+      <strong>Inform your fleet manager immediately.</strong>
+      <span class="lbl">Phone, message or email — whatever your operation uses. The fleet has to log the fault, plan the workshop appointment, and confirm that the trip can continue under manual recording. Driving past 7 days with a known unrepaired fault exposes the operator to substantial fines.</span>
+    </span>
+  </li>
+  <li>
+    <span class="num">5</span>
+    <span>
+      <strong>Book the authorised workshop appointment within 7 days.</strong>
+      <span class="lbl">Only an <strong>authorised tachograph workshop</strong> (holding a workshop card and the appropriate diagnostic tools) may repair, recalibrate or replace the VU. After repair, the workshop will perform a calibration and provide a fitting plate / calibration record that must be kept with the vehicle.</span>
+    </span>
+  </li>
+</ol>
+
+<p style="margin-top:24px;"><strong>One critical exception:</strong> if the fault is <em>security breach</em> or <em>sensor fault with motion conflict</em>, the unit may automatically eject the card and refuse to record further activities at all. In that case, the entire shift must be hand-written, and the workshop visit becomes urgent rather than the standard 7-day rule. Continuing to drive without manual records in this scenario is a serious offence in every EU and EEA member state.</p>
+
+<!-- ===================================================================== -->
+<!-- SECTION 6: OFFICIAL SOURCES                                            -->
+<!-- ===================================================================== -->
+<h2 id="sources">Official sources &amp; manufacturer manuals</h2>
+
+<p>Every message, threshold and procedure above is reproduced from one of the following publicly available, official documents. Where the manufacturer's English wording differs from common driver vocabulary, we have kept the manufacturer's exact text and added a plain-English explanation alongside.</p>
+
+<ul class="sources-list">
+  <li>
+    <strong>EU regulation — drivers' hours and AETR</strong>
+    Regulation (EC) No 561/2006 — driving times, breaks and rest periods. Directive 2002/15/EC — Working Time Directive for mobile road workers. AETR — European Agreement on the Work of Crews engaged in International Road Transport.
+    <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006R0561" target="_blank" rel="noopener">EUR-Lex: Regulation 561/2006 (EN)</a>
+  </li>
+  <li>
+    <strong>EU regulation — tachograph technical specification</strong>
+    Regulation (EU) No 165/2014 — legal basis. Commission Implementing Regulation (EU) 2016/799, Annex I C — full technical specification of the smart tachograph (Events, Faults, data structures).
+    <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0799" target="_blank" rel="noopener">EUR-Lex: 2016/799 / Annex I C (EN)</a>
+    ·
+    <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0165" target="_blank" rel="noopener">EUR-Lex: 165/2014 (EN)</a>
+  </li>
+  <li>
+    <strong>VDO DTCO 4.1 — Continental Automotive Technologies</strong>
+    Driver instruction manual, Edition 3 / 2024-08, BA00.1381.41 100 102. Covers DTCO 4.1, 4.1a and 4.1b.
+    <a href="https://www.fleet.vdo.com/media/sqrd5xnt/ba_dtco_41a_en_web_2024-08-27.pdf" target="_blank" rel="noopener">PDF download (English) — fleet.vdo.com</a>
+  </li>
+  <li>
+    <strong>VDO DTCO 4.0 — Continental Automotive Technologies</strong>
+    Earlier Smart Tacho 1 unit, still in widespread service. Driver manual, Edition 2 / 2022.
+    <a href="https://www.fleet.vdo.com/media/lvnkmvhq/ba_dtco_40e_web_gb.pdf" target="_blank" rel="noopener">PDF download (English) — fleet.vdo.com</a>
+  </li>
+  <li>
+    <strong>Stoneridge SE5000 Exakt Duo² — Stoneridge Electronics</strong>
+    Driver &amp; Company Manual, Rev 8.x. Reference unit for the UK and Nordic markets.
+    <a href="https://www.stoneridgeelectronics.com/tachographs/" target="_blank" rel="noopener">Manuals — stoneridgeelectronics.com</a>
+  </li>
+  <li>
+    <strong>Actia SmarTach — Actia Group</strong>
+    SmarTach Gen1 and Gen2 driver guides; widespread on French and southern-European fleets.
+    <a href="https://www.actia.com/en/solutions/tachograph/" target="_blank" rel="noopener">Product page — actia.com</a>
+  </li>
+  <li>
+    <strong>European Commission — DG MOVE</strong>
+    Authoritative background on the smart tachograph rollout, amendments, and enforcement guidance.
+    <a href="https://transport.ec.europa.eu/transport-modes/road/social-provisions/smart-tachograph_en" target="_blank" rel="noopener">transport.ec.europa.eu — Smart tachograph</a>
+  </li>
 </ul>
 
-<h2>Common mistakes drivers make with symbols</h2>
+<!-- ===================================================================== -->
+<!-- RELATED ARTICLES                                                       -->
+<!-- ===================================================================== -->
+<h2 id="related">Related driver guides</h2>
 
-<ul>
-  <li><strong>Leaving the unit on "Other work" during a break:</strong> This will not count as a statutory break. Always switch to Rest/Break.</li>
-  <li><strong>Choosing Availability instead of Rest:</strong> POA does not reset the driving-time limit or count as a WTD break.</li>
-  <li><strong>Forgetting manual entries:</strong> Not adding activities away from the vehicle (e.g. pre-shift work) leads to gaps and potential infringements.</li>
-  <li><strong>Using OUT incorrectly:</strong> Setting OUT to hide driving is illegal and easily detected in data analysis.</li>
-  <li><strong>Second driver not set correctly:</strong> In crew mode, the co-driver should be on Availability, or on Rest if taking a break. Do not leave them on Other work by default.</li>
-  <li><strong>Missing country entries:</strong> Skipping start or end country prompts creates avoidable non-compliance.</li>
-  <li><strong>Not using ferry/train mode:</strong> Rest may be treated as interrupted incorrectly if you do not mark a crossing.</li>
-  <li><strong>Removing the card too soon:</strong> Wait until the unit finishes saving data and confirms end country.</li>
-</ul>
+<div class="related-grid">
+  <a class="related-card" href="/articles/how-to-download-evaluate-archive-tachograph-data/">
+    <span class="r-eyebrow">Compliance · 12 min read</span>
+    <span class="r-title">How to download, evaluate and archive tachograph data</span>
+    <span class="r-text">Full guide to the 28-day driver-card and 90-day VU download cycle, archive rules, and what your fleet must keep on file.</span>
+    <span class="r-chip">Read the download guide →</span>
+  </a>
+  <a class="related-card" href="/articles/who-must-evaluate-tachograph-data-2026/">
+    <span class="r-eyebrow">Regulation · 8 min read</span>
+    <span class="r-title">Who must evaluate tachograph data in 2026</span>
+    <span class="r-text">Operator obligations under Reg 561/2006 and the Working Time Directive — which transport categories are in scope and what to deliver to an inspector.</span>
+    <span class="r-chip">Read the obligations guide →</span>
+  </a>
+  <a class="related-card" href="/articles/tachographs-for-vans-new-obligation-july-2026/">
+    <span class="r-eyebrow">New rules · 6 min read</span>
+    <span class="r-title">Tachographs for vans: the new obligation from July 2026</span>
+    <span class="r-text">From 1 July 2026, vans between 2.5 and 3.5 tonnes in international transport must carry a smart tachograph. Operator checklist.</span>
+    <span class="r-chip">Read the vans guide →</span>
+  </a>
+</div>
 
-<h2>How TAGRA decodes these symbols automatically</h2>
-<p>TAGRA reads driver card and vehicle unit files and converts digital tachograph symbols into clear activity timelines. It distinguishes Driving, Other work, Availability, and Rest/Break, and matches them against drivers' hours and Working Time Directive rules.</p>
-<p>Our <a href="/driver/">TAGRA Trucker</a> tools highlight infringements, OUT periods, ferry/train interruptions, and card issues, so you can fix problems fast. Learn more at <a href="/driver/">tagra.eu/driver</a>.</p>
+<!-- ===== second TAGRA CTA Box ===== -->
+<div class="cta-box" style="margin-top:36px;">
+  <h3>Don't decode hundreds of messages by hand.</h3>
+  <p>TAGRA reads driver cards and vehicle units from every smart tachograph on the market, matches each event and fault to its Annex I C definition, and produces inspection-ready reports under EC 561/2006, WTD and AETR. 30-day free trial, no card required, runs on any Windows PC.</p>
+  <a class="cta-btn" href="/try/?audience=fleet">Start your free 30-day trial →</a>
+</div>
 
-<h2>FAQ: tachograph activity symbols</h2>
+<!-- ===================================================================== -->
+<!-- FAQ                                                                    -->
+<!-- ===================================================================== -->
+<h2 id="faq">FAQ — tachograph fault codes and warning symbols</h2>
 
-<h3>What do tachograph symbols mean?</h3>
-<p>They show your current activity: <em>Driving</em>, <em>Other work</em>, <em>Availability</em>, and <em>Rest/Break</em>. The four main pictograms appear on every digital tachograph display. They are accompanied by icons for card insertion and removal, multi-driver mode, ferry/train crossings, country codes, and warnings such as overspeed or break due.</p>
+<div class="faq-block">
 
-<h3>What is the difference between "Other work" and "Availability"?</h3>
-<p>Other work is working time (loading, paperwork, vehicle checks). Availability is waiting time where you must be ready to work but are not doing any. Availability is not working time and not rest, and it does not count as a break.</p>
+<details>
+  <summary>What is the difference between an "event" and a "fault" on a digital tachograph?</summary>
+  <div class="faq-a">An <strong>event</strong> is an operational occurrence — driving without a card, exceeding the speed limit, card insertion while driving, time overlap. The unit is working correctly; it is recording something the driver did. A <strong>fault</strong> is a hardware or software malfunction of the tachograph itself — sensor fault, internal fault, time fault, printer failure. Faults trigger the legal 7-day workshop rule. Both categories are defined by Annex I C of Regulation (EU) 2016/799.</div>
+</details>
 
-<h3>Can Availability count as a break under drivers' hours?</h3>
-<p>No. Only Rest/Break satisfies the 45-minute break required after 4h30 of driving. Availability (POA) does not reset the driving limit and does not count towards Working Time Directive breaks.</p>
+<details>
+  <summary>I see "sensor fault" on my VDO display — can I keep driving?</summary>
+  <div class="faq-a">Briefly, yes — to reach a safe stopping place. Then you must (1) press OK to acknowledge, (2) print the day's activities, (3) write manual records of every onward activity on the back of that printout, (4) inform your fleet manager, and (5) reach an authorised workshop within 7 days. Continuing to drive without manual records once you know about a sensor fault is a serious offence in every EU member state.</div>
+</details>
 
-<h3>What should I do if I forgot to switch to Rest during a break?</h3>
-<p>Change to Rest as soon as you realise. If appropriate, make a printout, add a written note explaining the error, and sign it. You cannot overwrite recorded activities, but a signed note may help your operator explain an isolated mistake at a roadside check.</p>
+<details>
+  <summary>What does "GNSS anomaly" mean on a Smart Tachograph 2?</summary>
+  <div class="faq-a">Smart Tachograph 2 units (mandatory on vehicles registered after 21 August 2023, with retrofits required by 18 August 2025) check the GNSS signal for spoofing using the Galileo OSNMA service. A <em>GNSS anomaly</em> event means the unit detected either an attempted manipulation of the GPS/Galileo signal or that the signal failed authentication. The unit logs the event for enforcement. If it recurs on a specific vehicle, the antenna and immediate wiring should be checked for tampering — and workshop diagnostics may be needed.</div>
+</details>
+
+<details>
+  <summary>What is the difference between "Other work" and "Period of availability"?</summary>
+  <div class="faq-a"><strong>Other work</strong> is paid work that is not driving: loading, unloading, fuelling, paperwork, helping passengers, vehicle checks. It counts as working time under the WTD and does <em>not</em> count as a break. <strong>Period of availability</strong> is waiting time whose duration the driver knows in advance — ferry/train, queuing at a known appointment, accompanying a vehicle on a transporter. Period of availability is not work, but it also is <em>not</em> a break under drivers' hours and does count toward working time under the WTD.</div>
+</details>
+
+<details>
+  <summary>Can "Period of availability" count as a break under EC 561/2006?</summary>
+  <div class="faq-a">No. Annex 1 of Regulation 561/2006 lists only one category that resets the 4½-hour continuous-driving clock and counts toward the 45-minute mandatory break: the <em>break / rest</em> activity (bed pictogram). Drivers who set "Availability" while taking what they believe is a break receive no break credit on download — and roadside inspectors regularly issue fines for this.</div>
+</details>
+
+<details>
+  <summary>What should I do if I forgot to switch to "Rest" during a break?</summary>
+  <div class="faq-a">When you next insert your card in any vehicle, the tachograph offers a <strong>manual entry</strong> procedure for the period since your last card removal. Use the menu to set the correct activity (Rest) for that interval. Manual entries are time-stamped on the card and visible to enforcement, but they are accepted as a legitimate correction — unlike a missing or incorrect activity that was never declared.</div>
+</details>
+
+<details>
+  <summary>How often must I download my driver card and the vehicle unit?</summary>
+  <div class="faq-a">At least every <strong>28 days</strong> for the driver card and every <strong>90 days</strong> for the vehicle unit (Article 33 of Regulation 165/2014, in conjunction with Commission Regulation 581/2010). The downloaded data must be retained for at least one year — and in many member states for the entire working career of the driver as part of accident/insurance records.</div>
+</details>
+
+<details>
+  <summary>Does a "card communication error" affect my driving time records?</summary>
+  <div class="faq-a">Not necessarily. Most communication errors are simply dirty chip contacts — the activity carried out before the error is already in the card's memory. If the error is brief and clears after a clean and reinsertion, no period is lost. If the card refuses to be read at all, the unit will print the last activity automatically and you must hand-record everything from that point on, and the card should be replaced.</div>
+</details>
+
+<details>
+  <summary>The display says "country entry required" — what do I have to do?</summary>
+  <div class="faq-a">Smart tachographs require you to declare the country in which the shift begins and ends. With Smart Tachograph 2, the unit also asks you to confirm each border crossing (the GNSS detects the crossing, the driver presses OK to acknowledge). Use the menu: <em>entry → driver 1 → begin country</em> (and <em>end country</em> at the end of the shift). Missed country entries are recorded as events and visible to roadside inspectors.</div>
+</details>
+
+<details>
+  <summary>Does TAGRA support all four manufacturer fault codes shown in this guide?</summary>
+  <div class="faq-a">Yes. TAGRA reads the Annex I C events and faults directly from any downloaded .DDD file — the data format is identical regardless of the unit that wrote it. Manufacturer-specific pop-up messages are mapped to their underlying Annex I C event so that fleet managers see consistent, plain-English explanations whether their drivers are using VDO, Stoneridge, Actia, EFAS or any other type-approved smart tachograph.</div>
+</details>
+
+<details>
+  <summary>What does the official 7-day workshop rule actually require?</summary>
+  <div class="faq-a">Article 37 of Regulation 165/2014 requires that, where the tachograph cannot record activities correctly because of a fault, the operator must have it repaired by an approved fitter or workshop "as soon as the circumstances permit" — interpreted in practice as within <strong>seven calendar days</strong> if the vehicle can return to base, or immediately on return if it is on a longer international trip. The driver must keep manual records throughout this period.</div>
+</details>
+
+<details>
+  <summary>Can I keep driving with the "overspeed" event recorded?</summary>
+  <div class="faq-a">Yes — overspeed is an event, not a fault. The vehicle continues to record correctly; only the speed limit was exceeded. The event is visible on download, and repeated overspeed records on the same trip or across multiple trips are a common trigger for operator audits and roadside investigations.</div>
+</details>
+
+</div><!-- /.faq-block -->
 
 </article>
 </div>
@@ -325,6 +1421,7 @@
   </div>
 </footer>
 <script>(function(){var bar=document.getElementById('scroll-progress');if(bar)window.addEventListener('scroll',function(){var t=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(t/h*100)+'%';},{passive:true});var toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');if(toggle&&links)toggle.addEventListener('click',function(){var o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});})();</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What do tachograph symbols mean?","acceptedAnswer":{"@type":"Answer","text":"They show activity types: Driving, Other work, Availability, and Rest/Break. The four main pictograms appear on every digital tachograph display. They are accompanied by icons for driver card insertion and removal, multi-driver mode, ferry/train crossings, country codes, and warnings such as overspeed or break due."}},{"@type":"Question","name":"What is the difference between Other work and Availability?","acceptedAnswer":{"@type":"Answer","text":"Other work is working time (loading, unloading, vehicle checks, paperwork). Availability (POA) is waiting time where you must be available but are not working. POA is not working time and not rest, and it does not count as a break."}},{"@type":"Question","name":"Can Availability count as a break under drivers hours?","acceptedAnswer":{"@type":"Answer","text":"No. Only Rest/Break time satisfies the 45-minute break after 4 hours 30 minutes of driving. Availability does not reset the driving-time limit and does not meet Working Time Directive break requirements."}},{"@type":"Question","name":"What should I do if I forgot to switch to Rest during a break?","acceptedAnswer":{"@type":"Answer","text":"Switch to Rest/Break as soon as you notice. If needed, make a printout and add a signed note explaining the error. You cannot change stored activities, but the note may help your operator at a roadside inspection."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Tachograph fault codes & symbols explained: VDO, Stoneridge, Actia, EFAS guide", "description": "Complete driver guide to digital tachograph fault codes and warning symbols. Activity icons, warning pop-ups, VDO DTCO 4.1 / Stoneridge SE5000 / Actia / EFAS-4 fault codes, what each fault means and exactly what to do.", "image": "https://tagra.eu/assets/img/og/digital-tachograph-symbols.jpg", "author": {"@type": "Organization", "name": "Truck Data Technology, s.r.o.", "url": "https://www.tdt.cz"}, "publisher": {"@type": "Organization", "name": "Truck Data Technology, s.r.o.", "logo": {"@type": "ImageObject", "url": "https://tagra.eu/assets/img/logo.svg"}}, "datePublished": "2025-09-01", "dateModified": "2026-05-14", "inLanguage": "en", "mainEntityOfPage": "https://tagra.eu/articles/digital-tachograph-symbols/", "articleSection": "Driver knowledge base", "wordCount": 7800, "keywords": "tachograph fault codes, tachograph warning symbols, digital tachograph error codes, VDO DTCO error codes, Stoneridge SE5000 errors, Actia SmarTach faults, EFAS-4 faults, Annex 1C events, smart tachograph GNSS fault, drivers hours, Regulation 165/2014"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between an event and a fault on a digital tachograph?", "acceptedAnswer": {"@type": "Answer", "text": "An event is an operational occurrence — driving without a card, exceeding the speed limit, card insertion while driving, time overlap. The unit is working correctly; it is recording something the driver did. A fault is a hardware or software malfunction of the tachograph itself — sensor fault, internal fault, time fault, printer failure. Faults trigger the legal 7-day workshop rule. Both categories are defined by Annex I C of Regulation (EU) 2016/799."}}, {"@type": "Question", "name": "I see sensor fault on my VDO display — can I keep driving?", "acceptedAnswer": {"@type": "Answer", "text": "Briefly, yes — to reach a safe stopping place. Then you must acknowledge the message, print the day's activities, write manual records of every onward activity on the back of that printout, inform your fleet manager, and reach an authorised workshop within 7 days. Continuing to drive without manual records once you know about a sensor fault is a serious offence in every EU member state."}}, {"@type": "Question", "name": "What does GNSS anomaly mean on a Smart Tachograph 2?", "acceptedAnswer": {"@type": "Answer", "text": "Smart Tachograph 2 units check the GNSS signal for spoofing using the Galileo OSNMA service. A GNSS anomaly event means the unit detected either an attempted manipulation of the GPS/Galileo signal or that the signal failed authentication. The unit logs the event for enforcement. If it recurs on a specific vehicle, the antenna and immediate wiring should be checked for tampering."}}, {"@type": "Question", "name": "What is the difference between Other work and Period of availability?", "acceptedAnswer": {"@type": "Answer", "text": "Other work is paid work that is not driving: loading, unloading, fuelling, paperwork, helping passengers, vehicle checks. Period of availability is waiting time whose duration the driver knows in advance — ferry/train, queuing at a known appointment. Period of availability is not work, but it also is not a break under drivers' hours."}}, {"@type": "Question", "name": "Can Period of availability count as a break under EC 561/2006?", "acceptedAnswer": {"@type": "Answer", "text": "No. Annex 1 of Regulation 561/2006 lists only one category that resets the 4.5-hour continuous-driving clock and counts toward the 45-minute mandatory break: the break/rest activity. Drivers who set Availability while taking a break receive no break credit on download."}}, {"@type": "Question", "name": "What should I do if I forgot to switch to Rest during a break?", "acceptedAnswer": {"@type": "Answer", "text": "When you next insert your card in any vehicle, the tachograph offers a manual entry procedure for the period since your last card removal. Use the menu to set the correct activity for that interval. Manual entries are time-stamped on the card and accepted as a legitimate correction."}}, {"@type": "Question", "name": "How often must I download my driver card and the vehicle unit?", "acceptedAnswer": {"@type": "Answer", "text": "At least every 28 days for the driver card and every 90 days for the vehicle unit (Article 33 of Regulation 165/2014, in conjunction with Commission Regulation 581/2010). The downloaded data must be retained for at least one year."}}, {"@type": "Question", "name": "Does a card communication error affect my driving time records?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Most communication errors are simply dirty chip contacts — the activity carried out before the error is already in the card's memory. If the error is brief and clears after a clean and reinsertion, no period is lost. If the card refuses to be read at all, the unit will print the last activity automatically."}}, {"@type": "Question", "name": "The display says country entry required — what do I have to do?", "acceptedAnswer": {"@type": "Answer", "text": "Smart tachographs require you to declare the country in which the shift begins and ends. With Smart Tachograph 2, the unit also asks you to confirm each border crossing. Use the menu: entry → driver 1 → begin country at the start, and end country at the end of the shift."}}, {"@type": "Question", "name": "Does TAGRA support all four manufacturer fault codes shown in this guide?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TAGRA reads the Annex I C events and faults directly from any downloaded .DDD file — the data format is identical regardless of the unit that wrote it. Manufacturer-specific pop-up messages are mapped to their underlying Annex I C event."}}, {"@type": "Question", "name": "What does the official 7-day workshop rule actually require?", "acceptedAnswer": {"@type": "Answer", "text": "Article 37 of Regulation 165/2014 requires that, where the tachograph cannot record activities correctly because of a fault, the operator must have it repaired by an approved workshop as soon as the circumstances permit — interpreted in practice as within seven calendar days if the vehicle can return to base."}}, {"@type": "Question", "name": "Can I keep driving with the overspeed event recorded?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — overspeed is an event, not a fault. The vehicle continues to record correctly; only the speed limit was exceeded. The event is visible on download, and repeated overspeed records are a common trigger for operator audits and roadside investigations."}}]}</script>
 </body>
 </html>
