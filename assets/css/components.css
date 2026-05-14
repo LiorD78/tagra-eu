@@ -213,10 +213,71 @@
    ARTICLE CARDS (.article-card grid)
    ============================================================ */
 .article-grid {
+  /* Horizontal scroll carousel: cards have fixed width, page scrolls horizontally.
+     Inside .container so first card left-aligns with H1. */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  gap: 20px;
   margin-top: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding: 8px 0 24px; /* room for hover lift + visual breathing */
+  /* extra right padding so the user sees the next card peeking through */
+  padding-right: max(24px, 25%);
+  /* hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.article-grid::-webkit-scrollbar { width: 0; height: 0; }
+.article-grid .article-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  width: 300px;
+}
+@media (max-width: 768px) {
+  .article-grid {
+    grid-auto-columns: 85vw;
+    padding-right: 32px;
+  }
+  .article-grid .article-card { width: 85vw; max-width: 320px; }
+}
+
+/* Carousel wrapper for nav arrows */
+.article-carousel { position: relative; }
+.article-carousel-nav {
+  display: flex; gap: 8px;
+  margin-top: 16px;
+  justify-content: flex-start;
+}
+.article-carousel-btn {
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-page);
+  color: var(--blue-mid);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background .15s, border-color .15s, color .15s, transform .1s;
+  user-select: none;
+}
+.article-carousel-btn:hover {
+  background: var(--bg-apple-solid);
+  border-color: var(--blue-mid);
+  color: var(--blue-dark);
+}
+.article-carousel-btn:active { transform: scale(0.95); }
+.article-carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 .article-card {
   position: relative;
