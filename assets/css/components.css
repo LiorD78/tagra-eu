@@ -488,16 +488,20 @@
 }
 .activity-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.06); border-color: rgba(19,74,142,.25); }
 .activity-card .ico {
-  width: 44px; height: 44px;
+  width: 48px; height: 48px;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 12px;
-  font-size: 22px;
   color: #fff;
-  font-weight: 800;
+}
+.activity-card .ico img {
+  width: 30px; height: 30px;
+  /* SVGs use currentColor for strokes — inherits from parent .ico color */
+  filter: brightness(0) invert(1); /* force pure white regardless of source SVG fill/stroke */
 }
 .activity-card .ico--drive { background: linear-gradient(135deg, #0070F3, #134a8e); }
 .activity-card .ico--work  { background: linear-gradient(135deg, #5C820F, #6E9B12); }
-.activity-card .ico--avail { background: linear-gradient(135deg, #FBC02D, #F57F17); color:#1f2937;}
+.activity-card .ico--avail { background: linear-gradient(135deg, #FBC02D, #F57F17); }
+.activity-card .ico--avail img { filter: brightness(0); } /* dark icon on yellow bg */
 .activity-card .ico--rest  { background: linear-gradient(135deg, #6b7280, #374151); }
 .activity-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-top: 4px; }
 .activity-card p { font-size: 15px; line-height: 1.55; color: var(--text2); }

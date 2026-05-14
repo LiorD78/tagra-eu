@@ -46,6 +46,10 @@
     @media(max-width:700px){.art-title{font-size:26px;}}
     .art-meta{font-size:15px;color:var(--text2);padding-bottom:24px;border-bottom:1px solid var(--border);display:flex;gap:20px;flex-wrap:wrap;}
     .art-body{padding:44px 0 60px;}
+    /* H2 gradient mechanics: width:max-content shrinks the element to the text's
+       intrinsic width so the 3-stop gradient is rendered across the visible glyphs
+       (not the 949px wrapping width), giving the same visible 3-stop effect as H1.
+       Multi-line H2s wrap via max-width:100% (each wrapped line gets its own slice). */
     .art-body h2 {
       font-size: 36px; font-weight: 800;
       line-height: 1.1; letter-spacing: 0;
@@ -54,7 +58,8 @@
       background: linear-gradient(90deg, var(--blue-dark, #0b2c4a) 0%, var(--blue-mid, #134a8e) 55%, var(--blue-light, #1f5fa6) 100%);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
-      display: inline-block; max-width: 100%; margin-bottom: 14px;
+      display: inline-block; width: max-content; max-width: 100%;
+      margin-bottom: 14px;
       padding: 0.12em 0.15em 0.08em 0;
     }
     .art-body h3{font-size:20px;font-weight:700;color:var(--text);margin:28px 0 10px;}
@@ -113,10 +118,10 @@
     .lead{font-size:20px;color:var(--text2);line-height:1.55;}
   
 </style>
-  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260514b">
-  <link rel="stylesheet" href="../../assets/css/base.css?v=20260514b">
-  <link rel="stylesheet" href="../../assets/css/components.css?v=20260514b">
-  <link rel="stylesheet" href="/assets/css/nav.css?v=20260514b">
+  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260514c">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=20260514c">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=20260514c">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260514c">
   <script src="/assets/js/nav.js?v=20260513q" defer></script>
   <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
 </head>
@@ -196,22 +201,22 @@
 
 <div class="activity-grid">
   <div class="activity-card">
-    <div class="ico ico--drive" aria-hidden="true">⊙</div>
+    <div class="ico ico--drive" aria-hidden="true"><img src="icons/driving.svg?v=20260514c" alt="" width="28" height="28"></div>
     <h3>Driving (steering wheel)</h3>
     <p>Set <strong>automatically</strong> the moment the vehicle moves. Cannot be changed by hand. Counts toward your 4½-hour continuous limit, 9/10-hour daily, and 56/90-hour weekly/fortnightly driving limits.</p>
   </div>
   <div class="activity-card">
-    <div class="ico ico--work" aria-hidden="true">⚒</div>
+    <div class="ico ico--work" aria-hidden="true"><img src="icons/other-work.svg?v=20260514c" alt="" width="28" height="28"></div>
     <h3>Other work (crossed hammers)</h3>
     <p>All paid work that is <strong>not driving</strong>: loading and unloading, fuelling, paperwork, vehicle checks, helping passengers. Counts as working time under the WTD. Does <em>not</em> count as a break.</p>
   </div>
   <div class="activity-card">
-    <div class="ico ico--avail" aria-hidden="true">◇</div>
+    <div class="ico ico--avail" aria-hidden="true"><img src="icons/availability.svg?v=20260514c" alt="" width="28" height="28"></div>
     <h3>Availability (square diamond)</h3>
     <p>Waiting time whose duration is known in advance: ferry/train, queueing at a customer, accompanying a vehicle being towed. Period of availability does not count as a break under drivers' hours, but does count toward working time under the WTD.</p>
   </div>
   <div class="activity-card">
-    <div class="ico ico--rest" aria-hidden="true">▭</div>
+    <div class="ico ico--rest" aria-hidden="true"><img src="icons/rest.svg?v=20260514c" alt="" width="28" height="28"></div>
     <h3>Break / rest (bed)</h3>
     <p>Genuine break or daily/weekly rest. The driver must do no work and be free to dispose of their time. The only category that resets the 4½-hour continuous-driving clock and counts toward the mandatory 11-hour daily rest.</p>
   </div>
