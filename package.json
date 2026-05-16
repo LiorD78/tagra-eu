@@ -1,0 +1,8 @@
+{
+  "name": "tagra-eu",
+  "version": "1.0.0",
+  "description": "TAGRA.eu site with Netlify Functions",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "dependencies": { "jsonwebtoken": "^9.0.2" }
+}
