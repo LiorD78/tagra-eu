@@ -7,7 +7,10 @@
  *   url    — must start with http:// or https://
  *   type   — 'URL_UPDATED' (default) | 'URL_DELETED'
  *
- * Flow:
+ * GET endpoint (?whoami) — vrátí client_email + project_id service accountu
+ *   (veřejné identifikátory, NE privátní klíč) pro nastavení GSC ownership.
+ *
+ * Flow (POST):
  *   1. Load SA JSON from env GOOGLE_SA_KEY_B64 (base64 → utf8 → JSON.parse).
  *   2. Mint JWT RS256 (iss=client_email, scope=indexing, aud=token endpoint).
  *   3. Exchange JWT za access_token na oauth2.googleapis.com/token
@@ -94,6 +97,20 @@ exports.handler = async (event) => {
   const timestamp = new Date().toISOString();
 
   try {
+    // GET → whoami: vrátí jen veřejné identifikátory SA (pro GSC owner setup).
+    if (event.httpMethod === 'GET') {
+      const sa = loadServiceAccount();
+      return {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client_email: sa.client_email,
+          project_id: sa.project_id || null,
+          timestamp,
+        }),
+      };
+    }
+
     if (event.httpMethod !== 'POST') {
       return {
         statusCode: 405,
