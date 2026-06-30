@@ -37,3 +37,31 @@
 # Integrations — DE/PL not yet translated
 /integrations/*/de/       /integrations/:splat/   302
 /integrations/*/pl/       /integrations/:splat/   302
+
+# ──────────────────────────────────────────────────────────────────
+# Legacy tagra.eu (old Drupal-era) paths
+# tdt.cz / tdt.sk language-switcher (EN) links on every node still
+# point at these old TAGRA.eu URLs. Confirmed 2026-06-30: 16 of 18
+# distinct EN-link targets 404 on the new static site (only / and
+# /manuals happen to already match). Mapped each to the closest
+# equivalent on the new tagra.app site; a few have no real
+# equivalent and fall back to / or the nearest section hub — flagged
+# for review rather than guessed silently. Status 301 = permanent.
+# ──────────────────────────────────────────────────────────────────
+/contacts                            /contact/                    301
+/blog                                /articles/                   301
+/frequently-asked-questions          /faq/                        301
+/try-free                            /try/                        301
+/try-tagra-trucker-free              /try/?audience=driver        301
+/tagra-control                       /enforcement/                301
+/tachograph-data-download-equipment  /fleet/                      301
+/ochrana-osobnich-udaju              /privacy/                    301
+/obchodni-podminky                   /privacy/                    301
+/services                            /how-it-works/                301
+# No real equivalent on the new site — sent to the closest sensible page
+/about-company                       /contact/                    301
+/legislation                         /articles/                   301
+/references                          /                            301
+/czech-program-tagra                 /                            301
+/download-0                          /try/                        301
+/nova-aktualizace-verze-tagraeu-124  /                            301
