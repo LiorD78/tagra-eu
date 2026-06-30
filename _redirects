@@ -1,6 +1,16 @@
 # Netlify redirects — TAGRA.EU
 
 # ──────────────────────────────────────────────────────────────────
+# Old tagra.eu PDF install guide (2015) — still referenced/fanned-out
+# to by ChatGPT (confirmed via Collabim LLM analysis 2026-06-30) but
+# the generic tagra.eu->tagra.app domain redirect below 404s it since
+# the file doesn't exist on the new static site. Must come before
+# that generic rule to win.
+# ──────────────────────────────────────────────────────────────────
+https://www.tagra.eu/sites/default/files/prilohy/tagra-eu-instalace-programu.pdf  /manuals/how-to-install-tagra/  301!
+https://tagra.eu/sites/default/files/prilohy/tagra-eu-instalace-programu.pdf      /manuals/how-to-install-tagra/  301!
+
+# ──────────────────────────────────────────────────────────────────
 # tagra.eu is a domain alias only — tagra.app is the primary domain.
 # Send all tagra.eu/* traffic straight to the equivalent tagra.app/*
 # path (preserves the path; the path-specific rules further below
