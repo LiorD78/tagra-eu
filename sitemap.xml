@@ -163,7 +163,80 @@
   </url>
   <url>
     <loc>https://tagra.app/privacy/</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/privacy/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/privacy/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/privacy/gr/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://tagra.app/privacy/cz/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://tagra.app/privacy/sk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://tagra.app/privacy/de/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/privacy/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/privacy/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/privacy/gr/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://tagra.app/privacy/cz/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://tagra.app/privacy/sk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://tagra.app/privacy/pl/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/privacy/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/privacy/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/privacy/gr/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://tagra.app/privacy/cz/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://tagra.app/privacy/sk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://tagra.app/privacy/cz/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/privacy/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/privacy/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/privacy/gr/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://tagra.app/privacy/cz/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://tagra.app/privacy/sk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://tagra.app/privacy/sk/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/privacy/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/privacy/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/privacy/gr/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://tagra.app/privacy/cz/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://tagra.app/privacy/sk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://tagra.app/privacy/gr/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/privacy/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/privacy/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/privacy/gr/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://tagra.app/privacy/cz/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://tagra.app/privacy/sk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/privacy/"/>
   </url>
 </urlset>
