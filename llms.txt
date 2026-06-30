@@ -42,7 +42,7 @@ TAGRA is a Windows desktop software family developed by Truck Data Technology, s
 **Truck Data Technology, s.r.o.** (TDT) — Czech software developer, established 2000. Member of major Central European transport associations. International references include Czech Police, Czech Customs Administration, Czech Ministry of Transport, Slovak Labour Inspectorates, Hungarian Ministry of Transport.
 
 - **Website**: https://www.tdt.cz
-- **Sales contact**: obchod@tdt.cz · +420 739 005 345
+- **Sales contact**: sales@tagra.app · +420 739 005 345
 - **Business hours**: Monday to Friday, 8:00 to 16:00 CET (responses in English available)
 - **Trial**: Free 30-day trial available without registration
 

@@ -1,6 +1,6 @@
 # robots.txt for tagra.app
 # Truck Data Technology, s.r.o. — TAGRA tachograph software
-# Contact: obchod@tdt.cz
+# Contact: sales@tagra.app
 
 # ──────────────────────────────────────────────────────────
 # Default — all bots welcome on public content
