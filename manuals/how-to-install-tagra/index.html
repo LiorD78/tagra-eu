@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- TMX-ANALYTICS START -->
+  <meta name="msvalidate.01" content="7F7894081BE7FBB245FF03AF8810B22F">
+  <!-- Consent Mode v2 defaults (deny) + gtag stub — runs BEFORE gtag.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
+      analytics_storage:'denied', functionality_storage:'denied',
+      personalization_storage:'denied', security_storage:'granted',
+      wait_for_update:500
+    });
+    gtag('set','ads_data_redaction',true);
+    gtag('set','url_passthrough',false);
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92253QFBNX"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config','G-92253QFBNX');
+  </script>
+  <!-- Cookie consent banner (self-hosted) + Microsoft Clarity gating -->
+  <style>
+    .tmx-cc{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:linear-gradient(120deg,var(--blue-dark,#0b2c4a),var(--blue-mid,#134a8e) 62%,var(--blue-light,#1f5fa6));color:#fff;
+      font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      padding:16px 20px;box-shadow:0 -4px 24px rgba(0,0,0,.18);display:flex;flex-wrap:wrap;
+      align-items:center;gap:14px;justify-content:center}
+    .tmx-cc__txt{flex:1 1 360px;max-width:760px}
+    .tmx-cc__txt a{color:#9ed0f5;text-decoration:underline}
+    .tmx-cc__btns{display:flex;gap:10px;flex:0 0 auto}
+    .tmx-cc__b{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:600;
+      padding:10px 22px;border-radius:99px;transition:filter .15s;color:#fff}
+    .tmx-cc__b:hover{filter:brightness(1.08)}
+    .tmx-cc__b--no{background:rgba(255,255,255,.16)}
+    .tmx-cc__b--yes{background:var(--green-cta,#5C820F)}
+    @media(max-width:640px){.tmx-cc{padding:14px}.tmx-cc__btns{width:100%}.tmx-cc__b{flex:1}}
+  </style>
+  <script>
+  (function(){
+    var KEY='tmx-consent-v1', CL='wt18054m0r';
+    function lc(){var l=(document.documentElement.getAttribute('lang')||'en').toLowerCase().split('-')[0];
+      var m={cz:'cs',cs:'cs',sk:'sk',de:'de',pl:'pl',gr:'el',el:'el',en:'en'};return m[l]||'en';}
+    var T={
+      en:{t:'We use analytics cookies (Google Analytics, Microsoft Clarity) to understand site usage. They load only with your consent.',a:'Accept',r:'Reject',p:'Privacy &amp; cookies'},
+      cs:{t:'Pou\u017e\u00edv\u00e1me analytick\u00e9 cookies (Google Analytics, Microsoft Clarity) k pochopen\u00ed pou\u017e\u00edv\u00e1n\u00ed webu. Na\u010dtou se jen s va\u0161\u00edm souhlasem.',a:'P\u0159ijmout',r:'Odm\u00edtnout',p:'Soukrom\u00ed a cookies'},
+      sk:{t:'Pou\u017e\u00edvame analytick\u00e9 cookies (Google Analytics, Microsoft Clarity) na pochopenie pou\u017e\u00edvania webu. Na\u010d\u00edtaj\u00fa sa len s va\u0161\u00edm s\u00fahlasom.',a:'Prija\u0165',r:'Odmietnu\u0165',p:'S\u00fakromie a cookies'},
+      de:{t:'Wir verwenden Analyse-Cookies (Google Analytics, Microsoft Clarity), um die Nutzung der Website zu verstehen. Sie werden nur mit Ihrer Einwilligung geladen.',a:'Akzeptieren',r:'Ablehnen',p:'Datenschutz &amp; Cookies'},
+      pl:{t:'U\u017cywamy plik\u00f3w cookie do analityki (Google Analytics, Microsoft Clarity), aby zrozumie\u0107 korzystanie z witryny. \u0141aduj\u0105 si\u0119 tylko za Twoj\u0105 zgod\u0105.',a:'Akceptuj',r:'Odrzu\u0107',p:'Prywatno\u015b\u0107 i cookies'},
+      el:{t:'\u03a7\u03c1\u03b7\u03c3\u03b9\u03bc\u03bf\u03c0\u03bf\u03b9\u03bf\u03cd\u03bc\u03b5 cookies \u03b1\u03bd\u03ac\u03bb\u03c5\u03c3\u03b7\u03c2 (Google Analytics, Microsoft Clarity) \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03ba\u03b1\u03c4\u03b1\u03bd\u03bf\u03ae\u03c3\u03bf\u03c5\u03bc\u03b5 \u03c4\u03b7 \u03c7\u03c1\u03ae\u03c3\u03b7. \u03a6\u03bf\u03c1\u03c4\u03ce\u03bd\u03bf\u03bd\u03c4\u03b1\u03b9 \u03bc\u03cc\u03bd\u03bf \u03bc\u03b5 \u03c4\u03b7 \u03c3\u03c5\u03b3\u03ba\u03b1\u03c4\u03ac\u03b8\u03b5\u03c3\u03ae \u03c3\u03b1\u03c2.',a:'\u0391\u03c0\u03bf\u03b4\u03bf\u03c7\u03ae',r:'\u0391\u03c0\u03cc\u03c1\u03c1\u03b9\u03c8\u03b7',p:'\u0391\u03c0\u03cc\u03c1\u03c1\u03b7\u03c4\u03bf &amp; cookies'}
+    };
+    function loadClarity(){if(!CL||window.__tmxCl)return;window.__tmxCl=1;
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CL);}
+    function grant(){try{localStorage.setItem(KEY,'granted')}catch(e){}
+      gtag('consent','update',{analytics_storage:'granted'});loadClarity();}
+    function deny(){try{localStorage.setItem(KEY,'denied')}catch(e){}}
+    var saved=null;try{saved=localStorage.getItem(KEY)}catch(e){}
+    if(saved==='granted'){grant();return;} if(saved==='denied'){return;}
+    function show(){var tx=T[lc()]||T.en;
+      var b=document.createElement('div');b.className='tmx-cc';b.setAttribute('role','dialog');b.setAttribute('aria-live','polite');
+      b.innerHTML='<div class="tmx-cc__txt">'+tx.t+' <a href="/privacy/">'+tx.p+'</a></div>'+
+        '<div class="tmx-cc__btns"><button type="button" class="tmx-cc__b tmx-cc__b--no">'+tx.r+'</button>'+
+        '<button type="button" class="tmx-cc__b tmx-cc__b--yes">'+tx.a+'</button></div>';
+      document.body.appendChild(b);
+      b.querySelector('.tmx-cc__b--yes').addEventListener('click',function(){grant();b.remove();});
+      b.querySelector('.tmx-cc__b--no').addEventListener('click',function(){deny();b.remove();});}
+    if(document.body)show();else document.addEventListener('DOMContentLoaded',show);
+  })();
+  </script>
+  <!-- TMX-ANALYTICS END -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installing TAGRA — step-by-step manual | TAGRA</title>
+  <meta name="description" content="Complete installation manual for TAGRA tachograph software: Firebird and Desktop Runtime setup, installing TAGRA itself, trial activation or full licensing, and first database setup. 24 steps with screenshots.">
+  <meta name="theme-color" content="#0b2c4a">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://tagra.app/manuals/how-to-install-tagra/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="TAGRA">
+  <meta property="og:title" content="Installing TAGRA — step-by-step manual">
+  <meta property="og:description" content="Complete installation manual for TAGRA: Firebird, Desktop Runtime, activation/licensing and first database setup. 24 steps with screenshots.">
+  <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg">
+  <meta property="og:url" content="https://tagra.app/manuals/how-to-install-tagra/">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    a{color:var(--blue-mid);text-decoration:none;}
+    a:hover{color:var(--blue-dark);text-decoration:underline;text-underline-offset:.18em;}
+    img{max-width:100%;height:auto;display:block;}
+    #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--green-brand),var(--blue-light));width:0%;z-index:9999;pointer-events:none;}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+    .nav-logo{font-size:22px;font-weight:900;background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+    .nav-links a{font-size:15px;font-weight:500;color:var(--text);padding:8px 12px;border-radius:8px;text-decoration:none;transition:background .15s;}
+    .nav-links a:hover{background:var(--bg-apple);color:var(--blue-mid);}
+    .nav-links .nav-cta a{background:var(--green-cta);color:#fff!important;border-radius:99px;padding:8px 18px;font-weight:600;}
+    .nav-links .nav-cta a:hover{background:var(--green-brand);text-decoration:none;}
+    .nav-lang{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:600;}
+    .nav-lang a{padding:5px 8px;border-radius:6px;color:var(--text2);text-decoration:none;transition:background .15s;}
+    .nav-lang a:hover,.nav-lang a.active{background:var(--bg-apple);color:var(--blue-mid);}
+    .nav-lang span{color:var(--border);}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;}
+    @media(max-width:900px){.nav-links{display:none;}.nav-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;align-items:flex-start;gap:2px;position:absolute;top:var(--nav-h);left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 24px 20px;}}
+    .breadcrumb{font-size:14px;color:var(--text2);max-width:1180px;margin:18px auto 0;padding:0 16px;}
+    .breadcrumb a{color:var(--text2);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--blue-mid);}
+    .breadcrumb span{margin:0 5px;color:var(--border);}
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://tagra.app/#organization",
+  "name": "Truck Data Technology, s.r.o.",
+  "alternateName": "TDT",
+  "url": "https://www.tdt.cz",
+  "logo": "https://tagra.app/assets/img/logo-light.svg?v=20260513zh",
+  "sameAs": ["https://www.tdt.cz"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+420-739-005-345",
+    "email": "sales@tagra.app",
+    "contactType": "sales",
+    "availableLanguage": ["English", "Czech", "Slovak"]
+  }
+}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "HowTo","name": "How to install TAGRA (version 3.6.1)","inLanguage": "en","totalTime": "PT15M","tool": [{"@type": "HowToTool","name": "A PC running Windows"}],"step": [{"@type": "HowToStep","position": 1,"name": "Download and unzip the package","text": "Download TAGRA_eu.zip, unzip it and run TAGRA-setup.exe."},{"@type": "HowToStep","position": 2,"name": "Installing Firebird","text": "Allow the installation, choose a language, and click Next through to Finish."},{"@type": "HowToStep","position": 3,"name": "Installing Desktop Runtime","text": "Click Install, or Close if you already have this component."},{"@type": "HowToStep","position": 4,"name": "Installing TAGRA","text": "Accept the license, click Install, and finish with Finish."},{"@type": "HowToStep","position": 5,"name": "First launch and activation","text": "Launch the program and choose Try, Activate, or Offline."},{"@type": "HowToStep","position": 6,"name": "Renewing the license","text": "Choose a plan, enter your billing details, and pay the pro-forma invoice."},{"@type": "HowToStep","position": 7,"name": "First login and database initialization","text": "Create a database, log in as admin/admin, and run the initialization."}]}</script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css?v=20260514j">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=20260514j">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=20260514j">
+  <link rel="stylesheet" href="/assets/css/nav.css?v=20260514j">
+  <script src="/assets/js/nav.js?v=20260513q" defer></script>
+  <link rel="stylesheet" href="/assets/css/footer.css?v=20260513d">
+</head>
+<body>
+<div id="scroll-progress" aria-hidden="true"></div>
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="TAGRA – Home"><img src="/assets/img/logo-light.svg?v=20260513zh" alt="TAGRA" width="140" height="32" style="display:block;height:32px;width:auto;"></a>
+    <ul class="nav-links">
+            <li><a href="/fleet/">For companies</a></li>
+            <li><a href="/driver/">For drivers</a></li>
+            <li><a href="/enforcement/">Enforcement</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/manuals/" aria-current="page">Manuals</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li class="nav-cta-li"><a class="nav-cta" href="/try/?audience=fleet">Try 30 days free</a></li>
+          </ul>
+    <details class="nav-lang">
+      <summary aria-label="Language: EN">EN</summary>
+      <div class="nav-lang-menu" role="menu">
+        <a href="/manuals/how-to-install-tagra/" class="active" aria-current="page">English</a>
+        <a href="/de/">Deutsch</a>
+        <a href="/pl/">Polski</a>
+        <a href="https://www.tdt.cz/node/463" hreflang="el" target="_blank" rel="noopener">Ελληνικά</a>
+        <a href="https://www.tdt.cz/tagra-control" hreflang="cs" target="_blank" rel="noopener">Čeština</a>
+        <a href="https://www.tdt.cz/tagra-control" hreflang="sk" target="_blank" rel="noopener">Slovenčina</a>
+      </div>
+    </details>
+    <a class="nav-cta-mobile" href="/try/?audience=fleet">Try free</a>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<nav class="breadcrumb"><a href="/">TAGRA</a><span>&rsaquo;</span><a href="/manuals/">Manuals</a><span>&rsaquo;</span><span>Installing TAGRA</span></nav>
+<main>
+<style>
+#tmx-navod-tagra{--nv-blue-m:#134a8e;--nv-grad:linear-gradient(90deg,#0b2c4a 0%,#134a8e 50%,#1f5fa6 100%);--nv-green:#5C820F;--nv-green2:#6E9B12;--nv-ink:#111111;--nv-line:#d9e2ec;--nv-bg:#EFF6FF;--nv-radius:14px;
+  max-width:1180px;margin:0 auto;padding:0 16px 56px;color:var(--nv-ink);
+  font:400 17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+#tmx-navod-tagra *{box-sizing:border-box;}
+#tmx-navod-tagra .tmx-nv-hero{background:linear-gradient(180deg,#eef4fa 0%,#f4f8fc 52%,#ffffff 100%);
+  border:1px solid var(--nv-line);border-radius:20px;padding:38px 30px 30px;margin:18px 0 26px;text-align:center;}
+#tmx-navod-tagra .tmx-nv-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--nv-grad);padding:6px 14px;border-radius:999px;margin-bottom:14px;}
+#tmx-navod-tagra h1.tmx-nv-h1{font-size:36px;line-height:1.15;font-weight:800;margin:0 0 12px;
+  background:var(--nv-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+#tmx-navod-tagra .tmx-nv-sub{font-size:18px;color:#33475b;max-width:640px;margin:0 auto 22px;}
+#tmx-navod-tagra .tmx-btn{display:inline-block;font-weight:700;font-size:16px;color:#fff !important;text-decoration:none;
+  background:linear-gradient(90deg,#5C820F 0%,#6E9B12 100%);padding:13px 28px;border-radius:999px;
+  box-shadow:0 6px 18px rgba(92,130,15,.28);transition:transform .15s ease,box-shadow .15s ease;}
+#tmx-navod-tagra .tmx-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(92,130,15,.34);}
+#tmx-navod-tagra .tmx-btn--ghost{background:#fff;color:var(--nv-blue-m) !important;border:1.5px solid var(--nv-line);box-shadow:none;}
+#tmx-navod-tagra .tmx-toc{background:#fff;border:1px solid var(--nv-line);border-radius:16px;padding:18px 20px;margin:0 0 30px;}
+#tmx-navod-tagra .tmx-toc-t{font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#5b6b7c;margin:0 0 12px;}
+#tmx-navod-tagra .tmx-toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;counter-reset:toc;}
+#tmx-navod-tagra .tmx-toc li{counter-increment:toc;}
+#tmx-navod-tagra .tmx-toc a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--nv-ink);font-size:15.5px;padding:5px 0;border-bottom:1px solid #f0f4f8;}
+#tmx-navod-tagra .tmx-toc a:hover{color:var(--nv-blue-m);}
+#tmx-navod-tagra .tmx-toc a::before{content:none;}
+#tmx-navod-tagra h2.tmx-nv-h2{font-size:30px;line-height:1.2;font-weight:800;color:var(--nv-blue-m);
+  margin:48px auto 6px;max-width:800px;padding-top:14px;scroll-margin-top:80px;}
+#tmx-navod-tagra h2.tmx-nv-h2::after{content:"";display:block;width:64px;height:4px;border-radius:3px;background:var(--nv-grad);margin-top:12px;}
+#tmx-navod-tagra h3.tmx-nv-h3{font-size:21px;font-weight:700;color:#1a3553;margin:34px auto 4px;max-width:800px;scroll-margin-top:80px;}
+#tmx-navod-tagra .tmx-nv-lead{font-size:17.5px;color:#33475b;margin:10px 0 8px;}
+#tmx-navod-tagra .tmx-nv-lead a,#tmx-navod-tagra .tmx-step-body a{color:var(--nv-blue-m);font-weight:600;}
+#tmx-navod-tagra .tmx-step{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-top:1px solid #eef2f6;max-width:800px;margin-left:auto;margin-right:auto;}
+#tmx-navod-tagra .tmx-step:first-of-type{border-top:none;}
+#tmx-navod-tagra .tmx-step-num{flex:0 0 42px;height:42px;border-radius:12px;background:var(--nv-grad);color:#fff;
+  font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(19,74,142,.25);}
+#tmx-navod-tagra .tmx-step-body{flex:1 1 auto;min-width:0;}
+#tmx-navod-tagra .tmx-step-body>p{margin:7px 0 14px;}
+#tmx-navod-tagra .tmx-shot{margin:0;}
+#tmx-navod-tagra .tmx-shot img{display:block;max-width:100%;max-height:62vh;width:auto;height:auto;margin:0 auto;border:1px solid var(--nv-line);border-radius:var(--nv-radius);box-shadow:0 8px 24px rgba(11,44,74,.08);background:#fff;}
+#tmx-navod-tagra .tmx-shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+#tmx-navod-tagra .tmx-keys{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  background:linear-gradient(180deg,#f4faec 0%,#eef6e0 100%);border:1px solid #d8e8bf;border-radius:18px;padding:22px 26px;margin:26px 0;}
+#tmx-navod-tagra .tmx-keys p{margin:0;font-size:17.5px;color:#2c3a16;flex:1 1 260px;}
+#tmx-navod-tagra .tmx-rada-card{background:#fff;border:1px solid var(--nv-line);border-radius:18px;padding:30px 30px 26px;margin:40px auto 0;max-width:800px;text-align:left;}#tmx-navod-tagra .tmx-rada-headline{font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.2;margin:0 0 8px;padding:0;color:#0b2c4a;display:inline-block;max-width:100%;}@supports ((-webkit-background-clip:text) or (background-clip:text)){#tmx-navod-tagra .tmx-rada-headline{background:linear-gradient(90deg,#0b2c4a 0%,#134a8e 55%,#1f5fa6 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;}}#tmx-navod-tagra .tmx-rada-prompt{font-size:16px;font-weight:500;color:#33475b;margin:0 0 18px;line-height:1.45;max-width:640px;}
+@media(max-width:767px){
+  #tmx-navod-tagra{padding:0 12px 40px;font-size:16px;}
+  #tmx-navod-tagra .tmx-nv-hero{padding:28px 18px 24px;}
+  #tmx-navod-tagra h1.tmx-nv-h1{font-size:27px;}
+  #tmx-navod-tagra h2.tmx-nv-h2{font-size:24px;margin-top:38px;}
+  #tmx-navod-tagra .tmx-toc ol{grid-template-columns:1fr;}
+  #tmx-navod-tagra .tmx-shot-grid{grid-template-columns:1fr;}
+  #tmx-navod-tagra .tmx-step{gap:12px;}
+  #tmx-navod-tagra .tmx-step-num{flex-basis:34px;height:34px;font-size:16px;border-radius:10px;}
+}
+#tmx-navod-tagra .tmx-rada-row{display:flex;flex-wrap:wrap;gap:20px 40px;}#tmx-navod-tagra .tmx-rada-block{display:inline-flex;flex-direction:row;align-items:center;gap:18px;}#tmx-navod-tagra .tmx-rada-photo{display:block;width:120px;height:120px;flex-shrink:0;border-radius:50%;overflow:hidden;background:var(--nv-bg);line-height:0;box-shadow:0 2px 8px rgba(19,74,142,.08);transition:transform .2s ease,box-shadow .2s ease;}#tmx-navod-tagra .tmx-rada-photo:hover{transform:scale(1.04);box-shadow:0 8px 22px rgba(19,74,142,.22);}#tmx-navod-tagra .tmx-rada-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;}#tmx-navod-tagra .tmx-rada-info{display:inline-flex;flex-direction:column;gap:4px;min-width:0;}#tmx-navod-tagra .tmx-rada-link{display:inline-flex;align-items:center;gap:8px;font-size:19px;font-weight:700;color:var(--nv-blue-m);line-height:1.3;text-decoration:none;transition:color .2s ease;}#tmx-navod-tagra .tmx-rada-link:hover{color:#1f5fa6;text-decoration:underline;}#tmx-navod-tagra .tmx-rada-link::before{content:"📞";font-size:19px;}#tmx-navod-tagra .tmx-rada-status{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;line-height:1.3;color:#515154;padding-left:28px;margin-top:2px;}#tmx-navod-tagra .tmx-rada-status::before{content:"";flex-shrink:0;width:7px;height:7px;border-radius:50%;background:currentColor;}#tmx-navod-tagra .tmx-rada-status[data-state="open"]{color:#4a6b08;}#tmx-navod-tagra .tmx-rada-status[data-state="open"]::before{background:#6E9B12;box-shadow:0 0 0 3px rgba(110,155,18,0.18);animation:tmx-nv-pg 2s ease-in-out infinite;}#tmx-navod-tagra .tmx-rada-status[data-state="closing"]{color:#9a5b08;}#tmx-navod-tagra .tmx-rada-status[data-state="closing"]::before{background:#d97706;box-shadow:0 0 0 3px rgba(217,119,6,0.18);animation:tmx-nv-po 2s ease-in-out infinite;}#tmx-navod-tagra .tmx-rada-status[data-state="break"]{color:#9a5b08;}#tmx-navod-tagra .tmx-rada-status[data-state="break"]::before{background:#d97706;box-shadow:0 0 0 3px rgba(217,119,6,0.18);animation:tmx-nv-po 2s ease-in-out infinite;}#tmx-navod-tagra .tmx-rada-status[data-state="closed"]{color:#8a2a2a;}#tmx-navod-tagra .tmx-rada-status[data-state="closed"]::before{background:#c83838;box-shadow:0 0 0 3px rgba(200,56,56,0.18);animation:tmx-nv-pr 2.5s ease-in-out infinite;}#tmx-navod-tagra .tmx-rada-email{font-size:14px;color:#515154;margin:16px 0 0;line-height:1.4;}#tmx-navod-tagra .tmx-rada-email a{color:var(--nv-blue-m);font-weight:600;text-decoration:none;}#tmx-navod-tagra .tmx-rada-email a:hover{color:#1f5fa6;text-decoration:underline;}@keyframes tmx-nv-pg{0%,100%{box-shadow:0 0 0 3px rgba(110,155,18,0.18);}50%{box-shadow:0 0 0 7px rgba(110,155,18,0.0);}}@keyframes tmx-nv-po{0%,100%{box-shadow:0 0 0 3px rgba(217,119,6,0.18);}50%{box-shadow:0 0 0 7px rgba(217,119,6,0.0);}}@keyframes tmx-nv-pr{0%,100%{box-shadow:0 0 0 3px rgba(200,56,56,0.18);}50%{box-shadow:0 0 0 7px rgba(200,56,56,0.0);}}@media(max-width:767px){#tmx-navod-tagra .tmx-rada-headline{font-size:22px;}#tmx-navod-tagra .tmx-rada-prompt{font-size:15px;}#tmx-navod-tagra .tmx-rada-photo{width:72px;height:72px;}#tmx-navod-tagra .tmx-rada-block{gap:14px;}#tmx-navod-tagra .tmx-rada-link{font-size:17px;}#tmx-navod-tagra .tmx-rada-link::before{font-size:17px;}#tmx-navod-tagra .tmx-rada-status{font-size:13px;padding-left:26px;}}@media(max-width:480px){#tmx-navod-tagra .tmx-rada-headline{font-size:20px;}#tmx-navod-tagra .tmx-rada-photo{width:60px;height:60px;}#tmx-navod-tagra .tmx-rada-block{gap:12px;}#tmx-navod-tagra .tmx-rada-link{font-size:16px;}#tmx-navod-tagra .tmx-rada-status{font-size:12px;padding-left:24px;}#tmx-navod-tagra .tmx-rada-email{font-size:13px;}}@media(prefers-reduced-motion:reduce){#tmx-navod-tagra .tmx-rada-status::before{animation:none !important;}}#tmx-navod-tagra .tmx-shot{margin:0 auto;max-width:560px;}#tmx-navod-tagra .tmx-shot img{display:block;max-width:100%;max-height:62vh;width:auto;height:auto;margin:0 auto;border:1px solid var(--nv-line);border-radius:var(--nv-radius);box-shadow:0 8px 24px rgba(11,44,74,.08);background:#fff;}#tmx-navod-tagra .tmx-substeps{display:flex;flex-direction:column;gap:20px;margin-top:8px;}#tmx-navod-tagra .tmx-substep{display:flex;gap:12px;align-items:flex-start;}#tmx-navod-tagra .tmx-substep-num{flex:0 0 auto;min-width:46px;height:26px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;background:var(--nv-blue-m);color:#fff;font-weight:800;font-size:13px;border-radius:999px;}#tmx-navod-tagra .tmx-substep .tmx-shot{flex:0 1 560px;max-width:560px;}#tmx-navod-tagra .tmx-toc-list{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr;gap:2px;}#tmx-navod-tagra .tmx-toc a{align-items:center;}#tmx-navod-tagra .tmx-toc-num{flex:0 0 auto;min-width:48px;height:24px;padding:0 9px;border-radius:7px;background:var(--nv-bg);color:var(--nv-blue-m);font-weight:700;font-size:12.5px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;}#tmx-navod-tagra .tmx-toc-lbl{flex:1 1 auto;}@media(max-width:560px){#tmx-navod-tagra .tmx-substep-num{min-width:42px;}}</style>
+<div id="tmx-navod-tagra">
+<div class="tmx-nv-hero"><span class="tmx-nv-badge">Guide &middot; version 3.6.1 &middot; 2026</span><h1 class="tmx-nv-h1">Installing TAGRA</h1><p class="tmx-nv-sub">A step-by-step walkthrough of installing, activating and logging in to TAGRA &mdash; software for evaluating tachograph data.</p><a class="tmx-btn" href="/try/?audience=fleet" target="_blank" rel="noopener">Download TAGRA</a></div>
+<nav class="tmx-toc"><p class="tmx-toc-t">Guide contents</p><ul class="tmx-toc-list"><li><a href="#instalace"><span class="tmx-toc-num">1–3</span><span class="tmx-toc-lbl">Download and unzip</span></a></li><li><a href="#firebird"><span class="tmx-toc-num">4–6</span><span class="tmx-toc-lbl">Installing Firebird</span></a></li><li><a href="#runtime"><span class="tmx-toc-num">7</span><span class="tmx-toc-lbl">Desktop Runtime</span></a></li><li><a href="#program-tagra"><span class="tmx-toc-num">8–11</span><span class="tmx-toc-lbl">Installing TAGRA</span></a></li><li><a href="#prvni-spusteni"><span class="tmx-toc-num">12–18</span><span class="tmx-toc-lbl">First launch and activation</span></a></li><li><a href="#licence"><span class="tmx-toc-num">19–20</span><span class="tmx-toc-lbl">Renew / buy a license</span></a></li><li><a href="#prihlaseni"><span class="tmx-toc-num">21–24</span><span class="tmx-toc-lbl">First login and DB setup</span></a></li></ul></nav>
+<h2 class="tmx-nv-h2" id="instalace">Download and unzip the package</h2>
+<p class="tmx-nv-lead">You can download the latest version of TAGRA from <a href="/try/?audience=fleet" target="_blank" rel="noopener">tagra.app/try</a>. After downloading, right-click the file and choose <b>Extract All</b>. The package contains the installer files plus guides for installation, activation and everyday use.</p>
+<div class="tmx-step"><div class="tmx-step-num">1</div><div class="tmx-step-body"><p>Double-click <b>TAGRA-setup.exe</b> to start the installation.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/1.webp" alt="TAGRA installation step 1" loading="eager" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">2</div><div class="tmx-step-body"><p>Start the installation with the &ldquo;NEXT&rdquo; button.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/2.webp" alt="TAGRA installation step 2" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">3</div><div class="tmx-step-body"><p>TAGRA needs the <b>Firebird</b> database engine and the <b>Microsoft Windows Desktop Runtime</b> component to run. If you already have them installed (from a Windows update or earlier use), you can skip them by unticking the boxes. Otherwise leave them ticked and continue with &ldquo;Next&rdquo;.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/3.webp" alt="TAGRA installation step 3" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="firebird">Installing Firebird</h3>
+<div class="tmx-step"><div class="tmx-step-num">4</div><div class="tmx-step-body"><p>Allow the Firebird installation by choosing &ldquo;Yes&rdquo;.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/4.webp" alt="TAGRA installation step 4" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">5</div><div class="tmx-step-body"><p>Choose the installer language and confirm with &ldquo;OK&rdquo;.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/5.webp" alt="TAGRA installation step 5" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">6</div><div class="tmx-step-body"><p>Confirm each screen with &ldquo;Next&rdquo; &ndash; there is nothing to change &ndash; until you reach &ldquo;Finish&rdquo;. The following screens show the process.</p><div class="tmx-substeps"><div class="tmx-substep"><div class="tmx-substep-num">6.1</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.1.webp" alt="TAGRA installation step 6.1" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.2</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.2.webp" alt="TAGRA installation step 6.2" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.3</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.3.webp" alt="TAGRA installation step 6.3" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.4</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.4.webp" alt="TAGRA installation step 6.4" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.5</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.5.webp" alt="TAGRA installation step 6.5" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.6</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.6.webp" alt="TAGRA installation step 6.6" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.7</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.7.webp" alt="TAGRA installation step 6.7" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.8</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.8.webp" alt="TAGRA installation step 6.8" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.9</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.9.webp" alt="TAGRA installation step 6.9" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">6.10</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/6.10.webp" alt="TAGRA installation step 6.10" loading="lazy" decoding="async"></figure></div></div></div></div>
+<h3 class="tmx-nv-h3" id="runtime">Installing Microsoft Windows Desktop Runtime</h3>
+<div class="tmx-step"><div class="tmx-step-num">7</div><div class="tmx-step-body"><p>Start the installation with &ldquo;Install&rdquo;. If you already have this Windows component, click &ldquo;Close&rdquo; instead.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/7.webp" alt="TAGRA installation step 7" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="program-tagra">Installing TAGRA</h3>
+<div class="tmx-step"><div class="tmx-step-num">8</div><div class="tmx-step-body"><p>Accept the license terms and click &ldquo;Install&rdquo; to start the installation.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/8.webp" alt="TAGRA installation step 8" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">9</div><div class="tmx-step-body"><p>Allow the app to make changes to your PC by clicking &ldquo;Yes&rdquo;.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/9.webp" alt="TAGRA installation step 9" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">10</div><div class="tmx-step-body"><p>The program installs for a moment &ndash; you can follow the progress on screen.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/10.webp" alt="TAGRA installation step 10" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">11</div><div class="tmx-step-body"><p>Finish the installation with &ldquo;Finish&rdquo;. A green TAGRA shortcut icon appears on your desktop.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/11.webp" alt="TAGRA installation step 11" loading="lazy" decoding="async"></figure></div></div>
+<h2 class="tmx-nv-h2" id="prvni-spusteni">First launch of TAGRA</h2>
+<div class="tmx-step"><div class="tmx-step-num">12</div><div class="tmx-step-body"><p>Double-click the icon to launch the program.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/12.webp" alt="TAGRA installation step 12" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">13</div><div class="tmx-step-body"><p>A license screen appears. Choose one of three options: <b>Try</b> (new customer, just enter your email), <b>Activate</b> (you already have a license number and activation key), or <b>Offline</b> (the PC has no internet connection).</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/13.webp" alt="TAGRA installation step 13" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="vyzkouset">1. Try</h3>
+<div class="tmx-step"><div class="tmx-step-num">14</div><div class="tmx-step-body"><p>Enter your email address and confirm the 28-day activation in your inbox. In the &ldquo;Application variant&rdquo; field, choose straight away how many vehicles you want to use the program for (1, 2, 4, 6, or unlimited &ndash; MAX).</p><div class="tmx-substeps"><div class="tmx-substep"><div class="tmx-substep-num">14.1</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/14.1.webp" alt="TAGRA installation step 14.1" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">14.2</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/14.2.webp" alt="TAGRA installation step 14.2" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">14.3</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/14.3.webp" alt="TAGRA installation step 14.3" loading="lazy" decoding="async"></figure></div></div></div></div>
+<h3 class="tmx-nv-h3" id="aktivacni-email">Activation email</h3>
+<div class="tmx-step"><div class="tmx-step-num">15</div><div class="tmx-step-body"><p>After entering your email, you will receive an activation message &ndash; see the example below.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/15.webp" alt="TAGRA installation step 15" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="overeni-licence">License verification</h3>
+<div class="tmx-step"><div class="tmx-step-num">16</div><div class="tmx-step-body"><p>After clicking &ldquo;Activate license&rdquo; in the email, the program starts automatically and you can use it for 28 days. After that, you decide whether to purchase it.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/16.webp" alt="TAGRA installation step 16" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="aktivovat">2. Activate</h3>
+<div class="tmx-step"><div class="tmx-step-num">17</div><div class="tmx-step-body"><p>Click &ldquo;Activate&rdquo; and enter the license number and activation code &ndash; you will find both in your email.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/17.webp" alt="TAGRA installation step 17" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="offline">3. Offline</h3>
+<div class="tmx-step"><div class="tmx-step-num">18</div><div class="tmx-step-body"><p>Only use the &ldquo;Offline&rdquo; button if this PC has no long-term internet access. It lets you obtain an offline license file for that specific PC.</p><div class="tmx-substeps"><div class="tmx-substep"><div class="tmx-substep-num">18.1</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/18.1.webp" alt="TAGRA installation step 18.1" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">18.2</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/18.2.webp" alt="TAGRA installation step 18.2" loading="lazy" decoding="async"></figure></div></div></div></div>
+<h2 class="tmx-nv-h2" id="licence">Renewing and purchasing a license</h2>
+<p class="tmx-nv-lead">Once the trial period ends, you can purchase the program with the &ldquo;Renew&rdquo; button. Choose a plan based on the number of vehicles and enter your billing details. A pro-forma invoice is generated automatically &ndash; once it is paid, the license runs for one year. After that, the program keeps running once the annual license fee is paid, and it always includes the latest regulation updates.</p>
+<div class="tmx-keys"><p>Don&rsquo;t have a tachograph <b>download key</b> yet? You can get one directly from our e-shop (Czech/Slovak market).</p><a class="tmx-btn" href="https://www.truckmall.cz" target="_blank" rel="noopener">Download keys on TRUCKMALL.cz</a></div>
+<h3 class="tmx-nv-h3" id="kroky-nakupu">Steps to purchase or renew a license</h3>
+<div class="tmx-step"><div class="tmx-step-num">19</div><div class="tmx-step-body"><p>Choose a plan based on the number of vehicles, enter your billing details, and pay the generated pro-forma invoice.</p><div class="tmx-substeps"><div class="tmx-substep"><div class="tmx-substep-num">19.1</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/19.1.webp" alt="TAGRA installation step 19.1" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">19.2</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/19.2.webp" alt="TAGRA installation step 19.2" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">19.3</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/19.3.webp" alt="TAGRA installation step 19.3" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">19.4</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/19.4.webp" alt="TAGRA installation step 19.4" loading="lazy" decoding="async"></figure></div></div></div></div>
+<div class="tmx-step"><div class="tmx-step-num">20</div><div class="tmx-step-body"><p>Continue with the &ldquo;Continue&rdquo; button.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/20.webp" alt="TAGRA installation step 20" loading="lazy" decoding="async"></figure></div></div>
+<h2 class="tmx-nv-h2" id="prihlaseni">First login to the program</h2>
+<div class="tmx-step"><div class="tmx-step-num">21</div><div class="tmx-step-body"><p>For your first login, start by creating a database &ndash; click the white button next to the empty &ldquo;Database file path&rdquo; field and choose <b>Create new database</b>.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/21.webp" alt="TAGRA installation step 21" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">22</div><div class="tmx-step-body"><p>Choose where to save the database (ideally in your Documents folder) and name it (e.g. <b>tagradb.fdb</b>). Confirm with &ldquo;Save&rdquo;.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/22.webp" alt="TAGRA installation step 22" loading="lazy" decoding="async"></figure></div></div>
+<div class="tmx-step"><div class="tmx-step-num">23</div><div class="tmx-step-body"><p>Enter the username <b>admin</b> and password <b>admin</b>, then continue with &ldquo;Connect&rdquo;.</p><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/23.webp" alt="TAGRA installation step 23" loading="lazy" decoding="async"></figure></div></div>
+<h3 class="tmx-nv-h3" id="inicializace-db">Database initialization</h3>
+<div class="tmx-step"><div class="tmx-step-num">24</div><div class="tmx-step-body"><p>The program will prompt you to create the database for the first time &ndash; click &ldquo;Run&rdquo;. Once the database is created, you will reach the program&rsquo;s home screen and can start working.</p><div class="tmx-substeps"><div class="tmx-substep"><div class="tmx-substep-num">24.1</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/24.1.webp" alt="TAGRA installation step 24.1" loading="lazy" decoding="async"></figure></div><div class="tmx-substep"><div class="tmx-substep-num">24.2</div><figure class="tmx-shot"><img src="https://www.tdt.cz/download/Obrazkynavodkinstalaci/24.2.webp" alt="TAGRA installation step 24.2" loading="lazy" decoding="async"></figure></div></div></div></div>
+<div class="tmx-rada-card" style="text-align:left"><h4 class="tmx-rada-headline">Need a hand?</h4><p class="tmx-rada-prompt">Stuck on installation or activation? Our technical support team is happy to help.</p><a class="tmx-btn" href="mailto:helpdesk@tagra.app">Contact technical support</a></div>
+</div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><img src="/assets/img/logo-dark.svg?v=20260513zh" alt="TAGRA" width="140" height="32"></div>
+      <p class="footer-desc">Professional tachograph analysis software. Driver card download, digital tachograph analysis, EU drivers' hours and HGV Working Time Directive. Developed by Truck Data Technology, s.r.o.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/fleet/">For fleet operators</a></li>
+        <li><a href="/driver/">For professional drivers</a></li>
+        <li><a href="/enforcement/">For enforcement</a></li>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/for-whom/">For whom</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/manuals/">Manuals</a></li>
+        <li><a href="/articles/digital-tachograph-symbols/">Tachograph symbols</a></li>
+        <li><a href="/integrations/dkv-live/">DKV LIVE&reg;</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="https://www.tdt.cz" target="_blank" rel="noopener">Truck Data Technology</a></li>
+        <li><a href="/de/">Deutsch</a></li>
+        <li><a href="/pl/">Polski</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Truck Data Technology, s.r.o. All rights reserved.</span>
+    <span><a href="/contact/">Contact</a> &middot; <a href="https://www.tdt.cz" target="_blank" rel="noopener">tdt.cz</a></span>
+  </div>
+</footer>
+<script>(function(){var bar=document.getElementById('scroll-progress');if(bar)window.addEventListener('scroll',function(){var t=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(t/h*100)+'%';},{passive:true});var toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');if(toggle&&links)toggle.addEventListener('click',function(){var o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});})();</script>
+</body>
+</html>

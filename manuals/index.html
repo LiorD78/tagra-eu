@@ -74,17 +74,17 @@
   <!-- TMX-ANALYTICS END -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles – Tachograph compliance guides | TAGRA</title>
-  <meta name="description" content="Practical guides on tachograph data management, legal obligations and compliance for transport operators and professional drivers across Europe.">
+  <title>Manuals – Installation &amp; licensing guides | TAGRA</title>
+  <meta name="description" content="Step-by-step manuals for installing, activating and licensing TAGRA tachograph software — with full screenshots for every step.">
   <meta name="theme-color" content="#0b2c4a">
   <link rel="manifest" href="/manifest.json">
-  <link rel="canonical" href="https://tagra.app/articles/">
+  <link rel="canonical" href="https://tagra.app/manuals/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="TAGRA">
-  <meta property="og:title" content="Articles – Tachograph compliance guides | TAGRA">
+  <meta property="og:title" content="Manuals – Installation &amp; licensing guides | TAGRA">
   <meta property="og:image" content="https://cdn.truckmall.cz/data/user-content/TDT_TAGRA_MAX_wh.jpg">
-  <meta property="og:url" content="https://tagra.app/articles/">
+  <meta property="og:url" content="https://tagra.app/manuals/">
   <meta name="twitter:card" content="summary_large_image">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -92,7 +92,7 @@
     a{color:var(--green-brand);text-decoration:none;}
     a:hover{color:var(--green-cta);text-decoration:underline;text-underline-offset:.18em;}
     #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--green-brand),var(--blue-light));width:0%;z-index:9999;pointer-events:none;transition:width .1s ease-out;}
-.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;}
     .nav-logo{font-size:22px;font-weight:900;letter-spacing:-.02em;background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-decoration:none;}
     .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
     .nav-links li a{font-size:15px;font-weight:500;color:var(--text);padding:8px 12px;border-radius:8px;transition:background .15s;text-decoration:none;}
@@ -106,14 +106,10 @@
     .nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
     .nav-mobile-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;}
     @media(max-width:900px){.nav-links{display:none;}.nav-mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;align-items:flex-start;gap:2px;position:absolute;top:var(--nav-h);left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 24px 20px;}}
-    
-    
     @media(max-width:768px){.band{padding:50px 0;}}
-    @media(max-width:768px){
-    }
     .eyebrow{font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-brand);margin-bottom:12px;}
-    
-    
+    .article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:8px;}
+    .article-card{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none!important;transition:transform .2s,box-shadow .2s,border-color .2s;background:#fff;}
     .article-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:rgba(19,74,142,.3);}
     .article-card-body{padding:28px;display:flex;flex-direction:column;flex:1;}
     .article-card-eyebrow{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-mid);margin-bottom:10px;}
@@ -123,7 +119,6 @@
     .article-card-cta{display:inline-flex;margin-top:16px;font-size:15px;font-weight:700;color:var(--blue-mid);align-items:center;gap:4px;}
     .article-card:hover .article-card-cta{color:var(--blue-dark);}
     .article-card-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;}
-    .tag--new{background:rgba(92,130,15,.12);color:var(--green-cta);}
     .tag--guide{background:rgba(19,74,142,.1);color:var(--blue-mid);}
   </style>
 <script type="application/ld+json">
@@ -151,9 +146,9 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "url": "https://tagra.app/articles/",
-  "name": "Articles – Tachograph compliance guides",
-  "description": "Practical guides on tachograph data management, legal obligations and compliance for transport operators and professional drivers across Europe.",
+  "url": "https://tagra.app/manuals/",
+  "name": "Manuals – Installation & licensing guides",
+  "description": "Step-by-step manuals for installing, activating and licensing TAGRA tachograph software — with full screenshots for every step.",
   "inLanguage": "en",
   "isPartOf": { "@id": "https://tagra.app/#website" },
   "publisher": { "@id": "https://tagra.app/#organization" },
@@ -163,26 +158,8 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "url": "https://tagra.app/articles/digital-tachograph-symbols/",
-        "name": "Tachograph symbols: digital icon meanings explained"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "url": "https://tagra.app/articles/how-to-download-evaluate-archive-tachograph-data/",
-        "name": "How to download, evaluate and archive tachograph data"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "url": "https://tagra.app/articles/tachographs-for-vans-new-obligation-july-2026/",
-        "name": "Tachographs for vans — new obligation from July 2026"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "url": "https://tagra.app/articles/who-must-evaluate-tachograph-data-2026/",
-        "name": "Who must evaluate tachograph data in 2026"
+        "url": "https://tagra.app/manuals/how-to-install-tagra/",
+        "name": "Installing TAGRA"
       }
     ]
   }
@@ -205,7 +182,8 @@
             <li><a href="/fleet/">For companies</a></li>
             <li><a href="/driver/">For drivers</a></li>
             <li><a href="/enforcement/">Enforcement</a></li>
-            <li><a href="/articles/" aria-current="page">Articles</a></li><li><a href="/manuals/">Manuals</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/manuals/" aria-current="page">Manuals</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="/contact/">Contact</a></li>
             <li class="nav-cta-li"><a class="nav-cta" href="/try/?audience=fleet">Try 30 days free</a></li>
@@ -213,9 +191,9 @@
     <details class="nav-lang">
       <summary aria-label="Language: EN">EN</summary>
       <div class="nav-lang-menu" role="menu">
-        <a href="/articles/" class="active" aria-current="page">English</a>
-        <a href="/articles/de/">Deutsch</a>
-        <a href="/articles/pl/">Polski</a>
+        <a href="/manuals/" class="active" aria-current="page">English</a>
+        <a href="/de/">Deutsch</a>
+        <a href="/pl/">Polski</a>
         <a href="https://www.tdt.cz/node/463" hreflang="el" target="_blank" rel="noopener">Ελληνικά</a>
         <a href="https://www.tdt.cz/tagra-control" hreflang="cs" target="_blank" rel="noopener">Čeština</a>
         <a href="https://www.tdt.cz/tagra-control" hreflang="sk" target="_blank" rel="noopener">Slovenčina</a>
@@ -230,95 +208,30 @@
 
 <section class="band band--hero" style="text-align:left">
   <div class="container">
-    <div class="eyebrow">Knowledge base</div>
-    <h1 style="text-align:left">Tachograph compliance guides</h1>
-    <p style="font-size:19px;color:var(--text2);max-width:680px;margin:12px 0 0">Practical articles on legal obligations, data management and preparation for enforcement inspections — written by tachograph specialists.</p>
+    <div class="eyebrow">Support</div>
+    <h1 style="text-align:left">Manuals</h1>
+    <p style="font-size:19px;color:var(--text2);max-width:680px;margin:12px 0 0">Step-by-step guides for installing, activating and licensing TAGRA — every step illustrated with real screenshots.</p>
   </div>
 </section>
 
 <section class="band">
   <div class="container">
-    <div class="article-carousel">
-    <div class="article-grid" id="articleGrid">
+    <div class="article-grid">
 
-      <a class="article-card" href="/articles/digital-tachograph-symbols/">
+      <a class="article-card" href="/manuals/how-to-install-tagra/">
         <div class="article-card-body">
-          <span class="article-card-tag tag--guide">Driver knowledge base</span>
-          <div class="article-card-eyebrow">Reference guide</div>
-          <h3 class="card-title">Tachograph symbols: digital icon meanings explained</h3>
-          <p class="article-card-desc">Clear guide to the four activity symbols (driving, other work, availability, rest), card and crew icons, OUT, ferry/train mode and warning symbols every HGV driver should know.</p>
-          <div class="article-card-meta"><span>7 min read</span></div>
-          <span class="article-card-cta">Read the article →</span>
-        </div>
-      </a>
-
-      <a class="article-card" href="/articles/tachographs-for-vans-new-obligation-july-2026/">
-        <div class="article-card-body">
-          <span class="article-card-tag tag--new">New legislation</span>
-          <div class="article-card-eyebrow">Effective 1 July 2026</div>
-          <h3 class="card-title">Tachographs for vans: new obligation from July 2026</h3>
-          <p class="article-card-desc">From 1 July 2026, vans of 2.5–3.5 t in international transport must have a digital tachograph. Find out who is affected, what you need and how to prepare.</p>
-          <div class="article-card-meta"><span>8 min read</span></div>
-          <span class="article-card-cta">Read the article →</span>
-        </div>
-      </a>
-
-      <a class="article-card" href="/articles/who-must-evaluate-tachograph-data-2026/">
-        <div class="article-card-body">
-          <span class="article-card-tag tag--guide">Overview</span>
-          <div class="article-card-eyebrow">Updated for 2026</div>
-          <h3 class="card-title">Who must evaluate tachograph data from 2026</h3>
-          <p class="article-card-desc">Trucks, buses, vans in international transport and self-employed drivers — a clear overview of all transport types subject to the evaluation obligation.</p>
-          <div class="article-card-meta"><span>7 min read</span></div>
-          <span class="article-card-cta">Read the article →</span>
-        </div>
-      </a>
-
-      <a class="article-card" href="/articles/how-to-download-evaluate-archive-tachograph-data/">
-        <div class="article-card-body">
-          <span class="article-card-tag tag--guide">Complete guide</span>
-          <div class="article-card-eyebrow">Step by step</div>
-          <h3 class="card-title">Digital tachograph: how to correctly download, evaluate and archive data</h3>
-          <p class="article-card-desc">The complete compliance guide: deadlines 28/90 days, what you need, the correct process and what inspectors actually check.</p>
-          <div class="article-card-meta"><span>10 min read</span></div>
-          <span class="article-card-cta">Read the article →</span>
+          <span class="article-card-tag tag--guide">Installation guide</span>
+          <div class="article-card-eyebrow">Version 3.6.1</div>
+          <h3 class="card-title">Installing TAGRA</h3>
+          <p class="article-card-desc">Every step from download to first login: installing Firebird and Desktop Runtime, the TAGRA setup itself, trial activation or full licensing, and setting up the database.</p>
+          <div class="article-card-meta"><span>24 steps</span><span>~15 min</span></div>
+          <span class="article-card-cta">Read the manual →</span>
         </div>
       </a>
 
     </div>
-    <div class="article-carousel-nav">
-      <button class="article-carousel-btn" id="articlePrev" aria-label="Previous articles">‹</button>
-      <button class="article-carousel-btn" id="articleNext" aria-label="Next articles">›</button>
-    </div>
-    </div><!-- /.article-carousel -->
   </div>
 </section>
-
-<script>
-(function(){
-  const track = document.getElementById('articleGrid');
-  const prev = document.getElementById('articlePrev');
-  const next = document.getElementById('articleNext');
-  if (!track || !prev || !next) return;
-  function getStep(){
-    const card = track.querySelector('.article-card');
-    if (!card) return 320;
-    const cardW = card.getBoundingClientRect().width;
-    const cs = getComputedStyle(track);
-    const gap = parseFloat(cs.columnGap || cs.gap) || 20;
-    return cardW + gap;
-  }
-  function updateBtns(){
-    prev.disabled = track.scrollLeft <= 1;
-    next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
-  }
-  prev.addEventListener('click', ()=> track.scrollBy({left:-getStep(), behavior:'smooth'}));
-  next.addEventListener('click', ()=> track.scrollBy({left: getStep(), behavior:'smooth'}));
-  track.addEventListener('scroll', updateBtns, {passive:true});
-  window.addEventListener('resize', updateBtns);
-  updateBtns();
-})();
-</script>
 
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
@@ -340,7 +253,8 @@
     <div class="footer-col">
       <h4>Resources</h4>
       <ul>
-        <li><a href="/articles/">Articles</a></li><li><a href="/manuals/">Manuals</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/manuals/">Manuals</a></li>
         <li><a href="/articles/digital-tachograph-symbols/">Tachograph symbols</a></li>
         <li><a href="/integrations/dkv-live/">DKV LIVE&reg;</a></li>
       </ul>
