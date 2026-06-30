@@ -19,21 +19,21 @@ jobs:
         uses: LiorD78/seo-pipeline@v2
         with:
           mode: deploy-driven
-          host: tagra.eu
+          host: tagra.app
           indexnow-key: ${{ secrets.INDEXNOW_KEY }}
           fb-access-token: ${{ secrets.FB_APP_ACCESS_TOKEN }}
           url-list: |
-            https://tagra.eu/
-            https://tagra.eu/fleet/
-            https://tagra.eu/driver/
-            https://tagra.eu/enforcement/
-            https://tagra.eu/how-it-works/
-            https://tagra.eu/for-whom/
-            https://tagra.eu/faq/
-            https://tagra.eu/contact/
-            https://tagra.eu/integrations/dkv-live/
-            https://tagra.eu/articles/
-            https://tagra.eu/articles/digital-tachograph-symbols/
-            https://tagra.eu/articles/how-to-download-evaluate-archive-tachograph-data/
-            https://tagra.eu/articles/tachographs-for-vans-new-obligation-july-2026/
-            https://tagra.eu/articles/who-must-evaluate-tachograph-data-2026/
+            https://tagra.app/
+            https://tagra.app/fleet/
+            https://tagra.app/driver/
+            https://tagra.app/enforcement/
+            https://tagra.app/how-it-works/
+            https://tagra.app/for-whom/
+            https://tagra.app/faq/
+            https://tagra.app/contact/
+            https://tagra.app/integrations/dkv-live/
+            https://tagra.app/articles/
+            https://tagra.app/articles/digital-tachograph-symbols/
+            https://tagra.app/articles/how-to-download-evaluate-archive-tachograph-data/
+            https://tagra.app/articles/tachographs-for-vans-new-obligation-july-2026/
+            https://tagra.app/articles/who-must-evaluate-tachograph-data-2026/

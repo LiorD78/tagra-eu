@@ -1,6 +1,6 @@
 # /try/ — TAGRA 30-day trial flow
 
-Conversion-focused signup form for TAGRA 30-day trial. Lives at `tagra.eu/try/` and 5 language variants.
+Conversion-focused signup form for TAGRA 30-day trial. Lives at `tagra.app/try/` and 5 language variants.
 
 ## URL map
 
@@ -28,7 +28,7 @@ Prefill priority (in `try.js`):
    - `document.referrer` matching `/fleet*` → fleet
    - `document.referrer` matching `/driver*` → driver
    - `document.referrer` matching `/enforcement*` → enforcement
-   - Allowed hosts: `tagra.eu`, `www.tagra.eu`, `tagra.app`, `www.tagra.app`, `*.netlify.app`
+   - Allowed hosts: `tagra.app`, `www.tagra.app`, `tagra.app`, `www.tagra.app`, `*.netlify.app`
    - Cross-site referrers ignored (anti-spoofing)
 3. **No prefill** if neither matches — user picks manually.
 
@@ -97,7 +97,7 @@ When a real DE/PL version ships, the file wins over the redirect (Netlify proces
 
 ## Future work
 
-- **MailKit integration** (deferred until domain settled — `tagra.eu` vs `tagra.app` TBD)
+- **MailKit integration** (deferred until domain settled — `tagra.app` vs `tagra.app` TBD)
 - **Trial-list segmentation** — when MailKit ready: `TAGRA-trial-EN-fleet`, `-driver`, etc.
 - **DE/PL content pages** for `/fleet/`, `/driver/`, `/articles/` — currently EN-only
 

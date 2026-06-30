@@ -17,12 +17,12 @@ When a user submits the `/try/` form, three things happen:
 - Go to [resend.com](https://resend.com) and create a free account
 - Free tier: 3,000 emails/month, 100/day — more than enough at current volume
 
-### Step 2. Verify domain `tagra.eu`
+### Step 2. Verify domain `tagra.app`
 
 In Resend dashboard:
-- Domains → Add domain → `tagra.eu`
+- Domains → Add domain → `tagra.app`
 - Copy the 3 DNS records (SPF, DKIM, return-path)
-- Add them in Wedos DNS for `tagra.eu` (currently managed by colleague on separate account — needs DNS access)
+- Add them in Wedos DNS for `tagra.app` (currently managed by colleague on separate account — needs DNS access)
 - Wait for verification (usually < 1 hour)
 
 ### Step 3. Create API key
@@ -40,7 +40,7 @@ In Netlify dashboard for `tagra-eu`:
   - Key: `RESEND_API_KEY`
   - Value: `re_xxxxxxxxxxxx...` (the key from step 3)
   - Scope: "Production" and "Deploy previews"
-- Optionally add `RESEND_FROM` if you want different "From" address (default: `TAGRA <trials@tagra.eu>`)
+- Optionally add `RESEND_FROM` if you want different "From" address (default: `TAGRA <trials@tagra.app>`)
 
 ### Step 5. Configure Netlify Forms outgoing webhook
 
@@ -48,7 +48,7 @@ In Netlify dashboard for `tagra-eu`:
 - Type: **Outgoing webhook**
 - Event: **New form submission**
 - Form: **tagra-trial**
-- URL: `https://tagra.eu/.netlify/functions/trial-email`
+- URL: `https://tagra.app/.netlify/functions/trial-email`
 - Save
 
 ### Step 6. Test
@@ -95,7 +95,7 @@ User receives HTML email with download link
 | SK | ✓ | ✓ | ✓ |
 | GR | ✓ | ✓ | ✓ |
 
-Preview at `https://tagra.eu/try/email-preview/` (noindex, won't show in SERPs).
+Preview at `https://tagra.app/try/email-preview/` (noindex, won't show in SERPs).
 
 Templates have placeholder `{NAME}` which the function substitutes with the user's first name at runtime.
 

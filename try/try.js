@@ -28,8 +28,8 @@
       const refUrl = new URL(ref);
       // Only trust referrer if it's the same origin (or netlify staging)
       const sameSite = refUrl.host === window.location.host
-        || refUrl.host === 'tagra.eu'
-        || refUrl.host === 'www.tagra.eu'
+        || refUrl.host === 'tagra.app'
+        || refUrl.host === 'www.tagra.app'
         || refUrl.host === 'tagra.app'
         || refUrl.host === 'www.tagra.app'
         || refUrl.host.endsWith('.netlify.app');

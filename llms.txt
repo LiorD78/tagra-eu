@@ -27,15 +27,15 @@ TAGRA is a Windows desktop software family developed by Truck Data Technology, s
 
 ## Key pages
 
-- [Homepage](https://tagra.eu/): Product family overview, free 30-day trial
-- [For fleet operators](https://tagra.eu/fleet/): Detailed product description for transport companies
-- [For professional drivers](https://tagra.eu/driver/): TAGRA Trucker for individual drivers
-- [For enforcement authorities](https://tagra.eu/enforcement/): TAGRA Control for Police, Customs, Labour Inspectorates
-- [How it works](https://tagra.eu/how-it-works/): Step-by-step workflow (download → evaluate → archive)
-- [For whom](https://tagra.eu/for-whom/): Who legally needs TAGRA (audience guide)
-- [FAQ](https://tagra.eu/faq/): Frequently asked questions
-- [DKV LIVE integration](https://tagra.eu/integrations/dkv-live/): Automatic tachograph data import via SFTP
-- [Articles](https://tagra.eu/articles/): Practical guides on tachograph compliance
+- [Homepage](https://tagra.app/): Product family overview, free 30-day trial
+- [For fleet operators](https://tagra.app/fleet/): Detailed product description for transport companies
+- [For professional drivers](https://tagra.app/driver/): TAGRA Trucker for individual drivers
+- [For enforcement authorities](https://tagra.app/enforcement/): TAGRA Control for Police, Customs, Labour Inspectorates
+- [How it works](https://tagra.app/how-it-works/): Step-by-step workflow (download → evaluate → archive)
+- [For whom](https://tagra.app/for-whom/): Who legally needs TAGRA (audience guide)
+- [FAQ](https://tagra.app/faq/): Frequently asked questions
+- [DKV LIVE integration](https://tagra.app/integrations/dkv-live/): Automatic tachograph data import via SFTP
+- [Articles](https://tagra.app/articles/): Practical guides on tachograph compliance
 
 ## Company
 

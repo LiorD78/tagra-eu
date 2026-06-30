@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tagra.eu/</loc>
+    <loc>https://tagra.app/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
@@ -14,7 +14,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://tagra.eu/fleet/</loc>
+    <loc>https://tagra.app/fleet/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
@@ -29,7 +29,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://tagra.eu/driver/</loc>
+    <loc>https://tagra.app/driver/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
@@ -40,60 +40,60 @@
     </image:image>
   </url>
   <url>
-    <loc>https://tagra.eu/enforcement/</loc>
+    <loc>https://tagra.app/enforcement/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
     <image:image>
-      <image:loc>https://tagra.eu/assets/img/tagra-control-screenshot.webp</image:loc>
+      <image:loc>https://tagra.app/assets/img/tagra-control-screenshot.webp</image:loc>
       <image:title>TAGRA Control — interface for enforcement authorities</image:title>
       <image:caption>Roadside and company inspection software for Police, Customs and Labour Inspectorates.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://tagra.eu/assets/img/road-check-form-tagra.webp</image:loc>
+      <image:loc>https://tagra.app/assets/img/road-check-form-tagra.webp</image:loc>
       <image:title>Roadside check form ready for enforcement</image:title>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.eu/enforcement/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.eu/enforcement/de/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.eu/enforcement/pl/"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.eu/enforcement/gr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.eu/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/enforcement/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/enforcement/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/enforcement/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/enforcement/"/>
   </url>
   <url>
-    <loc>https://tagra.eu/enforcement/de/</loc>
+    <loc>https://tagra.app/enforcement/de/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.eu/enforcement/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.eu/enforcement/de/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.eu/enforcement/pl/"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.eu/enforcement/gr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.eu/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/enforcement/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/enforcement/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/enforcement/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/enforcement/"/>
   </url>
   <url>
-    <loc>https://tagra.eu/enforcement/pl/</loc>
+    <loc>https://tagra.app/enforcement/pl/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.eu/enforcement/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.eu/enforcement/de/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.eu/enforcement/pl/"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.eu/enforcement/gr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.eu/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/enforcement/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/enforcement/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/enforcement/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/enforcement/"/>
   </url>
   <url>
-    <loc>https://tagra.eu/enforcement/gr/</loc>
+    <loc>https://tagra.app/enforcement/gr/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.eu/enforcement/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.eu/enforcement/de/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.eu/enforcement/pl/"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.eu/enforcement/gr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.eu/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tagra.app/enforcement/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tagra.app/enforcement/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tagra.app/enforcement/pl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://tagra.app/enforcement/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tagra.app/enforcement/"/>
   </url>
   <url>
-    <loc>https://tagra.eu/how-it-works/</loc>
+    <loc>https://tagra.app/how-it-works/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -103,25 +103,25 @@
     </image:image>
   </url>
   <url>
-    <loc>https://tagra.eu/for-whom/</loc>
+    <loc>https://tagra.app/for-whom/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/faq/</loc>
+    <loc>https://tagra.app/faq/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/contact/</loc>
+    <loc>https://tagra.app/contact/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/integrations/dkv-live/</loc>
+    <loc>https://tagra.app/integrations/dkv-live/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
@@ -132,31 +132,31 @@
     </image:image>
   </url>
   <url>
-    <loc>https://tagra.eu/articles/</loc>
+    <loc>https://tagra.app/articles/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/articles/digital-tachograph-symbols/</loc>
+    <loc>https://tagra.app/articles/digital-tachograph-symbols/</loc>
     <lastmod>2026-05-12</lastmod>
     <priority>0.7</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/articles/how-to-download-evaluate-archive-tachograph-data/</loc>
+    <loc>https://tagra.app/articles/how-to-download-evaluate-archive-tachograph-data/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/articles/tachographs-for-vans-new-obligation-july-2026/</loc>
+    <loc>https://tagra.app/articles/tachographs-for-vans-new-obligation-july-2026/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://tagra.eu/articles/who-must-evaluate-tachograph-data-2026/</loc>
+    <loc>https://tagra.app/articles/who-must-evaluate-tachograph-data-2026/</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>

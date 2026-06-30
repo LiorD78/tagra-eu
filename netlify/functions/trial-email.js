@@ -6,16 +6,16 @@
  *
  * Configuration:
  *   - Resend API key in env var RESEND_API_KEY
- *   - From address: trials@tagra.eu (needs DNS verification on tagra.eu)
+ *   - From address: trials@tagra.app (needs DNS verification on tagra.app)
  *
  * Setup steps (manual, one-time):
  *   1. Sign up at https://resend.com (free tier 3,000 emails/month)
- *   2. Add domain tagra.eu, copy DNS records to Wedos
+ *   2. Add domain tagra.app, copy DNS records to Wedos
  *   3. Wait for verification
  *   4. Create API key, paste into Netlify env vars as RESEND_API_KEY
  *   5. Configure Netlify form notification:
  *      Settings → Forms → "Outgoing webhook" → URL:
- *      https://tagra.eu/.netlify/functions/trial-email
+ *      https://tagra.app/.netlify/functions/trial-email
  *      Event: "Submission created"
  *      Form: "tagra-trial"
  *
@@ -29,7 +29,7 @@
  */
 
 const RESEND_API = "https://api.resend.com/emails";
-const TEMPLATE_BASE = "https://tagra.eu/try/email-preview";
+const TEMPLATE_BASE = "https://tagra.app/try/email-preview";
 
 const LANG_TO_HTML = {
   en: "en", de: "de", pl: "pl", cz: "cz", sk: "sk", gr: "gr",
@@ -159,7 +159,7 @@ exports.handler = async (event) => {
     || SUBJECTS.en[finalAudience];
 
   // Send via Resend
-  const fromAddr = process.env.RESEND_FROM || "TAGRA <trials@tagra.eu>";
+  const fromAddr = process.env.RESEND_FROM || "TAGRA <trials@tagra.app>";
   const replyTo  = "obchod@tdt.cz";
 
   try {
