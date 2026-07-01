@@ -143,13 +143,9 @@
     }
     .hero .eyebrow {
       color: var(--green-brand);
-      /* Dark grey drop shadow only — no white halo (looked smeared).
-         Multiple layered shadows give depth without colour bleed. */
-      text-shadow:
-        0 1px 0 rgba(40,40,40,0.6),
-        0 2px 4px rgba(40,40,40,0.55),
-        0 3px 10px rgba(0,0,0,0.45);
-      margin-bottom: 10px;
+      /* No text-shadow — each element now sits on its own Liquid Glass
+         chip, which supplies the contrast. Shadow removed for crisp edges. */
+      margin-bottom: 0;
       letter-spacing: 0.12em;
       font-weight: 700;
     }
@@ -157,18 +153,17 @@
       max-width: 620px;
       margin: 0 auto;
       color: var(--blue-dark);
-      text-shadow: 0 1px 2px rgba(255,255,255,0.5);
     }
     .hero .hero-sub strong { color: var(--blue-dark); }
-    /* Liquid Glass panel behind hero text — hugs eyebrow/H1/sub tightly,
-       same translucent-blur language as .site-nav, boosts contrast of the
-       gradient H1 text against the video. */
+    /* Liquid Glass chips — one snug frosted panel PER line (eyebrow / H1 /
+       sub), each sized to its own content, not one shared block behind
+       all three. Same translucent-blur language as .site-nav. */
     .hero-glass {
       display: inline-block;
       max-width: 660px;
-      margin: 0 auto;
-      padding: 30px 42px 34px;
-      border-radius: 32px;
+      margin: 0 auto 14px;
+      padding: 14px 30px;
+      border-radius: 22px;
       background: linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.14) 100%);
       backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
       -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
@@ -179,8 +174,10 @@
         0 10px 40px rgba(11,44,74,0.22),
         0 2px 10px rgba(11,44,74,0.12);
     }
+    .hero-glass:last-child { margin-bottom: 0; }
+    .hero-glass .eyebrow, .hero-glass h1, .hero-glass .hero-sub { margin-bottom: 0; }
     @media (max-width: 768px) {
-      .hero-glass { padding: 22px 24px 26px; border-radius: 24px; max-width: 92%; }
+      .hero-glass { padding: 11px 20px; border-radius: 16px; max-width: 92%; margin: 0 auto 10px; }
     }
     @media (max-width: 1024px) {
       .hero { aspect-ratio: 9 / 16; max-height: 90vh; padding-top:calc(var(--nav-h, 64px) + 40px); background: #87b9d8; align-items: flex-start; }
@@ -778,10 +775,14 @@
     <source src="/assets/video/hero-1080.mp4?v=2026-05-13c" type="video/mp4">
   </video>
   <div class="container">
-    <div class="hero-glass">
-      <div class="eyebrow anim-up">Tachograph data management software</div>
-      <h1 class="anim-up" style="transition-delay:.05s">TAGRA</h1>
-      <p class="hero-sub anim-up" style="transition-delay:.1s">
+    <div class="hero-glass anim-up">
+      <div class="eyebrow">Tachograph data management software</div>
+    </div>
+    <div class="hero-glass anim-up" style="transition-delay:.05s">
+      <h1>TAGRA</h1>
+    </div>
+    <div class="hero-glass anim-up" style="transition-delay:.1s">
+      <p class="hero-sub">
         Downloading isn't enough — the law requires <strong>evaluation and archiving.</strong><br>
         TAGRA covers everything. Free 30-day trial, no credit card.
       </p>
