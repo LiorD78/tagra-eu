@@ -160,23 +160,23 @@
        all three. display:table (not inline-block) so each chip both
        shrink-wraps its content AND forces a new line — inline-block let
        chips sit side-by-side on wide desktop viewports (bug: "TAGRA"
-       chip drifting right of the eyebrow chip). Lower opacity/shadow =
-       subtler, more transparent glass per Libor's request 2026-07-01. */
+       chip drifting right of the eyebrow chip). Milkier/higher-opacity
+       fill = stronger contrast per Libor's request 2026-07-01. */
     .hero-glass {
       display: table;
       max-width: 660px;
       margin: 0 auto 14px;
       padding: 14px 30px;
       border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 100%);
-      backdrop-filter: blur(16px) saturate(150%) brightness(1.02);
-      -webkit-backdrop-filter: blur(16px) saturate(150%) brightness(1.02);
-      border: 1px solid rgba(255,255,255,0.22);
+      background: linear-gradient(180deg, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.24) 100%);
+      backdrop-filter: blur(20px) saturate(140%) brightness(1.05);
+      -webkit-backdrop-filter: blur(20px) saturate(140%) brightness(1.05);
+      border: 1px solid rgba(255,255,255,0.55);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.30),
-        inset 0 -1px 0 rgba(255,255,255,0.06),
-        0 6px 22px rgba(11,44,74,0.14),
-        0 1px 6px rgba(11,44,74,0.06);
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -1px 0 rgba(255,255,255,0.12),
+        0 8px 28px rgba(11,44,74,0.16),
+        0 2px 8px rgba(11,44,74,0.08);
     }
     .hero-glass:last-child { margin-bottom: 0; }
     .hero-glass .eyebrow, .hero-glass h1, .hero-glass .hero-sub { margin-bottom: 0; }
